@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You | MTR Baths</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        /* Specific Styles for Thank You Page */
+        body {
+            background-color: #f8f9fa;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .thank-you-wrapper {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 40px 20px;
+        }
+
+        .thank-you-card {
+            background: white;
+            max-width: 600px;
+            width: 100%;
+            border-radius: 12px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            text-align: center;
+            padding: 50px 30px;
+            border-top: 6px solid #f4b941; /* Brand Gold */
+        }
+
+        .success-icon {
+            width: 80px;
+            height: 80px;
+            background-color: #e8f8f0; /* Light Green */
+            color: #27ae60;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 30px;
+            font-size: 40px;
+        }
+
+        h1 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+            font-size: 32px;
+        }
+
+        p.lead {
+            font-size: 18px;
+            color: #555;
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+
+        .next-steps {
+            background-color: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            border: 1px solid #eee;
+        }
+
+        .next-steps h3 {
+            font-size: 18px;
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+
+        .call-now-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #2c3e50; /* Brand Blue */
+            color: white;
+            padding: 18px 35px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 20px;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(44, 62, 80, 0.3);
+            margin-bottom: 20px;
+        }
+
+        .call-now-btn:hover {
+            background-color: #f4b941; /* Hover Gold */
+            color: #2c3e50;
+            transform: translateY(-3px);
+        }
+
+        .call-now-btn svg {
+            fill: currentColor;
+            width: 24px;
+            height: 24px;
+            margin-right: 12px;
+        }
+
+        .back-link {
+            color: #999;
+            text-decoration: none;
+            font-size: 14px;
+        }
+        .back-link:hover { text-decoration: underline; color: #555; }
+
+        /* Confetti Animation (Optional Fun) */
+        @keyframes pop {
+            0% { transform: scale(0); opacity: 0; }
+            80% { transform: scale(1.1); opacity: 1; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+        .success-icon { animation: pop 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
+    </style>
+</head>
+<body>
+
+    <div style="background: #2c3e50; padding: 15px 0; text-align: center;">
+        <img src="https://ik.imagekit.io/mtrbaths/MTR_Baths__19_-removebg-preview%20(1).png" alt="MTR Baths" style="height: 40px;">
+    </div>
+
+    <div class="thank-you-wrapper">
+        <div class="thank-you-card">
+            <div class="success-icon">✓</div>
+            
+            <h1>Application Received!</h1>
+            <p class="lead">Thanks for contacting MTR Baths. Alex has received your project details and will be reviewing them shortly.</p>
+            
+            <div class="next-steps">
+                <h3>What Happens Next?</h3>
+                <p style="font-size: 15px; margin: 0;">We typically respond within 24 hours to confirm availability and discuss pricing for your <strong>3-Day Spa Package</strong>.</p>
+            </div>
+
+            <p style="font-weight: 600; color: #e74c3c; margin-bottom: 10px;">Want fast-track service?</p>
+            <a href="tel:+19168920745" class="call-now-btn">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 22.621l-3.521-6.795c-.008.004-1.974.97-2.064 1.011-2.24 1.086-6.799-7.82-4.609-8.994l2.083-1.026-3.493-6.817-2.106 1.039c-7.202 3.755 4.233 25.982 11.6 22.615.121-.055 2.102-1.029 2.11-1.033z"/></svg>
+                Call Alex Now
+            </a>
+            
+            <br>
+            <a href="index.php" class="back-link">Return to Homepage</a>
+        </div>
+    </div>
+
+    <footer style="background-color: white; padding: 20px 0; text-align: center; border-top: 1px solid #eee; font-size: 13px; color: #888;">
+        <p>&copy; 2026 MTR Baths. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>
