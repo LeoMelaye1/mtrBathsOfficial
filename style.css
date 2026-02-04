@@ -1596,6 +1596,7 @@ select.form-control {
     margin: 0 auto;
 }
 
+/* UPDATED: Removed hover effects that confuse mobile users */
 .county-badge {
     background-color: white;
     color: #2c3e50;
@@ -1604,14 +1605,14 @@ select.form-control {
     font-weight: 600;
     box-shadow: 0 2px 5px rgba(0,0,0,0.05);
     border: 1px solid #e0e0e0;
-    transition: all 0.2s ease;
-    cursor: default;
+    cursor: default; /* Tells the mouse it's just text, not a link */
 }
 
+/* Only add hover effect if it's actually clickable (optional) */
 .county-badge:hover {
-    border-color: #f4b941;
-    color: #f4b941;
-    transform: translateY(-2px);
+    border-color: #e0e0e0; /* No color change */
+    transform: none;       /* No movement */
+    color: #2c3e50;        /* No text color change */
 }
 
 /* Service Area Split Layout */
