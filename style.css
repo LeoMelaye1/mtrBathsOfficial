@@ -1702,3 +1702,157 @@ select.form-control {
     opacity: 0;
     pointer-events: none;
 }
+
+/* =========================================
+   MOBILE OPTIMIZATION (Paste at bottom of CSS)
+   ========================================= */
+
+@media (max-width: 768px) {
+
+    /* --- 1. GLOBAL ADJUSTMENTS --- */
+    body {
+        padding-bottom: 80px; /* Space for the sticky bottom bar */
+    }
+    
+    .container {
+        padding: 0 15px; /* Tighter side padding for more space */
+    }
+
+    /* --- 2. HERO SECTION FIXES --- */
+    .hero {
+        padding: 40px 0 20px 0; /* Less vertical whitespace */
+        min-height: auto;
+        background-position: center top; /* Focus background on top */
+    }
+
+    .hero-container {
+        flex-direction: column; /* Stack Content on top of Form */
+        gap: 20px;
+    }
+
+    .hero-content {
+        text-align: center; /* Center text on mobile */
+        margin-bottom: 10px;
+    }
+
+    .hero h1 {
+        font-size: 28px; /* Smaller H1 to prevent huge wrapping */
+        line-height: 1.2;
+        margin-bottom: 15px;
+    }
+
+    .hero-subtitle {
+        font-size: 16px;
+        line-height: 1.4;
+        margin-bottom: 20px;
+    }
+
+    /* Fix the Checklist Alignment on Mobile */
+    .hero-checklist {
+        display: inline-block; /* Centers the list block */
+        text-align: left; /* Keeps bullet points aligned left */
+        margin: 0 auto 20px auto;
+        padding-left: 10px;
+    }
+
+    .hero-checklist li {
+        font-size: 14px; /* Readable but compact */
+        margin-bottom: 10px;
+        display: flex;
+        align-items: flex-start; /* Aligns checkmark to top of text */
+    }
+
+    .check-icon {
+        margin-top: 2px; /* Visual alignment fix */
+    }
+
+    /* --- 3. FORM OPTIMIZATION --- */
+    .hero-visual-proof {
+        width: 100%; /* Full width form */
+        max-width: 100%;
+        margin: 0;
+    }
+
+    .embedded-form {
+        padding: 20px; /* slightly less padding */
+        box-shadow: 0 5px 15px rgba(0,0,0,0.2); /* Softer shadow */
+        border-radius: 8px;
+    }
+
+    .form-banner {
+        font-size: 18px;
+        text-align: center;
+    }
+
+    /* PREVENT ZOOMING: Inputs must be 16px on mobile */
+    .form-control, select, textarea {
+        font-size: 16px !important; 
+        padding: 12px;
+    }
+
+    #hero-submit {
+        font-size: 16px; /* Prevent button text overflow */
+        padding: 15px 10px;
+        white-space: normal; /* Allow text to wrap if needed */
+        line-height: 1.2;
+    }
+
+    /* --- 4. TRUST BADGES & LOGOS --- */
+    .hero-trust-badges {
+        justify-content: center; /* Center badges */
+        gap: 10px;
+        flex-wrap: wrap;
+    }
+
+    .badge-item {
+        font-size: 12px;
+        padding: 8px 12px;
+        width: auto; /* Let them flow naturally */
+    }
+
+    /* --- 5. OWNER SECTION STACKING --- */
+    .owner-container {
+        flex-direction: column; /* Stack image on top of text */
+        text-align: center;
+        gap: 30px;
+    }
+
+    .owner-image {
+        margin: 0 auto;
+        max-width: 280px; /* Restrict image size so it doesn't dominate */
+    }
+
+    .owner-content {
+        padding: 0 10px;
+    }
+    
+    .owner-signature {
+        justify-content: center;
+        display: flex;
+    }
+    
+    .owner-contact a {
+        justify-content: center;
+    }
+
+    /* --- 6. VIDEO & GALLERY FIXES --- */
+    .video-grid, .gallery-grid {
+        display: block; /* Stack videos/images vertically */
+    }
+
+    .video-card, .gallery-item {
+        margin-bottom: 30px;
+        width: 100%;
+    }
+
+    .video-wrapper video {
+        height: auto; /* Let height adjust naturally */
+        max-height: 300px; /* Cap it so it fits on one screen */
+    }
+
+    /* --- 7. STICKY BOTTOM BAR VISIBILITY --- */
+    .mobile-bottom-bar {
+        display: flex !important; /* Force show */
+        z-index: 99999;
+    }
+}
