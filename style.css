@@ -1856,3 +1856,74 @@ select.form-control {
         z-index: 99999;
     }
 }
+/* FIXED GALLERY STYLES */
+
+/* 1. Disable the Click Cursor */
+.img-wrapper.no-click {
+    cursor: default !important; /* Shows standard arrow, not a hand */
+    pointer-events: none;       /* Prevents clicks entirely */
+}
+
+/* 2. Force Images to match sizes */
+.fixed-ratio-img {
+    width: 100%;
+    height: 300px;       /* Forces all images to be exactly 300px tall */
+    object-fit: cover;   /* Smartly crops the image to fill the box without stretching */
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* 3. Improve Label Look */
+.img-label {
+    bottom: 15px; /* Move up slightly */
+    font-size: 14px;
+    font-weight: 700;
+    padding: 6px 18px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+    z-index: 10; /* Ensure label sits ON TOP of image */
+}
+
+/* 4. Mobile Adjustments */
+@media (max-width: 768px) {
+    .fixed-ratio-img {
+        height: 250px; /* Slightly shorter on mobile phones */
+    }
+    
+    .gallery-item {
+        margin-bottom: 20px;
+        padding: 10px;
+    }
+    
+    .side-by-side-container {
+        gap: 15px; /* Adds clean space between the stacked images */
+    }
+}
+
+
+/* FIX FOR WHITE LINE / HORIZONTAL SCROLL */
+@media (max-width: 768px) {
+    
+    /* 1. Force the page to never scroll horizontally */
+    html, body {
+        overflow-x: hidden; 
+        width: 100%;
+        position: relative;
+    }
+
+    /* 2. Fix the Button Text Overflow */
+    .btn {
+        white-space: normal !important; /* Allows text to wrap to two lines */
+        max-width: 100%;                /* Never wider than the screen */
+        box-sizing: border-box;         /* Includes padding in width calculation */
+        text-align: center;
+        padding: 15px 10px;             /* Reduced side padding for mobile */
+    }
+    
+    /* Optional: Make that specific bottom button fit better */
+    .gallery .btn {
+        width: 90%;                     /* Give it a little breathing room on sides */
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+    }
+}
