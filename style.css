@@ -1927,3 +1927,117 @@ select.form-control {
         display: block;
     }
 }
+
+/* ================================
+   MOBILE OPTIMIZATION + DEAD CLICK FIXES
+================================ */
+
+html { scroll-behavior: smooth; }
+
+/* Fix: before/after images were registering dead clicks */
+.img-wrapper.no-click,
+.img-wrapper.no-click img {
+    cursor: default !important;
+    pointer-events: none;
+}
+
+@media (max-width: 768px) {
+    body { padding-bottom: 80px; }
+
+    /* Bigger, more tappable bottom bar */
+    .mobile-bottom-bar {
+        padding: 10px 12px;
+        gap: 10px;
+        border-top: 2px solid #e74c3c;
+        box-shadow: 0 -4px 20px rgba(0,0,0,0.15);
+    }
+    .mobile-call-btn,
+    .mobile-quote-btn {
+        flex: 1;
+        padding: 14px 10px;
+        min-height: 52px;
+        font-size: 15px;
+        font-weight: 700;
+        border-radius: 8px;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .mobile-call-btn {
+        background: #e74c3c;
+        color: #fff;
+        border: 2px solid #e74c3c;
+    }
+    .mobile-quote-btn {
+        background: #fff;
+        color: #e74c3c;
+        border: 2px solid #e74c3c;
+    }
+
+    /* Hide desktop phone in header */
+    .call-section { display: none; }
+
+    /* Rating bar scrollable on mobile */
+    .rating-bar-container {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        white-space: nowrap;
+        scrollbar-width: none;
+    }
+    .rating-bar-container::-webkit-scrollbar { display: none; }
+    .rating-divider { display: none; }
+
+    /* Bigger form inputs — prevents iOS zoom */
+    .form-control,
+    .hero-form input,
+    .hero-form textarea {
+        font-size: 16px !important;
+        padding: 14px 12px !important;
+        min-height: 52px;
+        border-radius: 8px !important;
+    }
+    .hero-form textarea { min-height: 90px; }
+
+    /* Bigger submit button */
+    #hero-submit {
+        font-size: 17px !important;
+        padding: 18px 20px !important;
+        min-height: 58px !important;
+    }
+
+    /* Stack hero on mobile */
+    .hero-container { flex-direction: column !important; gap: 24px !important; }
+    .hero-content { text-align: center; }
+    .hero-checklist { text-align: left; display: inline-block; }
+
+    /* Stack owner section */
+    .owner-container { flex-direction: column !important; }
+    .owner-image, .owner-content { min-width: unset !important; width: 100% !important; }
+
+    /* Videos single column */
+    .video-grid { grid-template-columns: 1fr !important; }
+
+    /* Gallery full width */
+    .gallery-grid { grid-template-columns: 1fr !important; }
+
+    /* Portfolio 2 columns */
+    .portfolio-grid { grid-template-columns: 1fr 1fr !important; gap: 8px !important; }
+
+    /* Service area stack */
+    .service-split-layout { flex-direction: column !important; }
+
+    /* FAQ single column */
+    .faq-container { flex-direction: column !important; }
+
+    /* Bigger accordion tap targets */
+    .accordion-header {
+        padding: 18px 16px !important;
+        font-size: 15px !important;
+        min-height: 56px;
+    }
+
+    /* Responsive headings */
+    h1 { font-size: clamp(26px, 7vw, 42px) !important; }
+    h2 { font-size: clamp(22px, 5.5vw, 32px) !important; }
+}
