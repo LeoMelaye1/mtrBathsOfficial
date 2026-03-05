@@ -30,7 +30,7 @@ src="https://www.facebook.com/tr?id=871950812372808&ev=PageView&noscript=1"
     <script>var $wc_load=function(a){return  JSON.parse(JSON.stringify(a))},$wc_leads=$wc_leads||{doc:{url:$wc_load(document.URL),ref:$wc_load(document.referrer),search:$wc_load(location.search),hash:$wc_load(location.hash)}};</script><script  src="//s.ksrndkehqnwntyxlhgto.com/157458.js"></script>      
 
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
     <title>Premium Bathroom Remodeling | MTR Baths | Local Experts</title>
     <link rel="icon" type="image/png" href="https://static.wixstatic.com/media/5c9096_3c790612cb0b45d88ec5c7abd439eda2%7Emv2.png/v1/fill/w_192%2Ch_192%2Clg_1%2Cusm_0.66_1.00_0.01/5c9096_3c790612cb0b45d88ec5c7abd439eda2%7Emv2.png">
     
@@ -39,14 +39,266 @@ src="https://www.facebook.com/tr?id=871950812372808&ev=PageView&noscript=1"
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
     
     <link rel="stylesheet" href="style.css">
+
+    <style>
+        /* =============================================
+           MOBILE OPTIMIZATION OVERRIDES
+           All changes below are additive — they sit on
+           top of style.css and only activate on mobile
+           or fix the dead-click issues site-wide.
+        ============================================= */
+
+        /* --- Fix: before/after images were registering dead clicks ---
+           Remove pointer cursor so users don't think they're clickable */
+        .img-wrapper.no-click,
+        .img-wrapper.no-click img,
+        .gallery-item .side-by-side-container {
+            cursor: default !important;
+            pointer-events: none;
+        }
+
+        /* --- Fix: offer badge now scrolls to the form --- */
+        .offer-badge-link {
+            text-decoration: none;
+            display: inline-block;
+        }
+        .offer-badge-link:hover .offer-badge-pill {
+            background-color: rgba(231, 76, 60, 0.25);
+            transform: scale(1.03);
+        }
+        .offer-badge-pill {
+            background-color: rgba(231, 76, 60, 0.15);
+            color: #e74c3c;
+            border: 1px solid #e74c3c;
+            padding: 6px 16px;
+            border-radius: 50px;
+            font-size: 13px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            display: inline-block;
+            transition: background-color 0.2s ease, transform 0.2s ease;
+        }
+
+        /* =============================================
+           MOBILE-SPECIFIC STYLES (max-width: 768px)
+        ============================================= */
+        @media (max-width: 768px) {
+
+            /* --- Mobile bottom bar: make it bigger and more tappable --- */
+            .mobile-bottom-bar {
+                display: flex !important;
+                position: fixed;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                z-index: 9999;
+                background: #fff;
+                border-top: 2px solid #e74c3c;
+                box-shadow: 0 -4px 20px rgba(0,0,0,0.15);
+                padding: 10px 12px;
+                gap: 10px;
+            }
+
+            .mobile-call-btn,
+            .mobile-quote-btn {
+                flex: 1;
+                display: flex !important;
+                align-items: center;
+                justify-content: center;
+                padding: 14px 10px;
+                border-radius: 8px;
+                font-size: 15px;
+                font-weight: 700;
+                text-decoration: none;
+                text-align: center;
+                min-height: 52px; /* bigger tap target */
+                -webkit-tap-highlight-color: transparent;
+            }
+
+            .mobile-call-btn {
+                background: #e74c3c;
+                color: #fff;
+                border: 2px solid #e74c3c;
+            }
+
+            .mobile-quote-btn {
+                background: #fff;
+                color: #e74c3c;
+                border: 2px solid #e74c3c;
+            }
+
+            /* Push page content up so bottom bar doesn't cover it */
+            body {
+                padding-bottom: 80px;
+            }
+
+            /* --- Hide desktop header phone on mobile to reduce clutter --- */
+            .call-section {
+                display: none;
+            }
+
+            /* --- Shrink top header on mobile --- */
+            .top-header {
+                padding: 8px 0;
+            }
+
+            .logo-image {
+                max-height: 45px;
+            }
+
+            /* --- Rating bar: allow horizontal scroll on mobile --- */
+            .rating-bar-container {
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+                white-space: nowrap;
+                display: flex;
+                gap: 8px;
+                padding-bottom: 4px;
+                scrollbar-width: none;
+            }
+            .rating-bar-container::-webkit-scrollbar {
+                display: none;
+            }
+            .rating-divider {
+                display: none;
+            }
+
+            /* --- Hero section: stack form below headline --- */
+            .hero-container {
+                flex-direction: column !important;
+                gap: 24px !important;
+            }
+
+            .hero-content {
+                text-align: center;
+            }
+
+            .hero-checklist {
+                text-align: left;
+                display: inline-block;
+            }
+
+            /* --- Offer badge: bigger tap target on mobile --- */
+            .offer-badge-pill {
+                font-size: 12px;
+                padding: 8px 14px;
+            }
+
+            /* --- Form: bigger inputs and button for thumbs --- */
+            .hero-form .form-control,
+            .hero-form input,
+            .hero-form textarea {
+                font-size: 16px !important; /* prevents iOS zoom on focus */
+                padding: 14px 12px !important;
+                border-radius: 8px !important;
+                min-height: 52px;
+            }
+
+            .hero-form textarea {
+                min-height: 90px;
+            }
+
+            .hero-form .btn,
+            #hero-submit {
+                font-size: 17px !important;
+                padding: 18px 20px !important;
+                min-height: 58px !important;
+                border-radius: 8px !important;
+                letter-spacing: 0.3px;
+            }
+
+            /* --- Owner section: stack on mobile --- */
+            .owner-container {
+                flex-direction: column !important;
+                gap: 24px !important;
+            }
+
+            .owner-image,
+            .owner-content {
+                min-width: unset !important;
+                width: 100% !important;
+            }
+
+            /* --- Video grid: single column on mobile --- */
+            .video-grid {
+                grid-template-columns: 1fr !important;
+                gap: 20px !important;
+            }
+
+            /* --- Gallery: full width items on mobile --- */
+            .gallery-grid {
+                grid-template-columns: 1fr !important;
+            }
+
+            .side-by-side-container {
+                flex-direction: row !important; /* keep before/after side by side */
+            }
+
+            /* --- Portfolio grid: 2 columns on mobile --- */
+            .portfolio-grid {
+                grid-template-columns: 1fr 1fr !important;
+                gap: 8px !important;
+            }
+
+            /* --- Service area: stack on mobile --- */
+            .service-split-layout {
+                flex-direction: column !important;
+            }
+
+            /* --- FAQ columns: single column on mobile --- */
+            .faq-container {
+                flex-direction: column !important;
+            }
+
+            /* --- Final CTA: make phone link big and tappable --- */
+            .phone-large {
+                font-size: 18px !important;
+                padding: 18px 24px !important;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 10px;
+                min-height: 60px;
+            }
+
+            .final-cta .btn {
+                font-size: 16px !important;
+                padding: 16px 20px !important;
+                min-height: 56px;
+                display: block;
+                width: 100%;
+                text-align: center;
+            }
+
+            /* --- Accordion headers: bigger tap target --- */
+            .accordion-header {
+                padding: 18px 16px !important;
+                font-size: 15px !important;
+                min-height: 56px;
+                display: flex;
+                align-items: center;
+            }
+
+            /* Section headings tighter on mobile */
+            h1 { font-size: clamp(26px, 7vw, 42px) !important; }
+            h2 { font-size: clamp(22px, 5.5vw, 32px) !important; }
+        }
+
+        /* Smooth scroll for all anchor links */
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
 </head>
 <body>
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PNR8J2VT"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
+<!-- MOBILE BOTTOM BAR — sticky call/quote bar, primary mobile CTA -->
 <div class="mobile-bottom-bar">
-    <a href="tel:+19168920745" class="mobile-call-btn">Call Now</a>
-    <a href="#main-form-anchor" class="mobile-quote-btn">Check Availability</a>
+    <a href="tel:+19168920745" class="mobile-call-btn">📞 Call Now</a>
+    <a href="#main-form-anchor" class="mobile-quote-btn">Get Free Quote</a>
 </div>
 
 <div class="top-header">
@@ -70,10 +322,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     </a>
                 </div>
 
-<div class="call-section">
-    <div class="call-text">Give Us A Call Today!</div>
-    <a href="tel:+19168920745" class="phone-number">(916) 892-0745</a>
-</div>
+                <div class="call-section">
+                    <div class="call-text">Give Us A Call Today!</div>
+                    <a href="tel:+19168920745" class="phone-number">(916) 892-0745</a>
+                </div>
             </div>
         </div>
     </div>
@@ -81,34 +333,34 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <div class="nav-bar" style="border-bottom: 1px solid #eee; padding: 10px 0; background: #fff;">
     <div class="container">
-<div class="rating-bar-container">
-    <div class="rating-item">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" alt="Google" width="15" style="vertical-align: middle;">
-        <strong>5.0</strong> <span style="font-size:12px; color:#666;">on Google</span>
-    </div>
-    <div class="rating-divider">|</div>
-    
-    <div class="rating-item">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/a/ad/Yelp_Logo.svg" alt="Yelp" width="32" style="vertical-align: middle;">
-        <strong>5.0</strong> <span style="font-size:12px; color:#666;">on Yelp</span>
-    </div>
-    <div class="rating-divider">|</div>
-    
-    <div class="rating-item">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/b/b8/2021_Facebook_icon.svg" alt="FB" width="15" style="vertical-align: middle;">
-        <strong>5.0</strong> <span style="font-size:12px; color:#666;">on Facebook</span>
-    </div>
-    <div class="rating-divider">|</div>
+        <div class="rating-bar-container">
+            <div class="rating-item">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" alt="Google" width="15" style="vertical-align: middle;">
+                <strong>5.0</strong> <span style="font-size:12px; color:#666;">on Google</span>
+            </div>
+            <div class="rating-divider">|</div>
+            
+            <div class="rating-item">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/a/ad/Yelp_Logo.svg" alt="Yelp" width="32" style="vertical-align: middle;">
+                <strong>5.0</strong> <span style="font-size:12px; color:#666;">on Yelp</span>
+            </div>
+            <div class="rating-divider">|</div>
+            
+            <div class="rating-item">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/b/b8/2021_Facebook_icon.svg" alt="FB" width="15" style="vertical-align: middle;">
+                <strong>5.0</strong> <span style="font-size:12px; color:#666;">on Facebook</span>
+            </div>
+            <div class="rating-divider">|</div>
 
-    <div class="rating-item">
-        <strong style="color: #2c3e50;">A+</strong> <span style="font-size:12px; color:#666;">BBB Rating</span>
-    </div>
-    <div class="rating-divider">|</div>
+            <div class="rating-item">
+                <strong style="color: #2c3e50;">A+</strong> <span style="font-size:12px; color:#666;">BBB Rating</span>
+            </div>
+            <div class="rating-divider">|</div>
 
-    <div class="rating-item">
-        <span style="font-size:12px; color:#2c3e50; font-weight:600;">Licensed & Insured</span>
-    </div>
-</div>
+            <div class="rating-item">
+                <span style="font-size:12px; color:#2c3e50; font-weight:600;">Licensed & Insured</span>
+            </div>
+        </div>
     </div>
 </div>
 
@@ -117,86 +369,100 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="container">
         <div class="hero-container">
             <div class="hero-content">
+
+                <!-- FIX: Offer badge now links to the form so it's never a dead click -->
                 <div class="offer-badge-container" style="margin-bottom: 15px;">
-    <span style="
-        background-color: rgba(231, 76, 60, 0.15); 
-        color: #e74c3c; 
-        border: 1px solid #e74c3c; 
-        padding: 6px 16px; 
-        border-radius: 50px; 
-        font-size: 13px; 
-        font-weight: 700; 
-        text-transform: uppercase; 
-        letter-spacing: 0.5px;
-        display: inline-block;">
-        Spring Special: Save $2,500
-    </span>
-</div>
+                    <a href="#main-form-anchor" class="offer-badge-link" aria-label="Claim Spring Special offer">
+                        <span class="offer-badge-pill">
+                            🌿 Spring Special: Save $2,500
+                        </span>
+                    </a>
+                </div>
+
                 <h1>Fairfield's Trusted <span style="color:#f4b941;">Shower & Bath Experts</span></h1>
                 
                 <p class="hero-subtitle" style="margin-bottom: 20px; font-size: 18px;">
                     Custom Walk-In Showers & Tub Conversions Installed in As Little As 1 Day.
                 </p>
                 
-<ul class="hero-checklist">
-    <li>
-        <span class="check-icon">✔</span> 
-        <strong>Tub-to-Shower Conversions</strong>&nbsp;(Our Specialty)
-    </li>
-    <li>
-        <span class="check-icon">✔</span> 
-        <strong>Senior & Handicap Accessible</strong>&nbsp;Options
-    </li>
-    <li>
-        <span class="check-icon">✔</span> 
-        <strong>Lifetime Warranty</strong>&nbsp;on Labor & Materials
-    </li>
-</ul>
+                <ul class="hero-checklist">
+                    <li>
+                        <span class="check-icon">✔</span> 
+                        <strong>Tub-to-Shower Conversions</strong>&nbsp;(Our Specialty)
+                    </li>
+                    <li>
+                        <span class="check-icon">✔</span> 
+                        <strong>Senior & Handicap Accessible</strong>&nbsp;Options
+                    </li>
+                    <li>
+                        <span class="check-icon">✔</span> 
+                        <strong>Lifetime Warranty</strong>&nbsp;on Labor & Materials
+                    </li>
+                </ul>
+
+                <!-- Mobile-only inline call CTA (shown above the fold before form) -->
+                <a href="tel:+19168920745" style="
+                    display: none;
+                    margin-top: 20px;
+                    align-items: center;
+                    justify-content: center;
+                    gap: 10px;
+                    background: #e74c3c;
+                    color: #fff;
+                    padding: 16px 24px;
+                    border-radius: 8px;
+                    font-size: 18px;
+                    font-weight: 700;
+                    text-decoration: none;
+                    width: 100%;
+                    box-sizing: border-box;
+                " class="mobile-hero-call-btn" aria-label="Call MTR Baths now">
+                    📞 Call (916) 892-0745
+                </a>
             </div>
             
             <div class="hero-visual-proof">
                 <div class="hero-form embedded-form">
                     <div class="form-banner">Check Availability & Get Free Quote</div>
-<form id="simple-hero-form">
-    <div class="form-group">
-        <label for="hero-name">Full Name *</label>
-        <input type="text" id="hero-name" name="name" class="form-control" placeholder="John Doe" required>
-    </div>
-    
-    <div class="form-group">
-        <label for="hero-phone">Phone Number *</label>
-        <input type="tel" id="hero-phone" name="phone" class="form-control" placeholder="(555) 555-5555" required>
-    </div>
+                    <!-- FIX: form id kept the same so existing script.js still works -->
+                    <form id="simple-hero-form">
+                        <div class="form-group">
+                            <label for="hero-name">Full Name *</label>
+                            <input type="text" id="hero-name" name="name" class="form-control" placeholder="John Doe" required autocomplete="name">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="hero-phone">Phone Number *</label>
+                            <!-- FIX: inputmode="tel" improves mobile keyboard -->
+                            <input type="tel" id="hero-phone" name="phone" class="form-control" placeholder="(555) 555-5555" required autocomplete="tel" inputmode="tel">
+                        </div>
 
-    <div class="form-group">
-        <label for="hero-details">What are you looking to get done?</label>
-        <textarea id="hero-details" name="project_details" class="form-control" rows="3" placeholder="Tell us about your project (e.g., converting a tub to a walk-in shower)..." style="resize: vertical; font-family: inherit;"></textarea>
-    </div>
-    
-    <button type="submit" class="btn btn-red" id="hero-submit" style="width:100%; margin-top:5px; font-weight:700; font-size: 18px;">
-        Start My Free Consultation
-    </button>
-    
-<div class="form-disclaimer" style="margin-top: 15px; border-top: 1px solid #e0e0e0; padding-top: 12px; display: flex; flex-direction: column; align-items: center; text-align: center;">
-    
-    <div style="display: flex; align-items: center; justify-content: center; gap: 6px; margin-bottom: 4px; width: 100%;">
-        <span style="font-size: 14px;">🔒</span>
-        <span style="color: #27ae60; font-weight: 800; font-size: 13px; letter-spacing: 0.5px;">SEASONAL OFFER: SAVE $2,500</span>
-    </div>
-    
-    <div style="font-size: 11px; color: #aaa; font-weight: 500;">
-        Privacy guaranteed. No obligation.
-    </div>
-
-</div>
-</form>
+                        <div class="form-group">
+                            <label for="hero-details">What are you looking to get done?</label>
+                            <textarea id="hero-details" name="project_details" class="form-control" rows="3" placeholder="Tell us about your project (e.g., converting a tub to a walk-in shower)..." style="resize: vertical; font-family: inherit;"></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-red" id="hero-submit" style="width:100%; margin-top:5px; font-weight:700; font-size: 18px;">
+                            Start My Free Consultation
+                        </button>
+                        
+                        <div class="form-disclaimer" style="margin-top: 15px; border-top: 1px solid #e0e0e0; padding-top: 12px; display: flex; flex-direction: column; align-items: center; text-align: center;">
+                            <div style="display: flex; align-items: center; justify-content: center; gap: 6px; margin-bottom: 4px; width: 100%;">
+                                <span style="font-size: 14px;">🔒</span>
+                                <span style="color: #27ae60; font-weight: 800; font-size: 13px; letter-spacing: 0.5px;">SEASONAL OFFER: SAVE $2,500</span>
+                            </div>
+                            <div style="font-size: 11px; color: #aaa; font-weight: 500;">
+                                Privacy guaranteed. No obligation.
+                            </div>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
     </div>
 </section>
 
-    <section class="owner-section" id="owner" style="background-color: #f8f9fa; padding: 60px 0;">
+<section class="owner-section" id="owner" style="background-color: #f8f9fa; padding: 60px 0;">
     <div class="container">
         <div class="owner-container" style="display: flex; align-items: center; gap: 40px; flex-wrap: wrap;">
             
@@ -207,7 +473,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <div class="owner-content" style="flex: 1; min-width: 300px;">
                 <h2 style="color: #2c3e50; margin-bottom: 20px;">Local, Licensed, and Owner-Operated</h2>
                 <p style="margin-bottom: 20px; font-size: 16px; color: #555;">
-                    "Hi, I'm Alex. I’ve been helping homeowners in Northern California transform their bathrooms for over 15 years. 
+                    "Hi, I'm Alex. I've been helping homeowners in Northern California transform their bathrooms for over 15 years. 
                     <br><br>
                     When you work with MTR Baths, you aren't hiring a sales rep from a giant franchise. You're hiring a local expert who personally oversees every project. My goal is to build you a bathroom that is safe, beautiful, and built to last a lifetime."
                 </p>
@@ -228,27 +494,27 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <h2>Real Stories from Real Neighbors</h2>
         <p class="section-subtitle">See the reaction and the result. (Tap to play)</p>
         
-<div class="video-grid">
-    <div class="video-card">
-        <h3>The Reaction</h3>
-        <div class="video-wrapper">
-            <video controls playsinline preload="none" poster="woman.png">
-                <source src="IMG_5029 - Albert Golovin.mp4" type="video/mp4">
-            </video>
-            <div class="custom-play-button"></div>
+        <div class="video-grid">
+            <div class="video-card">
+                <h3>The Reaction</h3>
+                <div class="video-wrapper">
+                    <video controls playsinline preload="none" poster="woman.png">
+                        <source src="IMG_5029 - Albert Golovin.mp4" type="video/mp4">
+                    </video>
+                    <div class="custom-play-button"></div>
+                </div>
+            </div>
+            
+            <div class="video-card">
+                <h3>The Finished Project</h3>
+                <div class="video-wrapper">
+                    <video controls playsinline preload="none" poster="Greenshower.jpeg">
+                        <source src="IMG_4494 - Albert Golovin.mp4" type="video/mp4">
+                    </video>
+                    <div class="custom-play-button"></div>
+                </div>
+            </div>
         </div>
-    </div>
-    
-    <div class="video-card">
-        <h3>The Finished Project</h3>
-        <div class="video-wrapper">
-            <video controls playsinline preload="none" poster="Greenshower.jpeg">
-                <source src="IMG_4494 - Albert Golovin.mp4" type="video/mp4">
-            </video>
-            <div class="custom-play-button"></div>
-        </div>
-    </div>
-</div>
     </div>
 </section>
 
@@ -256,46 +522,49 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="container">
         <h2><span id="gallery-title">Local Bathroom Transformations</span></h2>
         
-<div class="gallery-grid">
-    <div class="gallery-item">
-        <div class="side-by-side-container">
-            <div class="img-wrapper no-click">
-                <img src="https://ik.imagekit.io/mtrbaths/Screen%20Shot%202025-03-17%20at%203.33.12%20AM.png?updatedAt=1742247173878" alt="Before Bathroom Remodel" class="fixed-ratio-img">
-                <span class="img-label before-label">Before</span>
+        <!-- FIX: Before/after images had dead clicks — no-click class now has 
+             pointer-events:none via CSS so users can't accidentally "tap" them -->
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <div class="side-by-side-container">
+                    <div class="img-wrapper no-click">
+                        <img src="https://ik.imagekit.io/mtrbaths/Screen%20Shot%202025-03-17%20at%203.33.12%20AM.png?updatedAt=1742247173878" alt="Before Bathroom Remodel" class="fixed-ratio-img">
+                        <span class="img-label before-label">Before</span>
+                    </div>
+                    <div class="img-wrapper no-click">
+                        <img src="https://ik.imagekit.io/mtrbaths/Screen%20Shot%202025-03-17%20at%203.33.32%20AM.png?updatedAt=1742247173904" alt="After Bathroom Remodel" class="fixed-ratio-img">
+                        <span class="img-label after-label">After</span>
+                    </div>
+                </div>
             </div>
-            <div class="img-wrapper no-click">
-                <img src="https://ik.imagekit.io/mtrbaths/Screen%20Shot%202025-03-17%20at%203.33.32%20AM.png?updatedAt=1742247173904" alt="After Bathroom Remodel" class="fixed-ratio-img">
-                <span class="img-label after-label">After</span>
-            </div>
-        </div>
-    </div>
 
-    <div class="gallery-item">
-        <div class="side-by-side-container">
-            <div class="img-wrapper no-click">
-                <img src="https://ik.imagekit.io/mtrbaths/Screen%20Shot%202025-03-17%20at%203.34.23%20AM.png?updatedAt=1742247059083" alt="Before Tub to Shower" class="fixed-ratio-img">
-                <span class="img-label before-label">Before</span>
+            <div class="gallery-item">
+                <div class="side-by-side-container">
+                    <div class="img-wrapper no-click">
+                        <img src="https://ik.imagekit.io/mtrbaths/Screen%20Shot%202025-03-17%20at%203.34.23%20AM.png?updatedAt=1742247059083" alt="Before Tub to Shower" class="fixed-ratio-img">
+                        <span class="img-label before-label">Before</span>
+                    </div>
+                    <div class="img-wrapper no-click">
+                        <img src="https://ik.imagekit.io/mtrbaths/Screen%20Shot%202025-03-17%20at%203.34.37%20AM.png?updatedAt=1742247061366" alt="After Tub to Shower" class="fixed-ratio-img">
+                        <span class="img-label after-label">After</span>
+                    </div>
+                </div>
             </div>
-            <div class="img-wrapper no-click">
-                <img src="https://ik.imagekit.io/mtrbaths/Screen%20Shot%202025-03-17%20at%203.34.37%20AM.png?updatedAt=1742247061366" alt="After Tub to Shower" class="fixed-ratio-img">
-                <span class="img-label after-label">After</span>
-            </div>
-        </div>
-    </div>
 
-    <div class="gallery-item">
-        <div class="side-by-side-container">
-            <div class="img-wrapper no-click">
-                <img src="Screenshot 2026-01-29 at 11.53.29 PM.png" alt="Before Project" class="fixed-ratio-img">
-                <span class="img-label before-label">Before</span>
-            </div>
-            <div class="img-wrapper no-click">
-                <img src="Screenshot 2026-01-29 at 11.53.37 PM.png" alt="After Project" class="fixed-ratio-img">
-                <span class="img-label after-label">After</span>
+            <div class="gallery-item">
+                <div class="side-by-side-container">
+                    <div class="img-wrapper no-click">
+                        <img src="Screenshot 2026-01-29 at 11.53.29 PM.png" alt="Before Project" class="fixed-ratio-img">
+                        <span class="img-label before-label">Before</span>
+                    </div>
+                    <div class="img-wrapper no-click">
+                        <img src="Screenshot 2026-01-29 at 11.53.37 PM.png" alt="After Project" class="fixed-ratio-img">
+                        <span class="img-label after-label">After</span>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-</div>
 </section>
 
 <section class="portfolio" id="portfolio">
@@ -306,13 +575,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="portfolio-grid">
             <div class="portfolio-item"><img src="classyshower.jpeg" alt="Project 1" class="portfolio-image" onclick="openLightbox(this.src)"></div>
             <div class="portfolio-item"><img src="Greenshower.jpeg" alt="Project 2" class="portfolio-image" onclick="openLightbox(this.src)"></div>
-            <div class="portfolio-item"><img src="Screenshot 2026-01-29 at 11.45.12 PM.png" alt="Project 3" class="portfolio-image" onclick="openLightbox(this.src)"></div>
-            <div class="portfolio-item"><img src="Screenshot 2026-01-29 at 11.36.47 PM.png" alt="Project 4" class="portfolio-image" onclick="openLightbox(this.src)"></div>
-            <div class="portfolio-item"><img src="Screenshot 2026-01-29 at 11.44.56 PM.png" alt="Project 5" class="portfolio-image" onclick="openLightbox(this.src)"></div>
-            <div class="portfolio-item"><img src="Screenshot 2026-01-29 at 11.44.59 PM.png" alt="Project 6" class="portfolio-image" onclick="openLightbox(this.src)"></div>
-            <div class="portfolio-item"><img src="Screenshot 2026-01-29 at 11.45.03 PM.png" alt="Project 7" class="portfolio-image" onclick="openLightbox(this.src)"></div>
-            <div class="portfolio-item"><img src="Screenshot 2026-01-29 at 11.45.06 PM.png" alt="Project 8" class="portfolio-image" onclick="openLightbox(this.src)"></div>
-            <div class="portfolio-item"><img src="Screenshot 2026-01-29 at 11.45.09 PM.png" alt="Project 9" class="portfolio-image" onclick="openLightbox(this.src)"></div>
+            <div class="portfolio-item"><img src="Screenshot 2026-01-29 at 11.45.12 PM.png" alt="Project 3" class="portfolio-image" onclick="openLightbox(this.src)"></div>
+            <div class="portfolio-item"><img src="Screenshot 2026-01-29 at 11.36.47 PM.png" alt="Project 4" class="portfolio-image" onclick="openLightbox(this.src)"></div>
+            <div class="portfolio-item"><img src="Screenshot 2026-01-29 at 11.44.56 PM.png" alt="Project 5" class="portfolio-image" onclick="openLightbox(this.src)"></div>
+            <div class="portfolio-item"><img src="Screenshot 2026-01-29 at 11.44.59 PM.png" alt="Project 6" class="portfolio-image" onclick="openLightbox(this.src)"></div>
+            <div class="portfolio-item"><img src="Screenshot 2026-01-29 at 11.45.03 PM.png" alt="Project 7" class="portfolio-image" onclick="openLightbox(this.src)"></div>
+            <div class="portfolio-item"><img src="Screenshot 2026-01-29 at 11.45.06 PM.png" alt="Project 8" class="portfolio-image" onclick="openLightbox(this.src)"></div>
+            <div class="portfolio-item"><img src="Screenshot 2026-01-29 at 11.45.09 PM.png" alt="Project 9" class="portfolio-image" onclick="openLightbox(this.src)"></div>
         </div> 
     </div>
 </section>
@@ -378,7 +647,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                         </div>
                     </div>
                 </div>
-                </div>
             </div>
             <div class="faq-column">
                 <div class="accordion">
@@ -415,7 +683,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 Call Alex Now: (916) 892-0745
             </a>
             
-            <a href="#main-form-anchor" class="btn btn-red trigger-modal">Schedule Free Bathroom Consultation</a>
+            <!-- FIX: was "trigger-modal" which did nothing visible — now scrolls to form -->
+            <a href="#main-form-anchor" class="btn btn-red">Schedule Free Bathroom Consultation</a>
             
             <p style="margin-top: 15px; font-size: 14px; opacity: 0.9;">
                 <em>Flexible financing & monthly payment plans available.</em>
@@ -442,7 +711,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                         </svg>
                     </a>
                     <a href="https://www.yelp.com/biz/mtr-walk-in-tubs-and-showers-west-sacramento" target="_blank">
-                    <img src="https://ik.imagekit.io/mtrbaths/DRH%20Construction%20Services%20Images/Yelp%20logo.png?updatedAt=1752783847296" alt="Yelp" class="social-icon" width="18" height="18">
+                        <img src="https://ik.imagekit.io/mtrbaths/DRH%20Construction%20Services%20Images/Yelp%20logo.png?updatedAt=1752783847296" alt="Yelp" class="social-icon" width="18" height="18">
                     </a>
                 </div>
             </div>
@@ -466,5 +735,26 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </div>
 
 <script src="script.js"></script>
+
+<script>
+    // Show mobile hero call button on small screens
+    (function() {
+        var btn = document.querySelector('.mobile-hero-call-btn');
+        if (btn && window.innerWidth <= 768) {
+            btn.style.display = 'flex';
+        }
+    })();
+
+    // Smooth scroll for all internal anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
+        anchor.addEventListener('click', function(e) {
+            var target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                e.preventDefault();
+                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        });
+    });
+</script>
 </body>
 </html>
