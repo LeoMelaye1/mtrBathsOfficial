@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
 <!-- Meta Pixel Code -->
 <script>
 !function(f,b,e,v,n,t,s)
@@ -30,7 +29,8 @@ src="https://www.facebook.com/tr?id=871950812372808&ev=PageView&noscript=1"
     <script>var $wc_load=function(a){return  JSON.parse(JSON.stringify(a))},$wc_leads=$wc_leads||{doc:{url:$wc_load(document.URL),ref:$wc_load(document.referrer),search:$wc_load(location.search),hash:$wc_load(location.hash)}};</script><script  src="//s.ksrndkehqnwntyxlhgto.com/157458.js"></script>      
 
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CHANGE 1: Added maximum-scale=1.0 — prevents iOS from zooming in when tapping form fields -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
     <title>Premium Bathroom Remodeling | MTR Baths | Local Experts</title>
     <link rel="icon" type="image/png" href="https://static.wixstatic.com/media/5c9096_3c790612cb0b45d88ec5c7abd439eda2%7Emv2.png/v1/fill/w_192%2Ch_192%2Clg_1%2Cusm_0.66_1.00_0.01/5c9096_3c790612cb0b45d88ec5c7abd439eda2%7Emv2.png">
     
@@ -39,6 +39,119 @@ src="https://www.facebook.com/tr?id=871950812372808&ev=PageView&noscript=1"
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
     
     <link rel="stylesheet" href="style.css">
+
+    <!-- CHANGE 4: Mobile optimization + dead click fixes (added here so style.css stays untouched) -->
+    <style>
+        html { scroll-behavior: smooth; }
+
+        /* Fix: before/after images were registering dead clicks in heatmap */
+        .img-wrapper.no-click,
+        .img-wrapper.no-click img {
+            cursor: default !important;
+            pointer-events: none;
+        }
+
+        @media (max-width: 768px) {
+            body { padding-bottom: 80px; }
+
+            /* Bigger, more tappable bottom bar */
+            .mobile-bottom-bar {
+                padding: 10px 12px;
+                gap: 10px;
+                border-top: 2px solid #e74c3c;
+                box-shadow: 0 -4px 20px rgba(0,0,0,0.15);
+            }
+            .mobile-call-btn,
+            .mobile-quote-btn {
+                flex: 1;
+                padding: 14px 10px;
+                min-height: 52px;
+                font-size: 15px;
+                font-weight: 700;
+                border-radius: 8px;
+                text-align: center;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            .mobile-call-btn {
+                background: #e74c3c;
+                color: #fff;
+                border: 2px solid #e74c3c;
+            }
+            .mobile-quote-btn {
+                background: #fff;
+                color: #e74c3c;
+                border: 2px solid #e74c3c;
+            }
+
+            /* Hide desktop phone in header on mobile */
+            .call-section { display: none; }
+
+            /* Rating bar scrollable on mobile instead of wrapping */
+            .rating-bar-container {
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+                white-space: nowrap;
+                scrollbar-width: none;
+            }
+            .rating-bar-container::-webkit-scrollbar { display: none; }
+            .rating-divider { display: none; }
+
+            /* font-size 16px prevents iOS auto-zoom on input focus */
+            .form-control,
+            .hero-form input,
+            .hero-form textarea {
+                font-size: 16px !important;
+                padding: 14px 12px !important;
+                min-height: 52px;
+                border-radius: 8px !important;
+            }
+            .hero-form textarea { min-height: 90px; }
+
+            /* Bigger submit button for thumbs */
+            #hero-submit {
+                font-size: 17px !important;
+                padding: 18px 20px !important;
+                min-height: 58px !important;
+            }
+
+            /* Stack hero columns on mobile */
+            .hero-container { flex-direction: column !important; gap: 24px !important; }
+            .hero-content { text-align: center; }
+            .hero-checklist { text-align: left; display: inline-block; }
+
+            /* Stack owner section */
+            .owner-container { flex-direction: column !important; }
+            .owner-image, .owner-content { min-width: unset !important; width: 100% !important; }
+
+            /* Videos single column */
+            .video-grid { grid-template-columns: 1fr !important; }
+
+            /* Gallery full width */
+            .gallery-grid { grid-template-columns: 1fr !important; }
+
+            /* Portfolio 2 columns */
+            .portfolio-grid { grid-template-columns: 1fr 1fr !important; gap: 8px !important; }
+
+            /* Service area stack */
+            .service-split-layout { flex-direction: column !important; }
+
+            /* FAQ single column */
+            .faq-container { flex-direction: column !important; }
+
+            /* Bigger accordion tap targets */
+            .accordion-header {
+                padding: 18px 16px !important;
+                font-size: 15px !important;
+                min-height: 56px;
+            }
+
+            /* Responsive headings */
+            h1 { font-size: clamp(26px, 7vw, 42px) !important; }
+            h2 { font-size: clamp(22px, 5.5vw, 32px) !important; }
+        }
+    </style>
 </head>
 <body>
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PNR8J2VT"
@@ -117,20 +230,23 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="container">
         <div class="hero-container">
             <div class="hero-content">
+                <!-- CHANGE 3: Wrapped in <a> tag — was the #1 dead click on the page -->
                 <div class="offer-badge-container" style="margin-bottom: 15px;">
-    <span style="
-        background-color: rgba(231, 76, 60, 0.15); 
-        color: #e74c3c; 
-        border: 1px solid #e74c3c; 
-        padding: 6px 16px; 
-        border-radius: 50px; 
-        font-size: 13px; 
-        font-weight: 700; 
-        text-transform: uppercase; 
-        letter-spacing: 0.5px;
-        display: inline-block;">
-        Spring Special: Save $2,500
-    </span>
+    <a href="#main-form-anchor" style="text-decoration: none;">
+        <span style="
+            background-color: rgba(231, 76, 60, 0.15); 
+            color: #e74c3c; 
+            border: 1px solid #e74c3c; 
+            padding: 6px 16px; 
+            border-radius: 50px; 
+            font-size: 13px; 
+            font-weight: 700; 
+            text-transform: uppercase; 
+            letter-spacing: 0.5px;
+            display: inline-block;">
+            Spring Special: Save $2,500
+        </span>
+    </a>
 </div>
                 <h1>Fairfield's Trusted <span style="color:#f4b941;">Shower & Bath Experts</span></h1>
                 
@@ -165,7 +281,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     
     <div class="form-group">
         <label for="hero-phone">Phone Number *</label>
-        <input type="tel" id="hero-phone" name="phone" class="form-control" placeholder="(555) 555-5555" required>
+        <!-- CHANGE 2: Added inputmode="tel" — brings up number pad on mobile instead of full keyboard -->
+        <input type="tel" id="hero-phone" name="phone" class="form-control" placeholder="(555) 555-5555" required inputmode="tel">
     </div>
 
     <div class="form-group">
@@ -207,7 +324,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <div class="owner-content" style="flex: 1; min-width: 300px;">
                 <h2 style="color: #2c3e50; margin-bottom: 20px;">Local, Licensed, and Owner-Operated</h2>
                 <p style="margin-bottom: 20px; font-size: 16px; color: #555;">
-                    "Hi, I'm Alex. I’ve been helping homeowners in Northern California transform their bathrooms for over 15 years. 
+                    "Hi, I'm Alex. I've been helping homeowners in Northern California transform their bathrooms for over 15 years. 
                     <br><br>
                     When you work with MTR Baths, you aren't hiring a sales rep from a giant franchise. You're hiring a local expert who personally oversees every project. My goal is to build you a bathroom that is safe, beautiful, and built to last a lifetime."
                 </p>
@@ -286,11 +403,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="gallery-item">
         <div class="side-by-side-container">
             <div class="img-wrapper no-click">
-                <img src="Screenshot 2026-01-29 at 11.53.29 PM.png" alt="Before Project" class="fixed-ratio-img">
+                <img src="Screenshot 2026-01-29 at 11.53.29 PM.png" alt="Before Project" class="fixed-ratio-img">
                 <span class="img-label before-label">Before</span>
             </div>
             <div class="img-wrapper no-click">
-                <img src="Screenshot 2026-01-29 at 11.53.37 PM.png" alt="After Project" class="fixed-ratio-img">
+                <img src="Screenshot 2026-01-29 at 11.53.37 PM.png" alt="After Project" class="fixed-ratio-img">
                 <span class="img-label after-label">After</span>
             </div>
         </div>
@@ -306,13 +423,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="portfolio-grid">
             <div class="portfolio-item"><img src="classyshower.jpeg" alt="Project 1" class="portfolio-image" onclick="openLightbox(this.src)"></div>
             <div class="portfolio-item"><img src="Greenshower.jpeg" alt="Project 2" class="portfolio-image" onclick="openLightbox(this.src)"></div>
-            <div class="portfolio-item"><img src="Screenshot 2026-01-29 at 11.45.12 PM.png" alt="Project 3" class="portfolio-image" onclick="openLightbox(this.src)"></div>
-            <div class="portfolio-item"><img src="Screenshot 2026-01-29 at 11.36.47 PM.png" alt="Project 4" class="portfolio-image" onclick="openLightbox(this.src)"></div>
-            <div class="portfolio-item"><img src="Screenshot 2026-01-29 at 11.44.56 PM.png" alt="Project 5" class="portfolio-image" onclick="openLightbox(this.src)"></div>
-            <div class="portfolio-item"><img src="Screenshot 2026-01-29 at 11.44.59 PM.png" alt="Project 6" class="portfolio-image" onclick="openLightbox(this.src)"></div>
-            <div class="portfolio-item"><img src="Screenshot 2026-01-29 at 11.45.03 PM.png" alt="Project 7" class="portfolio-image" onclick="openLightbox(this.src)"></div>
-            <div class="portfolio-item"><img src="Screenshot 2026-01-29 at 11.45.06 PM.png" alt="Project 8" class="portfolio-image" onclick="openLightbox(this.src)"></div>
-            <div class="portfolio-item"><img src="Screenshot 2026-01-29 at 11.45.09 PM.png" alt="Project 9" class="portfolio-image" onclick="openLightbox(this.src)"></div>
+            <div class="portfolio-item"><img src="Screenshot 2026-01-29 at 11.45.12 PM.png" alt="Project 3" class="portfolio-image" onclick="openLightbox(this.src)"></div>
+            <div class="portfolio-item"><img src="Screenshot 2026-01-29 at 11.36.47 PM.png" alt="Project 4" class="portfolio-image" onclick="openLightbox(this.src)"></div>
+            <div class="portfolio-item"><img src="Screenshot 2026-01-29 at 11.44.56 PM.png" alt="Project 5" class="portfolio-image" onclick="openLightbox(this.src)"></div>
+            <div class="portfolio-item"><img src="Screenshot 2026-01-29 at 11.44.59 PM.png" alt="Project 6" class="portfolio-image" onclick="openLightbox(this.src)"></div>
+            <div class="portfolio-item"><img src="Screenshot 2026-01-29 at 11.45.03 PM.png" alt="Project 7" class="portfolio-image" onclick="openLightbox(this.src)"></div>
+            <div class="portfolio-item"><img src="Screenshot 2026-01-29 at 11.45.06 PM.png" alt="Project 8" class="portfolio-image" onclick="openLightbox(this.src)"></div>
+            <div class="portfolio-item"><img src="Screenshot 2026-01-29 at 11.45.09 PM.png" alt="Project 9" class="portfolio-image" onclick="openLightbox(this.src)"></div>
         </div> 
     </div>
 </section>
