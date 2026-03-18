@@ -54,10 +54,13 @@ src="https://www.facebook.com/tr?id=871950812372808&ev=PageView&noscript=1"
         @media (max-width: 768px) {
             body { padding-bottom: 80px; }
 
-            /* Fix scroll-to-form offset caused by sticky header */
-            #main-form-anchor {
-                scroll-margin-top: 100px;
+            /* Fix scroll-to-form offset — anchor is now on the form itself */
+            #hero-form {
+                scroll-margin-top: 20px;
             }
+
+            /* Hide reviews bar on mobile */
+            .nav-bar { display: none; }
 
             /* Bigger, more tappable bottom bar */
             .mobile-bottom-bar {
@@ -170,7 +173,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <div class="mobile-bottom-bar">
     <a href="tel:+19168920745" class="mobile-call-btn">Call Now</a>
-    <a href="#main-form-anchor" class="mobile-quote-btn">Check Availability</a>
+    <a href="#hero-form" class="mobile-quote-btn">Check Availability</a>
 </div>
 
 <div class="top-header">
@@ -267,7 +270,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </ul>
             </div>
             
-            <div class="hero-visual-proof">
+            <div class="hero-visual-proof" id="hero-form">
                 <div class="hero-form embedded-form">
                     <div class="form-banner">Get Your Free Local Price Estimate</div>
 <form id="simple-hero-form">
