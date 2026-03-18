@@ -455,11 +455,29 @@ ul {
 .form-control {
     width: 100%;
     padding: 12px 15px;
-    border: 1px solid #e0e0e0;
-    border-radius: 4px;
+    border: 1.5px solid #dde1e7;
+    border-radius: 6px;
     font-size: 15px;
     background-color: white;
     font-family: 'Montserrat', sans-serif;
+    color: #4a4a4a;
+    outline: none;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    appearance: none;
+    -webkit-appearance: none;
+}
+
+.form-control:focus {
+    border-color: #f4b941;
+    box-shadow: 0 0 0 3px rgba(244, 185, 65, 0.18);
+}
+
+select.form-control {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%232c3e50' stroke-width='1.8' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 14px center;
+    padding-right: 38px;
+    cursor: pointer;
 }
 
 .btn-link-back {
@@ -1351,12 +1369,14 @@ footer {
     background-color: #ffffff;
     border-radius: 10px;
     box-shadow: 0 15px 35px rgba(0,0,0,0.45);
-    overflow: hidden;
-    padding: 0; /* Sub-sections control their own padding */
+    overflow: visible; /* Must NOT be hidden — clips native select dropdowns on mobile */
+    padding: 0;
     border-top: 5px solid #f4b941;
+    /* Use outline for rounded corners without overflow:hidden */
+    isolation: isolate;
 }
 
-/* Form title — padded to align with inputs below */
+/* Top corners clipped via the banner which sits flush at top */
 .form-banner {
     background: none;
     color: #2c3e50;
@@ -1366,6 +1386,7 @@ footer {
     font-size: 22px;
     border-bottom: 1px solid #eee;
     margin-bottom: 0;
+    border-radius: 0;
 }
 
 /* Form fields + button get their own padding */
@@ -1503,8 +1524,8 @@ select.form-control {
 }
 
 .check-icon {
-    background-color: #27ae60; /* Green check circle */
-    color: white;
+    background-color: #f4b941;
+    color: #1a1a1a;
     border-radius: 50%;
     width: 22px;
     height: 22px;
@@ -1515,7 +1536,7 @@ select.form-control {
     margin-right: 12px;
     flex-shrink: 0;
     box-shadow: 0 2px 5px rgba(0,0,0,0.3);
-    border: 2px solid white;
+    border: 2px solid rgba(255,255,255,0.6);
 }
 
 /* Offer Badge */
@@ -1764,14 +1785,15 @@ select.form-control {
     }
 
     .embedded-form {
-        padding: 20px; /* slightly less padding */
-        box-shadow: 0 5px 15px rgba(0,0,0,0.2); /* Softer shadow */
+        /* Don't add padding here — #simple-hero-form and .form-banner handle their own */
+        box-shadow: 0 5px 15px rgba(0,0,0,0.2);
         border-radius: 8px;
     }
 
     .form-banner {
         font-size: 18px;
         text-align: center;
+        padding: 16px 16px 12px 16px;
     }
 
     /* PREVENT ZOOMING: Inputs must be 16px on mobile */
@@ -1781,9 +1803,9 @@ select.form-control {
     }
 
     #hero-submit {
-        font-size: 16px; /* Prevent button text overflow */
-        padding: 15px 10px;
-        white-space: normal; /* Allow text to wrap if needed */
+        font-size: 15px !important;
+        padding: 16px 12px !important;
+        white-space: nowrap !important; /* Keep text + arrow on one line */
         line-height: 1.2;
     }
 
@@ -1991,9 +2013,16 @@ html { scroll-behavior: smooth; }
 
     /* Bigger submit button */
     #hero-submit {
-        font-size: 17px !important;
-        padding: 18px 20px !important;
-        min-height: 58px !important;
+        font-size: 15px !important;
+        padding: 16px 12px !important;
+        min-height: 52px !important;
+        white-space: nowrap !important;
+        line-height: 1.2 !important;
+    }
+
+    /* Tighter form padding on mobile */
+    #simple-hero-form {
+        padding: 14px 16px 18px 16px;
     }
 
     /* Stack hero on mobile */
