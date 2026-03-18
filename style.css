@@ -1940,10 +1940,13 @@ html { scroll-behavior: smooth; }
         border: 2px solid #e74c3c;
     }
 
-    /* Fix scroll-to-form offset */
-    #main-form-anchor {
-        scroll-margin-top: 100px;
+    /* Fix scroll-to-form — anchor is on the form div now */
+    #hero-form {
+        scroll-margin-top: 20px;
     }
+
+    /* Hide reviews bar on mobile */
+    .nav-bar { display: none; }
 
     /* Hide desktop phone tagline but keep the number visible */
     .call-section { display: flex !important; }
