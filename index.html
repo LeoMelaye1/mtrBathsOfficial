@@ -42,6 +42,25 @@ src="https://www.facebook.com/tr?id=871950812372808&ev=PageView&noscript=1"
 
     <!-- CHANGE 4: Mobile optimization + dead click fixes (added here so style.css stays untouched) -->
     <style>
+        /* Promo top banner */
+        .promo-banner {
+            background-color: #f4b941;
+            color: #1a1a1a;
+            text-align: center;
+            padding: 10px 20px;
+            font-size: 14px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 500;
+            line-height: 1.4;
+        }
+        .promo-banner a {
+            color: #1a1a1a;
+            font-weight: 700;
+            text-decoration: underline;
+            white-space: nowrap;
+        }
+        .promo-banner a:hover { opacity: 0.75; }
+
         html { scroll-behavior: smooth; }
 
         /* Fix: before/after images were registering dead clicks in heatmap */
@@ -162,6 +181,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <a href="#main-form-anchor" class="mobile-quote-btn">Check Availability</a>
 </div>
 
+<div class="promo-banner">
+    🎉 <strong>Spring Special:</strong> Save $2,500 on your bathroom remodel — <strong>Expires March 31</strong>. <a href="#main-form-anchor">Claim Your Discount →</a>
+</div>
+
 <div class="top-header">
     <div class="container">
         <div class="top-header-content">
@@ -219,21 +242,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="hero-container">
             <div class="hero-content">
                 <!-- CHANGE 3: Wrapped in <a> tag — was the #1 dead click on the page -->
-                <div class="offer-badge-container" style="margin-bottom: 15px;">
-        <span style="
-            background-color: #f4b941; 
-            color: #1a1a1a; 
-            border: none; 
-            padding: 6px 16px; 
-            border-radius: 50px; 
-            font-size: 13px; 
-            font-weight: 700; 
-            text-transform: uppercase; 
-            letter-spacing: 0.5px;
-            display: inline-block;">
-            Spring Special: Save $2,500 — Expires March 31
-        </span>
-</div>
                 <h1><span id="hero-city-headline">Northern California</span>'s Trusted <span style="color:#f4b941;">Bathroom Remodeling Experts</span></h1>
                 
                 <p class="hero-subtitle" style="margin-bottom: 20px; font-size: 18px;">
@@ -262,29 +270,23 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             <div class="hero-visual-proof">
                 <div class="hero-form embedded-form">
-                    <div class="form-banner">Get Your Local Offer Today</div>
+                    <div class="form-banner">See If You Qualify for a Local Discount</div>
 <form id="simple-hero-form">
     <div class="form-group">
-        <input type="text" id="hero-name" name="name" class="form-control" placeholder="Enter Your Full Name" required>
+        <input type="text" id="hero-name" name="name" class="form-control" placeholder="Your Full Name" required>
     </div>
     
     <div class="form-group">
-        <input type="tel" id="hero-phone" name="phone" class="form-control" placeholder="Enter Your Phone Number" required inputmode="tel">
-    </div>
-
-    <div class="form-group">
-        <textarea id="hero-details" name="project_details" class="form-control" rows="3" placeholder="What are you looking to get done?" style="resize: vertical; font-family: inherit;"></textarea>
+        <input type="tel" id="hero-phone" name="phone" class="form-control" placeholder="Your Phone Number" required inputmode="tel">
     </div>
     
-    <button type="submit" class="btn btn-red" id="hero-submit" style="width:100%; margin-top:5px; font-weight:700; font-size: 18px;">
+    <button type="submit" class="btn btn-red" id="hero-submit" style="width:100%; margin-top:8px; font-weight:700; font-size: 18px;">
         Get My Free Quote →
     </button>
 
-    <div style="margin-top: 14px; padding-top: 12px; border-top: 1px solid #eee; display: flex; justify-content: center; gap: 18px; flex-wrap: wrap;">
-        <span style="font-size: 11px; color: #999;">🔒 Privacy Guaranteed</span>
-        <span style="font-size: 11px; color: #999;">⭐ 5.0 Stars</span>
-        <span style="font-size: 11px; color: #999;">📅 Same-Day Response</span>
-    </div>
+    <p style="margin-top: 12px; font-size: 11px; color: #aaa; text-align: center; line-height: 1.5;">
+        🔒 No spam. We'll call you to schedule a free in-home consultation.
+    </p>
 </form>
                 </div>
             </div>
