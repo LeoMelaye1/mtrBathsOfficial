@@ -1940,17 +1940,26 @@ html { scroll-behavior: smooth; }
         border: 2px solid #e74c3c;
     }
 
-    /* Hide desktop phone in header */
-    .call-section { display: none; }
-
-    /* Rating bar scrollable on mobile */
-    .rating-bar-container {
-        overflow-x: auto;
-        -webkit-overflow-scrolling: touch;
-        white-space: nowrap;
-        scrollbar-width: none;
+    /* Fix scroll-to-form offset */
+    #main-form-anchor {
+        scroll-margin-top: 100px;
     }
-    .rating-bar-container::-webkit-scrollbar { display: none; }
+
+    /* Hide desktop phone tagline but keep the number visible */
+    .call-section { display: flex !important; }
+    .call-text { display: none; }
+    .phone-number { font-size: 16px !important; white-space: nowrap; }
+
+    /* Rating bar wraps on mobile — no horizontal scroll */
+    .rating-bar-container {
+        overflow-x: visible !important;
+        white-space: normal !important;
+        flex-wrap: wrap !important;
+        justify-content: center !important;
+        gap: 8px 16px !important;
+        padding: 6px 10px !important;
+    }
+    .rating-item { white-space: nowrap !important; }
     .rating-divider { display: none; }
 
     /* Bigger form inputs — prevents iOS zoom */
@@ -2019,22 +2028,20 @@ html { scroll-behavior: smooth; }
 ================================ */
 @media (max-width: 768px) {
 
-    /* Hide entire call section on mobile — bottom bar handles CTAs */
-    .call-section { display: none !important; }
+    /* Hide call section tagline text only — number stays visible */
+    .call-text { display: none !important; }
 
-    /* Rating bar — force single-row horizontal scroll */
+    /* Rating bar — force wrap into rows */
     .rating-bar-container {
         display: flex !important;
-        flex-wrap: nowrap !important;
-        overflow-x: scroll !important;
-        -webkit-overflow-scrolling: touch !important;
-        white-space: nowrap !important;
+        flex-wrap: wrap !important;
+        overflow-x: visible !important;
+        white-space: normal !important;
         scrollbar-width: none !important;
-        gap: 10px !important;
+        gap: 8px 16px !important;
         padding: 6px 15px !important;
-        justify-content: flex-start !important;
+        justify-content: center !important;
     }
-    .rating-bar-container::-webkit-scrollbar { display: none; }
     .rating-item {
         flex-shrink: 0 !important;
         white-space: nowrap !important;
