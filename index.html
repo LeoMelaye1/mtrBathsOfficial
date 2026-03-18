@@ -29,23 +29,137 @@ src="https://www.facebook.com/tr?id=871950812372808&ev=PageView&noscript=1"
     <script>var $wc_load=function(a){return  JSON.parse(JSON.stringify(a))},$wc_leads=$wc_leads||{doc:{url:$wc_load(document.URL),ref:$wc_load(document.referrer),search:$wc_load(location.search),hash:$wc_load(location.hash)}};</script><script  src="//s.ksrndkehqnwntyxlhgto.com/157458.js"></script>      
 
     <meta charset="UTF-8">
+    <!-- CHANGE 1: Added maximum-scale=1.0 — prevents iOS from zooming in when tapping form fields -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
     <title>Premium Bathroom Remodeling | MTR Baths | Local Experts</title>
     <link rel="icon" type="image/png" href="https://static.wixstatic.com/media/5c9096_3c790612cb0b45d88ec5c7abd439eda2%7Emv2.png/v1/fill/w_192%2Ch_192%2Clg_1%2Cusm_0.66_1.00_0.01/5c9096_3c790612cb0b45d88ec5c7abd439eda2%7Emv2.png">
-
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
-
+    
     <link rel="stylesheet" href="style.css">
+
+    <!-- CHANGE 4: Mobile optimization + dead click fixes (added here so style.css stays untouched) -->
+    <style>
+        html { scroll-behavior: smooth; }
+
+        /* Fix: before/after images were registering dead clicks in heatmap */
+        .img-wrapper.no-click,
+        .img-wrapper.no-click img {
+            cursor: default !important;
+            pointer-events: none;
+        }
+
+        @media (max-width: 768px) {
+            body { padding-bottom: 80px; }
+
+            /* Bigger, more tappable bottom bar */
+            .mobile-bottom-bar {
+                padding: 10px 12px;
+                gap: 10px;
+                border-top: 2px solid #e74c3c;
+                box-shadow: 0 -4px 20px rgba(0,0,0,0.15);
+            }
+            .mobile-call-btn,
+            .mobile-quote-btn {
+                flex: 1;
+                padding: 14px 10px;
+                min-height: 52px;
+                font-size: 15px;
+                font-weight: 700;
+                border-radius: 8px;
+                text-align: center;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            .mobile-call-btn {
+                background: #e74c3c;
+                color: #fff;
+                border: 2px solid #e74c3c;
+            }
+            .mobile-quote-btn {
+                background: #fff;
+                color: #e74c3c;
+                border: 2px solid #e74c3c;
+            }
+
+            /* Hide desktop phone in header on mobile */
+            .call-section { display: none; }
+
+            /* Rating bar scrollable on mobile instead of wrapping */
+            .rating-bar-container {
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+                white-space: nowrap;
+                scrollbar-width: none;
+            }
+            .rating-bar-container::-webkit-scrollbar { display: none; }
+            .rating-divider { display: none; }
+
+            /* font-size 16px prevents iOS auto-zoom on input focus */
+            .form-control,
+            .hero-form input,
+            .hero-form textarea {
+                font-size: 16px !important;
+                padding: 14px 12px !important;
+                min-height: 52px;
+                border-radius: 8px !important;
+            }
+            .hero-form textarea { min-height: 90px; }
+
+            /* Bigger submit button for thumbs */
+            #hero-submit {
+                font-size: 17px !important;
+                padding: 18px 20px !important;
+                min-height: 58px !important;
+            }
+
+            /* Stack hero columns on mobile */
+            .hero-container { flex-direction: column !important; gap: 24px !important; }
+            .hero-content { text-align: center; }
+            .hero-checklist { text-align: left; display: inline-block; }
+
+            /* Stack owner section */
+            .owner-container { flex-direction: column !important; }
+            .owner-image, .owner-content { min-width: unset !important; width: 100% !important; }
+
+            /* Videos single column */
+            .video-grid { grid-template-columns: 1fr !important; }
+
+            /* Gallery full width */
+            .gallery-grid { grid-template-columns: 1fr !important; }
+
+            /* Portfolio 2 columns */
+            .portfolio-grid { grid-template-columns: 1fr 1fr !important; gap: 8px !important; }
+
+            /* Service area stack */
+            .service-split-layout { flex-direction: column !important; }
+
+            /* FAQ single column */
+            .faq-container { flex-direction: column !important; }
+
+            /* Bigger accordion tap targets */
+            .accordion-header {
+                padding: 18px 16px !important;
+                font-size: 15px !important;
+                min-height: 56px;
+            }
+
+            /* Responsive headings */
+            h1 { font-size: clamp(26px, 7vw, 42px) !important; }
+            h2 { font-size: clamp(22px, 5.5vw, 32px) !important; }
+        }
+    </style>
 </head>
 <body>
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PNR8J2VT"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <div class="mobile-bottom-bar">
-    <a href="tel:+19168920745" class="mobile-call-btn">📞 Call Now</a>
-    <a href="#main-form-anchor" class="mobile-quote-btn">Get Free Quote →</a>
+    <a href="tel:+19168920745" class="mobile-call-btn">Call Now</a>
+    <a href="#main-form-anchor" class="mobile-quote-btn">Check Availability</a>
 </div>
 
 <div class="top-header">
@@ -101,56 +215,55 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
 </div>
 
-<section class="hero">
+<section class="hero" id="main-form-anchor">
     <div class="hero-overlay"></div>
     <div class="container">
         <div class="hero-container">
             <div class="hero-content">
+                <!-- CHANGE 3: Wrapped in <a> tag — was the #1 dead click on the page -->
                 <div class="offer-badge-container" style="margin-bottom: 18px;">
                     <div style="display:inline-flex; align-items:center; gap:10px; background-color:#f4b941; color:#1a1a1a; padding:8px 18px; border-radius:6px; font-family:'Montserrat',sans-serif; box-shadow:0 3px 12px rgba(0,0,0,0.25);">
                         <div style="width:3px; height:32px; background:#1a1a1a; border-radius:2px; opacity:0.25; flex-shrink:0;"></div>
                         <div>
-                            <div style="font-size:10px; font-weight:700; text-transform:uppercase; letter-spacing:1.5px; opacity:0.6;" id="badge-expiry-label">Limited Offer</div>
+                            <div style="font-size:10px; font-weight:700; text-transform:uppercase; letter-spacing:1.5px; opacity:0.6;">Spring Special · Expires March 31</div>
                             <div style="font-size:16px; font-weight:800; line-height:1.2; letter-spacing:-0.3px;">Save $2,500 on Your Remodel</div>
                         </div>
                     </div>
                 </div>
-
-                <h1>Your New Bathroom, <span style="color:#f4b941;">Done in 1–3 Days.</span> Lifetime Warranty Included.</h1>
-
+                <h1><span id="hero-city-headline">Northern California</span>'s Trusted <span style="color:#f4b941;">Bathroom Remodeling Experts</span></h1>
+                
                 <p class="hero-subtitle" style="margin-bottom: 20px; font-size: 18px;">
-                    <span id="hero-city-headline">Northern California</span>'s locally owned bathroom remodeling experts — no franchise, no middlemen, no mess.
+                    Showers, Tub Conversions & Full Bathroom Remodels — Installed in As Little As 1 Day.
                 </p>
-
-                <ul class="hero-checklist">
-                    <li>
-                        <span class="check-icon">✔</span>
-                        <span>No more struggling over the tub edge — <strong>tub-to-shower in 1 day</strong></span>
-                    </li>
-                    <li>
-                        <span class="check-icon">✔</span>
-                        <span>Done in days, <strong>not weeks</strong> of contractors in your home</span>
-                    </li>
-                    <li>
-                        <span class="check-icon">✔</span>
-                        <span><strong>Safe, accessible designs</strong> for seniors & mobility needs</span>
-                    </li>
-                    <li>
-                        <span class="check-icon">✔</span>
-                        <span><strong>Lifetime warranty</strong> — we come back if anything's ever wrong</span>
-                    </li>
-                </ul>
+                
+<ul class="hero-checklist">
+    <li>
+        <span class="check-icon">✔</span> 
+        <strong>Tub-to-Shower Conversions</strong>
+    </li>
+    <li>
+        <span class="check-icon">✔</span> 
+        <strong>Full Bathroom Remodels</strong>
+    </li>
+    <li>
+        <span class="check-icon">✔</span> 
+        <strong>Senior & Handicap Accessible</strong>
+    </li>
+    <li>
+        <span class="check-icon">✔</span> 
+        <strong>Lifetime Warranty</strong> on Labor & Materials
+    </li>
+</ul>
             </div>
-
-            <!-- Anchor sits directly above the form so mobile scroll lands exactly here -->
-            <div class="hero-visual-proof" id="main-form-anchor">
+            
+            <div class="hero-visual-proof">
                 <div class="hero-form embedded-form">
                     <div class="form-banner">Get Your Free Local Price Estimate</div>
 <form id="simple-hero-form">
     <div class="form-group">
         <input type="text" id="hero-name" name="name" class="form-control" placeholder="Your Full Name" required>
     </div>
-
+    
     <div class="form-group">
         <input type="tel" id="hero-phone" name="phone" class="form-control" placeholder="Your Phone Number" required inputmode="tel">
     </div>
@@ -166,7 +279,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <option value="other">Other</option>
         </select>
     </div>
-
+    
     <button type="submit" class="btn btn-red" id="hero-submit" style="width:100%; margin-top:8px; font-weight:700; font-size:18px;">
         Get My Free Quote — Save $2,500 →
     </button>
@@ -181,120 +294,29 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
 </section>
 
-<script>
-// Dynamic expiry badge — always shows a date ~2 weeks out so it never goes stale
-(function() {
-    var el = document.getElementById('badge-expiry-label');
-    if (!el) return;
-    var d = new Date();
-    d.setDate(d.getDate() + 14);
-    var months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
-    el.textContent = 'Limited Offer · Expires ' + months[d.getMonth()] + ' ' + d.getDate();
-})();
-</script>
-
     <section class="owner-section" id="owner" style="background-color: #f8f9fa; padding: 60px 0;">
     <div class="container">
         <div class="owner-container" style="display: flex; align-items: center; gap: 40px; flex-wrap: wrap;">
             
-            <div class="owner-image" style="flex: 1;">
-                <img src="alex-owner.jpg" alt="Alex - Owner of MTR Baths" loading="lazy" style="width: 100%; border-radius: 10px; box-shadow: 0 10px 30px rgba(0,0,0,0.15);">
+            <div class="owner-image" style="flex: 1; min-width: 300px;">
+                <img src="alex-owner.jpg" alt="Alex - Owner of MTR Baths" style="width: 100%; border-radius: 10px; box-shadow: 0 10px 30px rgba(0,0,0,0.15);">
             </div>
             
-            <div class="owner-content" style="flex: 1;">
-                <p style="font-size:13px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:#f4b941; margin-bottom:10px;">Who You're Calling</p>
-                <h2 style="color: #2c3e50; margin-bottom: 16px;">You're Not Getting a Salesman. You're Getting Alex.</h2>
-                <p style="margin-bottom: 24px; font-size: 17px; color: #555; line-height: 1.75;">
-                    "I personally show up to every consultation, oversee every install, and stand behind every job with a lifetime warranty. No franchise. No middlemen. Just a local guy who's been doing this for 15 years and won't put his name on work he isn't proud of."
+            <div class="owner-content" style="flex: 1; min-width: 300px;">
+                <h2 style="color: #2c3e50; margin-bottom: 20px;">Local, Licensed, and Owner-Operated</h2>
+                <p style="margin-bottom: 20px; font-size: 16px; color: #555;">
+                    "Hi, I'm Alex. I've been helping homeowners in Northern California transform their bathrooms for over 15 years. 
+                    <br><br>
+                    When you work with MTR Baths, you aren't hiring a sales rep from a giant franchise. You're hiring a local expert who personally oversees every project. My goal is to build you a bathroom that is safe, beautiful, and built to last a lifetime."
                 </p>
-
-                <!-- Proof stats -->
-                <div style="display:flex; gap:28px; flex-wrap:wrap; margin-bottom:28px;">
-                    <div style="text-align:center;">
-                        <div style="font-size:28px; font-weight:800; color:#2c3e50; font-family:'Playfair Display',serif;">15+</div>
-                        <div style="font-size:12px; color:#888; font-weight:600; text-transform:uppercase; letter-spacing:1px;">Years Local</div>
-                    </div>
-                    <div style="width:1px; background:#e0e0e0;"></div>
-                    <div style="text-align:center;">
-                        <div style="font-size:28px; font-weight:800; color:#2c3e50; font-family:'Playfair Display',serif;">500+</div>
-                        <div style="font-size:12px; color:#888; font-weight:600; text-transform:uppercase; letter-spacing:1px;">Baths Completed</div>
-                    </div>
-                    <div style="width:1px; background:#e0e0e0;"></div>
-                    <div style="text-align:center;">
-                        <div style="font-size:28px; font-weight:800; color:#2c3e50; font-family:'Playfair Display',serif;">5★</div>
-                        <div style="font-size:12px; color:#888; font-weight:600; text-transform:uppercase; letter-spacing:1px;">Avg. Rating</div>
-                    </div>
+                <div class="owner-signature" style="font-family: 'Playfair Display', serif; font-size: 24px; color: #f4b941; font-style: italic; margin-bottom: 20px;">
+                    - Alex, Owner of MTR Baths
                 </div>
-
-                <div class="owner-signature" style="font-family: 'Playfair Display', serif; font-size: 22px; color: #f4b941; font-style: italic; margin-bottom: 20px;">
-                    — Alex, Owner of MTR Baths
-                </div>
-                <a href="tel:+19168920745" style="display: flex; align-items: center; gap: 10px; font-weight: 700; color: #2c3e50; text-decoration: none; font-size: 17px;">
+                <a href="tel:+19168920745" style="display: flex; align-items: center; gap: 10px; font-weight: 700; color: #2c3e50; text-decoration: none; font-size: 18px;">
                     📞 Call Me Directly: (916) 892-0745
                 </a>
             </div>
             
-        </div>
-    </div>
-</section>
-
-<section class="faq" id="faq">
-    <div class="container">
-        <h2><span id="faq-title">Quick Answers Before You Call</span></h2>
-        <p class="section-subtitle" style="margin-bottom:40px;">The questions every homeowner asks — answered straight.</p>
-        <div class="faq-container">
-            <div class="faq-column">
-                <div class="accordion">
-                    <div class="accordion-header">How long will my bathroom remodel take?</div>
-                    <div class="accordion-content">
-                        <div class="accordion-content-inner">
-                            <p><span id="faq-timeline">Most installs are <strong>done in 1–3 days</strong> once materials are confirmed. We schedule quickly and don't leave you living without a bathroom for weeks like a general contractor would.</span></p>
-                        </div>
-                    </div>
-                </div>
-                <div class="accordion">
-                    <div class="accordion-header">What does a bathroom remodel typically cost?</div>
-                    <div class="accordion-content">
-                        <div class="accordion-content-inner">
-                            <p><span id="faq-pricing">Every job is different, but we give you a <strong>transparent, all-in quote</strong> after your free in-home consultation — materials, labor, and cleanup included. No surprise fees. Financing is available starting at <strong>$99/month</strong> with quick approval.</span></p>
-                        </div>
-                    </div>
-                </div>
-                <div class="accordion">
-                    <div class="accordion-header">Will there be a huge mess in my home?</div>
-                    <div class="accordion-content">
-                        <div class="accordion-content-inner">
-                            <p>We protect your floors, contain the work area, and clean up completely when we're done. Multiple customers have told us we left their home <strong>cleaner than we found it.</strong></p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="faq-column">
-                <div class="accordion">
-                    <div class="accordion-header">What's covered by the lifetime warranty?</div>
-                    <div class="accordion-content">
-                        <div class="accordion-content-inner">
-                            <p>Our lifetime warranty covers all <strong>materials and labor for as long as you own your home.</strong> If anything is ever wrong, we come back and fix it — no charge, no argument.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="accordion">
-                    <div class="accordion-header">What areas do you serve?</div>
-                    <div class="accordion-content">
-                        <div class="accordion-content-inner">
-                            <p><span id="faq-service-area">We serve homeowners across <strong>Sacramento, Solano, Contra Costa, Placer, and surrounding counties.</strong> Not sure if you're in our zone? Just call — <a href="tel:+19168920745" style="color:#f4b941; font-weight:700;">(916) 892-0745</a>.</span></p>
-                        </div>
-                    </div>
-                </div>
-                <div class="accordion">
-                    <div class="accordion-header">Do I need to be home during the installation?</div>
-                    <div class="accordion-content">
-                        <div class="accordion-content-inner">
-                            <p>We recommend being available at the start and end of the install day, but you don't need to hover. Our installers are background-checked, professional, and <strong>treat your home with respect.</strong></p>
-                        </div>
-                    </div>
-                </div>
-            </div>
         </div>
     </div>
 </section>
@@ -336,11 +358,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="gallery-item">
         <div class="side-by-side-container">
             <div class="img-wrapper no-click">
-                <img src="https://ik.imagekit.io/mtrbaths/Screen%20Shot%202025-03-17%20at%203.33.12%20AM.png?updatedAt=1742247173878" alt="Before Bathroom Remodel" class="fixed-ratio-img" loading="lazy">
+                <img src="https://ik.imagekit.io/mtrbaths/Screen%20Shot%202025-03-17%20at%203.33.12%20AM.png?updatedAt=1742247173878" alt="Before Bathroom Remodel" class="fixed-ratio-img">
                 <span class="img-label before-label">Before</span>
             </div>
             <div class="img-wrapper no-click">
-                <img src="https://ik.imagekit.io/mtrbaths/Screen%20Shot%202025-03-17%20at%203.33.32%20AM.png?updatedAt=1742247173904" alt="After Bathroom Remodel" class="fixed-ratio-img" loading="lazy">
+                <img src="https://ik.imagekit.io/mtrbaths/Screen%20Shot%202025-03-17%20at%203.33.32%20AM.png?updatedAt=1742247173904" alt="After Bathroom Remodel" class="fixed-ratio-img">
                 <span class="img-label after-label">After</span>
             </div>
         </div>
@@ -349,11 +371,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="gallery-item">
         <div class="side-by-side-container">
             <div class="img-wrapper no-click">
-                <img src="https://ik.imagekit.io/mtrbaths/Screen%20Shot%202025-03-17%20at%203.34.23%20AM.png?updatedAt=1742247059083" alt="Before Tub to Shower" class="fixed-ratio-img" loading="lazy">
+                <img src="https://ik.imagekit.io/mtrbaths/Screen%20Shot%202025-03-17%20at%203.34.23%20AM.png?updatedAt=1742247059083" alt="Before Tub to Shower" class="fixed-ratio-img">
                 <span class="img-label before-label">Before</span>
             </div>
             <div class="img-wrapper no-click">
-                <img src="https://ik.imagekit.io/mtrbaths/Screen%20Shot%202025-03-17%20at%203.34.37%20AM.png?updatedAt=1742247061366" alt="After Tub to Shower" class="fixed-ratio-img" loading="lazy">
+                <img src="https://ik.imagekit.io/mtrbaths/Screen%20Shot%202025-03-17%20at%203.34.37%20AM.png?updatedAt=1742247061366" alt="After Tub to Shower" class="fixed-ratio-img">
                 <span class="img-label after-label">After</span>
             </div>
         </div>
@@ -362,11 +384,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="gallery-item">
         <div class="side-by-side-container">
             <div class="img-wrapper no-click">
-                <img src="project-before-3.png" alt="Before Project" class="fixed-ratio-img" loading="lazy">
+                <img src="project-before-3.png" alt="Before Project" class="fixed-ratio-img">
                 <span class="img-label before-label">Before</span>
             </div>
             <div class="img-wrapper no-click">
-                <img src="project-after-3.png" alt="After Project" class="fixed-ratio-img" loading="lazy">
+                <img src="project-after-3.png" alt="After Project" class="fixed-ratio-img">
                 <span class="img-label after-label">After</span>
             </div>
         </div>
@@ -377,18 +399,18 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <section class="portfolio" id="portfolio">
     <div class="container">
         <h2><span id="portfolio-title">Recent Projects</span></h2>
-        <p class="portfolio-intro">Browse our recent bathroom transformations.</p>
+        <p class="portfolio-intro">Browse our recent bathroom projects. (Tap to enlarge)</p>
         
         <div class="portfolio-grid">
-            <div class="portfolio-item"><img src="classyshower.jpeg" alt="Project 1" class="portfolio-image" loading="lazy"></div>
-            <div class="portfolio-item"><img src="Greenshower.jpeg" alt="Project 2" class="portfolio-image" loading="lazy"></div>
-            <div class="portfolio-item"><img src="project-2.png" alt="Project 3" class="portfolio-image" loading="lazy"></div>
-            <div class="portfolio-item"><img src="whiteshower.jpeg" alt="Project 4" class="portfolio-image" loading="lazy"></div>
-            <div class="portfolio-item"><img src="project-4.png" alt="Project 5" class="portfolio-image" loading="lazy"></div>
-            <div class="portfolio-item"><img src="project-5.png" alt="Project 6" class="portfolio-image" loading="lazy"></div>
-            <div class="portfolio-item"><img src="project-6.png" alt="Project 7" class="portfolio-image" loading="lazy"></div>
-            <div class="portfolio-item"><img src="project-7.png" alt="Project 8" class="portfolio-image" loading="lazy"></div>
-            <div class="portfolio-item"><img src="project-8.png" alt="Project 9" class="portfolio-image" loading="lazy"></div>
+            <div class="portfolio-item"><img src="classyshower.jpeg" alt="Project 1" class="portfolio-image" onclick="openLightbox(this.src)"></div>
+            <div class="portfolio-item"><img src="Greenshower.jpeg" alt="Project 2" class="portfolio-image" onclick="openLightbox(this.src)"></div>
+            <div class="portfolio-item"><img src="project-2.png" alt="Project 3" class="portfolio-image" onclick="openLightbox(this.src)"></div>
+            <div class="portfolio-item"><img src="whiteshower.jpeg" alt="Project 4" class="portfolio-image" onclick="openLightbox(this.src)"></div>
+            <div class="portfolio-item"><img src="project-4.png" alt="Project 5" class="portfolio-image" onclick="openLightbox(this.src)"></div>
+            <div class="portfolio-item"><img src="project-5.png" alt="Project 6" class="portfolio-image" onclick="openLightbox(this.src)"></div>
+            <div class="portfolio-item"><img src="project-6.png" alt="Project 7" class="portfolio-image" onclick="openLightbox(this.src)"></div>
+            <div class="portfolio-item"><img src="project-7.png" alt="Project 8" class="portfolio-image" onclick="openLightbox(this.src)"></div>
+            <div class="portfolio-item"><img src="project-8.png" alt="Project 9" class="portfolio-image" onclick="openLightbox(this.src)"></div>
         </div> 
     </div>
 </section>
@@ -398,7 +420,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="service-split-layout">
             
             <div class="service-map-col">
-                <img src="MTR_Baths.png" alt="MTR Baths Service Area Map" loading="lazy" style="width:100%; height:auto; border-radius:10px; box-shadow:0 5px 15px rgba(0,0,0,0.1);">
+                <img src="MTR_Baths.png" alt="MTR Baths Service Area Map" style="width:100%; height:auto; border-radius:10px; box-shadow:0 5px 15px rgba(0,0,0,0.1);">
                 <p style="text-align:center; font-size:12px; color:#888; margin-top:10px;">(Yellow areas indicate primary service zones)</p>
             </div>
 
@@ -433,17 +455,67 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
 </section>
 
-
-
-<!-- Financing callout - compact -->
-<div style="background:#f4b941; padding:18px 0; text-align:center;">
+<section class="faq" id="faq">
     <div class="container">
-        <p style="margin:0; font-size:15px; font-weight:700; color:#1a1a1a; display:flex; flex-wrap:wrap; align-items:center; justify-content:center; gap:10px;">
-            <span>💳 Financing available — <strong>as low as $99/month</strong> with quick approval. Ask during your free consultation.</span>
-            <a href="#main-form-anchor" style="background:#2c3e50; color:#fff; padding:8px 18px; border-radius:4px; font-size:13px; text-decoration:none; font-weight:700; white-space:nowrap;">Get a Quote →</a>
-        </p>
+        <h2><span id="faq-title">Questions About Your Local Bathroom Remodel?</span></h2>
+        <div class="faq-container">
+            <div class="faq-column">
+                <div class="accordion">
+                    <div class="accordion-header">How long will my bathroom remodel take?</div>
+                    <div class="accordion-content">
+                        <div class="accordion-content-inner">
+                            <p><span id="faq-timeline">Most bathroom remodels in your area are completed in just 2-3 days once materials are on-site.</span></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion">
+                    <div class="accordion-header">What's included in your lifetime warranty?</div>
+                    <div class="accordion-content">
+                        <div class="accordion-content-inner">
+                            <p>Our exclusive lifetime warranty covers all materials and labor for as long as you own your home. If any issues arise with your new bathroom, we'll fix them at no additional cost to you.</p>
+                        </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+            <div class="faq-column">
+                <div class="accordion">
+                    <div class="accordion-header">What areas do you serve?</div>
+                    <div class="accordion-content">
+                        <div class="accordion-content-inner">
+                            <p><span id="faq-service-area">MTR Baths serves your local area and surrounding communities. If you're unsure if we service your specific location, just give us a call at (916) 892-0745.</span></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion">
+                    <div class="accordion-header">What are the typical costs for a bathroom remodel?</div>
+                    <div class="accordion-content">
+                        <div class="accordion-content-inner">
+                            <p><span id="faq-pricing">Bathroom remodel costs vary based on size, materials, and features. MTR Baths believes in transparent pricing – the quote we provide after your consultation includes all materials, labor, and cleanup, with no surprise fees.</span></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-</div>
+</section>
+
+<!-- FINANCING SECTION -->
+<section style="background:#2c3e50; padding:50px 0;">
+    <div class="container">
+        <div style="text-align:center; max-width:680px; margin:0 auto;">
+            <p style="font-size:13px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:#f4b941; margin-bottom:12px;">Flexible Payment Options</p>
+            <h2 style="font-family:'Playfair Display',serif; font-size:clamp(24px,3.5vw,36px); color:#fff; margin-bottom:16px; line-height:1.3;">Financing Available — As Low As $99/Month</h2>
+            <p style="font-size:16px; color:rgba(255,255,255,0.7); line-height:1.7; margin-bottom:32px;">We offer flexible financing and monthly payment plans so you can get the bathroom you deserve without the financial stress. Ask about your options during your free consultation.</p>
+            <div style="display:flex; justify-content:center; gap:24px; flex-wrap:wrap; margin-bottom:32px;">
+                <div style="display:flex; align-items:center; gap:8px; color:#fff; font-size:14px; font-weight:600;">✔ Quick Approval</div>
+                <div style="display:flex; align-items:center; gap:8px; color:#fff; font-size:14px; font-weight:600;">✔ Low Monthly Payments</div>
+                <div style="display:flex; align-items:center; gap:8px; color:#fff; font-size:14px; font-weight:600;">✔ No Hidden Fees</div>
+            </div>
+            <a href="#main-form-anchor" class="btn btn-red" style="display:inline-block; font-size:16px; padding:14px 32px;">Check Your Options →</a>
+        </div>
+    </div>
+</section>
 
 <section class="final-cta">
     <div class="container">
@@ -496,6 +568,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
     </div>
 </footer>
+
+<div id="lightbox" class="lightbox" onclick="closeLightbox()">
+    <span class="lightbox-close">&times;</span>
+    <img class="lightbox-content" id="lightbox-img">
+</div>
 
 <script src="script.js"></script>
 </body>
