@@ -383,14 +383,7 @@ ul {
     left: 0;
 }
 
-.form-banner {
-    background-color: #2c3e50;
-    color: white;
-    text-align: center;
-    padding: 15px;
-    font-weight: 600;
-    font-size: 18px;
-}
+/* .form-banner base styles are set later in the CONSOLIDATED HERO STYLES block */
 
 .form-step {
     display: none;
@@ -969,10 +962,11 @@ ul {
 
 /* Final CTA Section */
 .final-cta {
-    background: linear-gradient(rgba(44, 62, 80, 0.9), rgba(44, 62, 80, 0.9)), url('https://images.unsplash.com/photo-1584622781564-1d987f7333c1?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+    background: linear-gradient(rgba(20, 30, 40, 0.60), rgba(20, 30, 40, 0.60)), url('https://images.unsplash.com/photo-1584622781564-1d987f7333c1?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
     color: white;
     padding: 80px 0;
     text-align: center;
+    border-top: 4px solid #f4b941;
 }
 
 .final-cta-content {
@@ -1261,12 +1255,6 @@ footer {
 }
 
 
-.embedded-form {
-    background-color: white;
-    border-radius: 10px;
-    box-shadow: 0 20px 50px rgba(0,0,0,0.4);
-}
-
 /* Compact Radio Styles */
 .compact-radio .radio-option {
     padding: 12px 15px;
@@ -1298,13 +1286,6 @@ footer {
     font-size: 14px;
     font-weight: 600;
     letter-spacing: 0.5px;
-}
-
-.embedded-form {
-    background-color: white;
-    border-radius: 10px;
-    box-shadow: 0 20px 50px rgba(0,0,0,0.4);
-    padding: 25px; /* Clean padding */
 }
 
 /* CONSOLIDATED HERO STYLES */
@@ -1365,23 +1346,31 @@ footer {
     max-width: 100%;
 }
 
+/* CONSOLIDATED embedded-form — single source of truth */
 .embedded-form {
     background-color: #ffffff;
-    border-radius: 8px;
-    box-shadow: 0 15px 35px rgba(0,0,0,0.5); /* Deep shadow to lift off page */
-    padding: 25px;
-    border-top: 5px solid #f4b941; /* Gold accent bar */
+    border-radius: 10px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.45);
+    overflow: hidden;
+    padding: 0; /* Sub-sections control their own padding */
+    border-top: 5px solid #f4b941;
 }
 
+/* Form title — padded to align with inputs below */
 .form-banner {
     background: none;
     color: #2c3e50;
     text-align: left;
-    padding: 0 0 15px 0;
+    padding: 20px 25px 14px 25px;
     font-weight: 700;
     font-size: 22px;
     border-bottom: 1px solid #eee;
-    margin-bottom: 15px;
+    margin-bottom: 0;
+}
+
+/* Form fields + button get their own padding */
+#simple-hero-form {
+    padding: 18px 25px 22px 25px;
 }
 
 /* TRUST BADGES IN HERO */
