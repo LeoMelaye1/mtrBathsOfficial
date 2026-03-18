@@ -1813,7 +1813,11 @@ a, button, input, select, textarea, .accordion-header, .portfolio-item {
     }
     .rating-divider { display: inline-block !important; flex-shrink: 0; color: #ccc; }
 
-    /* --- HERO --- */
+    /* Hero — form first on mobile */
+    .hero-visual-proof { order: -1; }
+    .hero-content { order: 1; }
+
+    /* Hero layout */
     .hero { padding: 35px 0 20px; min-height: auto; background-position: center top; }
     .hero-container { flex-direction: column !important; gap: 20px !important; }
     .hero-content { flex: none !important; width: 100% !important; text-align: center; margin-bottom: 0; }
@@ -1948,5 +1952,15 @@ a, button, input, select, textarea, .accordion-header, .portfolio-item {
     .county-badge { padding: 8px 14px; font-size: 13px; }
     .owner-content [style*="display:flex"][style*="gap:28px"] {
         gap: 12px !important;
+    }
+}
+
+/* Scroll anchor offset — form clears header + nav on scroll */
+#main-form-anchor {
+    scroll-margin-top: 10px;
+}
+@media (max-width: 768px) {
+    #main-form-anchor {
+        scroll-margin-top: 100px;
     }
 }
