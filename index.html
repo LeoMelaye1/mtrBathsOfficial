@@ -219,20 +219,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="hero-container">
             <div class="hero-content">
                 <!-- CHANGE 3: Wrapped in <a> tag — was the #1 dead click on the page -->
-                <div class="offer-badge-container" style="margin-bottom: 15px;">
-                    <span style="
-                        background-color: #f4b941; 
-                        color: #1a1a1a; 
-                        border: none; 
-                        padding: 6px 16px; 
-                        border-radius: 50px; 
-                        font-size: 13px; 
-                        font-weight: 700; 
-                        text-transform: uppercase; 
-                        letter-spacing: 0.5px;
-                        display: inline-block;">
-                        Spring Special: Save $2,500 — Expires March 31
-                    </span>
+                <div class="offer-badge-container" style="margin-bottom: 18px;">
+                    <div style="display:inline-flex; align-items:center; gap:10px; background-color:#f4b941; color:#1a1a1a; padding:10px 18px; border-radius:6px; font-family:'Montserrat',sans-serif; box-shadow:0 4px 14px rgba(244,185,65,0.45);">
+                        <span style="font-size:22px; line-height:1;">🏷️</span>
+                        <div>
+                            <div style="font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:1px; opacity:0.7;">Limited Time Offer</div>
+                            <div style="font-size:17px; font-weight:800; line-height:1.2;">Save $2,500 on Your Remodel</div>
+                            <div style="font-size:11px; font-weight:600; opacity:0.65;">Expires March 31 — Fill out the form to claim</div>
+                        </div>
+                    </div>
                 </div>
                 <h1><span id="hero-city-headline">Northern California</span>'s Trusted <span style="color:#f4b941;">Bathroom Remodeling Experts</span></h1>
                 
@@ -262,7 +257,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             <div class="hero-visual-proof">
                 <div class="hero-form embedded-form">
-                    <div class="form-banner">See If You Qualify for a Local Discount</div>
+                    <div class="form-banner">Find Out What Your Remodel Costs</div>
 <form id="simple-hero-form">
     <div class="form-group">
         <input type="text" id="hero-name" name="name" class="form-control" placeholder="Your Full Name" required>
@@ -273,14 +268,22 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
 
     <div class="form-group">
-        <textarea id="hero-details" name="project_details" class="form-control" rows="3" placeholder="What are you looking to get done?" style="resize: vertical; font-family: inherit;"></textarea>
+        <select id="hero-project-type" name="project_type" class="form-control" style="font-family:inherit; color:#4a4a4a; cursor:pointer;">
+            <option value="" disabled selected>What are you looking to get done?</option>
+            <option value="tub-to-shower">Tub-to-Shower Conversion</option>
+            <option value="full-remodel">Full Bathroom Remodel</option>
+            <option value="walk-in-tub">Walk-In Tub</option>
+            <option value="shower-upgrade">Shower Upgrade</option>
+            <option value="accessible">Senior / Accessible Bathroom</option>
+            <option value="not-sure">Not Sure Yet</option>
+        </select>
     </div>
     
-    <button type="submit" class="btn btn-red" id="hero-submit" style="width:100%; margin-top:8px; font-weight:700; font-size: 18px;">
-        Get My Free Quote →
+    <button type="submit" class="btn btn-red" id="hero-submit" style="width:100%; margin-top:8px; font-weight:700; font-size:18px;">
+        Claim My $2,500 Discount →
     </button>
 
-    <p style="margin-top: 12px; font-size: 11px; color: #aaa; text-align: center; line-height: 1.5;">
+    <p style="margin-top:12px; font-size:11px; color:#aaa; text-align:center; line-height:1.5;">
         🔒 No spam. We'll call you to schedule a free in-home consultation.
     </p>
 </form>
