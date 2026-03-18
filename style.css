@@ -19,51 +19,6 @@ svg {
     max-width: 100%;
 }
 
-/* LIGHTBOX STYLES (New) */
-.lightbox {
-    display: none;
-    position: fixed;
-    z-index: 10001;
-    padding-top: 50px;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgba(0,0,0,0.9);
-}
-
-.lightbox-content {
-    margin: auto;
-    display: block;
-    width: 80%;
-    max-width: 900px;
-    border-radius: 5px;
-    animation: zoom 0.3s;
-}
-
-@keyframes zoom {
-    from {transform:scale(0)}
-    to {transform:scale(1)}
-}
-
-.lightbox-close {
-    position: absolute;
-    top: 15px;
-    right: 35px;
-    color: #f1f1f1;
-    font-size: 40px;
-    font-weight: bold;
-    transition: 0.3s;
-    cursor: pointer;
-}
-
-.lightbox-close:hover,
-.lightbox-close:focus {
-    color: #bbb;
-    text-decoration: none;
-    cursor: pointer;
-}
 
 
 /* Modal Styles */
@@ -683,7 +638,7 @@ select.form-control {
 .img-wrapper {
     flex: 1;
     position: relative;
-    cursor: zoom-in;
+    cursor: default;
 }
 
 .img-wrapper img {
@@ -775,8 +730,6 @@ select.form-control {
     border-radius: 8px;
     overflow: hidden;
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    transition: transform 0.3s ease;
-    cursor: zoom-in;
     /* REMOVE FIXED HEIGHT so we see the whole shower */
     height: auto; 
     display: inline-block; /* Keeps block intact */
@@ -784,8 +737,7 @@ select.form-control {
 }
 
 .portfolio-item:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    box-shadow: 0 6px 18px rgba(0,0,0,0.13);
 }
 
 .portfolio-image {
@@ -2041,8 +1993,8 @@ html { scroll-behavior: smooth; }
     /* Gallery full width */
     .gallery-grid { grid-template-columns: 1fr !important; }
 
-    /* Portfolio 2 columns */
-    .portfolio-grid { grid-template-columns: 1fr 1fr !important; gap: 8px !important; }
+    /* Portfolio single column on mobile */
+    .portfolio-grid { column-count: 1 !important; gap: 8px !important; }
 
     /* Service area stack */
     .service-split-layout { flex-direction: column !important; }
@@ -2104,5 +2056,68 @@ html { scroll-behavior: smooth; }
     }
     #simple-hero-form {
         padding-bottom: 18px !important;
+    }
+}
+
+/* ================================
+   ADDITIONAL MOBILE POLISH
+================================ */
+
+/* Remove any residual zoom-in cursors */
+.portfolio-image,
+.img-wrapper img {
+    cursor: default !important;
+}
+
+/* Financing section — stack checkmarks on small screens */
+@media (max-width: 480px) {
+    .financing-checks {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+}
+
+/* Footer stacks cleanly on mobile */
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column;
+        gap: 30px;
+    }
+    .footer-col {
+        min-width: unset !important;
+        width: 100%;
+    }
+}
+
+/* Better tap targets throughout — no accidental mis-taps */
+a, button, .accordion-header, .mobile-call-btn, .mobile-quote-btn {
+    touch-action: manipulation;
+}
+
+/* Prevent horizontal bleed from any absolutely-positioned elements */
+section, .container, .hero {
+    max-width: 100vw;
+    overflow-x: hidden;
+}
+
+/* Gallery side-by-side stacks to column on smallest screens */
+@media (max-width: 480px) {
+    .side-by-side-container {
+        flex-direction: column;
+    }
+    .fixed-ratio-img {
+        height: 200px;
+    }
+}
+
+/* Ensure the hero subtitle is readable on mobile */
+@media (max-width: 480px) {
+    .hero-subtitle {
+        font-size: 15px !important;
+    }
+    .offer-badge-container > div {
+        font-size: 13px !important;
+        padding: 8px 12px !important;
     }
 }
