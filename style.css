@@ -153,11 +153,8 @@ svg {
 }
 
 @media (max-width: 768px) {
-    body {
-        padding-bottom: 70px;
-    }
     .header-social {
-        display: none; 
+        display: none;
     }
 }
 
@@ -611,9 +608,7 @@ select.form-control {
         gap: 40px;
     }
     
-    .video-wrapper video {
-        height: 350px; /* Slightly smaller on mobile */
-    }
+    /* video height handled by consolidated mobile block */
 }
 
 /* Location Badge */
@@ -736,7 +731,8 @@ select.form-control {
         flex-direction: column;
     }
     .img-wrapper img {
-        height: 250px;
+        height: 220px;
+        object-fit: cover;
     }
 }
 
@@ -1556,23 +1552,8 @@ select.form-control {
     letter-spacing: 0.5px;
 }
 
-/* Mobile adjustments */
+/* Small phone adjustments */
 @media (max-width: 600px) {
-    .rating-bar-container {
-        flex-wrap: wrap;
-        gap: 10px;
-        justify-content: center;
-    }
-    .rating-divider {
-        display: none; 
-    }
-    .rating-item {
-        background: #f8f9fa;
-        padding: 4px 10px;
-        border-radius: 20px;
-        font-size: 12px;
-        border: 1px solid #eee;
-    }
     .hero-checklist li {
         font-size: 14px;
         margin-bottom: 8px;
@@ -1715,160 +1696,6 @@ select.form-control {
     pointer-events: none;
 }
 
-/* =========================================
-   MOBILE OPTIMIZATION (Paste at bottom of CSS)
-   ========================================= */
-
-@media (max-width: 768px) {
-
-    /* --- 1. GLOBAL ADJUSTMENTS --- */
-    body {
-        padding-bottom: 80px; /* Space for the sticky bottom bar */
-    }
-    
-    .container {
-        padding: 0 15px; /* Tighter side padding for more space */
-    }
-
-    /* --- 2. HERO SECTION FIXES --- */
-    .hero {
-        padding: 40px 0 20px 0; /* Less vertical whitespace */
-        min-height: auto;
-        background-position: center top; /* Focus background on top */
-    }
-
-    .hero-container {
-        flex-direction: column; /* Stack Content on top of Form */
-        gap: 20px;
-    }
-
-    .hero-content {
-        text-align: center; /* Center text on mobile */
-        margin-bottom: 10px;
-    }
-
-    .hero h1 {
-        font-size: 28px; /* Smaller H1 to prevent huge wrapping */
-        line-height: 1.2;
-        margin-bottom: 15px;
-    }
-
-    .hero-subtitle {
-        font-size: 16px;
-        line-height: 1.4;
-        margin-bottom: 20px;
-    }
-
-    /* Fix the Checklist Alignment on Mobile */
-    .hero-checklist {
-        display: inline-block; /* Centers the list block */
-        text-align: left; /* Keeps bullet points aligned left */
-        margin: 0 auto 20px auto;
-        padding-left: 10px;
-    }
-
-    .hero-checklist li {
-        font-size: 14px; /* Readable but compact */
-        margin-bottom: 10px;
-        display: flex;
-        align-items: flex-start; /* Aligns checkmark to top of text */
-    }
-
-    .check-icon {
-        margin-top: 2px; /* Visual alignment fix */
-    }
-
-    /* --- 3. FORM OPTIMIZATION --- */
-    .hero-visual-proof {
-        width: 100%; /* Full width form */
-        max-width: 100%;
-        margin: 0;
-    }
-
-    .embedded-form {
-        /* Don't add padding here — #simple-hero-form and .form-banner handle their own */
-        box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-        border-radius: 8px;
-    }
-
-    .form-banner {
-        font-size: 18px;
-        text-align: center;
-        padding: 16px 16px 12px 16px;
-    }
-
-    /* PREVENT ZOOMING: Inputs must be 16px on mobile */
-    .form-control, select, textarea {
-        font-size: 16px !important; 
-        padding: 12px;
-    }
-
-    #hero-submit {
-        font-size: 15px !important;
-        padding: 16px 12px !important;
-        white-space: nowrap !important; /* Keep text + arrow on one line */
-        line-height: 1.2;
-    }
-
-    /* --- 4. TRUST BADGES & LOGOS --- */
-    .hero-trust-badges {
-        justify-content: center; /* Center badges */
-        gap: 10px;
-        flex-wrap: wrap;
-    }
-
-    .badge-item {
-        font-size: 12px;
-        padding: 8px 12px;
-        width: auto; /* Let them flow naturally */
-    }
-
-    /* --- 5. OWNER SECTION STACKING --- */
-    .owner-container {
-        flex-direction: column; /* Stack image on top of text */
-        text-align: center;
-        gap: 30px;
-    }
-
-    .owner-image {
-        margin: 0 auto;
-        max-width: 280px; /* Restrict image size so it doesn't dominate */
-    }
-
-    .owner-content {
-        padding: 0 10px;
-    }
-    
-    .owner-signature {
-        justify-content: center;
-        display: flex;
-    }
-    
-    .owner-contact a {
-        justify-content: center;
-    }
-
-    /* --- 6. VIDEO & GALLERY FIXES --- */
-    .video-grid, .gallery-grid {
-        display: block; /* Stack videos/images vertically */
-    }
-
-    .video-card, .gallery-item {
-        margin-bottom: 30px;
-        width: 100%;
-    }
-
-    .video-wrapper video {
-        height: auto; /* Let height adjust naturally */
-        max-height: 300px; /* Cap it so it fits on one screen */
-    }
-
-    /* --- 7. STICKY BOTTOM BAR VISIBILITY --- */
-    .mobile-bottom-bar {
-        display: flex !important; /* Force show */
-        z-index: 99999;
-    }
-}
 /* FIXED GALLERY STYLES */
 
 /* 1. Disable the Click Cursor */
@@ -1898,9 +1725,7 @@ select.form-control {
 
 /* 4. Mobile Adjustments */
 @media (max-width: 768px) {
-    .fixed-ratio-img {
-        height: 250px; /* Slightly shorter on mobile phones */
-    }
+    /* fixed-ratio-img height handled by consolidated mobile block */
     
     .gallery-item {
         margin-bottom: 20px;
@@ -1929,7 +1754,7 @@ select.form-control {
         max-width: 100%;                /* Never wider than the screen */
         box-sizing: border-box;         /* Includes padding in width calculation */
         text-align: center;
-        padding: 15px 10px;             /* Reduced side padding for mobile */
+        padding: 14px 12px;
     }
     
     /* Optional: Make that specific bottom button fit better */
@@ -1942,141 +1767,35 @@ select.form-control {
 }
 
 /* ================================
-   MOBILE OPTIMIZATION + DEAD CLICK FIXES
+   MOBILE — SINGLE CONSOLIDATED BLOCK
+   (Replaces all previous duplicate mobile rules)
 ================================ */
 
-html { scroll-behavior: smooth; }
-
-/* Fix: before/after images were registering dead clicks */
-.img-wrapper.no-click,
-.img-wrapper.no-click img {
-    cursor: default !important;
-    pointer-events: none;
+/* Remove 300ms tap delay on interactive elements */
+a, button, input, select, textarea, .accordion-header, .portfolio-item {
+    touch-action: manipulation;
 }
 
 @media (max-width: 768px) {
+
+    /* --- GLOBAL --- */
     body { padding-bottom: 80px; }
+    html, body { overflow-x: hidden; width: 100%; position: relative; }
+    .container { padding: 0 15px; }
 
-    /* Bigger, more tappable bottom bar */
-    .mobile-bottom-bar {
-        padding: 10px 12px;
-        gap: 10px;
-        border-top: 2px solid #e74c3c;
-        box-shadow: 0 -4px 20px rgba(0,0,0,0.15);
-    }
-    .mobile-call-btn,
-    .mobile-quote-btn {
-        flex: 1;
-        padding: 14px 10px;
-        min-height: 52px;
-        font-size: 15px;
-        font-weight: 700;
-        border-radius: 8px;
-        text-align: center;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-    .mobile-call-btn {
-        background: #e74c3c;
-        color: #fff;
-        border: 2px solid #e74c3c;
-    }
-    .mobile-quote-btn {
-        background: #fff;
-        color: #e74c3c;
-        border: 2px solid #e74c3c;
-    }
+    /* --- HEADINGS --- */
+    h1 { font-size: clamp(24px, 7vw, 38px) !important; line-height: 1.2 !important; }
+    h2 { font-size: clamp(20px, 5.5vw, 30px) !important; }
 
-    /* Hide desktop phone in header */
-    .call-section { display: none; }
-
-    /* Rating bar scrollable on mobile */
-    .rating-bar-container {
-        overflow-x: auto;
-        -webkit-overflow-scrolling: touch;
-        white-space: nowrap;
-        scrollbar-width: none;
-    }
-    .rating-bar-container::-webkit-scrollbar { display: none; }
-    .rating-divider { display: none; }
-
-    /* Bigger form inputs — prevents iOS zoom */
-    .form-control,
-    .hero-form input,
-    .hero-form textarea {
-        font-size: 16px !important;
-        padding: 14px 12px !important;
-        min-height: 52px;
-        border-radius: 8px !important;
-    }
-    .hero-form textarea { min-height: 90px; }
-
-    /* Bigger submit button */
-    #hero-submit {
-        font-size: 15px !important;
-        padding: 16px 12px !important;
-        min-height: 52px !important;
-        white-space: nowrap !important;
-        line-height: 1.2 !important;
-    }
-
-    /* Tighter form padding on mobile */
-    #simple-hero-form {
-        padding: 14px 16px 18px 16px;
-    }
-
-    /* Stack hero on mobile */
-    .hero-container { flex-direction: column !important; gap: 24px !important; }
-    .hero-content { text-align: center; }
-    .hero-checklist { text-align: left; display: inline-block; }
-
-    /* Stack owner section */
-    .owner-container { flex-direction: column !important; }
-    .owner-image, .owner-content { min-width: unset !important; width: 100% !important; }
-
-    /* Videos single column */
-    .video-grid { grid-template-columns: 1fr !important; }
-
-    /* Gallery full width */
-    .gallery-grid { grid-template-columns: 1fr !important; }
-
-    /* Portfolio 2 columns */
-    .portfolio-grid { grid-template-columns: 1fr 1fr !important; gap: 8px !important; }
-
-    /* Service area stack */
-    .service-split-layout { flex-direction: column !important; }
-
-    /* FAQ single column */
-    .faq-container { flex-direction: column !important; }
-
-    /* Bigger accordion tap targets */
-    .accordion-header {
-        padding: 18px 16px !important;
-        font-size: 15px !important;
-        min-height: 56px;
-    }
-
-    /* Responsive headings */
-    h1 { font-size: clamp(26px, 7vw, 42px) !important; }
-    h2 { font-size: clamp(22px, 5.5vw, 32px) !important; }
-}
-
-/* ================================
-   MOBILE-SPECIFIC TARGETED FIXES
-================================ */
-@media (max-width: 768px) {
-
-    /* Hide entire call section on mobile — bottom bar handles CTAs */
+    /* --- HEADER --- */
     .call-section { display: none !important; }
 
-    /* Rating bar — force single-row horizontal scroll */
+    /* --- RATING BAR — horizontal scroll, single row --- */
     .rating-bar-container {
         display: flex !important;
         flex-wrap: nowrap !important;
-        overflow-x: scroll !important;
+        overflow-x: auto !important;
         -webkit-overflow-scrolling: touch !important;
-        white-space: nowrap !important;
         scrollbar-width: none !important;
         gap: 10px !important;
         padding: 6px 15px !important;
@@ -2090,19 +1809,129 @@ html { scroll-behavior: smooth; }
         border: none !important;
         border-radius: 0 !important;
         padding: 0 !important;
+        font-size: 12px !important;
     }
-    .rating-divider {
-        display: inline-block !important;
-        flex-shrink: 0;
-        color: #ccc;
+    .rating-divider { display: inline-block !important; flex-shrink: 0; color: #ccc; }
+
+    /* --- HERO --- */
+    .hero { padding: 35px 0 20px; min-height: auto; background-position: center top; }
+    .hero-container { flex-direction: column !important; gap: 20px !important; }
+    .hero-content { flex: none !important; width: 100% !important; text-align: center; margin-bottom: 0; }
+    .hero-visual-proof { flex: none !important; width: 100% !important; }
+    .hero-checklist { text-align: left !important; display: inline-block !important; }
+    .hero-subtitle { font-size: 16px !important; }
+
+    /* Offer badge — prevent overflow on narrow screens */
+    .offer-badge-container > div {
+        max-width: 100%;
+        flex-wrap: wrap;
+        font-size: 14px !important;
     }
 
-    /* Form card — no extra height stretching */
+    /* --- FORM --- */
+    /* font-size ≥ 16px prevents iOS auto-zoom on input focus */
+    .form-control,
+    select.form-control,
+    .hero-form input,
+    .hero-form select,
+    .hero-form textarea {
+        font-size: 16px !important;
+        padding: 13px 12px !important;
+        min-height: 50px;
+        border-radius: 8px !important;
+    }
+    .hero-form textarea { min-height: 90px !important; }
+
+    #hero-submit {
+        font-size: 15px !important;
+        padding: 16px 12px !important;
+        min-height: 52px !important;
+        white-space: normal !important;
+        line-height: 1.3 !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+    }
+
+    #simple-hero-form { padding: 14px 16px 18px !important; }
+
     .hero-form.embedded-form {
         height: auto !important;
         min-height: unset !important;
     }
-    #simple-hero-form {
-        padding-bottom: 18px !important;
+
+    /* --- BOTTOM BAR --- */
+    .mobile-bottom-bar {
+        display: flex !important;
+        padding: 10px 12px !important;
+        gap: 10px !important;
+        border-top: 2px solid #2c3e50 !important;
+        box-shadow: 0 -4px 20px rgba(0,0,0,0.12) !important;
     }
+    .mobile-call-btn,
+    .mobile-quote-btn {
+        flex: 1 !important;
+        min-height: 52px !important;
+        font-size: 15px !important;
+        font-weight: 700 !important;
+        border-radius: 8px !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        white-space: nowrap;
+    }
+
+    /* --- OWNER SECTION --- */
+    .owner-container { flex-direction: column !important; text-align: center; gap: 24px !important; }
+    .owner-image, .owner-content { min-width: unset !important; width: 100% !important; max-width: 100% !important; }
+    .owner-image { max-width: 300px !important; margin: 0 auto !important; }
+
+    /* --- VIDEOS --- */
+    .video-grid { grid-template-columns: 1fr !important; gap: 30px !important; display: block !important; }
+    .video-card { margin-bottom: 30px; }
+    .video-wrapper video { height: 280px !important; max-width: 100%; }
+
+    /* --- GALLERY (before/after) --- */
+    .gallery-grid { display: block !important; }
+    .gallery-item { margin-bottom: 24px; padding: 10px; }
+    .side-by-side-container { flex-direction: column !important; gap: 12px !important; }
+    .fixed-ratio-img { height: 220px !important; }
+    .img-wrapper img { height: 220px !important; object-fit: cover !important; }
+
+    /* --- PORTFOLIO --- */
+    .portfolio-grid { column-count: 2 !important; column-gap: 10px !important; }
+
+    /* --- SERVICE AREA --- */
+    .service-split-layout { flex-direction: column !important; text-align: center; }
+    .service-map-col { width: 100% !important; max-width: 380px; margin: 0 auto; }
+    .service-text-col h2, .service-text-col p { text-align: center !important; }
+    .counties-grid { justify-content: center !important; }
+
+    /* --- FAQ --- */
+    .faq-container { flex-direction: column !important; }
+    .faq-column { flex: none !important; width: 100% !important; }
+    .accordion-header {
+        padding: 17px 16px !important;
+        font-size: 15px !important;
+        min-height: 54px;
+    }
+
+    /* --- FOOTER --- */
+    .footer-content { flex-direction: column; gap: 20px; }
+
+    /* --- BUTTON OVERFLOW FIX --- */
+    .btn {
+        white-space: normal !important;
+        max-width: 100%;
+        box-sizing: border-box;
+        text-align: center;
+        padding: 14px 12px;
+    }
+}
+
+/* Very small phones (≤ 390px) */
+@media (max-width: 390px) {
+    h1 { font-size: 22px !important; }
+    .portfolio-grid { column-count: 1 !important; }
+    .video-wrapper video { height: 240px !important; }
+    .county-badge { padding: 8px 14px; font-size: 13px; }
 }
