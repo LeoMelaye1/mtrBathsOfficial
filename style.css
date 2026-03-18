@@ -283,12 +283,12 @@ ul {
 }
 
 .call-text {
-    font-size: 13px; /* Slightly smaller text */
+    font-size: 16px;
     display: block;
     margin-bottom: 2px;
     color: white !important;
     text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
-    white-space: nowrap; /* PREVENTS WRAPPING */
+    white-space: nowrap;
 }
 
 .phone-number {
