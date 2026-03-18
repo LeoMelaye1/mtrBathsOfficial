@@ -1926,6 +1926,18 @@ a, button, input, select, textarea, .accordion-header, .portfolio-item {
         text-align: center;
         padding: 14px 12px;
     }
+
+    /* Owner proof stats - stack gracefully on mobile */
+    .owner-content [style*="display:flex"][style*="gap:28px"] {
+        gap: 16px !important;
+        justify-content: center;
+    }
+
+    /* Financing strip - stack link below text on small phones */
+    .financing-strip-inner {
+        flex-direction: column !important;
+        gap: 10px !important;
+    }
 }
 
 /* Very small phones (≤ 390px) */
@@ -1934,4 +1946,7 @@ a, button, input, select, textarea, .accordion-header, .portfolio-item {
     .portfolio-grid { column-count: 1 !important; }
     .video-wrapper video { height: 240px !important; }
     .county-badge { padding: 8px 14px; font-size: 13px; }
+    .owner-content [style*="display:flex"][style*="gap:28px"] {
+        gap: 12px !important;
+    }
 }
