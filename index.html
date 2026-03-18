@@ -54,6 +54,11 @@ src="https://www.facebook.com/tr?id=871950812372808&ev=PageView&noscript=1"
         @media (max-width: 768px) {
             body { padding-bottom: 80px; }
 
+            /* Fix scroll-to-form offset caused by sticky header */
+            #main-form-anchor {
+                scroll-margin-top: 100px;
+            }
+
             /* Bigger, more tappable bottom bar */
             .mobile-bottom-bar {
                 padding: 10px 12px;
@@ -85,17 +90,23 @@ src="https://www.facebook.com/tr?id=871950812372808&ev=PageView&noscript=1"
                 border: 2px solid #e74c3c;
             }
 
-            /* Hide desktop phone in header on mobile */
-            .call-section { display: none; }
+            /* Show phone number in header on mobile, hide the tagline text */
+            .call-section { display: flex !important; }
+            .call-text { display: none; }
+            .phone-number { font-size: 16px !important; white-space: nowrap; }
 
-            /* Rating bar scrollable on mobile instead of wrapping */
+            /* Rating bar wraps into rows on mobile — no scrolling needed */
             .rating-bar-container {
-                overflow-x: auto;
-                -webkit-overflow-scrolling: touch;
-                white-space: nowrap;
-                scrollbar-width: none;
+                overflow-x: visible;
+                white-space: normal;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 8px 16px;
+                padding: 6px 10px;
             }
-            .rating-bar-container::-webkit-scrollbar { display: none; }
+            .rating-item {
+                white-space: nowrap;
+            }
             .rating-divider { display: none; }
 
             /* font-size 16px prevents iOS auto-zoom on input focus */
