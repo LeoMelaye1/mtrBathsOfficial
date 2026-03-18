@@ -187,6 +187,7 @@ function updateLocationContent(city, state) {
     }
     
     const elementsToUpdate = {
+        'hero-city-headline': city,
         'location-text': `Proudly Serving ${city} & Within 50 Miles`,
         'location-title': `Premium Bathroom Remodeling in ${city}`,
         'hero-city-name': city,
