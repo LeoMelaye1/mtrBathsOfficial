@@ -144,34 +144,54 @@ const combinedProjectDetails = `Project: ${projectDetails}`;
 
 // Location Detection Functions
 function detectUserLocation() {
+    // Step 1: Try browser GPS/WiFi geolocation — street-level accurate
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(
+            function(position) {
+                // Success — reverse geocode lat/lng to city name using OpenStreetMap (free, no API key)
+                const lat = position.coords.latitude;
+                const lon = position.coords.longitude;
+                fetch(`https://nominatim.openstreetmap.org/reverse?lat=${lat}&lon=${lon}&format=json`)
+                    .then(response => response.json())
+                    .then(data => {
+                        const city = data.address.city
+                                  || data.address.town
+                                  || data.address.village
+                                  || data.address.suburb
+                                  || null;
+                        const state = data.address.state || 'CA';
+                        if (city) {
+                            updateLocationContent(city, state);
+                        } else {
+                            fallbackToIpLocation();
+                        }
+                    })
+                    .catch(() => fallbackToIpLocation());
+            },
+            function(error) {
+                // User denied or geolocation unavailable — fall back to IP lookup
+                fallbackToIpLocation();
+            },
+            { timeout: 5000 }
+        );
+    } else {
+        // Browser doesn't support geolocation
+        fallbackToIpLocation();
+    }
+}
+
+function fallbackToIpLocation() {
+    // Step 2: IP-based geolocation (less accurate, ~city level but can be off)
     fetch('https://ipapi.co/json/')
         .then(response => response.json())
         .then(data => {
             if (data.city && data.region) {
                 updateLocationContent(data.city, data.region);
             } else {
-                tryAlternativeLocationService();
-            }
-        })
-        .catch(error => {
-            console.log('Primary location service failed');
-            tryAlternativeLocationService();
-        });
-}
-
-function tryAlternativeLocationService() {
-    fetch('https://ipapi.co/city/')
-        .then(response => response.text())
-        .then(city => {
-            if (city && city !== 'Undefined') {
-                updateLocationContent(city, 'CA');
-            } else {
                 updateLocationContent('Sacramento', 'CA');
             }
         })
-        .catch(error => {
-            updateLocationContent('Sacramento', 'CA');
-        });
+        .catch(() => updateLocationContent('Sacramento', 'CA'));
 }
 
 function updateLocationContent(city, state) {
