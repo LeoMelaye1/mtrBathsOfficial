@@ -1202,13 +1202,13 @@ footer {
 
 /* ADD THIS TO THE BOTTOM OF style.css (OR REPLACE IF IT EXISTS) */
 
-/* EMBEDDED FORM STYLES (New) */
+/* EMBEDDED FORM STYLES (legacy block - do not add padding/height here) */
 .embedded-form {
     background-color: white;
     border-radius: 12px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.15); /* Strong shadow to pop off background */
-    overflow: hidden;
-    height: 100%;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    overflow: visible;
+    height: auto;
 }
 
 /* Ensure Form Step Animation works without modal */
@@ -2067,38 +2067,40 @@ html { scroll-behavior: smooth; }
 ================================ */
 @media (max-width: 768px) {
 
-    /* Header call text — swap long for short version */
-    .call-text-full { display: none !important; }
-    .call-text-short { display: inline !important; }
-    .call-text { font-size: 13px !important; }
-    .phone-number { font-size: 16px !important; }
+    /* Hide entire call section on mobile — bottom bar handles CTAs */
+    .call-section { display: none !important; }
 
-    /* Rating bar — proper horizontal scroll, no pill wrapping */
+    /* Rating bar — force single-row horizontal scroll */
     .rating-bar-container {
         display: flex !important;
         flex-wrap: nowrap !important;
-        overflow-x: auto !important;
-        -webkit-overflow-scrolling: touch;
+        overflow-x: scroll !important;
+        -webkit-overflow-scrolling: touch !important;
         white-space: nowrap !important;
-        scrollbar-width: none;
-        gap: 12px;
-        padding: 8px 15px;
+        scrollbar-width: none !important;
+        gap: 10px !important;
+        padding: 6px 15px !important;
         justify-content: flex-start !important;
     }
     .rating-bar-container::-webkit-scrollbar { display: none; }
     .rating-item {
+        flex-shrink: 0 !important;
+        white-space: nowrap !important;
         background: none !important;
         border: none !important;
-        padding: 0 !important;
         border-radius: 0 !important;
-        flex-shrink: 0;
-        white-space: nowrap;
+        padding: 0 !important;
     }
-    .rating-divider { display: inline !important; color: #ccc; }
+    .rating-divider {
+        display: inline-block !important;
+        flex-shrink: 0;
+        color: #ccc;
+    }
 
-    /* Form card — remove excess bottom space */
+    /* Form card — no extra height stretching */
     .hero-form.embedded-form {
-        padding-bottom: 0 !important;
+        height: auto !important;
+        min-height: unset !important;
     }
     #simple-hero-form {
         padding-bottom: 18px !important;
