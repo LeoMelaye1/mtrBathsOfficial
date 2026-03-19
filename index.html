@@ -308,54 +308,91 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
 </section>
 <!-- WHAT WE DO SECTION -->
-<section style="padding: 64px 0; background: #fff; border-bottom: 1px solid #eee;">
+<style>
+    .wwd-section { padding: 52px 0; background: #fff; border-bottom: 1px solid #eee; }
+    .wwd-header { display: flex; align-items: flex-end; justify-content: space-between; flex-wrap: wrap; gap: 20px; margin-bottom: 36px; }
+    .wwd-eyebrow { font-size: 11px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color: #b8882a; margin-bottom: 10px; }
+    .wwd-headline { font-family: 'Playfair Display', serif; font-size: clamp(24px, 5vw, 34px); color: #2c3e50; margin: 0; line-height: 1.25; }
+    .wwd-intro { font-size: 14px; color: #666; line-height: 1.75; max-width: 320px; margin: 0; }
+    .wwd-grid { display: grid; grid-template-columns: 1fr 1fr; border: 2px solid #e8e4dc; border-radius: 10px; overflow: hidden; gap: 0; }
+    .wwd-card { background: #fff; padding: 32px 28px; }
+    .wwd-card:nth-child(1),
+    .wwd-card:nth-child(2) { border-bottom: 2px solid #e8e4dc; }
+    .wwd-card:nth-child(1),
+    .wwd-card:nth-child(3) { border-right: 2px solid #e8e4dc; }
+    .wwd-card-num { font-family: 'Playfair Display', serif; font-size: 44px; color: #f0e8d5; font-weight: 700; line-height: 1; margin-bottom: 12px; }
+    .wwd-card-title { font-size: 15px; font-weight: 700; color: #2c3e50; margin-bottom: 10px; font-family: 'Montserrat', sans-serif; }
+    .wwd-card-body { font-size: 14px; color: #666; line-height: 1.75; margin-bottom: 14px; }
+    .wwd-card-tag { display: inline-block; font-size: 10px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #9a6e1a; background: #fdf3e0; padding: 4px 10px; border-radius: 4px; }
+    .wwd-strip { margin-top: 24px; background: #2c3e50; border-radius: 10px; padding: 28px 32px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 20px; }
+    .wwd-strip p { color: #fff; font-size: 15px; line-height: 1.65; margin: 0; }
+    .wwd-strip a { background: #e74c3c; color: #fff; text-decoration: none; padding: 14px 28px; border-radius: 6px; font-size: 15px; font-weight: 700; white-space: nowrap; flex-shrink: 0; }
+
+    @media (max-width: 640px) {
+        .wwd-section { padding: 44px 0; }
+        .wwd-header { flex-direction: column; align-items: flex-start; gap: 12px; margin-bottom: 28px; }
+        .wwd-intro { max-width: 100%; }
+        .wwd-grid { grid-template-columns: 1fr; border-radius: 8px; }
+        .wwd-card { padding: 28px 20px; }
+        .wwd-card:nth-child(1),
+        .wwd-card:nth-child(2),
+        .wwd-card:nth-child(3) { border-right: none; border-bottom: 2px solid #e8e4dc; }
+        .wwd-card:nth-child(4) { border-bottom: none; }
+        .wwd-card-num { font-size: 36px; margin-bottom: 8px; }
+        .wwd-card-title { font-size: 16px; }
+        .wwd-card-body { font-size: 14px; }
+        .wwd-strip { flex-direction: column; align-items: flex-start; padding: 24px 20px; border-radius: 8px; gap: 16px; }
+        .wwd-strip p { font-size: 14px; }
+        .wwd-strip a { width: 100%; text-align: center; padding: 16px; font-size: 16px; min-height: 52px; display: flex; align-items: center; justify-content: center; }
+    }
+</style>
+
+<section class="wwd-section">
     <div class="container">
 
-        <div style="display:flex; align-items:flex-end; justify-content:space-between; flex-wrap:wrap; gap:20px; margin-bottom:40px;">
+        <div class="wwd-header">
             <div>
-                <p style="font-size:11px; font-weight:700; letter-spacing:2.5px; text-transform:uppercase; color:#b8882a; margin-bottom:10px;">What We Do</p>
-                <h2 style="font-family:'Playfair Display',serif; font-size:clamp(24px,3.5vw,34px); color:#2c3e50; margin-bottom:0; line-height:1.25;">One company. One specialty.<br>Done right the first time.</h2>
+                <p class="wwd-eyebrow">What We Do</p>
+                <h2 class="wwd-headline">One company. One specialty.<br>Done right the first time.</h2>
             </div>
-            <p style="font-size:14px; color:#666; line-height:1.75; max-width:320px; margin:0;">We don't do roofing, flooring, or kitchens on the side. Every crew member, every supplier relationship, every process we have is built around one thing — bathrooms.</p>
+            <p class="wwd-intro">We don't do roofing, flooring, or kitchens on the side. Every crew member, every supplier relationship, every process we have is built around one thing — bathrooms.</p>
         </div>
 
-        <!-- 4-card grid -->
-        <div style="display:grid; grid-template-columns:1fr 1fr; gap:2px; border:2px solid #e8e4dc; border-radius:10px; overflow:hidden;">
+        <div class="wwd-grid">
 
-            <div style="background:#fff; padding:36px 32px;">
-                <div style="font-family:'Playfair Display',serif; font-size:48px; color:#f0e8d5; font-weight:700; line-height:1; margin-bottom:14px;">01</div>
-                <h3 style="font-size:16px; font-weight:700; color:#2c3e50; margin-bottom:10px; font-family:'Montserrat',sans-serif;">Tub-to-Shower Conversions</h3>
-                <p style="font-size:14px; color:#666; line-height:1.75; margin-bottom:16px;">Your old tub comes out. A fully waterproofed, custom walk-in shower goes in. Most jobs are done in a single day — we leave your bathroom clean and your walls dry. No demo crew followed by a tile crew followed by a plumber. One team, start to finish.</p>
-                <span style="display:inline-block; font-size:11px; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; color:#9a6e1a; background:#fdf3e0; padding:4px 10px; border-radius:4px;">Our most requested job</span>
+            <div class="wwd-card">
+                <div class="wwd-card-num">01</div>
+                <h3 class="wwd-card-title">Tub-to-Shower Conversions</h3>
+                <p class="wwd-card-body">Your old tub comes out. A fully waterproofed, custom walk-in shower goes in. Most jobs are done in a single day — one team, start to finish. No demo crew followed by a tile crew followed by a plumber.</p>
+                <span class="wwd-card-tag">Our most requested job</span>
             </div>
 
-            <div style="background:#fff; padding:36px 32px; border-left:2px solid #e8e4dc;">
-                <div style="font-family:'Playfair Display',serif; font-size:48px; color:#f0e8d5; font-weight:700; line-height:1; margin-bottom:14px;">02</div>
-                <h3 style="font-size:16px; font-weight:700; color:#2c3e50; margin-bottom:10px; font-family:'Montserrat',sans-serif;">Full Bathroom Remodels</h3>
-                <p style="font-size:14px; color:#666; line-height:1.75; margin-bottom:16px;">From knocking out the old tile to setting the final fixture, we handle the whole room. One point of contact, one price quote, and one crew that shows up on time. No juggling subcontractors or chasing down permits yourself.</p>
-                <span style="display:inline-block; font-size:11px; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; color:#9a6e1a; background:#fdf3e0; padding:4px 10px; border-radius:4px;">Flat-rate, no surprises</span>
+            <div class="wwd-card">
+                <div class="wwd-card-num">02</div>
+                <h3 class="wwd-card-title">Full Bathroom Remodels</h3>
+                <p class="wwd-card-body">From knocking out the old tile to setting the final fixture, we handle the whole room. One point of contact, one price quote, one crew that shows up on time. No juggling subcontractors yourself.</p>
+                <span class="wwd-card-tag">Flat-rate, no surprises</span>
             </div>
 
-            <div style="background:#fff; padding:36px 32px; border-top:2px solid #e8e4dc;">
-                <div style="font-family:'Playfair Display',serif; font-size:48px; color:#f0e8d5; font-weight:700; line-height:1; margin-bottom:14px;">03</div>
-                <h3 style="font-size:16px; font-weight:700; color:#2c3e50; margin-bottom:10px; font-family:'Montserrat',sans-serif;">Senior & Accessible Showers</h3>
-                <p style="font-size:14px; color:#666; line-height:1.75; margin-bottom:16px;">Low-threshold entries, built-in teak seating, grab bars set into studs — not just drywall anchors. We've done dozens of these for aging parents and post-surgery recoveries. Safe to use at 70 and still looks sharp doing it.</p>
-                <span style="display:inline-block; font-size:11px; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; color:#9a6e1a; background:#fdf3e0; padding:4px 10px; border-radius:4px;">ADA-compliant options</span>
+            <div class="wwd-card">
+                <div class="wwd-card-num">03</div>
+                <h3 class="wwd-card-title">Senior & Accessible Showers</h3>
+                <p class="wwd-card-body">Low-threshold entries, built-in seating, grab bars set into studs — not just drywall anchors. We've done dozens of these for aging parents and post-surgery recoveries. Safe at 70, sharp-looking too.</p>
+                <span class="wwd-card-tag">ADA-compliant options</span>
             </div>
 
-            <div style="background:#fff; padding:36px 32px; border-top:2px solid #e8e4dc; border-left:2px solid #e8e4dc;">
-                <div style="font-family:'Playfair Display',serif; font-size:48px; color:#f0e8d5; font-weight:700; line-height:1; margin-bottom:14px;">04</div>
-                <h3 style="font-size:16px; font-weight:700; color:#2c3e50; margin-bottom:10px; font-family:'Montserrat',sans-serif;">Shower Upgrades & Replacements</h3>
-                <p style="font-size:14px; color:#666; line-height:1.75; margin-bottom:16px;">Cracked grout, a leaky pan, a surround that's seen better days — we replace it properly instead of caulking over the problem. New glass, new tile, new fixtures. If it's worth keeping, we keep it. If it's not, we tell you upfront.</p>
-                <span style="display:inline-block; font-size:11px; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; color:#9a6e1a; background:#fdf3e0; padding:4px 10px; border-radius:4px;">Honest assessments</span>
+            <div class="wwd-card">
+                <div class="wwd-card-num">04</div>
+                <h3 class="wwd-card-title">Shower Upgrades & Replacements</h3>
+                <p class="wwd-card-body">Cracked grout, a leaky pan, a surround that's seen better days — we replace it properly instead of caulking over the problem. New glass, new tile, new fixtures. Honest assessment, upfront price.</p>
+                <span class="wwd-card-tag">Honest assessments</span>
             </div>
 
         </div>
 
-        <!-- Warranty strip -->
-        <div style="margin-top:28px; background:#2c3e50; border-radius:10px; padding:28px 36px; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:20px;">
-            <p style="color:#fff; font-size:15px; line-height:1.65; margin:0;"><strong style="color:#f4b941;">Every job includes a lifetime warranty</strong> on labor and materials — for as long as you own the home. No asterisks.</p>
-            <a href="#hero-form" style="background:#e74c3c; color:#fff; text-decoration:none; padding:14px 28px; border-radius:6px; font-size:14px; font-weight:700; white-space:nowrap;">Get a Free Quote →</a>
+        <div class="wwd-strip">
+            <p><strong style="color:#f4b941;">Every job includes a lifetime warranty</strong> on labor and materials — for as long as you own the home. No asterisks.</p>
+            <a href="#hero-form">Get a Free Quote →</a>
         </div>
 
     </div>
