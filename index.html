@@ -618,7 +618,7 @@ footer{background:#1e1e1e;padding:34px 0 18px}
         </div>
         <div class="mob-trust-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
         <div class="mob-trust-label">5.0</div>
-        <div class="mob-trust-count">Based on 40+ Reviews</div>
+        <div class="mob-trust-count">Based on 25 Reviews</div>
       </div>
       <div class="mob-trust-box">
         <div class="mob-trust-logo">
@@ -1188,28 +1188,68 @@ function copyCode(code,btn){
   }).catch(function(){});
 }
 
-/* ─── FORMS ─── */
-document.getElementById('hero-form-el').addEventListener('submit',function(e){
+/* ─── FORMS → WEBHOOK → THANK YOU PAGE ─── */
+var WEBHOOK_URL = 'https://services.leadconnectorhq.com/hooks/YOUR_WEBHOOK_ID_HERE/webhook-trigger/YOUR_TRIGGER_ID_HERE';
+var THANKYOU_URL = 'thank-you.html'; // change to your actual thank-you page URL
+
+function submitToWebhook(formData, btn, successText) {
+  btn.disabled = true;
+  btn.textContent = 'Sending...';
+  fetch(WEBHOOK_URL, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(formData)
+  })
+  .then(function() {
+    if (window.dataLayer) window.dataLayer.push({ event: 'lead_form_submit', form: formData.form_source });
+    if (typeof fbq !== 'undefined') fbq('track', 'Lead');
+    window.location.href = THANKYOU_URL;
+  })
+  .catch(function() {
+    // Even if webhook fails, still fire pixels and redirect
+    if (window.dataLayer) window.dataLayer.push({ event: 'lead_form_submit', form: formData.form_source });
+    if (typeof fbq !== 'undefined') fbq('track', 'Lead');
+    window.location.href = THANKYOU_URL;
+  });
+}
+
+// Hero form
+document.getElementById('hero-form-el').addEventListener('submit', function(e) {
   e.preventDefault();
-  var b=document.getElementById('hero-submit');
-  b.textContent='Submitted! We\'ll call you shortly.';b.style.background='#27ae60';b.style.color='#fff';b.disabled=true;
-  if(window.dataLayer)window.dataLayer.push({event:'lead_form_submit',form:'hero'});
-  if(typeof fbq!=='undefined')fbq('track','Lead');
+  var inputs = this.querySelectorAll('input, textarea');
+  submitToWebhook({
+    form_source: 'hero',
+    name: inputs[0] ? inputs[0].value : '',
+    phone: inputs[1] ? inputs[1].value : '',
+    message: inputs[2] ? inputs[2].value : '',
+    page_url: window.location.href
+  }, document.getElementById('hero-submit'), 'Sending...');
 });
-document.getElementById('bottom-form-el').addEventListener('submit',function(e){
+
+// Bottom form
+document.getElementById('bottom-form-el').addEventListener('submit', function(e) {
   e.preventDefault();
-  var b=document.getElementById('bottom-submit');
-  b.textContent='Got it! We\'ll call you soon.';b.style.background='#27ae60';b.disabled=true;
-  if(window.dataLayer)window.dataLayer.push({event:'lead_form_submit',form:'bottom'});
-  if(typeof fbq!=='undefined')fbq('track','Lead');
+  var inputs = this.querySelectorAll('input');
+  submitToWebhook({
+    form_source: 'bottom',
+    name: inputs[0] ? inputs[0].value : '',
+    phone: inputs[1] ? inputs[1].value : '',
+    page_url: window.location.href
+  }, document.getElementById('bottom-submit'), 'Sending...');
 });
-var mf=document.getElementById('mob-form-el');
-if(mf)mf.addEventListener('submit',function(e){
+
+// Mobile form
+var mf = document.getElementById('mob-form-el');
+if (mf) mf.addEventListener('submit', function(e) {
   e.preventDefault();
-  var b=document.getElementById('mob-submit');
-  b.textContent='Submitted!';b.style.background='#27ae60';b.disabled=true;
-  if(window.dataLayer)window.dataLayer.push({event:'lead_form_submit',form:'mobile'});
-  if(typeof fbq!=='undefined')fbq('track','Lead');
+  var inputs = this.querySelectorAll('input, textarea');
+  submitToWebhook({
+    form_source: 'mobile',
+    name: inputs[0] ? inputs[0].value : '',
+    phone: inputs[1] ? inputs[1].value : '',
+    message: inputs[2] ? inputs[2].value : '',
+    page_url: window.location.href
+  }, document.getElementById('mob-submit'), 'Sending...');
 });
 
 /* ─── SMOOTH SCROLL ─── */
