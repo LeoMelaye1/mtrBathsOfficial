@@ -195,30 +195,31 @@ a{text-decoration:none;color:inherit}
 .vdot-y{background:#d32323}
 
 /* ── MID CTA ── */
-.mid-cta{background:#c0392b;padding:22px 0;text-align:center}
+.mid-cta{background:#2c3e50;padding:22px 0;text-align:center}
 .mid-cta h3{font-family:'Raleway',sans-serif;font-size:clamp(15px,2vw,20px);color:#fff;font-weight:900;margin-bottom:13px}
 .mid-cta-btns{display:flex;align-items:center;justify-content:center;gap:11px;flex-wrap:wrap}
 .btn-gold{background:#f0c040;color:#1a1a1a;padding:12px 26px;border-radius:3px;font-family:'Raleway',sans-serif;font-weight:900;font-size:14px;display:inline-block;transition:background .15s}
 .btn-gold:hover{background:#d4a800}
-.btn-ow{background:transparent;color:#fff;border:2px solid rgba(255,255,255,.7);padding:10px 24px;border-radius:3px;font-family:'Raleway',sans-serif;font-weight:700;font-size:14px;display:inline-block}
+.btn-ow{background:transparent;color:rgba(255,255,255,.85);border:2px solid rgba(255,255,255,.4);padding:10px 24px;border-radius:3px;font-family:'Raleway',sans-serif;font-weight:700;font-size:14px;display:inline-block}
 .btn-ow:hover{background:rgba(255,255,255,.08)}
 
 /* ── DARK CTA ── */
 .dark-cta{background:#1a1a1a url('https://ik.imagekit.io/mtrbaths/Screen%20Shot%202025-03-17%20at%203.33.12%20AM.png?updatedAt=1742247173878') center/cover no-repeat;position:relative;padding:54px 0;text-align:center}
-.dark-cta::before{content:'';position:absolute;inset:0;background:rgba(0,0,0,.74)}
+.dark-cta::before{content:'';position:absolute;inset:0;background:rgba(0,0,0,.76)}
 .dark-cta-inner{position:relative;max-width:660px;margin:0 auto}
-.dark-cta h2{font-family:'Raleway',sans-serif;font-size:clamp(17px,2.5vw,25px);font-weight:900;color:#fff;background:#c0392b;display:inline-block;padding:5px 14px;margin-bottom:16px;border-radius:2px}
-.dark-cta p{font-size:13px;color:rgba(255,255,255,.8);line-height:1.8;margin-bottom:22px;background:rgba(150,15,5,.62);padding:13px 18px;border-radius:2px}
+.dark-cta h2{font-family:'Raleway',sans-serif;font-size:clamp(17px,2.5vw,25px);font-weight:900;color:#fff;margin-bottom:14px}
+.dark-cta h2 span{color:#f0c040}
+.dark-cta p{font-size:14px;color:rgba(255,255,255,.7);line-height:1.8;margin-bottom:24px}
 .dark-cta a{display:inline-block;background:#f0c040;color:#1a1a1a;font-family:'Raleway',sans-serif;font-size:15px;font-weight:900;padding:13px 44px;border-radius:3px;transition:background .15s}
 .dark-cta a:hover{background:#d4a800}
 
 /* ── BOTTOM FORM STRIP ── */
-.bottom-form-strip{background:#f0c040;padding:24px 0}
+.bottom-form-strip{background:#f7f7f5;border-top:3px solid #f0c040;padding:28px 0}
 .bfs-inner{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
 .bfs-title{font-family:'Raleway',sans-serif;font-size:clamp(14px,1.7vw,18px);font-weight:900;color:#1a1a1a;white-space:nowrap;margin-right:6px}
-.bfs-input{flex:1 1 140px;min-width:120px;background:#fff;border:none;border-radius:3px;padding:12px 13px;font-size:14px;font-family:'Open Sans',sans-serif;color:#333}
+.bfs-input{flex:1 1 140px;min-width:120px;background:#fff;border:2px solid #ddd;border-radius:3px;padding:12px 13px;font-size:14px;font-family:'Open Sans',sans-serif;color:#333}
 .bfs-input::placeholder{color:#aaa}
-.bfs-input:focus{outline:2px solid #2c3e50}
+.bfs-input:focus{outline:none;border-color:#2c3e50}
 .bfs-btn{background:#2c3e50;color:#fff;border:none;border-radius:3px;padding:12px 20px;font-family:'Raleway',sans-serif;font-size:14px;font-weight:800;cursor:pointer;white-space:nowrap;transition:background .15s}
 .bfs-btn:hover{background:#1a2c3e}
 
@@ -247,34 +248,164 @@ footer{background:#1e1e1e;padding:34px 0 18px}
 .mb-call{flex:1;background:#c0392b;color:#fff;padding:13px;min-height:50px;font-size:14px;font-weight:700;border-radius:6px;text-align:center;display:flex;align-items:center;justify-content:center;font-family:'Raleway',sans-serif}
 .mb-quote{flex:1;background:#f0c040;color:#1a1a1a;padding:13px;min-height:50px;font-size:14px;font-weight:700;border-radius:6px;text-align:center;display:flex;align-items:center;justify-content:center;font-family:'Raleway',sans-serif}
 
-/* ── RESPONSIVE ── */
+/* ══════════════════════════════════════════
+   RESPONSIVE — TABLET (max 920px)
+   ══════════════════════════════════════════ */
 @media(max-width:920px){
   .coupons-grid{grid-template-columns:repeat(2,1fr)}
-  .reviews-grid{grid-template-columns:1fr}
+  .coupon:nth-child(2){border-right:none}
+  .coupon:nth-child(1),.coupon:nth-child(2){border-bottom:2px dashed #ccc}
+  .reviews-grid{grid-template-columns:1fr 1fr}
   .ba-grid{grid-template-columns:1fr 1fr}
   .about-inner{flex-direction:column}
-  .about-media{flex:none;width:100%}
+  .about-media{flex:none;width:100%;max-width:560px;margin:0 auto}
   .photo-grid{grid-template-columns:repeat(4,1fr)}
   .proj-grid{grid-template-columns:repeat(3,1fr)}
   .services-grid{grid-template-columns:repeat(2,1fr)}
+  .bottom-form-inner{grid-template-columns:1fr}
+  .hero-inner{max-width:100%}
+  .hero-right-card{flex:0 0 280px}
 }
+
+/* ══════════════════════════════════════════
+   RESPONSIVE — MOBILE (max 600px)
+   ══════════════════════════════════════════ */
 @media(max-width:600px){
-  body{padding-bottom:72px}
+
+  /* ── Spacing ── */
+  body{padding-bottom:70px}
+  .container{padding:0 16px}
+
+  /* ── Mobile sticky bar ── */
   .mobile-bar{display:flex}
-  .hero-inner{flex-direction:column}
-  .hero-right-card{flex:none;width:100%}
-  .hero-left-card{text-align:center}
+
+  /* ── Nav ── */
+  .top-nav{position:sticky;top:0;z-index:100}
   .nav-links{display:none}
-  .nav-phone{font-size:12px;padding:8px 14px}
-  .ba-grid{grid-template-columns:1fr}
-  .proj-grid{grid-template-columns:repeat(2,1fr)}
-  .services-grid{grid-template-columns:1fr 1fr}
-  .bfs-inner{flex-direction:column;align-items:stretch}
-  .bfs-title{text-align:center}
-  .bfs-btn{width:100%;padding:14px}
-  .footer-inner{flex-direction:column}
-  .photo-grid{grid-template-columns:repeat(4,1fr)}
-  input,select{font-size:16px !important}
+  .nav-phone{font-size:13px;padding:9px 14px;gap:6px}
+  .nav-logo img{height:38px}
+  .nav-inner{height:54px}
+
+  /* ── Urgency bar ── */
+  .urgency-bar{font-size:12px;padding:8px 12px;line-height:1.4}
+
+  /* ── Rating bar ── */
+  .rating-row{gap:4px 12px;padding:4px 0}
+  .ri{font-size:11px;gap:4px}
+  .ri strong{font-size:11px}
+  .rbar-div{display:none}
+
+  /* ── HERO ── */
+  .hero{padding:32px 0 36px}
+  .hero-inner{flex-direction:column;gap:0}
+  .hero-left-card{padding:24px 20px;text-align:left;border-radius:0}
+  .hero-right-card{flex:none;width:100%;padding:22px 20px;border-radius:0}
+  .hero-pre{font-size:11px}
+  .hero-h1{font-size:clamp(24px,7vw,32px);margin-bottom:8px}
+  .hero-sub{font-size:13px;margin-bottom:14px}
+  .hero-checks{gap:8px;margin-bottom:18px}
+  .hero-checks li{font-size:13px}
+  .hero-call{font-size:16px;padding:15px;min-height:52px}
+  .hero-rating{font-size:11px;gap:5px;justify-content:flex-start}
+  .star-row{font-size:12px}
+  .form-heading{font-size:15px;margin-bottom:14px}
+  .hf-input{font-size:16px!important;padding:14px 13px;margin-bottom:10px}
+  .hf-input[style*="height"]{height:96px!important}
+  .hf-submit{font-size:16px;padding:16px;min-height:54px}
+
+  /* ── Coupons ── */
+  .coupons{padding:28px 0}
+  .coupons-header{margin-bottom:16px}
+  .coupons-title{font-size:18px}
+  .coupons-subtitle{font-size:12px}
+  .coupons-grid{grid-template-columns:1fr 1fr;border-radius:0}
+  .coupon:nth-child(1){border-bottom:2px dashed #ccc}
+  .coupon:nth-child(2){border-right:none;border-bottom:2px dashed #ccc}
+  .coupon:nth-child(3){border-bottom:none}
+  .coupon:nth-child(4){border-right:none;border-bottom:none}
+  .coupon-img{height:70px}
+  .coupon-body{padding:8px 10px 10px}
+  .coupon-badge{font-size:13px}
+  .coupon-desc{font-size:10px}
+  .coupon-cta-btn{font-size:11px;padding:8px}
+  .co-input{font-size:16px!important}
+
+  /* ── About ── */
+  .about{padding:40px 0}
+  .about-media{max-width:100%}
+  .photo-grid{grid-template-columns:repeat(2,1fr);gap:6px}
+  .photo-grid img{height:80px}
+  .proj-badge{width:100%;justify-content:center}
+  .owner-sig{flex-direction:column;text-align:center;gap:10px;padding:16px}
+  .owner-sig img{width:64px;height:64px}
+
+  /* ── Call strip ── */
+  .call-strip{padding:14px 0 24px}
+  .call-strip a{width:100%;display:block;text-align:center;padding:16px;font-size:16px}
+
+  /* ── Gallery ── */
+  .gallery-section{padding:36px 0}
+  .ba-grid{grid-template-columns:1fr;gap:10px}
+  .ba-img img{height:150px}
+  .proj-grid{grid-template-columns:repeat(2,1fr);gap:6px}
+  .proj-item img{height:auto}
+
+  /* ── Reviews ── */
+  .reviews{padding:36px 0}
+  .reviews-grid{grid-template-columns:1fr}
+  .review-card{padding:20px 18px}
+  .review-text{font-size:13px}
+
+  /* ── Mid CTA ── */
+  .mid-cta{padding:20px 0}
+  .mid-cta h3{font-size:15px;margin-bottom:12px;padding:0 8px}
+  .mid-cta-btns{flex-direction:column;gap:8px;width:100%;padding:0 16px}
+  .btn-gold,.btn-ow{width:100%;text-align:center;padding:15px;font-size:15px;min-height:52px;display:flex;align-items:center;justify-content:center}
+
+  /* ── Dark CTA ── */
+  .dark-cta{padding:40px 0}
+  .dark-cta h2{font-size:18px;margin-bottom:12px}
+  .dark-cta p{font-size:13px;margin-bottom:20px}
+  .dark-cta a{padding:14px 28px;font-size:15px;width:100%;text-align:center;display:block}
+
+  /* ── Bottom form ── */
+  .bottom-form-strip{padding:22px 0}
+  .bfs-inner{flex-direction:column;align-items:stretch;gap:10px}
+  .bfs-title{text-align:center;white-space:normal;font-size:16px;margin-right:0}
+  .bfs-input{width:100%;font-size:16px!important;min-height:50px}
+  .bfs-btn{width:100%;padding:16px;font-size:15px;min-height:52px}
+
+  /* ── Services ── */
+  .services{padding:36px 0}
+  .services-grid{grid-template-columns:1fr 1fr;gap:14px}
+  .service-img{height:140px}
+  .service-name{font-size:12px}
+
+  /* ── Footer ── */
+  footer{padding:28px 0 16px}
+  .footer-inner{flex-direction:column;gap:24px}
+  .footer-col p{font-size:12px}
+
+  /* ── Typography ── */
+  .section-title{font-size:clamp(18px,5.5vw,24px);margin-bottom:20px}
+  .section-label{font-size:10px;letter-spacing:2px}
+  .about-h2{font-size:clamp(19px,5.5vw,24px)}
+  .about-p{font-size:13px}
+  .about-checks li{font-size:13px}
+
+  /* ── Prevent iOS zoom on all inputs ── */
+  input,select,textarea{font-size:16px!important}
+}
+
+/* ══════════════════════════════════════════
+   RESPONSIVE — VERY SMALL (max 380px)
+   ══════════════════════════════════════════ */
+@media(max-width:380px){
+  .hero-h1{font-size:22px}
+  .coupons-grid{grid-template-columns:1fr}
+  .coupon{border-right:none!important;border-bottom:2px dashed #ccc!important}
+  .coupon:last-child{border-bottom:none!important}
+  .nav-phone span{display:none}
 }
 </style>
 </head>
@@ -589,7 +720,7 @@ footer{background:#1e1e1e;padding:34px 0 18px}
 <section class="reviews" id="reviews">
   <div class="container">
     <span class="section-label">Verified Reviews</span>
-    <h2 class="section-title">What <span class="geo-city4">Your Neighbors</span> Are Saying</h2>
+    <h2 class="section-title">See What <span class="geo-city4">Homeowners Near You</span> Are Saying</h2>
     <p class="reviews-sub">Real reviews from real customers &mdash; verified on Google, Yelp &amp; Yahoo Local.</p>
     <div class="reviews-grid">
 
@@ -660,7 +791,7 @@ footer{background:#1e1e1e;padding:34px 0 18px}
 <!-- DARK CTA -->
 <section class="dark-cta">
   <div class="dark-cta-inner">
-    <h2><span class="geo-city5">Northern California</span>&rsquo;s Trusted Bathroom Remodeling Experts</h2>
+    <h2><span class="dark-cta h2 span" style="color:#f0c040"><span class="geo-city5">Northern California</span></span>&rsquo;s Trusted Bathroom Remodeling Experts</h2>
     <p>Looking for a bathroom remodeler you can actually trust near <span class="geo-city6">you</span>? MTR Baths has spent 13+ years earning 5-star reviews across Northern California with over 3,000 completed projects. Whether you need a tub-to-shower conversion, a senior-safe walk-in, or a full remodel &mdash; call us for your free in-home estimate.</p>
     <a href="tel:+19168920745">Call Now (916) 892-0745</a>
   </div>
