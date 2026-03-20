@@ -416,18 +416,14 @@ footer{background:#1e1e1e;padding:34px 0 18px}
 
 /* ── Hero card ── */
 .mob-hero-wrap{position:relative;overflow:hidden}
-.mob-hero-wrap::before{content:'';position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=800&q=80&fm=jpg&fit=crop&crop=center') center/cover no-repeat;filter:brightness(.45)}
-.mob-hero-card{position:relative;z-index:1;text-align:center;padding:28px 20px 22px}
-.mob-hero-h1{font-family:'Raleway',sans-serif;font-size:26px;font-weight:900;color:#fff;line-height:1.2;margin-bottom:8px}
-.mob-hero-sub{font-size:15px;font-weight:700;color:#d97706;margin-bottom:14px}
-.mob-hero-divider{border:none;border-top:1px solid #e0e0e0;margin:14px 0}
-.mob-hero-cert{font-size:11px;font-weight:700;color:rgba(255,255,255,.75);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:16px}
-.mob-trust-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:18px}
-.mob-trust-box{border:1px solid rgba(255,255,255,.15);border-radius:8px;padding:14px 10px;display:flex;flex-direction:column;align-items:center;gap:4px;text-align:center;background:rgba(255,255,255,.95);box-shadow:0 2px 8px rgba(0,0,0,.2)}
-.mob-trust-logo{display:flex;align-items:center;gap:6px;justify-content:center;margin-bottom:4px}
-.mob-trust-stars{color:#d97706;font-size:14px;letter-spacing:1px}
-.mob-trust-label{font-size:12px;font-weight:800;color:#222;font-family:'Raleway',sans-serif}
-.mob-trust-count{font-size:10px;color:#888}
+.mob-hero-wrap::before{content:'';position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=800&q=80&fm=jpg&fit=crop&crop=center') center/cover no-repeat;filter:brightness(.55)}
+.mob-hero-card{position:relative;z-index:1;text-align:center;padding:28px 16px 22px;background:#fff}
+.mob-hero-h1{font-family:'Raleway',sans-serif;font-size:26px;font-weight:900;color:#1a1a1a;line-height:1.2;margin-bottom:8px}
+.mob-hero-sub{font-size:14px;font-weight:700;color:#d97706;margin-bottom:14px}
+.mob-hero-divider{border:none;border-top:1px solid #e0e0e0;margin:12px 0}
+.mob-hero-cert{font-size:10px;font-weight:700;color:#888;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:14px}
+.mob-trust-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:16px}
+.mob-trust-box{border:1px solid #e8e8e8;border-radius:8px;padding:10px;display:flex;align-items:center;justify-content:center;background:#fff;box-shadow:0 1px 4px rgba(0,0,0,.08);min-height:0}
 .mob-call-big{display:flex;align-items:center;justify-content:center;gap:10px;background:#1e293b;color:#fff;padding:16px;border-radius:6px;font-family:'Raleway',sans-serif;font-size:18px;font-weight:600;width:100%;margin-bottom:10px;letter-spacing:.2px}
 .mob-phone-cta{display:flex;flex-direction:column;align-items:center;gap:4px;padding:14px 16px;background:rgba(255,255,255,.1);border:2px solid rgba(255,255,255,.3);border-radius:6px;width:100%}
 .mob-phone-cta-label{font-size:12px;color:rgba(255,255,255,.8);font-weight:600;letter-spacing:.5px;text-transform:uppercase}
@@ -628,19 +624,19 @@ footer{background:#1e1e1e;padding:34px 0 18px}
     <hr class="mob-hero-divider" style="border-color:rgba(255,255,255,.2);margin:14px 0">
     <p class="mob-hero-cert">Certified &mdash; Licensed &mdash; Lifetime Warranty</p>
     <div class="mob-trust-grid">
-      <!-- Google badge — exact match to screenshot -->
-      <div class="mob-trust-box">
-        <div style="display:flex;align-items:center;gap:7px;margin-bottom:5px">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" alt="Google" style="width:26px;height:26px;flex-shrink:0">
-          <span style="font-size:14px;font-weight:800;color:#222;font-family:'Raleway',sans-serif">Google</span>
+      <!-- Google badge — compact horizontal, exact match to reference screenshot -->
+      <div class="mob-trust-box" style="flex-direction:column;gap:0;padding:8px 10px;align-items:flex-start">
+        <div style="display:flex;align-items:center;gap:5px;margin-bottom:3px">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" alt="Google" style="width:20px;height:20px;flex-shrink:0">
+          <span style="font-size:13px;font-weight:800;color:#222;font-family:'Raleway',sans-serif">Google</span>
         </div>
-        <div style="color:#f59e0b;font-size:16px;letter-spacing:2px;margin-bottom:2px">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-        <div style="font-size:13px;font-weight:800;color:#222;font-family:'Raleway',sans-serif">5.0</div>
-        <div style="font-size:11px;color:#666;margin-top:1px">Based on 25 Reviews</div>
+        <div style="color:#f59e0b;font-size:13px;letter-spacing:1px;line-height:1;margin-bottom:2px">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <div style="font-size:12px;font-weight:800;color:#222;font-family:'Raleway',sans-serif;line-height:1">5.0</div>
+        <div style="font-size:10px;color:#888;margin-top:1px;line-height:1.2">Based on 40+ Reviews</div>
       </div>
-      <!-- BBB badge — using uploaded logo -->
-      <div class="mob-trust-box" style="padding:12px 10px;justify-content:center">
-        <img src="Untitled design (2).png" alt="BBB Accredited Business" style="width:100%;max-width:140px;height:auto;display:block;margin:0 auto">
+      <!-- BBB badge — logo fills the box -->
+      <div class="mob-trust-box" style="padding:8px">
+        <img src="bbb-accredited.png" alt="BBB Accredited Business" style="width:100%;height:auto;display:block;max-height:60px;object-fit:contain">
       </div>
     </div>
     <a href="tel:+19168920745" class="mob-call-big">&#128222; Tap To Call Now</a>
@@ -651,7 +647,7 @@ footer{background:#1e1e1e;padding:34px 0 18px}
   <!-- ② ABOUT — blue bar + VIDEO + why choose -->
   <div class="mob-about-bar">13+ Years Serving <span class="geo-city">Northern California</span></div>
   <div style="background:#000;position:relative;overflow:hidden">
-    <video autoplay muted playsinline loop preload="auto" poster="video-thumb.jpg" style="width:100%;height:220px;object-fit:cover;display:block">
+    <video id="mob-about-video" playsinline preload="auto" poster="video-thumb.jpg" controls style="width:100%;height:220px;object-fit:cover;display:block">
       <source src="owner-walkthrough.mp4" type="video/mp4">
       <source src="hero-bg.mp4" type="video/mp4">
     </video>
@@ -1279,6 +1275,16 @@ function copyCode(code,btn){
     setTimeout(function(){btn.textContent=orig;if(cop)cop.style.display='none';},2500);
   }).catch(function(){});
 }
+
+/* ─── MOBILE VIDEO — autoplay once fully buffered, muted by default, controls shown ─── */
+(function(){
+  var v = document.getElementById('mob-about-video');
+  if(!v) return;
+  v.muted = true; // start muted so autoplay is allowed by browsers
+  v.addEventListener('canplaythrough', function(){
+    v.play().catch(function(){});
+  }, {once: true});
+})();
 
 /* ─── MOBILE FAQ ACCORDION ─── */
 document.querySelectorAll('.mob-faq-q').forEach(function(q){
