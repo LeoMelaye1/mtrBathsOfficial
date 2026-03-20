@@ -37,9 +37,8 @@ a{text-decoration:none;color:inherit}
 .urgency-bar a{color:#222;font-weight:800;text-decoration:underline}
 
 /* ── HERO ── */
-.hero{background:#111;position:relative;padding:58px 0 76px;overflow:hidden}
-.hero-video-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.38;z-index:0;pointer-events:none}
-.hero::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(0,0,0,.6) 0%,rgba(0,0,0,.4) 100%);z-index:1}
+.hero{background:#111 url('https://s.yimg.com/bj/cb5f/cb5fbd171105b4b9cf8986e406b53b17.jpg') center/cover no-repeat;position:relative;padding:58px 0 76px;overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(0,0,0,.62) 0%,rgba(0,0,0,.45) 100%);z-index:1}
 .hero-inner{position:relative;z-index:2;display:flex;justify-content:center;gap:0;max-width:880px;margin:0 auto}
 .hero-left-card{background:rgba(232,232,232,.97);padding:34px 30px;flex:1 1 0;min-width:0}
 .hero-pre{font-size:12px;color:#555;margin-bottom:8px;line-height:1.4}
@@ -118,22 +117,6 @@ a{text-decoration:none;color:inherit}
 .trust-items{display:flex;align-items:center;justify-content:center;gap:6px 24px;flex-wrap:wrap}
 .trust-item{font-size:12px;font-weight:600;color:rgba(255,255,255,.8)}
 .tdiv{color:rgba(255,255,255,.2);font-size:14px}
-
-/* ── CREDS (light bg — proper colored logos) ── */
-.creds-strip{background:#f7f7f5;border-top:1px solid #eee;border-bottom:1px solid #eee;padding:18px 0;text-align:center}
-.creds-strip p{font-size:13px;font-weight:600;color:#555;margin-bottom:12px}
-.creds-logos{display:flex;align-items:center;justify-content:center;gap:28px;flex-wrap:wrap}
-/* proper brand logos on light bg — actual colors, reasonable sizing, no filters */
-.creds-google{display:flex;align-items:center;gap:5px}
-.creds-google svg{width:55px;height:18px}
-.creds-yelp{display:flex;align-items:center;gap:4px}
-.creds-yelp-burst{color:#d32323;font-size:16px}
-.creds-yelp-text{font-family:'Open Sans',sans-serif;font-size:14px;font-weight:700;color:#d32323;letter-spacing:-.3px}
-.creds-facebook{display:flex;align-items:center;gap:4px}
-.creds-facebook svg{width:16px;height:16px}
-.creds-facebook span{font-size:14px;font-weight:700;color:#1877f2}
-.creds-badge{display:flex;align-items:center;gap:4px;background:#fff;border:1px solid #ddd;border-radius:4px;padding:4px 10px}
-.creds-badge span{font-size:12px;font-weight:700;color:#333}
 
 /* ── ABOUT ── */
 .about{background:#fff;padding:60px 0}
@@ -321,11 +304,8 @@ footer{background:#1e1e1e;padding:34px 0 18px}
   <a href="tel:+19168920745">(916) 892-0745</a> &nbsp;&middot;&nbsp; Expires March 31
 </div>
 
-<!-- HERO with uploaded video background -->
+<!-- HERO — static photo background for fast load -->
 <section class="hero" id="main-form-anchor">
-  <video class="hero-video-bg" autoplay muted loop playsinline>
-    <source src="hero-bg.mp4" type="video/mp4">
-  </video>
   <div class="container">
     <div class="hero-inner">
       <div class="hero-left-card">
@@ -371,22 +351,27 @@ footer{background:#1e1e1e;padding:34px 0 18px}
   </div>
 </section>
 
-<!-- RATING BAR -->
+<!-- SINGLE COMBINED TRUST + RATINGS BAR -->
 <div class="rating-bar">
   <div class="container">
     <div class="rating-row">
+      <!-- Google rating -->
       <div class="ri">
         <span class="g-mark"><svg viewBox="0 0 18 18" xmlns="http://www.w3.org/2000/svg"><path fill="#4285F4" d="M17.64 9.2c0-.637-.057-1.251-.164-1.84H9v3.481h4.844a4.14 4.14 0 0 1-1.796 2.716v2.259h2.908c1.702-1.567 2.684-3.875 2.684-6.615z"/><path fill="#34A853" d="M9 18c2.43 0 4.467-.806 5.956-2.184l-2.908-2.259c-.806.54-1.837.86-3.048.86-2.344 0-4.328-1.584-5.036-3.711H.957v2.332A8.997 8.997 0 0 0 9 18z"/><path fill="#FBBC05" d="M3.964 10.706A5.41 5.41 0 0 1 3.682 9c0-.593.102-1.17.282-1.706V4.962H.957A8.996 8.996 0 0 0 0 9c0 1.452.348 2.827.957 4.038l3.007-2.332z"/><path fill="#EA4335" d="M9 3.58c1.321 0 2.508.454 3.44 1.345l2.582-2.58C13.463.891 11.426 0 9 0A8.997 8.997 0 0 0 .957 4.962L3.964 7.294C4.672 5.163 6.656 3.58 9 3.58z"/></svg></span>
-        <strong>5.0</strong><span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span><span>Google</span>
+        <strong>5.0</strong><span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span><span style="opacity:.7">Google</span>
       </div>
       <div class="rbar-div">&middot;</div>
-      <div class="ri"><span class="y-mark">y!</span><strong>5.0</strong><span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span><span>Yelp (55+ reviews)</span></div>
+      <!-- Yelp rating -->
+      <div class="ri"><span class="y-mark">y!</span><strong>5.0</strong><span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span><span style="opacity:.7">Yelp (55+)</span></div>
       <div class="rbar-div">&middot;</div>
-      <div class="ri"><span class="fb-mark">f</span><strong>5.0</strong><span>Facebook</span></div>
+      <!-- Facebook -->
+      <div class="ri"><span class="fb-mark">f</span><strong>5.0</strong><span style="opacity:.7">Facebook</span></div>
       <div class="rbar-div">&middot;</div>
-      <div class="ri"><span class="bbb-mark">BBB</span><strong>A+</strong><span>Accredited</span></div>
+      <!-- BBB -->
+      <div class="ri"><span class="bbb-mark">BBB</span><strong>A+</strong><span style="opacity:.7">Accredited</span></div>
       <div class="rbar-div">&middot;</div>
-      <div class="ri"><strong>CA #965267</strong><span>Licensed &amp; Insured</span></div>
+      <!-- License -->
+      <div class="ri"><strong>CA #965267</strong><span style="opacity:.7">Licensed &amp; Insured</span></div>
     </div>
   </div>
 </div>
@@ -512,46 +497,6 @@ footer{background:#1e1e1e;padding:34px 0 18px}
 </div>
 
 <!-- CREDS — proper colored logos on light bg -->
-<div class="creds-strip">
-  <p>Certified, Accredited &amp; Trusted</p>
-  <div class="creds-logos">
-    <!-- Google — full wordmark SVG, proper colors -->
-    <div class="creds-google">
-      <svg viewBox="0 0 272 92" xmlns="http://www.w3.org/2000/svg" style="width:64px;height:auto">
-        <path fill="#EA4335" d="M115.75 47.18c0 12.77-9.99 22.18-22.25 22.18s-22.25-9.41-22.25-22.18C71.25 34.32 81.24 25 93.5 25s22.25 9.32 22.25 22.18zm-9.74 0c0-7.98-5.79-13.44-12.51-13.44S80.99 39.2 80.99 47.18c0 7.9 5.79 13.44 12.51 13.44s12.51-5.55 12.51-13.44z"/>
-        <path fill="#FBBC05" d="M163.75 47.18c0 12.77-9.99 22.18-22.25 22.18s-22.25-9.41-22.25-22.18c0-12.85 9.99-22.18 22.25-22.18s22.25 9.32 22.25 22.18zm-9.74 0c0-7.98-5.79-13.44-12.51-13.44s-12.51 5.46-12.51 13.44c0 7.9 5.79 13.44 12.51 13.44s12.51-5.55 12.51-13.44z"/>
-        <path fill="#4285F4" d="M209.75 26.34v39.82c0 16.38-9.66 23.07-21.08 23.07-10.75 0-17.22-7.19-19.66-13.07l8.48-3.53c1.51 3.61 5.21 7.87 11.17 7.87 7.31 0 11.84-4.51 11.84-13v-3.19h-.34c-2.18 2.69-6.38 5.04-11.68 5.04-11.09 0-21.25-9.66-21.25-22.09 0-12.52 10.16-22.26 21.25-22.26 5.29 0 9.49 2.35 11.68 4.96h.34v-3.61h9.25zm-8.56 20.92c0-7.81-5.21-13.52-11.84-13.52-6.72 0-12.35 5.71-12.35 13.52 0 7.73 5.63 13.36 12.35 13.36 6.63 0 11.84-5.63 11.84-13.36z"/>
-        <path fill="#34A853" d="M225 3v65h-9.5V3h9.5z"/>
-        <path fill="#EA4335" d="M262.02 54.48l7.56 5.04c-2.44 3.61-8.32 9.83-18.48 9.83-12.6 0-22.01-9.74-22.01-22.18 0-13.19 9.49-22.18 20.92-22.18 11.51 0 17.14 9.16 18.98 14.11l1.01 2.52-29.65 12.28c2.27 4.45 5.8 6.72 10.75 6.72 4.96 0 8.4-2.44 10.92-6.14zm-23.27-7.98l19.82-8.23c-1.09-2.77-4.37-4.7-8.23-4.7-4.95 0-11.84 4.37-11.59 12.93z"/>
-        <path fill="#4285F4" d="M35.29 41.41V32h31.09c.31 1.59.47 3.52.47 5.57 0 6.91-1.89 15.46-7.98 21.55-5.93 6.17-13.5 9.49-23.56 9.49C16.32 68.61 0 53 0 34S16.32-.39 35.31-.39c10.29 0 17.62 4.03 23.14 9.31l-6.5 6.5c-3.95-3.71-9.31-6.6-16.64-6.6-13.6 0-24.23 10.96-24.23 24.56s10.63 24.56 24.23 24.56c8.82 0 13.83-3.55 17.05-6.77 2.61-2.61 4.33-6.35 5.01-11.45l-22.08.69z"/>
-      </svg>
-    </div>
-    <!-- Yelp — red text, burst icon -->
-    <div class="creds-yelp">
-      <svg viewBox="0 0 60 24" style="width:52px;height:auto" xmlns="http://www.w3.org/2000/svg">
-        <text x="0" y="19" font-family="Arial,sans-serif" font-size="20" font-weight="900" fill="#d32323">yelp</text>
-      </svg>
-    </div>
-    <!-- Facebook — proper blue f logo -->
-    <div class="creds-facebook">
-      <svg viewBox="0 0 24 24" style="width:18px;height:18px" xmlns="http://www.w3.org/2000/svg">
-        <path fill="#1877f2" d="M24 12.073C24 5.405 18.627 0 12 0S0 5.405 0 12.073C0 18.1 4.388 23.094 10.125 24v-8.437H7.078v-3.49h3.047V9.41c0-3.025 1.792-4.697 4.533-4.697 1.312 0 2.686.236 2.686.236v2.97h-1.514c-1.491 0-1.956.931-1.956 1.887v2.268h3.328l-.532 3.49h-2.796V24C19.612 23.094 24 18.1 24 12.073z"/>
-      </svg>
-      <span>Facebook</span>
-    </div>
-    <!-- BBB -->
-    <div class="creds-badge">
-      <svg width="14" height="14" viewBox="0 0 20 20"><circle cx="10" cy="10" r="10" fill="#0033a0"/><text x="4" y="14" font-size="7" font-weight="900" fill="#fff" font-family="Arial">BBB</text></svg>
-      <span>A+ Accredited</span>
-    </div>
-    <!-- License -->
-    <div class="creds-badge">
-      <svg width="14" height="14" viewBox="0 0 20 20"><circle cx="10" cy="10" r="10" fill="#2c3e50"/><text x="5.5" y="14" font-size="7" font-weight="900" fill="#f0c040" font-family="Arial">CA</text></svg>
-      <span>Lic. #965267</span>
-    </div>
-  </div>
-</div>
-
 <!-- ABOUT + OWNER VIDEO -->
 <section class="about" id="about">
   <div class="container">
