@@ -37,7 +37,7 @@ a{text-decoration:none;color:inherit}
 .urgency-bar a{color:#222;font-weight:800;text-decoration:underline}
 
 /* ── HERO ── */
-.hero{background:#111 url('https://ik.imagekit.io/mtrbaths/Screen%20Shot%202025-03-17%20at%203.33.32%20AM.png?updatedAt=1742247173904&tr=w-1920,h-900,fo-auto,q-85') center/cover no-repeat;position:relative;padding:58px 0 76px;overflow:hidden}
+.hero{background:#111 url('https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=1920&q=85&fm=jpg&fit=crop&crop=center') center/cover no-repeat;position:relative;padding:58px 0 76px;overflow:hidden}
 .hero::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(0,0,0,.62) 0%,rgba(0,0,0,.45) 100%);z-index:1}
 .hero-inner{position:relative;z-index:2;display:flex;justify-content:center;gap:0;max-width:880px;margin:0 auto}
 .hero-left-card{background:rgba(232,232,232,.97);padding:34px 30px;flex:1 1 0;min-width:0}
@@ -60,7 +60,6 @@ a{text-decoration:none;color:inherit}
 .hf-input{width:100%;background:#fff;border:2px solid transparent;border-radius:3px;padding:11px 13px;font-size:14px;font-family:'Open Sans',sans-serif;color:#333;margin-bottom:9px;transition:border-color .2s}
 .hf-input::placeholder{color:#bbb}
 .hf-input:focus{outline:none;border-color:#f0c040}
-.hf-select{width:100%;background:#fff;border:2px solid transparent;border-radius:3px;padding:11px 13px;font-size:14px;font-family:'Open Sans',sans-serif;color:#666;margin-bottom:9px;appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M0 0l5 5 5-5z' fill='%23aaa'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 12px center}
 .hf-submit{width:100%;background:#f0c040;color:#1a1a1a;border:none;border-radius:3px;padding:14px;font-family:'Raleway',sans-serif;font-size:16px;font-weight:900;cursor:pointer;transition:background .15s}
 .hf-submit:hover{background:#d4a800}
 
@@ -78,10 +77,23 @@ a{text-decoration:none;color:inherit}
 .bbb-mark{display:inline-flex;align-items:center;justify-content:center;height:16px;padding:0 5px;border-radius:2px;background:#0033a0;flex-shrink:0;font-size:8px;font-weight:900;color:#fff;letter-spacing:.3px;font-family:'Open Sans',sans-serif}
 .rbar-div{color:rgba(255,255,255,.2);font-size:14px}
 
-/* ── COUPONS — lead-capture mechanic ── */
+/* ── COUPONS ── */
 .coupons{background:#fff;padding:36px 0}
-.coupons-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
-.coupon{border:2px dashed #ccc;border-radius:4px;overflow:hidden;position:relative;display:flex;flex-direction:column;min-height:260px}
+.coupons-header{text-align:center;margin-bottom:20px}
+.coupons-eyebrow{display:inline-flex;align-items:center;gap:10px;font-family:'Raleway',sans-serif;font-size:13px;font-weight:900;text-transform:uppercase;letter-spacing:2px;color:#555}
+.coupons-eyebrow::before,.coupons-eyebrow::after{content:'✂';font-size:16px;color:#c0392b}
+.coupons-title{font-family:'Raleway',sans-serif;font-size:clamp(20px,2.8vw,28px);font-weight:900;color:#1a1a1a;margin-top:4px}
+.coupons-title span{color:#c0392b}
+.coupons-subtitle{font-size:13px;color:#888;margin-top:4px}
+/* dashed coupon border line across top */
+.coupons-cut-line{display:flex;align-items:center;gap:0;margin-bottom:18px;overflow:hidden}
+.coupons-cut-line::before,.coupons-cut-line::after{content:'';flex:1;border-top:2px dashed #ddd}
+.coupons-cut-icon{color:#bbb;font-size:18px;padding:0 10px;line-height:1}
+.coupons-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border:2px dashed #ccc;border-radius:4px;overflow:hidden}
+.coupon{border-right:2px dashed #ccc;position:relative;display:flex;flex-direction:column;min-height:270px;background:#fff}
+.coupon:last-child{border-right:none}
+/* COUPON stamp top-right */
+.coupon-stamp{position:absolute;top:8px;right:8px;background:#c0392b;color:#fff;font-family:'Raleway',sans-serif;font-size:8px;font-weight:900;letter-spacing:1.5px;text-transform:uppercase;padding:2px 6px;border-radius:2px;z-index:3}
 .coupon-img{height:88px;overflow:hidden;flex-shrink:0}
 .coupon-img img{width:100%;height:100%;object-fit:cover}
 .coupon-body{padding:10px 12px 12px;display:flex;flex-direction:column;gap:3px;flex:1}
@@ -96,7 +108,7 @@ a{text-decoration:none;color:inherit}
 .coupon-cta-btn:hover{background:#1a2c3e}
 .coupon-exp{font-size:9px;color:#ccc;margin-top:3px}
 /* reveal overlay */
-.coupon-overlay{position:absolute;inset:0;background:#2c3e50;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:18px;gap:9px;opacity:0;pointer-events:none;transition:opacity .25s}
+.coupon-overlay{position:absolute;inset:0;background:#2c3e50;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:18px;gap:9px;opacity:0;pointer-events:none;transition:opacity .25s;z-index:10}
 .coupon.revealing .coupon-overlay{opacity:1;pointer-events:all}
 .coupon.revealed .coupon-overlay{opacity:1;pointer-events:all}
 .co-title{font-family:'Raleway',sans-serif;font-size:13px;font-weight:900;color:#f0c040;text-align:center}
@@ -111,6 +123,8 @@ a{text-decoration:none;color:inherit}
 .co-code{background:#f0c040;color:#1a1a1a;font-family:'Raleway',sans-serif;font-size:20px;font-weight:900;padding:8px 18px;border-radius:3px;letter-spacing:2px;text-align:center;cursor:pointer;width:100%;border:none}
 .co-copied{font-size:11px;color:#2ecc71;font-weight:700;display:none;text-align:center}
 .co-hint{font-size:10px;color:rgba(255,255,255,.55);text-align:center;line-height:1.4}
+@media(max-width:920px){.coupons-grid{grid-template-columns:repeat(2,1fr)}.coupon:nth-child(2){border-right:none}.coupon:nth-child(1),.coupon:nth-child(2){border-bottom:2px dashed #ccc}}
+@media(max-width:600px){.coupons-grid{grid-template-columns:repeat(2,1fr)}}
 
 /* ── ABOUT ── */
 .about{background:#fff;padding:60px 0}
@@ -328,16 +342,7 @@ footer{background:#1e1e1e;padding:34px 0 18px}
         <form id="hero-form-el">
           <input type="text" class="hf-input" placeholder="Your Name*" required>
           <input type="tel" class="hf-input" placeholder="Your Phone*" required inputmode="tel">
-          <input type="email" class="hf-input" placeholder="Your Email*">
-          <select class="hf-select">
-            <option value="" disabled selected>What are you looking to do?*</option>
-            <option>Tub-to-Shower Conversion</option>
-            <option>Walk-In Shower</option>
-            <option>Senior / Accessible Bathroom</option>
-            <option>Full Bathroom Remodel</option>
-            <option>Shower Upgrade / Replacement</option>
-            <option>Other</option>
-          </select>
+          <textarea class="hf-input" placeholder="Tell us about your project — what are you looking to do?*" required style="resize:none;height:108px;margin-bottom:9px;line-height:1.5"></textarea>
           <button type="submit" class="hf-submit" id="hero-submit">Book Now! &rsaquo;</button>
         </form>
       </div>
@@ -352,7 +357,7 @@ footer{background:#1e1e1e;padding:34px 0 18px}
       <!-- Google rating -->
       <div class="ri">
         <span class="g-mark"><svg viewBox="0 0 18 18" xmlns="http://www.w3.org/2000/svg"><path fill="#4285F4" d="M17.64 9.2c0-.637-.057-1.251-.164-1.84H9v3.481h4.844a4.14 4.14 0 0 1-1.796 2.716v2.259h2.908c1.702-1.567 2.684-3.875 2.684-6.615z"/><path fill="#34A853" d="M9 18c2.43 0 4.467-.806 5.956-2.184l-2.908-2.259c-.806.54-1.837.86-3.048.86-2.344 0-4.328-1.584-5.036-3.711H.957v2.332A8.997 8.997 0 0 0 9 18z"/><path fill="#FBBC05" d="M3.964 10.706A5.41 5.41 0 0 1 3.682 9c0-.593.102-1.17.282-1.706V4.962H.957A8.996 8.996 0 0 0 0 9c0 1.452.348 2.827.957 4.038l3.007-2.332z"/><path fill="#EA4335" d="M9 3.58c1.321 0 2.508.454 3.44 1.345l2.582-2.58C13.463.891 11.426 0 9 0A8.997 8.997 0 0 0 .957 4.962L3.964 7.294C4.672 5.163 6.656 3.58 9 3.58z"/></svg></span>
-        <strong>5.0</strong><span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span><span style="opacity:.7">Google (14 reviews)</span>
+        <strong>5.0</strong><span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span><span style="opacity:.7">Google</span>
       </div>
       <div class="rbar-div">&middot;</div>
       <!-- Yelp rating -->
@@ -373,10 +378,17 @@ footer{background:#1e1e1e;padding:34px 0 18px}
 <!-- COUPONS — tap to reveal via lead form -->
 <section class="coupons">
   <div class="container">
+    <div class="coupons-header">
+      <div class="coupons-eyebrow">Online Coupons</div>
+      <h2 class="coupons-title">Exclusive Offers — <span>Tap Any Coupon to Claim</span></h2>
+      <p class="coupons-subtitle">Enter your info to unlock your promo code instantly</p>
+    </div>
+    <div class="coupons-cut-line"><span class="coupons-cut-icon">✂</span></div>
     <div class="coupons-grid">
 
       <!-- Coupon 1 -->
       <div class="coupon" id="c1">
+        <div class="coupon-stamp">COUPON</div>
         <div class="coupon-img"><img src="https://ik.imagekit.io/mtrbaths/Screen%20Shot%202025-03-17%20at%203.33.32%20AM.png?updatedAt=1742247173904" alt="Free Estimate"></div>
         <div class="coupon-body">
           <div class="coupon-title">Online Offer</div>
@@ -402,6 +414,7 @@ footer{background:#1e1e1e;padding:34px 0 18px}
 
       <!-- Coupon 2 -->
       <div class="coupon" id="c2">
+        <div class="coupon-stamp">COUPON</div>
         <div class="coupon-img"><img src="https://ik.imagekit.io/mtrbaths/Screen%20Shot%202025-03-17%20at%203.34.37%20AM.png?updatedAt=1742247061366" alt="Save 2500"></div>
         <div class="coupon-body">
           <div class="coupon-title">Spring Special</div>
@@ -427,6 +440,7 @@ footer{background:#1e1e1e;padding:34px 0 18px}
 
       <!-- Coupon 3 -->
       <div class="coupon" id="c3">
+        <div class="coupon-stamp">COUPON</div>
         <div class="coupon-img"><img src="https://s.yimg.com/bj/356e/356e68c7a1dd2fc84013bde73f6d8f0d.jpg" alt="Lifetime Warranty"></div>
         <div class="coupon-body">
           <div class="coupon-title">Included With Every Job</div>
@@ -451,6 +465,7 @@ footer{background:#1e1e1e;padding:34px 0 18px}
 
       <!-- Coupon 4 -->
       <div class="coupon" id="c4">
+        <div class="coupon-stamp">COUPON</div>
         <div class="coupon-img"><img src="https://s.yimg.com/bj/b843/b843874fcb52ef9dc1ac758f89e60f35.jpg" alt="Financing"></div>
         <div class="coupon-body">
           <div class="coupon-title">Flexible Financing</div>
@@ -488,7 +503,7 @@ footer{background:#1e1e1e;padding:34px 0 18px}
         <div class="owner-video-wrap">
           <!-- Owner walkthrough video — replace src with your owner polo video -->
           <video controls playsinline preload="none"
-            poster="https://ik.imagekit.io/mtrbaths/Screen%20Shot%202025-03-17%20at%203.33.32%20AM.png?updatedAt=1742247173904"
+            poster="video-thumb.jpg"
             style="width:100%;display:block;max-height:310px;object-fit:cover">
             <source src="owner-walkthrough.mp4" type="video/mp4">
             <!-- Fallback to the shower video if owner walkthrough not yet added -->
