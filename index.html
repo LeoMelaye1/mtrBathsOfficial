@@ -453,35 +453,44 @@ footer{background:#1e1e1e;padding:34px 0 18px}
 .mob-step-text{font-size:13px;color:#555;line-height:1.6}
 .mob-guarantee{background:#d97706;color:#1a1a1a;text-align:center;padding:15px 16px;font-family:'Raleway',sans-serif;font-size:15px;font-weight:900;letter-spacing:.3px;margin-top:4px}
 
-/* ── Reviews ── */
-.mob-reviews{background:#fff;padding:24px 16px}
-.mob-reviews h2{font-family:'Raleway',sans-serif;font-size:22px;font-weight:900;color:#1a1a1a;margin-bottom:16px;line-height:1.2}
-.mob-review-card{background:#fff;border:1px solid #e8e8e8;border-radius:8px;padding:16px;margin-bottom:12px;box-shadow:0 1px 4px rgba(0,0,0,.06)}
-.mob-review-stars{color:#d97706;font-size:16px;margin-bottom:6px}
-.mob-review-text{font-size:13px;color:#444;line-height:1.7;margin-bottom:10px}
-.mob-review-name{font-size:12px;font-weight:700;color:#222}
-.mob-review-plat{display:flex;align-items:center;gap:4px;font-size:11px;color:#888;margin-top:4px}
+/* ── Reviews (Tyler Davis card style) ── */
+.mob-reviews{background:#f1f5f9;padding:28px 16px}
+.mob-reviews-h2{font-family:'Raleway',sans-serif;font-size:22px;font-weight:900;color:#1a1a1a;margin-bottom:4px;line-height:1.2}
+.mob-reviews-sub{font-size:13px;color:#888;margin-bottom:18px}
+.mob-review-card{background:#fff;border-radius:10px;padding:18px 16px;margin-bottom:12px;box-shadow:0 2px 8px rgba(0,0,0,.08);position:relative}
+.mob-review-top{display:flex;align-items:center;gap:10px;margin-bottom:10px}
+.mob-reviewer-avatar{width:42px;height:42px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Raleway',sans-serif;font-size:16px;font-weight:900;color:#fff;flex-shrink:0}
+.mob-reviewer-name{font-size:14px;font-weight:800;color:#1a1a1a;margin-bottom:2px}
+.mob-reviewer-source{font-size:11px;color:#888}
+.mob-review-plat-logo{position:absolute;top:14px;right:14px;width:20px;height:20px}
+.mob-review-stars-row{color:#f59e0b;font-size:15px;letter-spacing:1px;margin-bottom:8px}
+.mob-review-text{font-size:13px;color:#444;line-height:1.7;font-style:italic}
+.mob-review-verified{display:flex;align-items:center;gap:4px;font-size:11px;color:#16a34a;font-weight:700;margin-top:10px}
 
-/* ── Services ── */
-.mob-services{background:#f1f5f9;padding:24px 16px}
-.mob-services h2{font-family:'Raleway',sans-serif;font-size:22px;font-weight:900;color:#1a1a1a;text-align:center;margin-bottom:16px}
-.mob-svc-card{background:#fff;border-radius:8px;padding:16px;display:flex;align-items:center;gap:14px;margin-bottom:10px;box-shadow:0 1px 4px rgba(0,0,0,.06)}
-.mob-svc-icon{width:44px;height:44px;background:#1e293b;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0}
-.mob-svc-label{font-family:'Raleway',sans-serif;font-size:15px;font-weight:800;color:#1a1a1a}
+/* ── Services (2-col icon tiles like Tyler Davis) ── */
+.mob-services{background:#fff;padding:28px 16px}
+.mob-services h2{font-family:'Raleway',sans-serif;font-size:22px;font-weight:900;color:#1a1a1a;text-align:center;margin-bottom:20px}
+.mob-svc-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.mob-svc-tile{background:#f1f5f9;border-radius:10px;padding:20px 12px;display:flex;flex-direction:column;align-items:center;gap:10px;text-align:center}
+.mob-svc-tile-icon{width:54px;height:54px;background:#1e293b;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:26px}
+.mob-svc-tile-label{font-family:'Raleway',sans-serif;font-size:13px;font-weight:800;color:#1a1a1a;line-height:1.3}
 
-/* ── Service area ── */
-.mob-area{position:relative;overflow:hidden;margin:0}
-.mob-area-bg{width:100%;height:240px;object-fit:cover;display:block}
-.mob-area-overlay{position:absolute;inset:0;background:rgba(44,62,80,.88);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:24px 20px;text-align:center}
-.mob-area-title{font-family:'Raleway',sans-serif;font-size:22px;font-weight:900;color:#d97706;margin-bottom:12px;line-height:1.2}
-.mob-area-cities{font-size:13px;color:rgba(255,255,255,.88);line-height:2;letter-spacing:.3px}
+/* ── FAQ ── */
+.mob-faq{background:#f1f5f9;padding:28px 16px}
+.mob-faq h2{font-family:'Raleway',sans-serif;font-size:22px;font-weight:900;color:#1a1a1a;margin-bottom:18px}
+.mob-faq-item{background:#fff;border-radius:8px;margin-bottom:8px;overflow:hidden}
+.mob-faq-q{padding:16px;font-size:14px;font-weight:700;color:#1a1a1a;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:8px;line-height:1.4;user-select:none}
+.mob-faq-q-icon{font-size:20px;color:#1e293b;flex-shrink:0;transition:transform .25s}
+.mob-faq-item.open .mob-faq-q-icon{transform:rotate(45deg)}
+.mob-faq-a{font-size:13px;color:#555;line-height:1.7;padding:0 16px 16px;display:none}
+.mob-faq-item.open .mob-faq-a{display:block}
 
-/* ── Bottom CTA ── */
-.mob-bottom{background:#fff;padding:0 0 24px}
-.mob-bottom-img{width:100%;height:200px;object-fit:cover;display:block;margin-bottom:20px}
-.mob-bottom h2{font-family:'Raleway',sans-serif;font-size:22px;font-weight:900;color:#1a1a1a;text-align:center;padding:0 20px;margin-bottom:16px;line-height:1.3}
-.mob-bottom-logo{display:block;height:52px;width:auto;margin:0 auto 18px}
-.mob-bottom-call{display:flex;align-items:center;justify-content:center;gap:10px;background:#1e293b;color:#fff;padding:18px;border-radius:6px;font-family:'Raleway',sans-serif;font-size:18px;font-weight:900;margin:0 16px}
+/* ── Bottom CTA (owner photo) ── */
+.mob-bottom{background:#fff;padding-bottom:24px}
+.mob-bottom-photo{width:100%;height:220px;object-fit:cover;object-position:top center;display:block}
+.mob-bottom h2{font-family:'Raleway',sans-serif;font-size:21px;font-weight:900;color:#1a1a1a;text-align:center;padding:18px 16px 10px;line-height:1.3;margin:0}
+.mob-bottom-logo{display:block;height:48px;width:auto;margin:0 auto 16px}
+.mob-bottom-call{display:flex;align-items:center;justify-content:center;gap:10px;background:#1e293b;color:#fff;padding:18px;border-radius:6px;font-family:'Raleway',sans-serif;font-size:19px;font-weight:700;margin:0 16px}
 
 /* ── Mobile lead form ── */
 .mob-form-wrap{background:#1e293b;padding:28px 16px}
@@ -611,46 +620,54 @@ footer{background:#1e1e1e;padding:34px 0 18px}
   <!-- ① HERO CARD with background image -->
   <div class="mob-hero-wrap">
   <div class="mob-hero-card">
-    <h1 class="mob-hero-h1"><span class="geo-city">Northern California</span>'s #1 Bathroom Remodeling Experts</h1>
-    <p class="mob-hero-sub">13+ Years of 5-Star Service</p>
+    <h1 class="mob-hero-h1">Bathroom Remodeling &amp; Shower Experts in <span class="geo-city">Northern California</span></h1>
+    <p class="mob-hero-sub">Tub Conversions · Walk-In Showers · Senior-Safe Bathrooms</p>
     <hr class="mob-hero-divider" style="border-color:rgba(255,255,255,.2);margin:14px 0">
     <p class="mob-hero-cert">Certified &mdash; Licensed &mdash; Lifetime Warranty</p>
     <div class="mob-trust-grid">
+      <!-- Google badge — exact match to screenshot -->
       <div class="mob-trust-box">
-        <div class="mob-trust-logo">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" alt="Google" style="width:18px;height:18px">
-          <span style="font-size:13px;font-weight:800;color:#333">Google</span>
+        <div style="display:flex;align-items:center;gap:7px;margin-bottom:5px">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" alt="Google" style="width:26px;height:26px;flex-shrink:0">
+          <span style="font-size:14px;font-weight:800;color:#222;font-family:'Raleway',sans-serif">Google</span>
         </div>
-        <div class="mob-trust-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-        <div class="mob-trust-label">5.0 Stars</div>
-        <div class="mob-trust-count">25 Verified Reviews</div>
+        <div style="color:#f59e0b;font-size:16px;letter-spacing:2px;margin-bottom:2px">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <div style="font-size:13px;font-weight:800;color:#222;font-family:'Raleway',sans-serif">5.0</div>
+        <div style="font-size:11px;color:#666;margin-top:1px">Based on 25 Reviews</div>
       </div>
-      <div class="mob-trust-box">
-        <div class="mob-trust-logo">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/BBB_2020_logo.svg/320px-BBB_2020_logo.svg.png" alt="BBB Accredited" style="height:22px;width:auto">
+      <!-- BBB badge — exact match to screenshot: logo left, ACCREDITED BUSINESS right -->
+      <div class="mob-trust-box" style="padding:12px 10px">
+        <div style="display:flex;align-items:center;gap:6px;margin-bottom:4px">
+          <img src="https://www.bbb.org/ProfileImages/10e67aee-c6ef-493a-9bb8-a9cf84d34a63" alt="BBB" style="height:36px;width:auto"
+            onerror="this.onerror=null;this.src='https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/BBB_2020_logo.svg/320px-BBB_2020_logo.svg.png';this.style.height='24px'">
+          <div style="text-align:left;line-height:1.2">
+            <div style="font-size:11px;font-weight:900;color:#0033a0;font-family:'Raleway',sans-serif;letter-spacing:.5px">ACCREDITED</div>
+            <div style="font-size:11px;font-weight:900;color:#0033a0;font-family:'Raleway',sans-serif;letter-spacing:.5px">BUSINESS</div>
+          </div>
         </div>
-        <div style="font-size:13px;font-weight:900;color:#0033a0;font-family:'Raleway',sans-serif;margin-top:2px">A+ Rating</div>
-        <div class="mob-trust-label" style="color:#0033a0">Accredited Business</div>
-        <div class="mob-trust-count">Since 2010</div>
+        <div style="font-size:18px;font-weight:900;color:#0033a0;font-family:'Raleway',sans-serif;line-height:1">A+</div>
+        <div style="font-size:10px;color:#666;margin-top:1px">BBB Rating</div>
       </div>
     </div>
     <a href="tel:+19168920745" class="mob-call-big">&#128222; Tap To Call Now</a>
-    <a href="tel:+19168920745" class="mob-phone-cta">
-      <div class="mob-phone-cta-label">Call to get a free quote today!</div>
-      <div class="mob-phone-cta-number">&#9990; (916) 892-0745</div>
-    </a>
+    <a href="#mob-form" class="mob-form-btn" style="display:flex;align-items:center;justify-content:center;gap:8px;background:#d97706;color:#1a1a1a;padding:15px;border-radius:6px;font-family:'Raleway',sans-serif;font-size:16px;font-weight:700;width:100%;margin-top:10px">&#8595; Message Us Instead</a>
   </div>
   </div>
 
-  <!-- ② ABOUT — blue bar + photo + why choose -->
+  <!-- ② ABOUT — blue bar + VIDEO + why choose -->
   <div class="mob-about-bar">13+ Years Serving <span class="geo-city">Northern California</span></div>
-  <img src="https://ik.imagekit.io/mtrbaths/Screen%20Shot%202025-03-17%20at%203.33.32%20AM.png?updatedAt=1742247173904" alt="MTR Baths completed bathroom remodel" class="mob-about-photo">
+  <div style="background:#000;position:relative;overflow:hidden">
+    <video playsinline preload="none" poster="video-thumb.jpg" controls style="width:100%;height:220px;object-fit:cover;display:block">
+      <source src="owner-walkthrough.mp4" type="video/mp4">
+      <source src="hero-bg.mp4" type="video/mp4">
+    </video>
+  </div>
   <div class="mob-why">
     <h2>Why Choose MTR Baths?</h2>
     <ul class="mob-why-list">
       <li><span class="mob-why-icon">&#128196;</span>Free Estimates &amp; Same-Day Scheduling</li>
       <li><span class="mob-why-icon">&#128176;</span>Fair &amp; Honest Pricing — Best Price Guaranteed</li>
-      <li><span class="mob-why-icon">&#9989;</span>100% Satisfaction Guaranteed</li>
+      <li><span class="mob-why-icon">&#9989;</span>Lifetime Warranty on All Labor &amp; Materials</li>
       <li><span class="mob-why-icon">&#128112;</span>Licensed, Bonded &amp; Insured · CA #965267</li>
       <li><span class="mob-why-icon">&#127968;</span>Christian Family-Owned Since 2010</li>
       <li><span class="mob-why-icon">&#128179;</span>Flexible Financing — From $99/Month</li>
@@ -673,7 +690,7 @@ footer{background:#1e1e1e;padding:34px 0 18px}
       <div class="mob-step-body">
         <span class="mob-step-icon">&#128203;</span>
         <div class="mob-step-title">Get Your Free Estimate</div>
-        <div class="mob-step-text">We come to your home, measure everything, and provide a clear flat-rate quote. No hidden fees.</div>
+        <div class="mob-step-text">We come to your home, measure everything, and give you a clear flat-rate quote. No hidden fees, ever.</div>
       </div>
     </div>
     <div class="mob-step">
@@ -681,45 +698,24 @@ footer{background:#1e1e1e;padding:34px 0 18px}
       <div class="mob-step-body">
         <span class="mob-step-icon">&#9989;</span>
         <div class="mob-step-title">Remodel Complete</div>
-        <div class="mob-step-text">Our crew shows up on time and gets the job done — most installs in one day. You enjoy your new bathroom.</div>
+        <div class="mob-step-text">Our crew shows up on time and finishes the job — most installs in one day. You enjoy your new bathroom.</div>
       </div>
     </div>
-    <div class="mob-guarantee">&#9989; &nbsp;100% SATISFACTION GUARANTEED</div>
+    <div class="mob-guarantee">&#9989; &nbsp;LIFETIME WARRANTY — SATISFACTION GUARANTEED</div>
   </div>
 
-  <!-- ④ REVIEWS heading + cards (desktop reviews section shows below) -->
-  <div class="mob-reviews">
-    <h2>What <span class="geo-city">Sacramento</span> Homeowners Say:</h2>
-    <div class="mob-review-card">
-      <div class="mob-review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-      <p class="mob-review-text">"Surpassed our expectations by a mile! Alex and his son Albert did an absolutely incredible job on our walk-in shower. Very professional and talented!!"</p>
-      <div class="mob-review-name">Rick M.</div>
-      <div class="mob-review-plat">
-        <span class="g-mark" style="width:14px;height:14px"><svg viewBox="0 0 18 18"><path fill="#4285F4" d="M17.64 9.2c0-.637-.057-1.251-.164-1.84H9v3.481h4.844a4.14 4.14 0 0 1-1.796 2.716v2.259h2.908c1.702-1.567 2.684-3.875 2.684-6.615z"/><path fill="#34A853" d="M9 18c2.43 0 4.467-.806 5.956-2.184l-2.908-2.259c-.806.54-1.837.86-3.048.86-2.344 0-4.328-1.584-5.036-3.711H.957v2.332A8.997 8.997 0 0 0 9 18z"/><path fill="#FBBC05" d="M3.964 10.706A5.41 5.41 0 0 1 3.682 9c0-.593.102-1.17.282-1.706V4.962H.957A8.996 8.996 0 0 0 0 9c0 1.452.348 2.827.957 4.038l3.007-2.332z"/><path fill="#EA4335" d="M9 3.58c1.321 0 2.508.454 3.44 1.345l2.582-2.58C13.463.891 11.426 0 9 0A8.997 8.997 0 0 0 .957 4.962L3.964 7.294C4.672 5.163 6.656 3.58 9 3.58z"/></svg></span>
-        Google Verified
-      </div>
-    </div>
-    <div class="mob-review-card">
-      <div class="mob-review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-      <p class="mob-review-text">"Absolutely AMAZING!!!! Albert came to the house and the transformation was unbelievable. Kohler certified — highly recommend MTR Baths!"</p>
-      <div class="mob-review-name">Kurt A.</div>
-      <div class="mob-review-plat">
-        <span class="y-mark" style="width:14px;height:14px;font-size:7px">y!</span>
-        Yelp Verified
-      </div>
-    </div>
-  </div>
-
-  <!-- ⑤ SERVICES -->
+  <!-- ④ SERVICES — 2-col icon tiles -->
   <div class="mob-services">
     <h2>What We Do</h2>
-    <div class="mob-svc-card"><span class="mob-svc-icon">&#128703;</span><span class="mob-svc-label">Tub-to-Shower Conversion</span></div>
-    <div class="mob-svc-card"><span class="mob-svc-icon">&#129703;</span><span class="mob-svc-label">Walk-In Shower Installation</span></div>
-    <div class="mob-svc-card"><span class="mob-svc-icon">&#9855;</span><span class="mob-svc-label">Senior &amp; Accessible Showers</span></div>
-    <div class="mob-svc-card"><span class="mob-svc-icon">&#127968;</span><span class="mob-svc-label">Full Bathroom Remodel</span></div>
+    <div class="mob-svc-grid">
+      <div class="mob-svc-tile"><span class="mob-svc-tile-icon">&#128703;</span><span class="mob-svc-tile-label">Tub-to-Shower Conversion</span></div>
+      <div class="mob-svc-tile"><span class="mob-svc-tile-icon">&#129703;</span><span class="mob-svc-tile-label">Walk-In Shower Installation</span></div>
+      <div class="mob-svc-tile"><span class="mob-svc-tile-icon">&#9855;</span><span class="mob-svc-tile-label">Senior &amp; Accessible Showers</span></div>
+      <div class="mob-svc-tile"><span class="mob-svc-tile-icon">&#127968;</span><span class="mob-svc-tile-label">Full Bathroom Remodel</span></div>
+    </div>
   </div>
 
-  <!-- ⑥ SERVICE AREA -->
+  <!-- ⑤ SERVICE AREA -->
   <div class="mob-area">
     <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=800&q=80&fm=jpg&fit=crop" alt="Service area" class="mob-area-bg">
     <div class="mob-area-overlay">
@@ -728,20 +724,88 @@ footer{background:#1e1e1e;padding:34px 0 18px}
     </div>
   </div>
 
-  <!-- ⑦ BOTTOM CTA -->
-  <div class="mob-bottom">
-    <div style="background:#000;position:relative">
-      <video playsinline preload="none" poster="video-thumb.jpg" controls style="width:100%;height:200px;object-fit:cover;display:block">
-        <source src="owner-walkthrough.mp4" type="video/mp4">
-        <source src="hero-bg.mp4" type="video/mp4">
-      </video>
+  <!-- ⑥ TESTIMONIALS (Tyler Davis card style) -->
+  <div class="mob-reviews">
+    <p class="mob-reviews-h2">What <span class="geo-city">Sacramento</span> Homeowners Say:</p>
+    <p class="mob-reviews-sub">Real reviews, verified on Google &amp; Yelp</p>
+
+    <div class="mob-review-card">
+      <div class="mob-review-top">
+        <div class="mob-reviewer-avatar" style="background:#e74c3c">R</div>
+        <div>
+          <div class="mob-reviewer-name">Rick M.</div>
+          <div class="mob-reviewer-source">Sacramento, CA &middot; Yelp</div>
+        </div>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/a/ad/Yelp_Logo.svg" class="mob-review-plat-logo" alt="Yelp">
+      </div>
+      <div class="mob-review-stars-row">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <p class="mob-review-text">"Surpassed our expectations by a mile! Alex and his son Albert did an absolutely incredible job on our walk-in shower. Very professional and talented — would hire them again in a heartbeat."</p>
+      <div class="mob-review-verified">&#10004; Yelp Verified Review</div>
     </div>
-    <h2>Does Your Home Need A Professional Bathroom Remodel?</h2>
-    <img src="https://ik.imagekit.io/mtrbaths/MTR_Baths__19_-removebg-preview%20(1).png" alt="MTR Baths" class="mob-bottom-logo">
-    <a href="tel:+19168920745" class="mob-bottom-call">&#128222; Tap To Call Now</a>
+
+    <div class="mob-review-card">
+      <div class="mob-review-top">
+        <div class="mob-reviewer-avatar" style="background:#2980b9">J</div>
+        <div>
+          <div class="mob-reviewer-name">Jessica H.</div>
+          <div class="mob-reviewer-source">Elk Grove, CA &middot; Yelp</div>
+        </div>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/a/ad/Yelp_Logo.svg" class="mob-review-plat-logo" alt="Yelp">
+      </div>
+      <div class="mob-review-stars-row">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <p class="mob-review-text">"I recently had my walk-in shower remodeled and could not be happier. From start to finish the process was smooth and professional. The crew was clean, efficient, and respectful of our home."</p>
+      <div class="mob-review-verified">&#10004; Yelp Verified Review</div>
+    </div>
+
+    <div class="mob-review-card">
+      <div class="mob-review-top">
+        <div class="mob-reviewer-avatar" style="background:#27ae60">M</div>
+        <div>
+          <div class="mob-reviewer-name">NorCal Homeowner</div>
+          <div class="mob-reviewer-source">Northern California &middot; Google</div>
+        </div>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" class="mob-review-plat-logo" alt="Google">
+      </div>
+      <div class="mob-review-stars-row">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <p class="mob-review-text">"Wow! Amazing work on repair/remodel of our master bathroom. Service, quality, and value were great. Alex and his team are top-notch. Very professional and talented!!"</p>
+      <div class="mob-review-verified">&#10004; Google Verified Review</div>
+    </div>
   </div>
 
-  <!-- ⑧ MOBILE FORM -->
+  <!-- ⑦ FAQ -->
+  <div class="mob-faq">
+    <h2>Frequently Asked Questions</h2>
+    <div class="mob-faq-item">
+      <div class="mob-faq-q">How long does a bathroom remodel take?<span class="mob-faq-q-icon">+</span></div>
+      <div class="mob-faq-a">Most tub-to-shower conversions are done in a single day. Full bathroom remodels typically take 2–3 days. We give you a clear timeline before we start — no surprises.</div>
+    </div>
+    <div class="mob-faq-item">
+      <div class="mob-faq-q">Is the estimate really free?<span class="mob-faq-q-icon">+</span></div>
+      <div class="mob-faq-a">Yes, 100% free. We come to your home, measure everything, and give you a flat-rate quote. No obligation, no pressure, no charge.</div>
+    </div>
+    <div class="mob-faq-item">
+      <div class="mob-faq-q">What does the lifetime warranty cover?<span class="mob-faq-q-icon">+</span></div>
+      <div class="mob-faq-a">All labor and materials for as long as you own the home. If anything we installed has an issue, we fix it at zero cost. It's in writing — not just a verbal promise.</div>
+    </div>
+    <div class="mob-faq-item">
+      <div class="mob-faq-q">Do you do senior-safe / ADA showers?<span class="mob-faq-q-icon">+</span></div>
+      <div class="mob-faq-a">Absolutely — it's one of our specialties. We install zero-threshold entries, built-in bench seats, and grab bars bolted into wall studs (not just drywall anchors). Safe and sharp-looking.</div>
+    </div>
+    <div class="mob-faq-item">
+      <div class="mob-faq-q">Do you offer financing?<span class="mob-faq-q-icon">+</span></div>
+      <div class="mob-faq-a">Yes — flexible financing from as low as $99/month. Quick approval, no hidden fees. Ask us about your options during the free in-home estimate.</div>
+    </div>
+  </div>
+
+  <!-- ⑧ OWNER CTA (photo instead of video) -->
+  <div class="mob-bottom">
+    <img src="alex-owner.jpg" alt="Alex, Owner of MTR Baths" class="mob-bottom-photo" onerror="this.src='https://ik.imagekit.io/mtrbaths/Screen%20Shot%202025-03-17%20at%203.33.32%20AM.png?updatedAt=1742247173904'">
+    <h2>Does Your Home Need A Professional Bathroom Remodel?</h2>
+    <img src="https://ik.imagekit.io/mtrbaths/MTR_Baths__19_-removebg-preview%20(1).png" alt="MTR Baths" class="mob-bottom-logo">
+    <a href="tel:+19168920745" class="mob-bottom-call">&#128222; (916) 892-0745</a>
+  </div>
+
+  <!-- ⑨ MOBILE FORM -->
   <div class="mob-form-wrap" id="mob-form">
     <h3>Get Your Free Estimate</h3>
     <form id="mob-form-el">
@@ -1201,6 +1265,16 @@ function copyCode(code,btn){
     setTimeout(function(){btn.textContent=orig;if(cop)cop.style.display='none';},2500);
   }).catch(function(){});
 }
+
+/* ─── MOBILE FAQ ACCORDION ─── */
+document.querySelectorAll('.mob-faq-q').forEach(function(q){
+  q.addEventListener('click',function(){
+    var item=this.parentElement;
+    var wasOpen=item.classList.contains('open');
+    document.querySelectorAll('.mob-faq-item.open').forEach(function(i){i.classList.remove('open');});
+    if(!wasOpen)item.classList.add('open');
+  });
+});
 
 /* ─── FORMS → WEBHOOK → THANK YOU PAGE ─── */
 var WEBHOOK_URL = 'https://services.leadconnectorhq.com/hooks/jfcDigX68fpqfA6vHcYK/webhook-trigger/d000c737-69a4-4358-bc59-bf73bd337457';
