@@ -1254,8 +1254,13 @@ function revealCode(id,code,btn){
   var name=inputs[0]?inputs[0].value.trim():'';
   var phone=inputs[1]?inputs[1].value.trim():'';
   if(!name||!phone){inputs[0]&&!inputs[0].value.trim()?inputs[0].focus():inputs[1].focus();return;}
-  // store the original label
   if(!btn.getAttribute('data-orig'))btn.setAttribute('data-orig',btn.textContent);
+  // POST to LeadConnector webhook
+  fetch(WEBHOOK_URL,{
+    method:'POST',
+    headers:{'Content-Type':'application/json'},
+    body:JSON.stringify({form_source:'coupon',coupon_code:code,name:name,phone:phone,page_url:window.location.href})
+  }).catch(function(){});
   // fire conversion events
   if(window.dataLayer)window.dataLayer.push({event:'coupon_claim',coupon:code,name:name,phone:phone});
   if(typeof fbq!=='undefined')fbq('track','Lead',{content_name:code});
@@ -1298,7 +1303,7 @@ document.querySelectorAll('.mob-faq-q').forEach(function(q){
 
 /* ─── FORMS → WEBHOOK → THANK YOU PAGE ─── */
 var WEBHOOK_URL = 'https://services.leadconnectorhq.com/hooks/jfcDigX68fpqfA6vHcYK/webhook-trigger/d000c737-69a4-4358-bc59-bf73bd337457';
-var THANKYOU_URL = 'thank-you.html'; // change to your actual thank-you page URL
+var THANKYOU_URL = 'https://mtr-baths.com/thank-you.html'; // change to your actual thank-you page URL
 
 function submitToWebhook(formData, btn, successText) {
   btn.disabled = true;
