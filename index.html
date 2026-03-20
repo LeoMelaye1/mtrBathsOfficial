@@ -467,13 +467,20 @@ footer{background:#1e1e1e;padding:34px 0 18px}
 .mob-review-text{font-size:13px;color:#444;line-height:1.7;font-style:italic}
 .mob-review-verified{display:flex;align-items:center;gap:4px;font-size:11px;color:#16a34a;font-weight:700;margin-top:10px}
 
-/* ── Services (2-col icon tiles like Tyler Davis) ── */
+/* ── Services (single column stacked) ── */
 .mob-services{background:#fff;padding:28px 16px}
-.mob-services h2{font-family:'Raleway',sans-serif;font-size:22px;font-weight:900;color:#1a1a1a;text-align:center;margin-bottom:20px}
-.mob-svc-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-.mob-svc-tile{background:#f1f5f9;border-radius:10px;padding:20px 12px;display:flex;flex-direction:column;align-items:center;gap:10px;text-align:center}
-.mob-svc-tile-icon{width:54px;height:54px;background:#1e293b;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:26px}
-.mob-svc-tile-label{font-family:'Raleway',sans-serif;font-size:13px;font-weight:800;color:#1a1a1a;line-height:1.3}
+.mob-services h2{font-family:'Raleway',sans-serif;font-size:22px;font-weight:900;color:#1a1a1a;margin-bottom:20px}
+.mob-svc-list{display:flex;flex-direction:column;gap:10px}
+.mob-svc-row{background:#f1f5f9;border-radius:10px;padding:16px 18px;display:flex;align-items:center;gap:16px}
+.mob-svc-tile-icon{width:48px;height:48px;background:#1e293b;border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.mob-svc-tile-label{font-family:'Raleway',sans-serif;font-size:15px;font-weight:800;color:#1a1a1a;line-height:1.3}
+
+/* ── Service area ── */
+.mob-area{position:relative;overflow:hidden;min-height:220px}
+.mob-area-bg{width:100%;height:220px;object-fit:cover;display:block}
+.mob-area-overlay{position:absolute;inset:0;background:rgba(30,41,59,.87);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:24px 20px;text-align:center}
+.mob-area-title{font-family:'Raleway',sans-serif;font-size:20px;font-weight:900;color:#d97706;margin-bottom:10px;line-height:1.2}
+.mob-area-cities{font-size:12px;color:rgba(255,255,255,.9);line-height:2;letter-spacing:.3px}
 
 /* ── FAQ ── */
 .mob-faq{background:#f1f5f9;padding:28px 16px}
@@ -501,13 +508,9 @@ footer{background:#1e1e1e;padding:34px 0 18px}
   body{background:#f1f5f9}
   /* Show mobile sections */
   .mob-only{display:block}
-  /* Hide entire desktop hero + most desktop sections */
+  /* Hide ALL desktop sections on mobile — mob-only has its own reviews */
   .hero,.rating-bar,.about,.gallery-section,.call-strip,.dark-cta,.services,
-  .coupons,.bottom-form-strip,.mid-cta,.urgency-bar{display:none}
-  /* Show only reviews + footer from desktop */
-  .reviews{display:block;background:#fff}
-  .reviews-grid{grid-template-columns:1fr}
-  .review-card{margin-bottom:10px}
+  .coupons,.bottom-form-strip,.mid-cta,.urgency-bar,.reviews{display:none}
   footer{display:block}
   .footer-inner{flex-direction:column;gap:24px}
   /* Sticky bar */
@@ -635,18 +638,9 @@ footer{background:#1e1e1e;padding:34px 0 18px}
         <div style="font-size:13px;font-weight:800;color:#222;font-family:'Raleway',sans-serif">5.0</div>
         <div style="font-size:11px;color:#666;margin-top:1px">Based on 25 Reviews</div>
       </div>
-      <!-- BBB badge — exact match to screenshot: logo left, ACCREDITED BUSINESS right -->
-      <div class="mob-trust-box" style="padding:12px 10px">
-        <div style="display:flex;align-items:center;gap:6px;margin-bottom:4px">
-          <img src="https://www.bbb.org/ProfileImages/10e67aee-c6ef-493a-9bb8-a9cf84d34a63" alt="BBB" style="height:36px;width:auto"
-            onerror="this.onerror=null;this.src='https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/BBB_2020_logo.svg/320px-BBB_2020_logo.svg.png';this.style.height='24px'">
-          <div style="text-align:left;line-height:1.2">
-            <div style="font-size:11px;font-weight:900;color:#0033a0;font-family:'Raleway',sans-serif;letter-spacing:.5px">ACCREDITED</div>
-            <div style="font-size:11px;font-weight:900;color:#0033a0;font-family:'Raleway',sans-serif;letter-spacing:.5px">BUSINESS</div>
-          </div>
-        </div>
-        <div style="font-size:18px;font-weight:900;color:#0033a0;font-family:'Raleway',sans-serif;line-height:1">A+</div>
-        <div style="font-size:10px;color:#666;margin-top:1px">BBB Rating</div>
+      <!-- BBB badge — using uploaded logo -->
+      <div class="mob-trust-box" style="padding:12px 10px;justify-content:center">
+        <img src="bbb-accredited.png" alt="BBB Accredited Business" style="width:100%;max-width:140px;height:auto;display:block;margin:0 auto">
       </div>
     </div>
     <a href="tel:+19168920745" class="mob-call-big">&#128222; Tap To Call Now</a>
@@ -657,7 +651,7 @@ footer{background:#1e1e1e;padding:34px 0 18px}
   <!-- ② ABOUT — blue bar + VIDEO + why choose -->
   <div class="mob-about-bar">13+ Years Serving <span class="geo-city">Northern California</span></div>
   <div style="background:#000;position:relative;overflow:hidden">
-    <video playsinline preload="none" poster="video-thumb.jpg" controls style="width:100%;height:220px;object-fit:cover;display:block">
+    <video autoplay muted playsinline loop preload="auto" poster="video-thumb.jpg" style="width:100%;height:220px;object-fit:cover;display:block">
       <source src="owner-walkthrough.mp4" type="video/mp4">
       <source src="hero-bg.mp4" type="video/mp4">
     </video>
@@ -704,14 +698,34 @@ footer{background:#1e1e1e;padding:34px 0 18px}
     <div class="mob-guarantee">&#9989; &nbsp;LIFETIME WARRANTY — SATISFACTION GUARANTEED</div>
   </div>
 
-  <!-- ④ SERVICES — 2-col icon tiles -->
+  <!-- ④ SERVICES — single column stacked -->
   <div class="mob-services">
     <h2>What We Do</h2>
-    <div class="mob-svc-grid">
-      <div class="mob-svc-tile"><span class="mob-svc-tile-icon">&#128703;</span><span class="mob-svc-tile-label">Tub-to-Shower Conversion</span></div>
-      <div class="mob-svc-tile"><span class="mob-svc-tile-icon">&#129703;</span><span class="mob-svc-tile-label">Walk-In Shower Installation</span></div>
-      <div class="mob-svc-tile"><span class="mob-svc-tile-icon">&#9855;</span><span class="mob-svc-tile-label">Senior &amp; Accessible Showers</span></div>
-      <div class="mob-svc-tile"><span class="mob-svc-tile-icon">&#127968;</span><span class="mob-svc-tile-label">Full Bathroom Remodel</span></div>
+    <div class="mob-svc-list">
+      <div class="mob-svc-row">
+        <span class="mob-svc-tile-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="26" height="26"><rect x="2" y="7" width="20" height="15" rx="2"/><path d="M8 7V5a4 4 0 0 1 8 0v2"/><line x1="12" y1="12" x2="12" y2="16"/></svg>
+        </span>
+        <span class="mob-svc-tile-label">Tub-to-Shower Conversion</span>
+      </div>
+      <div class="mob-svc-row">
+        <span class="mob-svc-tile-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="26" height="26"><path d="M4 12h16"/><path d="M4 12V6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v6"/><path d="M4 12v4a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-4"/><path d="M10 18v2"/><path d="M14 18v2"/></svg>
+        </span>
+        <span class="mob-svc-tile-label">Walk-In Shower Installation</span>
+      </div>
+      <div class="mob-svc-row">
+        <span class="mob-svc-tile-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="26" height="26"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+        </span>
+        <span class="mob-svc-tile-label">Senior &amp; Accessible Showers</span>
+      </div>
+      <div class="mob-svc-row">
+        <span class="mob-svc-tile-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="26" height="26"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        </span>
+        <span class="mob-svc-tile-label">Full Bathroom Remodel</span>
+      </div>
     </div>
   </div>
 
@@ -719,7 +733,7 @@ footer{background:#1e1e1e;padding:34px 0 18px}
   <div class="mob-area">
     <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=800&q=80&fm=jpg&fit=crop" alt="Service area" class="mob-area-bg">
     <div class="mob-area-overlay">
-      <div class="mob-area-title">Proudly Serving<br><span class="geo-city">Northern California</span></div>
+      <div class="mob-area-title">Proudly Serving <span class="geo-city">Northern California</span></div>
       <div class="mob-area-cities">Sacramento &middot; West Sacramento &middot; Roseville &middot; Elk Grove &middot; Folsom &middot; Stockton &middot; Modesto &middot; Fairfield &middot; Napa &middot; Davis<br><span style="color:rgba(255,255,255,.6);font-size:12px">+ all of Northern California</span></div>
     </div>
   </div>
@@ -761,8 +775,8 @@ footer{background:#1e1e1e;padding:34px 0 18px}
       <div class="mob-review-top">
         <div class="mob-reviewer-avatar" style="background:#27ae60">M</div>
         <div>
-          <div class="mob-reviewer-name">NorCal Homeowner</div>
-          <div class="mob-reviewer-source">Northern California &middot; Google</div>
+          <div class="mob-reviewer-name">Michael S.</div>
+          <div class="mob-reviewer-source">West Sacramento, CA &middot; Google</div>
         </div>
         <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" class="mob-review-plat-logo" alt="Google">
       </div>
@@ -1081,7 +1095,7 @@ footer{background:#1e1e1e;padding:34px 0 18px}
         <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
         <p class="review-text">&ldquo;<span class="hlg">Wow! Amazing work</span> on repair/remodel of our master bathroom. Service, quality, and value were great. <span class="hl">Alex and his team</span> (his son is the sweetest!) are top-notch. Very professional and talented!!!&rdquo;</p>
         <div class="rev-avatar" style="background:#e67e22">M</div>
-        <div class="reviewer-name">NorCal Homeowner</div>
+        <div class="reviewer-name">Michael S., West Sacramento</div>
         <div class="reviewer-meta">Google Verified <span class="vdot vdot-g"><svg viewBox="0 0 10 10"><path d="M2 5l2.5 2.5L8 3" stroke="#fff" stroke-width="1.5" fill="none"/></svg></span></div>
       </div>
 
