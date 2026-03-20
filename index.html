@@ -37,7 +37,7 @@ a{text-decoration:none;color:inherit}
 .urgency-bar a{color:#222;font-weight:800;text-decoration:underline}
 
 /* ── HERO ── */
-.hero{background:#111 url('https://s.yimg.com/bj/cb5f/cb5fbd171105b4b9cf8986e406b53b17.jpg') center/cover no-repeat;position:relative;padding:58px 0 76px;overflow:hidden}
+.hero{background:#111 url('https://ik.imagekit.io/mtrbaths/Screen%20Shot%202025-03-17%20at%203.33.32%20AM.png?updatedAt=1742247173904&tr=w-1920,h-900,fo-auto,q-85') center/cover no-repeat;position:relative;padding:58px 0 76px;overflow:hidden}
 .hero::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(0,0,0,.62) 0%,rgba(0,0,0,.45) 100%);z-index:1}
 .hero-inner{position:relative;z-index:2;display:flex;justify-content:center;gap:0;max-width:880px;margin:0 auto}
 .hero-left-card{background:rgba(232,232,232,.97);padding:34px 30px;flex:1 1 0;min-width:0}
@@ -111,12 +111,6 @@ a{text-decoration:none;color:inherit}
 .co-code{background:#f0c040;color:#1a1a1a;font-family:'Raleway',sans-serif;font-size:20px;font-weight:900;padding:8px 18px;border-radius:3px;letter-spacing:2px;text-align:center;cursor:pointer;width:100%;border:none}
 .co-copied{font-size:11px;color:#2ecc71;font-weight:700;display:none;text-align:center}
 .co-hint{font-size:10px;color:rgba(255,255,255,.55);text-align:center;line-height:1.4}
-
-/* ── TRUST STRIP ── */
-.trust-strip{background:#2c3e50;padding:14px 0}
-.trust-items{display:flex;align-items:center;justify-content:center;gap:6px 24px;flex-wrap:wrap}
-.trust-item{font-size:12px;font-weight:600;color:rgba(255,255,255,.8)}
-.tdiv{color:rgba(255,255,255,.2);font-size:14px}
 
 /* ── ABOUT ── */
 .about{background:#fff;padding:60px 0}
@@ -326,7 +320,7 @@ footer{background:#1e1e1e;padding:34px 0 18px}
             5.0
           </span>
           <span class="star-row">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-          <span style="font-size:12px;color:#666">(55+ Reviews)</span>
+          <span style="font-size:12px;color:#666">(Google &amp; Yelp)</span>
         </div>
       </div>
       <div class="hero-right-card" id="hero-form">
@@ -362,7 +356,7 @@ footer{background:#1e1e1e;padding:34px 0 18px}
       </div>
       <div class="rbar-div">&middot;</div>
       <!-- Yelp rating -->
-      <div class="ri"><span class="y-mark">y!</span><strong>5.0</strong><span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span><span style="opacity:.7">Yelp (55+)</span></div>
+      <div class="ri"><span class="y-mark">y!</span><strong>5.0</strong><span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span><span style="opacity:.7">Yelp (6 reviews)</span></div>
       <div class="rbar-div">&middot;</div>
       <!-- Facebook -->
       <div class="ri"><span class="fb-mark">f</span><strong>5.0</strong><span style="opacity:.7">Facebook</span></div>
@@ -483,18 +477,7 @@ footer{background:#1e1e1e;padding:34px 0 18px}
   </div>
 </section>
 
-<!-- TRUST STRIP -->
-<div class="trust-strip">
-  <div class="container">
-    <div class="trust-items">
-      <div class="trust-item">13+ Years Serving NorCal</div><div class="tdiv">&middot;</div>
-      <div class="trust-item">Licensed, Bonded &amp; Insured</div><div class="tdiv">&middot;</div>
-      <div class="trust-item">5.0&#9733; on Google &amp; Yelp</div><div class="tdiv">&middot;</div>
-      <div class="trust-item">Christian Family-Owned Business</div><div class="tdiv">&middot;</div>
-      <div class="trust-item">BBB Accredited</div>
-    </div>
-  </div>
-</div>
+
 
 <!-- CREDS — proper colored logos on light bg -->
 <!-- ABOUT + OWNER VIDEO -->
@@ -740,20 +723,40 @@ footer{background:#1e1e1e;padding:34px 0 18px}
 /* ─── GEO LOCATION ─── */
 (function(){
   var geoSelectors=['geo-city','geo-city2','geo-city3','geo-city4','geo-city5','geo-city6','geo-city7'];
+  var done=false;
   function setCity(city,region){
+    if(done||!city||city.length<2)return;
+    done=true;
     geoSelectors.forEach(function(cls){
       document.querySelectorAll('.'+cls).forEach(function(el){el.textContent=city;});
     });
     document.querySelectorAll('.geo-region').forEach(function(el){el.textContent=region||city;});
     document.title='Bathroom Remodeling '+city+' | MTR Baths | Free In-Home Estimate';
   }
-  fetch('https://api.bigdatacloud.net/data/ip-geolocation?localityLanguage=en')
+  // Primary: ipapi.co — free, no key needed, very reliable
+  fetch('https://ipapi.co/json/')
     .then(function(r){return r.json();})
     .then(function(d){
-      var city=(d.location&&d.location.city)||'';
-      var region=(d.location&&d.location.principalSubdivision)||'Northern California';
-      if(city)setCity(city,region);
+      setCity(d.city||'',d.region||'Northern California');
     }).catch(function(){});
+  // Fallback 1: ipinfo.io — fires 800ms later if primary gave no city
+  setTimeout(function(){
+    if(done)return;
+    fetch('https://ipinfo.io/json?token=')
+      .then(function(r){return r.json();})
+      .then(function(d){setCity(d.city||'',d.region||'Northern California');})
+      .catch(function(){});
+  },800);
+  // Fallback 2: browser geolocation + reverse geocode — fires 2s later
+  setTimeout(function(){
+    if(done||!navigator.geolocation)return;
+    navigator.geolocation.getCurrentPosition(function(pos){
+      fetch('https://api.bigdatacloud.net/data/reverse-geocode-client?latitude='+pos.coords.latitude+'&longitude='+pos.coords.longitude+'&localityLanguage=en')
+        .then(function(r){return r.json();})
+        .then(function(d){setCity(d.city||d.locality||'',d.principalSubdivision||'Northern California');})
+        .catch(function(){});
+    },function(){},{timeout:3000});
+  },2000);
 })();
 
 /* ─── COUPON LEAD-CAPTURE MECHANIC ─── */
