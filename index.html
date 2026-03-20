@@ -415,19 +415,23 @@ footer{background:#1e1e1e;padding:34px 0 18px}
 .mob-only{display:none}
 
 /* ── Hero card ── */
-.mob-hero-card{background:#fff;text-align:center;padding:28px 20px 20px}
-.mob-hero-h1{font-family:'Raleway',sans-serif;font-size:26px;font-weight:900;color:#1a1a1a;line-height:1.2;margin-bottom:8px}
+.mob-hero-wrap{position:relative;overflow:hidden}
+.mob-hero-wrap::before{content:'';position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=800&q=80&fm=jpg&fit=crop&crop=center') center/cover no-repeat;filter:brightness(.45)}
+.mob-hero-card{position:relative;z-index:1;text-align:center;padding:28px 20px 22px}
+.mob-hero-h1{font-family:'Raleway',sans-serif;font-size:26px;font-weight:900;color:#fff;line-height:1.2;margin-bottom:8px}
 .mob-hero-sub{font-size:15px;font-weight:700;color:#d97706;margin-bottom:14px}
 .mob-hero-divider{border:none;border-top:1px solid #e0e0e0;margin:14px 0}
-.mob-hero-cert{font-size:11px;font-weight:700;color:#888;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:16px}
+.mob-hero-cert{font-size:11px;font-weight:700;color:rgba(255,255,255,.75);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:16px}
 .mob-trust-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:18px}
-.mob-trust-box{border:1px solid #e0e0e0;border-radius:8px;padding:14px 10px;display:flex;flex-direction:column;align-items:center;gap:4px;text-align:center;background:#fff}
+.mob-trust-box{border:1px solid rgba(255,255,255,.15);border-radius:8px;padding:14px 10px;display:flex;flex-direction:column;align-items:center;gap:4px;text-align:center;background:rgba(255,255,255,.95);box-shadow:0 2px 8px rgba(0,0,0,.2)}
 .mob-trust-logo{display:flex;align-items:center;gap:6px;justify-content:center;margin-bottom:4px}
 .mob-trust-stars{color:#d97706;font-size:14px;letter-spacing:1px}
 .mob-trust-label{font-size:12px;font-weight:800;color:#222;font-family:'Raleway',sans-serif}
 .mob-trust-count{font-size:10px;color:#888}
-.mob-call-big{display:flex;align-items:center;justify-content:center;gap:10px;background:#1e293b;color:#fff;padding:18px;border-radius:6px;font-family:'Raleway',sans-serif;font-size:18px;font-weight:900;width:100%;margin-bottom:10px}
-.mob-form-btn{display:flex;align-items:center;justify-content:center;gap:8px;background:#d97706;color:#1a1a1a;padding:15px;border-radius:6px;font-family:'Raleway',sans-serif;font-size:16px;font-weight:900;width:100%}
+.mob-call-big{display:flex;align-items:center;justify-content:center;gap:10px;background:#1e293b;color:#fff;padding:16px;border-radius:6px;font-family:'Raleway',sans-serif;font-size:18px;font-weight:600;width:100%;margin-bottom:10px;letter-spacing:.2px}
+.mob-phone-cta{display:flex;flex-direction:column;align-items:center;gap:4px;padding:14px 16px;background:rgba(255,255,255,.1);border:2px solid rgba(255,255,255,.3);border-radius:6px;width:100%}
+.mob-phone-cta-label{font-size:12px;color:rgba(255,255,255,.8);font-weight:600;letter-spacing:.5px;text-transform:uppercase}
+.mob-phone-cta-number{display:flex;align-items:center;gap:8px;font-family:'Raleway',sans-serif;font-size:20px;font-weight:800;color:#fff}
 
 /* ── About / photo section ── */
 .mob-about-bar{background:#1e293b;color:#fff;text-align:center;padding:12px 16px;font-family:'Raleway',sans-serif;font-size:14px;font-weight:800;text-transform:uppercase;letter-spacing:.5px}
@@ -604,33 +608,38 @@ footer{background:#1e1e1e;padding:34px 0 18px}
 <!-- MOBILE ONLY SECTIONS -->
 <div class="mob-only">
 
-  <!-- ① HERO CARD -->
+  <!-- ① HERO CARD with background image -->
+  <div class="mob-hero-wrap">
   <div class="mob-hero-card">
     <h1 class="mob-hero-h1"><span class="geo-city">Northern California</span>'s #1 Bathroom Remodeling Experts</h1>
     <p class="mob-hero-sub">13+ Years of 5-Star Service</p>
-    <hr class="mob-hero-divider">
-    <p class="mob-hero-cert">Certified &mdash; Licensed &mdash; Satisfaction Guaranteed</p>
+    <hr class="mob-hero-divider" style="border-color:rgba(255,255,255,.2);margin:14px 0">
+    <p class="mob-hero-cert">Certified &mdash; Licensed &mdash; Lifetime Warranty</p>
     <div class="mob-trust-grid">
       <div class="mob-trust-box">
         <div class="mob-trust-logo">
-          <span class="g-mark" style="width:22px;height:22px"><svg viewBox="0 0 18 18"><path fill="#4285F4" d="M17.64 9.2c0-.637-.057-1.251-.164-1.84H9v3.481h4.844a4.14 4.14 0 0 1-1.796 2.716v2.259h2.908c1.702-1.567 2.684-3.875 2.684-6.615z"/><path fill="#34A853" d="M9 18c2.43 0 4.467-.806 5.956-2.184l-2.908-2.259c-.806.54-1.837.86-3.048.86-2.344 0-4.328-1.584-5.036-3.711H.957v2.332A8.997 8.997 0 0 0 9 18z"/><path fill="#FBBC05" d="M3.964 10.706A5.41 5.41 0 0 1 3.682 9c0-.593.102-1.17.282-1.706V4.962H.957A8.996 8.996 0 0 0 0 9c0 1.452.348 2.827.957 4.038l3.007-2.332z"/><path fill="#EA4335" d="M9 3.58c1.321 0 2.508.454 3.44 1.345l2.582-2.58C13.463.891 11.426 0 9 0A8.997 8.997 0 0 0 .957 4.962L3.964 7.294C4.672 5.163 6.656 3.58 9 3.58z"/></svg></span>
+          <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" alt="Google" style="width:18px;height:18px">
           <span style="font-size:13px;font-weight:800;color:#333">Google</span>
         </div>
         <div class="mob-trust-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-        <div class="mob-trust-label">5.0</div>
-        <div class="mob-trust-count">Based on 25 Reviews</div>
+        <div class="mob-trust-label">5.0 Stars</div>
+        <div class="mob-trust-count">25 Verified Reviews</div>
       </div>
       <div class="mob-trust-box">
         <div class="mob-trust-logo">
-          <span class="bbb-mark" style="height:20px;padding:0 7px;font-size:10px;border-radius:3px">BBB</span>
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/BBB_2020_logo.svg/320px-BBB_2020_logo.svg.png" alt="BBB Accredited" style="height:22px;width:auto">
         </div>
-        <div class="mob-trust-stars" style="color:#0033a0">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-        <div class="mob-trust-label">A+ Accredited</div>
-        <div class="mob-trust-count">BBB Business</div>
+        <div style="font-size:13px;font-weight:900;color:#0033a0;font-family:'Raleway',sans-serif;margin-top:2px">A+ Rating</div>
+        <div class="mob-trust-label" style="color:#0033a0">Accredited Business</div>
+        <div class="mob-trust-count">Since 2010</div>
       </div>
     </div>
     <a href="tel:+19168920745" class="mob-call-big">&#128222; Tap To Call Now</a>
-    <a href="#mob-form" class="mob-form-btn">&#8595; Message Us Instead</a>
+    <a href="tel:+19168920745" class="mob-phone-cta">
+      <div class="mob-phone-cta-label">Call to get a free quote today!</div>
+      <div class="mob-phone-cta-number">&#9990; (916) 892-0745</div>
+    </a>
+  </div>
   </div>
 
   <!-- ② ABOUT — blue bar + photo + why choose -->
@@ -721,7 +730,12 @@ footer{background:#1e1e1e;padding:34px 0 18px}
 
   <!-- ⑦ BOTTOM CTA -->
   <div class="mob-bottom">
-    <img src="https://ik.imagekit.io/mtrbaths/Screen%20Shot%202025-03-17%20at%203.34.37%20AM.png?updatedAt=1742247061366" alt="Bathroom remodel" class="mob-bottom-img">
+    <div style="background:#000;position:relative">
+      <video playsinline preload="none" poster="video-thumb.jpg" controls style="width:100%;height:200px;object-fit:cover;display:block">
+        <source src="owner-walkthrough.mp4" type="video/mp4">
+        <source src="hero-bg.mp4" type="video/mp4">
+      </video>
+    </div>
     <h2>Does Your Home Need A Professional Bathroom Remodel?</h2>
     <img src="https://ik.imagekit.io/mtrbaths/MTR_Baths__19_-removebg-preview%20(1).png" alt="MTR Baths" class="mob-bottom-logo">
     <a href="tel:+19168920745" class="mob-bottom-call">&#128222; Tap To Call Now</a>
@@ -1189,7 +1203,7 @@ function copyCode(code,btn){
 }
 
 /* ─── FORMS → WEBHOOK → THANK YOU PAGE ─── */
-var WEBHOOK_URL = 'https://services.leadconnectorhq.com/hooks/YOUR_WEBHOOK_ID_HERE/webhook-trigger/YOUR_TRIGGER_ID_HERE';
+var WEBHOOK_URL = 'https://services.leadconnectorhq.com/hooks/jfcDigX68fpqfA6vHcYK/webhook-trigger/d000c737-69a4-4358-bc59-bf73bd337457';
 var THANKYOU_URL = 'thank-you.html'; // change to your actual thank-you page URL
 
 function submitToWebhook(formData, btn, successText) {
