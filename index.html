@@ -55,7 +55,8 @@ a{text-decoration:none;color:inherit}
 .plat-logo{display:inline-flex;align-items:center;gap:4px;font-size:12px;font-weight:700;color:#555}
 .plat-logo .g-icon{width:14px;height:14px;flex-shrink:0}
 /* form card */
-.hero-right-card{background:#2c3e50;padding:26px 24px;flex:0 0 310px}
+.hero-right-card{background:#2c3e50;padding:26px 24px;flex:0 0 310px;display:flex;flex-direction:column}
+.hero-right-card form{display:flex;flex-direction:column;flex:1}
 .form-heading{font-family:'Raleway',sans-serif;font-size:16px;font-weight:800;color:#fff;text-align:center;margin-bottom:16px;line-height:1.3}
 .hf-input{width:100%;background:#fff;border:2px solid transparent;border-radius:3px;padding:11px 13px;font-size:14px;font-family:'Open Sans',sans-serif;color:#333;margin-bottom:9px;transition:border-color .2s}
 .hf-input::placeholder{color:#bbb}
@@ -81,9 +82,9 @@ a{text-decoration:none;color:inherit}
 .coupons{background:#fff;padding:36px 0}
 .coupons-header{text-align:center;margin-bottom:20px}
 .coupons-eyebrow{display:inline-flex;align-items:center;gap:10px;font-family:'Raleway',sans-serif;font-size:13px;font-weight:900;text-transform:uppercase;letter-spacing:2px;color:#555}
-.coupons-eyebrow::before,.coupons-eyebrow::after{content:'✂';font-size:16px;color:#c0392b}
+.coupons-eyebrow::before,.coupons-eyebrow::after{content:'✂';font-size:16px;color:#2c3e50}
 .coupons-title{font-family:'Raleway',sans-serif;font-size:clamp(20px,2.8vw,28px);font-weight:900;color:#1a1a1a;margin-top:4px}
-.coupons-title span{color:#c0392b}
+.coupons-title span{color:#2c3e50}
 .coupons-subtitle{font-size:13px;color:#888;margin-top:4px}
 /* dashed coupon border line across top */
 .coupons-cut-line{display:flex;align-items:center;gap:0;margin-bottom:18px;overflow:hidden}
@@ -93,7 +94,7 @@ a{text-decoration:none;color:inherit}
 .coupon{border-right:2px dashed #ccc;position:relative;display:flex;flex-direction:column;min-height:270px;background:#fff}
 .coupon:last-child{border-right:none}
 /* COUPON stamp top-right */
-.coupon-stamp{position:absolute;top:8px;right:8px;background:#c0392b;color:#fff;font-family:'Raleway',sans-serif;font-size:8px;font-weight:900;letter-spacing:1.5px;text-transform:uppercase;padding:2px 6px;border-radius:2px;z-index:3}
+.coupon-stamp{position:absolute;top:8px;right:8px;background:#2c3e50;color:#fff;font-family:'Raleway',sans-serif;font-size:8px;font-weight:900;letter-spacing:1.5px;text-transform:uppercase;padding:2px 6px;border-radius:2px;z-index:3}
 .coupon-img{height:88px;overflow:hidden;flex-shrink:0}
 .coupon-img img{width:100%;height:100%;object-fit:cover}
 .coupon-body{padding:10px 12px 12px;display:flex;flex-direction:column;gap:3px;flex:1}
@@ -145,7 +146,7 @@ a{text-decoration:none;color:inherit}
 .about-checks{list-style:none;display:flex;flex-direction:column;gap:9px;margin-bottom:20px}
 .about-checks li{display:flex;align-items:center;gap:9px;font-size:13px;color:#444;font-weight:600}
 .about-checks li .ac{width:17px;height:17px;background:#f0c040;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:9px;color:#1a1a1a;font-weight:900;flex-shrink:0}
-.owner-sig{display:flex;align-items:center;gap:13px;background:#f7f7f5;border:1px solid #eee;border-radius:4px;padding:12px 14px}
+.owner-sig{display:flex;align-items:center;gap:13px;background:#f8f7f4;border:1px solid #eee;border-radius:4px;padding:12px 14px}
 .owner-sig img{width:54px;height:54px;border-radius:50%;object-fit:cover;border:2px solid #f0c040;flex-shrink:0}
 .owner-sig-name{font-family:'Raleway',sans-serif;font-size:14px;font-weight:900;color:#1a1a1a}
 .owner-sig-sub{font-size:11px;color:#888;margin-top:2px}
@@ -157,7 +158,7 @@ a{text-decoration:none;color:inherit}
 .call-strip a:hover{background:#d4a800}
 
 /* ── GALLERY ── */
-.gallery-section{padding:50px 0;background:#f7f7f5}
+.gallery-section{padding:50px 0;background:#f8f7f4}
 .section-label{font-size:10px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:#b8882a;display:block;text-align:center;margin-bottom:8px}
 .section-title{font-family:'Raleway',sans-serif;font-size:clamp(19px,2.8vw,28px);font-weight:900;color:#1a1a1a;text-align:center;margin-bottom:28px}
 .ba-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:14px}
@@ -214,7 +215,7 @@ a{text-decoration:none;color:inherit}
 .dark-cta a:hover{background:#d4a800}
 
 /* ── BOTTOM FORM STRIP ── */
-.bottom-form-strip{background:#f7f7f5;border-top:3px solid #f0c040;padding:28px 0}
+.bottom-form-strip{background:#f8f7f4;border-top:3px solid #f0c040;padding:28px 0}
 .bfs-inner{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
 .bfs-title{font-family:'Raleway',sans-serif;font-size:clamp(14px,1.7vw,18px);font-weight:900;color:#1a1a1a;white-space:nowrap;margin-right:6px}
 .bfs-input{flex:1 1 140px;min-width:120px;background:#fff;border:2px solid #ddd;border-radius:3px;padding:12px 13px;font-size:14px;font-family:'Open Sans',sans-serif;color:#333}
@@ -244,8 +245,8 @@ footer{background:#1e1e1e;padding:34px 0 18px}
 .footer-bottom{border-top:1px solid rgba(255,255,255,.07);padding-top:15px;text-align:center;font-size:11px;color:rgba(255,255,255,.28)}
 
 /* ── MOBILE BAR ── */
-.mobile-bar{display:none;position:fixed;bottom:0;left:0;right:0;z-index:200;background:#fff;padding:9px 12px;gap:10px;border-top:2px solid #c0392b;box-shadow:0 -3px 14px rgba(0,0,0,.13)}
-.mb-call{flex:1;background:#c0392b;color:#fff;padding:13px;min-height:50px;font-size:14px;font-weight:700;border-radius:6px;text-align:center;display:flex;align-items:center;justify-content:center;font-family:'Raleway',sans-serif}
+.mobile-bar{display:none;position:fixed;bottom:0;left:0;right:0;z-index:200;background:#fff;padding:9px 12px;gap:10px;border-top:3px solid #1e293b;box-shadow:0 -3px 14px rgba(0,0,0,.13)}
+.mb-call{flex:1;background:#1e293b;color:#fff;padding:13px;min-height:50px;font-size:14px;font-weight:700;border-radius:6px;text-align:center;display:flex;align-items:center;justify-content:center;font-family:'Raleway',sans-serif}
 .mb-quote{flex:1;background:#f0c040;color:#1a1a1a;padding:13px;min-height:50px;font-size:14px;font-weight:700;border-radius:6px;text-align:center;display:flex;align-items:center;justify-content:center;font-family:'Raleway',sans-serif}
 
 /* ══════════════════════════════════════════
@@ -407,14 +408,108 @@ footer{background:#1e1e1e;padding:34px 0 18px}
   .coupon:last-child{border-bottom:none!important}
   .nav-phone span{display:none}
 }
+
+/* ═══════════════════════════════════════════
+   MOBILE-ONLY SECTIONS — Tyler Davis style
+   ═══════════════════════════════════════════ */
+.mob-only{display:none}
+
+/* ── Hero card ── */
+.mob-hero-card{background:#fff;text-align:center;padding:28px 20px 20px}
+.mob-hero-h1{font-family:'Raleway',sans-serif;font-size:26px;font-weight:900;color:#1a1a1a;line-height:1.2;margin-bottom:8px}
+.mob-hero-sub{font-size:15px;font-weight:700;color:#d97706;margin-bottom:14px}
+.mob-hero-divider{border:none;border-top:1px solid #e0e0e0;margin:14px 0}
+.mob-hero-cert{font-size:11px;font-weight:700;color:#888;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:16px}
+.mob-trust-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:18px}
+.mob-trust-box{border:1px solid #e0e0e0;border-radius:8px;padding:14px 10px;display:flex;flex-direction:column;align-items:center;gap:4px;text-align:center;background:#fff}
+.mob-trust-logo{display:flex;align-items:center;gap:6px;justify-content:center;margin-bottom:4px}
+.mob-trust-stars{color:#d97706;font-size:14px;letter-spacing:1px}
+.mob-trust-label{font-size:12px;font-weight:800;color:#222;font-family:'Raleway',sans-serif}
+.mob-trust-count{font-size:10px;color:#888}
+.mob-call-big{display:flex;align-items:center;justify-content:center;gap:10px;background:#1e293b;color:#fff;padding:18px;border-radius:6px;font-family:'Raleway',sans-serif;font-size:18px;font-weight:900;width:100%;margin-bottom:10px}
+.mob-form-btn{display:flex;align-items:center;justify-content:center;gap:8px;background:#d97706;color:#1a1a1a;padding:15px;border-radius:6px;font-family:'Raleway',sans-serif;font-size:16px;font-weight:900;width:100%}
+
+/* ── About / photo section ── */
+.mob-about-bar{background:#1e293b;color:#fff;text-align:center;padding:12px 16px;font-family:'Raleway',sans-serif;font-size:14px;font-weight:800;text-transform:uppercase;letter-spacing:.5px}
+.mob-about-photo{width:100%;height:220px;object-fit:cover;display:block}
+.mob-why{background:#fff;padding:24px 16px}
+.mob-why h2{font-family:'Raleway',sans-serif;font-size:22px;font-weight:900;color:#1a1a1a;text-align:center;margin-bottom:18px}
+.mob-why-list{list-style:none;display:flex;flex-direction:column;gap:14px}
+.mob-why-list li{display:flex;align-items:center;gap:14px;font-size:14px;color:#333;font-weight:600;line-height:1.4;text-align:left}
+.mob-why-icon{width:36px;height:36px;border-radius:50%;background:#1e293b;display:flex;align-items:center;justify-content:center;font-size:17px;flex-shrink:0}
+
+/* ── Steps ── */
+.mob-steps{background:#f1f5f9;padding:28px 16px}
+.mob-steps-h2{font-family:'Raleway',sans-serif;font-size:22px;font-weight:900;color:#1a1a1a;text-align:center;margin-bottom:18px;line-height:1.2}
+.mob-step{background:#fff;border-radius:8px;overflow:hidden;margin-bottom:12px;box-shadow:0 1px 4px rgba(0,0,0,.08)}
+.mob-step-head{background:#1e293b;color:#fff;padding:11px 16px;font-family:'Raleway',sans-serif;font-size:15px;font-weight:900;text-align:center;letter-spacing:1px}
+.mob-step-body{padding:20px 16px;text-align:center}
+.mob-step-icon{font-size:36px;margin-bottom:8px;display:block}
+.mob-step-title{font-family:'Raleway',sans-serif;font-size:14px;font-weight:900;color:#1e293b;margin-bottom:8px;text-transform:uppercase;letter-spacing:.5px}
+.mob-step-text{font-size:13px;color:#555;line-height:1.6}
+.mob-guarantee{background:#d97706;color:#1a1a1a;text-align:center;padding:15px 16px;font-family:'Raleway',sans-serif;font-size:15px;font-weight:900;letter-spacing:.3px;margin-top:4px}
+
+/* ── Reviews ── */
+.mob-reviews{background:#fff;padding:24px 16px}
+.mob-reviews h2{font-family:'Raleway',sans-serif;font-size:22px;font-weight:900;color:#1a1a1a;margin-bottom:16px;line-height:1.2}
+.mob-review-card{background:#fff;border:1px solid #e8e8e8;border-radius:8px;padding:16px;margin-bottom:12px;box-shadow:0 1px 4px rgba(0,0,0,.06)}
+.mob-review-stars{color:#d97706;font-size:16px;margin-bottom:6px}
+.mob-review-text{font-size:13px;color:#444;line-height:1.7;margin-bottom:10px}
+.mob-review-name{font-size:12px;font-weight:700;color:#222}
+.mob-review-plat{display:flex;align-items:center;gap:4px;font-size:11px;color:#888;margin-top:4px}
+
+/* ── Services ── */
+.mob-services{background:#f1f5f9;padding:24px 16px}
+.mob-services h2{font-family:'Raleway',sans-serif;font-size:22px;font-weight:900;color:#1a1a1a;text-align:center;margin-bottom:16px}
+.mob-svc-card{background:#fff;border-radius:8px;padding:16px;display:flex;align-items:center;gap:14px;margin-bottom:10px;box-shadow:0 1px 4px rgba(0,0,0,.06)}
+.mob-svc-icon{width:44px;height:44px;background:#1e293b;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0}
+.mob-svc-label{font-family:'Raleway',sans-serif;font-size:15px;font-weight:800;color:#1a1a1a}
+
+/* ── Service area ── */
+.mob-area{position:relative;overflow:hidden;margin:0}
+.mob-area-bg{width:100%;height:240px;object-fit:cover;display:block}
+.mob-area-overlay{position:absolute;inset:0;background:rgba(44,62,80,.88);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:24px 20px;text-align:center}
+.mob-area-title{font-family:'Raleway',sans-serif;font-size:22px;font-weight:900;color:#d97706;margin-bottom:12px;line-height:1.2}
+.mob-area-cities{font-size:13px;color:rgba(255,255,255,.88);line-height:2;letter-spacing:.3px}
+
+/* ── Bottom CTA ── */
+.mob-bottom{background:#fff;padding:0 0 24px}
+.mob-bottom-img{width:100%;height:200px;object-fit:cover;display:block;margin-bottom:20px}
+.mob-bottom h2{font-family:'Raleway',sans-serif;font-size:22px;font-weight:900;color:#1a1a1a;text-align:center;padding:0 20px;margin-bottom:16px;line-height:1.3}
+.mob-bottom-logo{display:block;height:52px;width:auto;margin:0 auto 18px}
+.mob-bottom-call{display:flex;align-items:center;justify-content:center;gap:10px;background:#1e293b;color:#fff;padding:18px;border-radius:6px;font-family:'Raleway',sans-serif;font-size:18px;font-weight:900;margin:0 16px}
+
+/* ── Mobile lead form ── */
+.mob-form-wrap{background:#1e293b;padding:28px 16px}
+.mob-form-wrap h3{font-family:'Raleway',sans-serif;font-size:18px;font-weight:900;color:#fff;text-align:center;margin-bottom:18px}
+
+@media(max-width:600px){
+  /* Page bg */
+  body{background:#f1f5f9}
+  /* Show mobile sections */
+  .mob-only{display:block}
+  /* Hide entire desktop hero + most desktop sections */
+  .hero,.rating-bar,.about,.gallery-section,.call-strip,.dark-cta,.services,
+  .coupons,.bottom-form-strip,.mid-cta,.urgency-bar{display:none}
+  /* Show only reviews + footer from desktop */
+  .reviews{display:block;background:#fff}
+  .reviews-grid{grid-template-columns:1fr}
+  .review-card{margin-bottom:10px}
+  footer{display:block}
+  .footer-inner{flex-direction:column;gap:24px}
+  /* Sticky bar */
+  .mobile-bar{display:flex}
+  body{padding-bottom:70px}
+  /* iOS zoom prevention */
+  input,select,textarea{font-size:16px!important}
+}
 </style>
 </head>
 <body>
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PNR8J2VT" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <div class="mobile-bar">
-  <a href="tel:+19168920745" class="mb-call">&#128222; Call Now</a>
-  <a href="#hero-form" class="mb-quote">Free Quote</a>
+  <a href="tel:+19168920745" class="mb-call" style="flex:1;max-width:100%">&#128222; Call Now — (916) 892-0745</a>
 </div>
 
 <!-- NAV -->
@@ -465,15 +560,15 @@ footer{background:#1e1e1e;padding:34px 0 18px}
             5.0
           </span>
           <span class="star-row">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-          <span style="font-size:12px;color:#666">(Google &amp; Yelp)</span>
+          <span style="font-size:12px;color:#666">(40+ Reviews)</span>
         </div>
       </div>
       <div class="hero-right-card" id="hero-form">
         <p class="form-heading">No Obligation<br>Same Day Estimate</p>
-        <form id="hero-form-el">
+        <form id="hero-form-el" style="display:flex;flex-direction:column;gap:0">
           <input type="text" class="hf-input" placeholder="Your Name*" required>
           <input type="tel" class="hf-input" placeholder="Your Phone*" required inputmode="tel">
-          <textarea class="hf-input" placeholder="Tell us about your project — what are you looking to do?*" required style="resize:none;height:108px;margin-bottom:9px;line-height:1.5"></textarea>
+          <textarea class="hf-input" placeholder="Tell us about your project — what are you looking to do?*" required style="resize:none;flex:1;min-height:100px;margin-bottom:9px;line-height:1.5"></textarea>
           <button type="submit" class="hf-submit" id="hero-submit">Book Now! &rsaquo;</button>
         </form>
       </div>
@@ -488,14 +583,14 @@ footer{background:#1e1e1e;padding:34px 0 18px}
       <!-- Google rating -->
       <div class="ri">
         <span class="g-mark"><svg viewBox="0 0 18 18" xmlns="http://www.w3.org/2000/svg"><path fill="#4285F4" d="M17.64 9.2c0-.637-.057-1.251-.164-1.84H9v3.481h4.844a4.14 4.14 0 0 1-1.796 2.716v2.259h2.908c1.702-1.567 2.684-3.875 2.684-6.615z"/><path fill="#34A853" d="M9 18c2.43 0 4.467-.806 5.956-2.184l-2.908-2.259c-.806.54-1.837.86-3.048.86-2.344 0-4.328-1.584-5.036-3.711H.957v2.332A8.997 8.997 0 0 0 9 18z"/><path fill="#FBBC05" d="M3.964 10.706A5.41 5.41 0 0 1 3.682 9c0-.593.102-1.17.282-1.706V4.962H.957A8.996 8.996 0 0 0 0 9c0 1.452.348 2.827.957 4.038l3.007-2.332z"/><path fill="#EA4335" d="M9 3.58c1.321 0 2.508.454 3.44 1.345l2.582-2.58C13.463.891 11.426 0 9 0A8.997 8.997 0 0 0 .957 4.962L3.964 7.294C4.672 5.163 6.656 3.58 9 3.58z"/></svg></span>
-        <strong>5.0</strong><span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span><span style="opacity:.7">Google</span>
+        <strong>5.0</strong><span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span><span style="opacity:.7">Google (25 reviews)</span>
       </div>
       <div class="rbar-div">&middot;</div>
       <!-- Yelp rating -->
-      <div class="ri"><span class="y-mark">y!</span><strong>5.0</strong><span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span><span style="opacity:.7">Yelp (6 reviews)</span></div>
+      <div class="ri"><span class="y-mark">y!</span><strong>5.0</strong><span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span><span style="opacity:.7">Yelp (15 reviews)</span></div>
       <div class="rbar-div">&middot;</div>
       <!-- Facebook -->
-      <div class="ri"><span class="fb-mark">f</span><strong>5.0</strong><span style="opacity:.7">Facebook</span></div>
+      <div class="ri"><span class="fb-mark">f</span><strong>5.0</strong><span style="opacity:.7">Facebook (6 reviews)</span></div>
       <div class="rbar-div">&middot;</div>
       <!-- BBB -->
       <div class="ri"><span class="bbb-mark">BBB</span><strong>A+</strong><span style="opacity:.7">Accredited</span></div>
@@ -506,7 +601,148 @@ footer{background:#1e1e1e;padding:34px 0 18px}
   </div>
 </div>
 
-<!-- COUPONS — tap to reveal via lead form -->
+<!-- MOBILE ONLY SECTIONS -->
+<div class="mob-only">
+
+  <!-- ① HERO CARD -->
+  <div class="mob-hero-card">
+    <h1 class="mob-hero-h1"><span class="geo-city">Northern California</span>'s #1 Bathroom Remodeling Experts</h1>
+    <p class="mob-hero-sub">13+ Years of 5-Star Service</p>
+    <hr class="mob-hero-divider">
+    <p class="mob-hero-cert">Certified &mdash; Licensed &mdash; Satisfaction Guaranteed</p>
+    <div class="mob-trust-grid">
+      <div class="mob-trust-box">
+        <div class="mob-trust-logo">
+          <span class="g-mark" style="width:22px;height:22px"><svg viewBox="0 0 18 18"><path fill="#4285F4" d="M17.64 9.2c0-.637-.057-1.251-.164-1.84H9v3.481h4.844a4.14 4.14 0 0 1-1.796 2.716v2.259h2.908c1.702-1.567 2.684-3.875 2.684-6.615z"/><path fill="#34A853" d="M9 18c2.43 0 4.467-.806 5.956-2.184l-2.908-2.259c-.806.54-1.837.86-3.048.86-2.344 0-4.328-1.584-5.036-3.711H.957v2.332A8.997 8.997 0 0 0 9 18z"/><path fill="#FBBC05" d="M3.964 10.706A5.41 5.41 0 0 1 3.682 9c0-.593.102-1.17.282-1.706V4.962H.957A8.996 8.996 0 0 0 0 9c0 1.452.348 2.827.957 4.038l3.007-2.332z"/><path fill="#EA4335" d="M9 3.58c1.321 0 2.508.454 3.44 1.345l2.582-2.58C13.463.891 11.426 0 9 0A8.997 8.997 0 0 0 .957 4.962L3.964 7.294C4.672 5.163 6.656 3.58 9 3.58z"/></svg></span>
+          <span style="font-size:13px;font-weight:800;color:#333">Google</span>
+        </div>
+        <div class="mob-trust-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <div class="mob-trust-label">5.0</div>
+        <div class="mob-trust-count">Based on 40+ Reviews</div>
+      </div>
+      <div class="mob-trust-box">
+        <div class="mob-trust-logo">
+          <span class="bbb-mark" style="height:20px;padding:0 7px;font-size:10px;border-radius:3px">BBB</span>
+        </div>
+        <div class="mob-trust-stars" style="color:#0033a0">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <div class="mob-trust-label">A+ Accredited</div>
+        <div class="mob-trust-count">BBB Business</div>
+      </div>
+    </div>
+    <a href="tel:+19168920745" class="mob-call-big">&#128222; Tap To Call Now</a>
+    <a href="#mob-form" class="mob-form-btn">&#8595; Message Us Instead</a>
+  </div>
+
+  <!-- ② ABOUT — blue bar + photo + why choose -->
+  <div class="mob-about-bar">13+ Years Serving <span class="geo-city">Northern California</span></div>
+  <img src="https://ik.imagekit.io/mtrbaths/Screen%20Shot%202025-03-17%20at%203.33.32%20AM.png?updatedAt=1742247173904" alt="MTR Baths completed bathroom remodel" class="mob-about-photo">
+  <div class="mob-why">
+    <h2>Why Choose MTR Baths?</h2>
+    <ul class="mob-why-list">
+      <li><span class="mob-why-icon">&#128196;</span>Free Estimates &amp; Same-Day Scheduling</li>
+      <li><span class="mob-why-icon">&#128176;</span>Fair &amp; Honest Pricing — Best Price Guaranteed</li>
+      <li><span class="mob-why-icon">&#9989;</span>100% Satisfaction Guaranteed</li>
+      <li><span class="mob-why-icon">&#128112;</span>Licensed, Bonded &amp; Insured · CA #965267</li>
+      <li><span class="mob-why-icon">&#127968;</span>Christian Family-Owned Since 2010</li>
+      <li><span class="mob-why-icon">&#128179;</span>Flexible Financing — From $99/Month</li>
+    </ul>
+  </div>
+
+  <!-- ③ HOW IT WORKS — steps -->
+  <div class="mob-steps">
+    <h2 class="mob-steps-h2">How Our Bathroom Remodeling Works</h2>
+    <div class="mob-step">
+      <div class="mob-step-head">STEP 1</div>
+      <div class="mob-step-body">
+        <span class="mob-step-icon">&#128222;</span>
+        <div class="mob-step-title">Contact Us</div>
+        <div class="mob-step-text">Give us a call or send a message. We'll answer your questions and get you scheduled — usually same day.</div>
+      </div>
+    </div>
+    <div class="mob-step">
+      <div class="mob-step-head">STEP 2</div>
+      <div class="mob-step-body">
+        <span class="mob-step-icon">&#128203;</span>
+        <div class="mob-step-title">Get Your Free Estimate</div>
+        <div class="mob-step-text">We come to your home, measure everything, and provide a clear flat-rate quote. No hidden fees.</div>
+      </div>
+    </div>
+    <div class="mob-step">
+      <div class="mob-step-head">STEP 3</div>
+      <div class="mob-step-body">
+        <span class="mob-step-icon">&#9989;</span>
+        <div class="mob-step-title">Remodel Complete</div>
+        <div class="mob-step-text">Our crew shows up on time and gets the job done — most installs in one day. You enjoy your new bathroom.</div>
+      </div>
+    </div>
+    <div class="mob-guarantee">&#9989; &nbsp;100% SATISFACTION GUARANTEED</div>
+  </div>
+
+  <!-- ④ REVIEWS heading + cards (desktop reviews section shows below) -->
+  <div class="mob-reviews">
+    <h2>What <span class="geo-city">Sacramento</span> Homeowners Say:</h2>
+    <div class="mob-review-card">
+      <div class="mob-review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <p class="mob-review-text">"Surpassed our expectations by a mile! Alex and his son Albert did an absolutely incredible job on our walk-in shower. Very professional and talented!!"</p>
+      <div class="mob-review-name">Rick M.</div>
+      <div class="mob-review-plat">
+        <span class="g-mark" style="width:14px;height:14px"><svg viewBox="0 0 18 18"><path fill="#4285F4" d="M17.64 9.2c0-.637-.057-1.251-.164-1.84H9v3.481h4.844a4.14 4.14 0 0 1-1.796 2.716v2.259h2.908c1.702-1.567 2.684-3.875 2.684-6.615z"/><path fill="#34A853" d="M9 18c2.43 0 4.467-.806 5.956-2.184l-2.908-2.259c-.806.54-1.837.86-3.048.86-2.344 0-4.328-1.584-5.036-3.711H.957v2.332A8.997 8.997 0 0 0 9 18z"/><path fill="#FBBC05" d="M3.964 10.706A5.41 5.41 0 0 1 3.682 9c0-.593.102-1.17.282-1.706V4.962H.957A8.996 8.996 0 0 0 0 9c0 1.452.348 2.827.957 4.038l3.007-2.332z"/><path fill="#EA4335" d="M9 3.58c1.321 0 2.508.454 3.44 1.345l2.582-2.58C13.463.891 11.426 0 9 0A8.997 8.997 0 0 0 .957 4.962L3.964 7.294C4.672 5.163 6.656 3.58 9 3.58z"/></svg></span>
+        Google Verified
+      </div>
+    </div>
+    <div class="mob-review-card">
+      <div class="mob-review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <p class="mob-review-text">"Absolutely AMAZING!!!! Albert came to the house and the transformation was unbelievable. Kohler certified — highly recommend MTR Baths!"</p>
+      <div class="mob-review-name">Kurt A.</div>
+      <div class="mob-review-plat">
+        <span class="y-mark" style="width:14px;height:14px;font-size:7px">y!</span>
+        Yelp Verified
+      </div>
+    </div>
+  </div>
+
+  <!-- ⑤ SERVICES -->
+  <div class="mob-services">
+    <h2>What We Do</h2>
+    <div class="mob-svc-card"><span class="mob-svc-icon">&#128703;</span><span class="mob-svc-label">Tub-to-Shower Conversion</span></div>
+    <div class="mob-svc-card"><span class="mob-svc-icon">&#129703;</span><span class="mob-svc-label">Walk-In Shower Installation</span></div>
+    <div class="mob-svc-card"><span class="mob-svc-icon">&#9855;</span><span class="mob-svc-label">Senior &amp; Accessible Showers</span></div>
+    <div class="mob-svc-card"><span class="mob-svc-icon">&#127968;</span><span class="mob-svc-label">Full Bathroom Remodel</span></div>
+  </div>
+
+  <!-- ⑥ SERVICE AREA -->
+  <div class="mob-area">
+    <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=800&q=80&fm=jpg&fit=crop" alt="Service area" class="mob-area-bg">
+    <div class="mob-area-overlay">
+      <div class="mob-area-title">Proudly Serving<br><span class="geo-city">Northern California</span></div>
+      <div class="mob-area-cities">Sacramento &middot; West Sacramento &middot; Roseville &middot; Elk Grove &middot; Folsom &middot; Stockton &middot; Modesto &middot; Fairfield &middot; Napa &middot; Davis<br><span style="color:rgba(255,255,255,.6);font-size:12px">+ all of Northern California</span></div>
+    </div>
+  </div>
+
+  <!-- ⑦ BOTTOM CTA -->
+  <div class="mob-bottom">
+    <img src="https://ik.imagekit.io/mtrbaths/Screen%20Shot%202025-03-17%20at%203.34.37%20AM.png?updatedAt=1742247061366" alt="Bathroom remodel" class="mob-bottom-img">
+    <h2>Does Your Home Need A Professional Bathroom Remodel?</h2>
+    <img src="https://ik.imagekit.io/mtrbaths/MTR_Baths__19_-removebg-preview%20(1).png" alt="MTR Baths" class="mob-bottom-logo">
+    <a href="tel:+19168920745" class="mob-bottom-call">&#128222; Tap To Call Now</a>
+  </div>
+
+  <!-- ⑧ MOBILE FORM -->
+  <div class="mob-form-wrap" id="mob-form">
+    <h3>Get Your Free Estimate</h3>
+    <form id="mob-form-el">
+      <input type="text" class="hf-input" placeholder="Your Name*" required style="margin-bottom:10px">
+      <input type="tel" class="hf-input" placeholder="Your Phone*" required inputmode="tel" style="margin-bottom:10px">
+      <textarea class="hf-input" placeholder="Tell us what you need..." style="resize:none;height:80px;margin-bottom:12px;line-height:1.5"></textarea>
+      <button type="submit" id="mob-submit" class="hf-submit" style="background:#d97706;color:#1a1a1a;font-size:17px;padding:17px;min-height:56px">Book My Free Estimate &rsaquo;</button>
+      <p style="font-size:11px;color:rgba(255,255,255,.4);text-align:center;margin-top:10px">No spam. We'll call you shortly.</p>
+    </form>
+  </div>
+
+</div>
+<!-- END MOBILE ONLY -->
+
+<!-- COUPONS -->
 <section class="coupons">
   <div class="container">
     <div class="coupons-header">
@@ -791,7 +1027,7 @@ footer{background:#1e1e1e;padding:34px 0 18px}
 <!-- DARK CTA -->
 <section class="dark-cta">
   <div class="dark-cta-inner">
-    <h2><span class="dark-cta h2 span" style="color:#f0c040"><span class="geo-city5">Northern California</span></span>&rsquo;s Trusted Bathroom Remodeling Experts</h2>
+    <h2><span class="geo-city5" style="color:#f0c040">Northern California</span>&rsquo;s Trusted Bathroom Remodeling Experts</h2>
     <p>Looking for a bathroom remodeler you can actually trust near <span class="geo-city6">you</span>? MTR Baths has spent 13+ years earning 5-star reviews across Northern California with over 3,000 completed projects. Whether you need a tub-to-shower conversion, a senior-safe walk-in, or a full remodel &mdash; call us for your free in-home estimate.</p>
     <a href="tel:+19168920745">Call Now (916) 892-0745</a>
   </div>
@@ -805,7 +1041,6 @@ footer{background:#1e1e1e;padding:34px 0 18px}
         <div class="bfs-title">Professional &amp; Affordable &mdash; We&rsquo;re On Our Way!</div>
         <input type="text" class="bfs-input" placeholder="Your Name*" required>
         <input type="tel" class="bfs-input" placeholder="Your Phone*" required inputmode="tel">
-        <input type="email" class="bfs-input" placeholder="Your Email*">
         <button type="submit" class="bfs-btn" id="bottom-submit">Get Started Now!</button>
       </div>
     </form>
@@ -966,6 +1201,14 @@ document.getElementById('bottom-form-el').addEventListener('submit',function(e){
   var b=document.getElementById('bottom-submit');
   b.textContent='Got it! We\'ll call you soon.';b.style.background='#27ae60';b.disabled=true;
   if(window.dataLayer)window.dataLayer.push({event:'lead_form_submit',form:'bottom'});
+  if(typeof fbq!=='undefined')fbq('track','Lead');
+});
+var mf=document.getElementById('mob-form-el');
+if(mf)mf.addEventListener('submit',function(e){
+  e.preventDefault();
+  var b=document.getElementById('mob-submit');
+  b.textContent='Submitted!';b.style.background='#27ae60';b.disabled=true;
+  if(window.dataLayer)window.dataLayer.push({event:'lead_form_submit',form:'mobile'});
   if(typeof fbq!=='undefined')fbq('track','Lead');
 });
 
