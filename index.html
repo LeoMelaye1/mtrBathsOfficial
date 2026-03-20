@@ -22,250 +22,274 @@ img{max-width:100%;display:block}
 a{text-decoration:none;color:inherit}
 .container{max-width:1100px;margin:0 auto;padding:0 24px}
 
-/* NAV */
-.top-nav{background:#2b2b2b;padding:0}
+/* ── NAV ── */
+.top-nav{background:#2b2b2b}
 .nav-inner{display:flex;align-items:center;justify-content:space-between;height:62px}
 .nav-logo img{height:46px;width:auto}
 .nav-links{display:flex;gap:28px}
-.nav-links a{font-size:14px;font-weight:600;color:rgba(255,255,255,.85);transition:color .15s}
+.nav-links a{font-size:14px;font-weight:600;color:rgba(255,255,255,.8);transition:color .15s}
 .nav-links a:hover{color:#f0c040}
-.nav-phone{display:flex;align-items:center;gap:8px;background:#1a1a1a;color:#fff;padding:10px 20px;border-radius:30px;font-size:15px;font-weight:700;transition:background .15s}
+.nav-phone{display:flex;align-items:center;gap:8px;background:#1a1a1a;color:#fff;padding:10px 20px;border-radius:30px;font-size:14px;font-weight:700;transition:background .15s;white-space:nowrap}
 .nav-phone:hover{background:#000}
-.nav-phone svg{width:16px;height:16px;fill:#f0c040;flex-shrink:0}
 
-/* URGENCY BAR */
+/* ── URGENCY BAR ── */
 .urgency-bar{background:#f0c040;padding:10px 16px;text-align:center;font-size:14px;font-weight:700;color:#222}
-.urgency-bar a{color:#222;font-weight:800}
+.urgency-bar a{color:#222;font-weight:800;text-decoration:underline}
 
-/* HERO */
-.hero{background:#1a1a1a;position:relative;padding:60px 0 80px;overflow:hidden}
-.hero-video-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.4;z-index:0;pointer-events:none}
-.hero-yt-bg{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:177.78vh;min-width:100%;height:56.25vw;min-height:100%;pointer-events:none;z-index:0;opacity:.35;border:none}
-.hero::before{content:'';position:absolute;inset:0;background:rgba(0,0,0,.5);z-index:1}
+/* ── HERO ── */
+.hero{background:#111;position:relative;padding:58px 0 76px;overflow:hidden}
+.hero-video-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.38;z-index:0;pointer-events:none}
+.hero::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(0,0,0,.6) 0%,rgba(0,0,0,.4) 100%);z-index:1}
 .hero-inner{position:relative;z-index:2;display:flex;justify-content:center;gap:0;max-width:880px;margin:0 auto}
-.hero-left-card{background:#e8e8e8;padding:36px 32px;flex:1 1 0;min-width:0}
-.hero-pre{font-size:13px;color:#444;margin-bottom:10px;line-height:1.4}
-.hero-h1{font-family:'Raleway',sans-serif;font-size:clamp(24px,3.2vw,36px);font-weight:900;color:#222;line-height:1.15;margin-bottom:10px}
-.hero-sub{font-size:13px;color:#666;margin-bottom:18px}
-.hero-checks{list-style:none;margin-bottom:22px;display:flex;flex-direction:column;gap:8px}
-.hero-checks li{display:flex;align-items:center;gap:9px;font-size:13px;font-weight:700;color:#333}
-.hcheck{width:18px;height:18px;background:#f0c040;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:900;color:#222;flex-shrink:0}
-.hero-call{display:block;width:100%;background:#f0c040;color:#222;text-align:center;padding:14px;font-family:'Raleway',sans-serif;font-size:18px;font-weight:900;border-radius:4px;margin-bottom:14px;transition:background .15s}
+.hero-left-card{background:rgba(232,232,232,.97);padding:34px 30px;flex:1 1 0;min-width:0}
+.hero-pre{font-size:12px;color:#555;margin-bottom:8px;line-height:1.4}
+.hero-h1{font-family:'Raleway',sans-serif;font-size:clamp(22px,3vw,34px);font-weight:900;color:#1a1a1a;line-height:1.18;margin-bottom:9px}
+.hero-sub{font-size:13px;color:#666;margin-bottom:16px}
+.hero-checks{list-style:none;margin-bottom:20px;display:flex;flex-direction:column;gap:7px}
+.hero-checks li{display:flex;align-items:center;gap:9px;font-size:13px;font-weight:700;color:#222}
+.hcheck{width:18px;height:18px;background:#f0c040;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:900;color:#1a1a1a;flex-shrink:0}
+.hero-call{display:block;width:100%;background:#f0c040;color:#1a1a1a;text-align:center;padding:13px;font-family:'Raleway',sans-serif;font-size:17px;font-weight:900;border-radius:3px;margin-bottom:12px;transition:background .15s}
 .hero-call:hover{background:#d4a800}
-.hero-rating{display:flex;align-items:center;gap:8px;font-size:13px;color:#555;flex-wrap:wrap}
-.hero-rating .stars{color:#f0c040;font-size:15px}
-.hero-rating strong{color:#333}
-.hero-right-card{background:#2c3e50;padding:28px 26px;flex:0 0 310px}
-.form-heading{font-family:'Raleway',sans-serif;font-size:17px;font-weight:800;color:#fff;text-align:center;margin-bottom:18px}
-.hf-input{width:100%;background:#fff;border:none;border-radius:3px;padding:12px 14px;font-size:14px;font-family:'Open Sans',sans-serif;color:#333;margin-bottom:10px}
-.hf-input::placeholder{color:#aaa}
-.hf-input:focus{outline:2px solid #f0c040;outline-offset:0}
-.hf-select{width:100%;background:#fff;border:none;border-radius:3px;padding:12px 14px;font-size:14px;font-family:'Open Sans',sans-serif;color:#555;margin-bottom:10px;appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M0 0l5 5 5-5z' fill='%23aaa'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 12px center}
-.hf-submit{width:100%;background:#f0c040;color:#222;border:none;border-radius:3px;padding:15px;font-family:'Raleway',sans-serif;font-size:17px;font-weight:900;cursor:pointer;transition:background .15s;margin-top:2px}
+.hero-rating{display:flex;align-items:center;gap:7px;font-size:12px;color:#555;flex-wrap:wrap}
+.star-row{color:#f0c040;font-size:13px;letter-spacing:.5px}
+/* platform logos inline — clean, not filtered */
+.plat-logo{display:inline-flex;align-items:center;gap:4px;font-size:12px;font-weight:700;color:#555}
+.plat-logo .g-icon{width:14px;height:14px;flex-shrink:0}
+/* form card */
+.hero-right-card{background:#2c3e50;padding:26px 24px;flex:0 0 310px}
+.form-heading{font-family:'Raleway',sans-serif;font-size:16px;font-weight:800;color:#fff;text-align:center;margin-bottom:16px;line-height:1.3}
+.hf-input{width:100%;background:#fff;border:2px solid transparent;border-radius:3px;padding:11px 13px;font-size:14px;font-family:'Open Sans',sans-serif;color:#333;margin-bottom:9px;transition:border-color .2s}
+.hf-input::placeholder{color:#bbb}
+.hf-input:focus{outline:none;border-color:#f0c040}
+.hf-select{width:100%;background:#fff;border:2px solid transparent;border-radius:3px;padding:11px 13px;font-size:14px;font-family:'Open Sans',sans-serif;color:#666;margin-bottom:9px;appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M0 0l5 5 5-5z' fill='%23aaa'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 12px center}
+.hf-submit{width:100%;background:#f0c040;color:#1a1a1a;border:none;border-radius:3px;padding:14px;font-family:'Raleway',sans-serif;font-size:16px;font-weight:900;cursor:pointer;transition:background .15s}
 .hf-submit:hover{background:#d4a800}
 
-/* INTERACTIVE COUPONS */
-.coupons{background:#fff;padding:40px 0}
-.coupons-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
-.coupon-wrapper{perspective:1000px;cursor:pointer}
-.coupon-inner{position:relative;width:100%;transition:transform .6s;transform-style:preserve-3d}
-.coupon-wrapper.flipped .coupon-inner{transform:rotateY(180deg)}
-.coupon-front,.coupon-back{backface-visibility:hidden;-webkit-backface-visibility:hidden;border:2px dashed #ccc;border-radius:4px;overflow:hidden}
-.coupon-back{position:absolute;top:0;left:0;width:100%;height:100%;transform:rotateY(180deg);background:#2c3e50;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:20px;text-align:center;gap:10px}
-.coupon-back .cb-title{font-family:'Raleway',sans-serif;font-size:14px;font-weight:900;color:#f0c040}
-.coupon-back .cb-code{background:#f0c040;color:#222;font-family:'Raleway',sans-serif;font-size:18px;font-weight:900;padding:8px 18px;border-radius:3px;letter-spacing:2px}
-.coupon-back .cb-copy{background:transparent;border:2px solid rgba(255,255,255,.4);color:#fff;padding:8px 16px;border-radius:3px;font-size:12px;font-weight:700;cursor:pointer;font-family:'Open Sans',sans-serif;transition:background .15s}
-.coupon-back .cb-copy:hover{background:rgba(255,255,255,.1)}
-.coupon-back .cb-copied{color:#2ecc71;font-size:12px;font-weight:700;display:none}
-.coupon-back .cb-hint{font-size:11px;color:rgba(255,255,255,.5);line-height:1.4}
-.coupon-back .cb-flip{background:transparent;border:none;color:rgba(255,255,255,.4);font-size:11px;cursor:pointer;margin-top:4px;font-family:'Open Sans',sans-serif}
-.coupon-front{display:flex;flex-direction:column}
-.coupon-img{height:90px;overflow:hidden}
+/* ── RATING BAR (clean logos) ── */
+.rating-bar{background:#1e1e1e;padding:9px 0}
+.rating-row{display:flex;align-items:center;justify-content:center;gap:6px 22px;flex-wrap:wrap}
+.ri{display:flex;align-items:center;gap:5px;font-size:12px;font-weight:600;color:rgba(255,255,255,.75)}
+.ri strong{color:#fff;font-size:13px}
+.ri .stars{color:#f0c040;font-size:11px;letter-spacing:.3px}
+/* clean inline brand marks */
+.g-mark{display:inline-flex;align-items:center;justify-content:center;width:16px;height:16px;border-radius:50%;background:#fff;flex-shrink:0}
+.g-mark svg{width:10px;height:10px}
+.y-mark{display:inline-flex;align-items:center;justify-content:center;width:16px;height:16px;border-radius:2px;background:#d32323;flex-shrink:0;font-size:9px;font-weight:900;color:#fff;letter-spacing:-.3px;font-family:'Open Sans',sans-serif}
+.fb-mark{display:inline-flex;align-items:center;justify-content:center;width:16px;height:16px;border-radius:3px;background:#1877f2;flex-shrink:0;font-size:10px;font-weight:900;color:#fff;font-family:'Open Sans',sans-serif}
+.bbb-mark{display:inline-flex;align-items:center;justify-content:center;height:16px;padding:0 5px;border-radius:2px;background:#0033a0;flex-shrink:0;font-size:8px;font-weight:900;color:#fff;letter-spacing:.3px;font-family:'Open Sans',sans-serif}
+.rbar-div{color:rgba(255,255,255,.2);font-size:14px}
+
+/* ── COUPONS — lead-capture mechanic ── */
+.coupons{background:#fff;padding:36px 0}
+.coupons-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.coupon{border:2px dashed #ccc;border-radius:4px;overflow:hidden;position:relative;display:flex;flex-direction:column;min-height:260px}
+.coupon-img{height:88px;overflow:hidden;flex-shrink:0}
 .coupon-img img{width:100%;height:100%;object-fit:cover}
-.coupon-body{padding:10px 12px 14px;display:flex;flex-direction:column;gap:4px;flex:1}
-.coupon-title{font-size:9px;font-weight:800;text-transform:uppercase;letter-spacing:1px;color:#555}
-.coupon-subtitle{font-size:9px;color:#888;line-height:1.3}
-.coupon-badge{display:inline-block;background:#f0c040;color:#222;font-family:'Raleway',sans-serif;font-size:16px;font-weight:900;padding:4px 10px;border-radius:3px;margin:4px 0}
-.coupon-badge.green{background:#27ae60;color:#fff}
-.coupon-badge.navy{background:#2c3e50;color:#fff}
-.coupon-desc{font-size:10px;color:#777;line-height:1.4}
-.coupon-cta{font-size:11px;font-weight:800;color:#2c3e50;margin-top:4px;display:flex;align-items:center;gap:4px}
-.coupon-cta span{background:#f0c040;color:#222;padding:2px 8px;border-radius:3px;font-size:9px}
-.coupon-exp{font-size:9px;color:#bbb}
+.coupon-body{padding:10px 12px 12px;display:flex;flex-direction:column;gap:3px;flex:1}
+.coupon-title{font-size:9px;font-weight:800;text-transform:uppercase;letter-spacing:1px;color:#666}
+.coupon-subtitle{font-size:9px;color:#999;line-height:1.3}
+.coupon-badge{display:inline-block;font-family:'Raleway',sans-serif;font-size:15px;font-weight:900;padding:3px 9px;border-radius:3px;margin:3px 0;line-height:1.2}
+.badge-gold{background:#f0c040;color:#1a1a1a}
+.badge-green{background:#27ae60;color:#fff}
+.badge-navy{background:#2c3e50;color:#fff}
+.coupon-desc{font-size:10px;color:#888;line-height:1.4;flex:1}
+.coupon-cta-btn{width:100%;background:#2c3e50;color:#fff;border:none;border-radius:3px;padding:8px;font-family:'Raleway',sans-serif;font-size:12px;font-weight:800;cursor:pointer;margin-top:6px;transition:background .15s}
+.coupon-cta-btn:hover{background:#1a2c3e}
+.coupon-exp{font-size:9px;color:#ccc;margin-top:3px}
+/* reveal overlay */
+.coupon-overlay{position:absolute;inset:0;background:#2c3e50;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:18px;gap:9px;opacity:0;pointer-events:none;transition:opacity .25s}
+.coupon.revealing .coupon-overlay{opacity:1;pointer-events:all}
+.coupon.revealed .coupon-overlay{opacity:1;pointer-events:all}
+.co-title{font-family:'Raleway',sans-serif;font-size:13px;font-weight:900;color:#f0c040;text-align:center}
+.co-input{width:100%;background:#fff;border:2px solid transparent;border-radius:3px;padding:9px 11px;font-size:13px;font-family:'Open Sans',sans-serif;color:#333}
+.co-input::placeholder{color:#bbb}
+.co-input:focus{outline:none;border-color:#f0c040}
+.co-submit{width:100%;background:#f0c040;color:#1a1a1a;border:none;border-radius:3px;padding:10px;font-family:'Raleway',sans-serif;font-size:13px;font-weight:900;cursor:pointer;transition:background .15s}
+.co-submit:hover{background:#d4a800}
+.co-back{background:transparent;border:none;color:rgba(255,255,255,.45);font-size:11px;cursor:pointer;font-family:'Open Sans',sans-serif;margin-top:2px}
+/* code reveal */
+.co-code-wrap{display:none;flex-direction:column;align-items:center;gap:8px;width:100%}
+.co-code{background:#f0c040;color:#1a1a1a;font-family:'Raleway',sans-serif;font-size:20px;font-weight:900;padding:8px 18px;border-radius:3px;letter-spacing:2px;text-align:center;cursor:pointer;width:100%;border:none}
+.co-copied{font-size:11px;color:#2ecc71;font-weight:700;display:none;text-align:center}
+.co-hint{font-size:10px;color:rgba(255,255,255,.55);text-align:center;line-height:1.4}
 
-/* TRUST */
-.trust-strip{background:#2c3e50;padding:16px 0}
-.trust-items{display:flex;align-items:center;justify-content:center;gap:6px 28px;flex-wrap:wrap}
-.trust-item{font-size:13px;font-weight:600;color:rgba(255,255,255,.85)}
-.tdiv{color:rgba(255,255,255,.2)}
+/* ── TRUST STRIP ── */
+.trust-strip{background:#2c3e50;padding:14px 0}
+.trust-items{display:flex;align-items:center;justify-content:center;gap:6px 24px;flex-wrap:wrap}
+.trust-item{font-size:12px;font-weight:600;color:rgba(255,255,255,.8)}
+.tdiv{color:rgba(255,255,255,.2);font-size:14px}
 
-/* CREDS */
-.creds-strip{background:#f9f9f9;border-top:1px solid #eee;border-bottom:1px solid #eee;padding:20px 0;text-align:center}
-.creds-strip p{font-size:15px;font-weight:600;color:#444;margin-bottom:14px}
-.creds-logos{display:flex;align-items:center;justify-content:center;gap:32px;flex-wrap:wrap}
-.creds-logos img{height:26px;width:auto;opacity:.7}
-.creds-logos span{font-size:13px;font-weight:700;color:#555;background:#eee;padding:5px 14px;border-radius:3px}
+/* ── CREDS (light bg — proper colored logos) ── */
+.creds-strip{background:#f7f7f5;border-top:1px solid #eee;border-bottom:1px solid #eee;padding:18px 0;text-align:center}
+.creds-strip p{font-size:13px;font-weight:600;color:#555;margin-bottom:12px}
+.creds-logos{display:flex;align-items:center;justify-content:center;gap:28px;flex-wrap:wrap}
+/* proper brand logos on light bg — actual colors, reasonable sizing, no filters */
+.creds-google{display:flex;align-items:center;gap:5px}
+.creds-google svg{width:55px;height:18px}
+.creds-yelp{display:flex;align-items:center;gap:4px}
+.creds-yelp-burst{color:#d32323;font-size:16px}
+.creds-yelp-text{font-family:'Open Sans',sans-serif;font-size:14px;font-weight:700;color:#d32323;letter-spacing:-.3px}
+.creds-facebook{display:flex;align-items:center;gap:4px}
+.creds-facebook svg{width:16px;height:16px}
+.creds-facebook span{font-size:14px;font-weight:700;color:#1877f2}
+.creds-badge{display:flex;align-items:center;gap:4px;background:#fff;border:1px solid #ddd;border-radius:4px;padding:4px 10px}
+.creds-badge span{font-size:12px;font-weight:700;color:#333}
 
-/* ABOUT */
-.about{background:#fff;padding:64px 0}
-.about-inner{display:flex;gap:48px;align-items:flex-start}
+/* ── ABOUT ── */
+.about{background:#fff;padding:60px 0}
+.about-inner{display:flex;gap:44px;align-items:flex-start}
 .about-media{flex:0 0 440px}
-/* owner video */
-.owner-video-wrap{position:relative;border-radius:8px;overflow:hidden;box-shadow:0 8px 32px rgba(0,0,0,.15);margin-bottom:14px;background:#000}
-.owner-video-wrap video{width:100%;display:block;max-height:300px;object-fit:cover}
-.owner-video-wrap img{width:100%;display:block;border-radius:8px}
-.owner-badge{background:#f0c040;color:#222;padding:6px 14px;border-radius:0 0 6px 6px;font-size:11px;font-weight:800;text-align:center;text-transform:uppercase;letter-spacing:1px}
-/* photo collage below video */
-.photo-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:8px}
-.photo-grid img{width:100%;height:110px;object-fit:cover;border-radius:4px}
-.projects-badge{display:inline-flex;align-items:center;gap:10px;background:#f0c040;border-radius:4px;padding:10px 16px;margin-top:10px}
-.projects-badge .num{font-family:'Raleway',sans-serif;font-size:28px;font-weight:900;color:#222;line-height:1}
-.projects-badge .lbl{font-size:11px;font-weight:700;color:#555;line-height:1.3}
+.owner-video-wrap{border-radius:6px;overflow:hidden;box-shadow:0 8px 30px rgba(0,0,0,.14);margin-bottom:8px;background:#000;position:relative}
+.owner-video-wrap video{width:100%;display:block;max-height:310px;object-fit:cover}
+.owner-badge{background:#2c3e50;color:rgba(255,255,255,.8);padding:6px 14px;font-size:10px;font-weight:700;text-align:center;text-transform:uppercase;letter-spacing:1px}
+.photo-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:7px;margin-top:10px}
+.photo-grid img{width:100%;height:90px;object-fit:cover;border-radius:3px}
+.proj-badge{display:inline-flex;align-items:center;gap:10px;background:#f0c040;border-radius:3px;padding:9px 14px;margin-top:10px}
+.proj-badge .num{font-family:'Raleway',sans-serif;font-size:24px;font-weight:900;color:#1a1a1a;line-height:1}
+.proj-badge .lbl{font-size:11px;font-weight:700;color:#444;line-height:1.3}
 .about-text{flex:1}
-.about-h2{font-family:'Raleway',sans-serif;font-size:clamp(20px,2.8vw,28px);font-weight:900;color:#222;margin-bottom:14px;line-height:1.25}
+.about-h2{font-family:'Raleway',sans-serif;font-size:clamp(19px,2.6vw,27px);font-weight:900;color:#1a1a1a;margin-bottom:12px;line-height:1.25}
 .about-h2 span{color:#f0c040}
-.about-p{font-size:14px;color:#666;line-height:1.75;margin-bottom:18px}
-.about-checks{list-style:none;display:flex;flex-direction:column;gap:10px;margin-bottom:22px}
-.about-checks li{display:flex;align-items:center;gap:10px;font-size:14px;color:#444;font-weight:600}
-.about-checks li .ac{width:18px;height:18px;background:#f0c040;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:10px;color:#222;font-weight:900;flex-shrink:0}
-/* owner signature card */
-.owner-sig{display:flex;align-items:center;gap:14px;background:#f9f9f9;border:1px solid #eee;border-radius:6px;padding:14px 16px;margin-top:4px}
-.owner-sig img{width:60px;height:60px;border-radius:50%;object-fit:cover;border:2px solid #f0c040;flex-shrink:0}
-.owner-sig-text{}
-.owner-sig-name{font-family:'Raleway',sans-serif;font-size:15px;font-weight:900;color:#222}
-.owner-sig-title{font-size:12px;color:#888}
-.owner-sig-phone{font-size:14px;font-weight:700;color:#2c3e50;margin-top:3px}
+.about-p{font-size:13px;color:#666;line-height:1.75;margin-bottom:16px}
+.about-checks{list-style:none;display:flex;flex-direction:column;gap:9px;margin-bottom:20px}
+.about-checks li{display:flex;align-items:center;gap:9px;font-size:13px;color:#444;font-weight:600}
+.about-checks li .ac{width:17px;height:17px;background:#f0c040;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:9px;color:#1a1a1a;font-weight:900;flex-shrink:0}
+.owner-sig{display:flex;align-items:center;gap:13px;background:#f7f7f5;border:1px solid #eee;border-radius:4px;padding:12px 14px}
+.owner-sig img{width:54px;height:54px;border-radius:50%;object-fit:cover;border:2px solid #f0c040;flex-shrink:0}
+.owner-sig-name{font-family:'Raleway',sans-serif;font-size:14px;font-weight:900;color:#1a1a1a}
+.owner-sig-sub{font-size:11px;color:#888;margin-top:2px}
+.owner-sig-phone{font-size:13px;font-weight:700;color:#2c3e50;margin-top:3px}
 
-/* CALL STRIP */
-.call-strip{background:#fff;padding:16px 0 32px;text-align:center}
-.call-strip a{display:inline-block;background:#f0c040;color:#222;font-family:'Raleway',sans-serif;font-size:18px;font-weight:900;padding:16px 52px;border-radius:4px;transition:background .15s}
+/* ── CALL STRIP ── */
+.call-strip{background:#fff;padding:14px 0 30px;text-align:center}
+.call-strip a{display:inline-block;background:#f0c040;color:#1a1a1a;font-family:'Raleway',sans-serif;font-size:17px;font-weight:900;padding:15px 50px;border-radius:3px;transition:background .15s}
 .call-strip a:hover{background:#d4a800}
 
-/* GALLERY */
-.gallery-section{padding:52px 0;background:#f9f9f9}
-.section-label{font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:#b8882a;display:block;text-align:center;margin-bottom:8px}
-.section-title{font-family:'Raleway',sans-serif;font-size:clamp(20px,3vw,30px);font-weight:900;color:#222;text-align:center;margin-bottom:32px}
-/* Before/after grid */
-.ba-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:16px}
-.ba-item{border-radius:6px;overflow:hidden;box-shadow:0 3px 12px rgba(0,0,0,.1)}
+/* ── GALLERY ── */
+.gallery-section{padding:50px 0;background:#f7f7f5}
+.section-label{font-size:10px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:#b8882a;display:block;text-align:center;margin-bottom:8px}
+.section-title{font-family:'Raleway',sans-serif;font-size:clamp(19px,2.8vw,28px);font-weight:900;color:#1a1a1a;text-align:center;margin-bottom:28px}
+.ba-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:14px}
+.ba-item{border-radius:5px;overflow:hidden;box-shadow:0 2px 10px rgba(0,0,0,.09)}
 .ba-pair{display:grid;grid-template-columns:1fr 1fr}
 .ba-img{position:relative;overflow:hidden}
-.ba-img img{width:100%;height:180px;object-fit:cover;display:block}
-.ba-label{position:absolute;bottom:6px;left:6px;padding:2px 8px;border-radius:3px;font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.8px}
-.ba-before{background:rgba(0,0,0,.6);color:#fff}
+.ba-img img{width:100%;height:175px;object-fit:cover;display:block}
+.ba-label{position:absolute;bottom:6px;left:6px;padding:2px 8px;border-radius:2px;font-size:9px;font-weight:800;text-transform:uppercase;letter-spacing:.7px}
+.ba-before{background:rgba(0,0,0,.58);color:#fff}
 .ba-after{background:#f0c040;color:#1a1a1a}
-/* project photo strip */
-.proj-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:10px}
-.proj-item{border-radius:4px;overflow:hidden;aspect-ratio:4/3}
+.proj-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:8px}
+.proj-item{border-radius:3px;overflow:hidden;aspect-ratio:4/3}
 .proj-item img{width:100%;height:100%;object-fit:cover;transition:transform .3s;display:block}
 .proj-item:hover img{transform:scale(1.06)}
 
-/* REVIEWS */
-.reviews{background:#fff;padding:52px 0}
-.reviews-sub{text-align:center;font-size:14px;color:#888;margin-bottom:32px}
-.reviews-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
-.review-card{background:#f4f4f4;border-radius:4px;padding:26px 24px;text-align:center;position:relative}
-.review-platform{position:absolute;top:14px;right:14px}
-.review-platform img{height:18px;width:auto}
-.review-text{font-size:13px;color:#444;line-height:1.75;margin-bottom:14px}
+/* ── REVIEWS ── */
+.reviews{background:#fff;padding:50px 0}
+.reviews-sub{text-align:center;font-size:13px;color:#888;margin-bottom:28px}
+.reviews-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.review-card{background:#f5f5f3;border-radius:4px;padding:24px 22px;text-align:center;position:relative}
+.review-plat{position:absolute;top:12px;right:12px;display:flex;align-items:center;gap:3px}
+.review-plat-g{width:15px;height:15px;flex-shrink:0}
+.review-plat-y{width:13px;height:13px;border-radius:2px;background:#d32323;display:flex;align-items:center;justify-content:center;font-size:8px;font-weight:900;color:#fff;font-family:'Open Sans',sans-serif;flex-shrink:0}
+.review-text{font-size:13px;color:#444;line-height:1.75;margin-bottom:13px}
 .review-text .hl{color:#2980b9;font-weight:700}
-.review-text .hl-gold{color:#c8940a;font-weight:700}
-.review-stars{color:#f0c040;font-size:20px;letter-spacing:2px;margin-bottom:10px}
-.reviewer-avatar{width:36px;height:36px;background:#ddd;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 6px;overflow:hidden}
-.reviewer-avatar svg{width:20px;height:20px;fill:#aaa}
-.reviewer-name{font-size:13px;font-weight:700;color:#333}
-.reviewer-meta{font-size:11px;color:#999;display:flex;align-items:center;justify-content:center;gap:4px;margin-top:3px;flex-wrap:wrap}
-.verified-dot{width:13px;height:13px;background:#2980b9;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0}
-.verified-dot svg{width:7px;height:7px;fill:#fff}
-.verified-yelp{background:#e31c24}
+.review-text .hlg{color:#c8940a;font-weight:700}
+.review-stars{color:#f0c040;font-size:18px;letter-spacing:2px;margin-bottom:10px}
+/* reviewer avatar — styled initial circle matching platform colors */
+.rev-avatar{width:38px;height:38px;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 6px;font-family:'Raleway',sans-serif;font-size:14px;font-weight:900;color:#fff;flex-shrink:0}
+.reviewer-name{font-size:13px;font-weight:700;color:#222}
+.reviewer-meta{font-size:11px;color:#aaa;display:flex;align-items:center;justify-content:center;gap:4px;margin-top:3px;flex-wrap:wrap}
+.vdot{width:12px;height:12px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0}
+.vdot svg{width:7px;height:7px;fill:#fff}
+.vdot-g{background:#4285f4}
+.vdot-y{background:#d32323}
 
-/* MID CTA */
-.mid-cta{background:#c0392b;padding:24px 0;text-align:center}
-.mid-cta h3{font-family:'Raleway',sans-serif;font-size:clamp(16px,2.2vw,21px);color:#fff;font-weight:900;margin-bottom:14px}
-.mid-cta-btns{display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap}
-.btn-gold{background:#f0c040;color:#222;padding:13px 28px;border-radius:4px;font-family:'Raleway',sans-serif;font-weight:900;font-size:15px;transition:background .15s;display:inline-block}
+/* ── MID CTA ── */
+.mid-cta{background:#c0392b;padding:22px 0;text-align:center}
+.mid-cta h3{font-family:'Raleway',sans-serif;font-size:clamp(15px,2vw,20px);color:#fff;font-weight:900;margin-bottom:13px}
+.mid-cta-btns{display:flex;align-items:center;justify-content:center;gap:11px;flex-wrap:wrap}
+.btn-gold{background:#f0c040;color:#1a1a1a;padding:12px 26px;border-radius:3px;font-family:'Raleway',sans-serif;font-weight:900;font-size:14px;display:inline-block;transition:background .15s}
 .btn-gold:hover{background:#d4a800}
-.btn-outline-w{background:transparent;color:#fff;border:2px solid #fff;padding:11px 26px;border-radius:4px;font-family:'Raleway',sans-serif;font-weight:700;font-size:15px;display:inline-block}
-.btn-outline-w:hover{background:rgba(255,255,255,.1)}
+.btn-ow{background:transparent;color:#fff;border:2px solid rgba(255,255,255,.7);padding:10px 24px;border-radius:3px;font-family:'Raleway',sans-serif;font-weight:700;font-size:14px;display:inline-block}
+.btn-ow:hover{background:rgba(255,255,255,.08)}
 
-/* DARK CTA */
-.dark-cta{background:#1a1a1a url('https://ik.imagekit.io/mtrbaths/Screen%20Shot%202025-03-17%20at%203.33.12%20AM.png?updatedAt=1742247173878') center/cover no-repeat;position:relative;padding:56px 0;text-align:center}
-.dark-cta::before{content:'';position:absolute;inset:0;background:rgba(0,0,0,.72)}
-.dark-cta-inner{position:relative;max-width:680px;margin:0 auto}
-.dark-cta-h2{font-family:'Raleway',sans-serif;font-size:clamp(18px,2.8vw,26px);font-weight:900;color:#fff;background:#c0392b;display:inline-block;padding:6px 16px;margin-bottom:18px;border-radius:2px}
-.dark-cta-p{font-size:14px;color:rgba(255,255,255,.8);line-height:1.8;margin-bottom:24px;background:rgba(160,20,10,.65);padding:14px 20px;border-radius:2px}
-.dark-cta a{display:inline-block;background:#f0c040;color:#222;font-family:'Raleway',sans-serif;font-size:16px;font-weight:900;padding:14px 46px;border-radius:4px;transition:background .15s}
+/* ── DARK CTA ── */
+.dark-cta{background:#1a1a1a url('https://ik.imagekit.io/mtrbaths/Screen%20Shot%202025-03-17%20at%203.33.12%20AM.png?updatedAt=1742247173878') center/cover no-repeat;position:relative;padding:54px 0;text-align:center}
+.dark-cta::before{content:'';position:absolute;inset:0;background:rgba(0,0,0,.74)}
+.dark-cta-inner{position:relative;max-width:660px;margin:0 auto}
+.dark-cta h2{font-family:'Raleway',sans-serif;font-size:clamp(17px,2.5vw,25px);font-weight:900;color:#fff;background:#c0392b;display:inline-block;padding:5px 14px;margin-bottom:16px;border-radius:2px}
+.dark-cta p{font-size:13px;color:rgba(255,255,255,.8);line-height:1.8;margin-bottom:22px;background:rgba(150,15,5,.62);padding:13px 18px;border-radius:2px}
+.dark-cta a{display:inline-block;background:#f0c040;color:#1a1a1a;font-family:'Raleway',sans-serif;font-size:15px;font-weight:900;padding:13px 44px;border-radius:3px;transition:background .15s}
 .dark-cta a:hover{background:#d4a800}
 
-/* BOTTOM FORM */
-.bottom-form-strip{background:#f0c040;padding:26px 0}
-.bfs-inner{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
-.bfs-title{font-family:'Raleway',sans-serif;font-size:clamp(15px,1.8vw,19px);font-weight:900;color:#222;white-space:nowrap;margin-right:6px}
-.bfs-input{flex:1 1 150px;min-width:130px;background:#fff;border:none;border-radius:3px;padding:13px 14px;font-size:14px;font-family:'Open Sans',sans-serif;color:#333}
+/* ── BOTTOM FORM STRIP ── */
+.bottom-form-strip{background:#f0c040;padding:24px 0}
+.bfs-inner{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.bfs-title{font-family:'Raleway',sans-serif;font-size:clamp(14px,1.7vw,18px);font-weight:900;color:#1a1a1a;white-space:nowrap;margin-right:6px}
+.bfs-input{flex:1 1 140px;min-width:120px;background:#fff;border:none;border-radius:3px;padding:12px 13px;font-size:14px;font-family:'Open Sans',sans-serif;color:#333}
 .bfs-input::placeholder{color:#aaa}
 .bfs-input:focus{outline:2px solid #2c3e50}
-.bfs-btn{background:#2c3e50;color:#fff;border:none;border-radius:3px;padding:13px 22px;font-family:'Raleway',sans-serif;font-size:14px;font-weight:800;cursor:pointer;white-space:nowrap;transition:background .15s}
+.bfs-btn{background:#2c3e50;color:#fff;border:none;border-radius:3px;padding:12px 20px;font-family:'Raleway',sans-serif;font-size:14px;font-weight:800;cursor:pointer;white-space:nowrap;transition:background .15s}
 .bfs-btn:hover{background:#1a2c3e}
 
-/* SERVICES */
-.services{background:#fff;padding:50px 0}
-.services-h2{font-family:'Raleway',sans-serif;font-size:clamp(20px,2.8vw,28px);font-weight:900;color:#222;text-align:center;margin-bottom:6px}
+/* ── SERVICES ── */
+.services{background:#fff;padding:48px 0}
+.services-h2{font-family:'Raleway',sans-serif;font-size:clamp(19px,2.6vw,27px);font-weight:900;color:#1a1a1a;text-align:center;margin-bottom:6px}
 .services-h2 span{color:#f0c040}
-.services-sub{text-align:center;font-size:14px;color:#888;margin-bottom:28px}
-.services-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
-.service-img{width:100%;height:200px;object-fit:cover;border-radius:3px;display:block}
-.service-name{font-size:14px;font-weight:700;color:#333;margin-top:9px}
+.services-sub{text-align:center;font-size:13px;color:#888;margin-bottom:26px}
+.services-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.service-img{width:100%;height:195px;object-fit:cover;border-radius:3px;display:block}
+.service-name{font-size:13px;font-weight:700;color:#333;margin-top:8px}
 
-/* FOOTER */
-footer{background:#222;padding:36px 0 20px}
-.footer-inner{display:flex;gap:40px;flex-wrap:wrap;margin-bottom:24px}
-.footer-col h3{font-size:13px;font-weight:700;color:#fff;margin-bottom:10px;text-transform:uppercase;letter-spacing:.8px}
-.footer-col p{font-size:13px;color:rgba(255,255,255,.45);line-height:1.8}
-.footer-social{display:flex;gap:10px;margin-top:12px}
-.footer-social a{width:32px;height:32px;background:rgba(255,255,255,.08);border-radius:4px;display:flex;align-items:center;justify-content:center}
-.footer-social a:hover{background:rgba(255,255,255,.15)}
-.footer-social svg{width:14px;height:14px;fill:rgba(255,255,255,.6)}
-.footer-bottom{border-top:1px solid rgba(255,255,255,.08);padding-top:16px;text-align:center;font-size:11px;color:rgba(255,255,255,.3)}
+/* ── FOOTER ── */
+footer{background:#1e1e1e;padding:34px 0 18px}
+.footer-inner{display:flex;gap:40px;flex-wrap:wrap;margin-bottom:22px}
+.footer-col h3{font-size:12px;font-weight:700;color:#fff;margin-bottom:9px;text-transform:uppercase;letter-spacing:.8px}
+.footer-col p{font-size:12px;color:rgba(255,255,255,.4);line-height:1.85}
+.footer-social{display:flex;gap:9px;margin-top:11px}
+.footer-social a{width:30px;height:30px;background:rgba(255,255,255,.07);border-radius:4px;display:flex;align-items:center;justify-content:center;transition:background .2s}
+.footer-social a:hover{background:rgba(255,255,255,.13)}
+.footer-social svg{width:13px;height:13px;fill:rgba(255,255,255,.55)}
+.footer-bottom{border-top:1px solid rgba(255,255,255,.07);padding-top:15px;text-align:center;font-size:11px;color:rgba(255,255,255,.28)}
 
-/* MOBILE */
-.mobile-bar{display:none;position:fixed;bottom:0;left:0;right:0;z-index:200;background:#fff;padding:10px 12px;gap:10px;border-top:2px solid #c0392b;box-shadow:0 -4px 16px rgba(0,0,0,.15)}
-.mb-call{flex:1;background:#c0392b;color:#fff;padding:14px;min-height:52px;font-size:15px;font-weight:700;border-radius:6px;text-align:center;display:flex;align-items:center;justify-content:center;font-family:'Raleway',sans-serif}
-.mb-quote{flex:1;background:#f0c040;color:#222;padding:14px;min-height:52px;font-size:15px;font-weight:700;border-radius:6px;text-align:center;display:flex;align-items:center;justify-content:center;font-family:'Raleway',sans-serif}
+/* ── MOBILE BAR ── */
+.mobile-bar{display:none;position:fixed;bottom:0;left:0;right:0;z-index:200;background:#fff;padding:9px 12px;gap:10px;border-top:2px solid #c0392b;box-shadow:0 -3px 14px rgba(0,0,0,.13)}
+.mb-call{flex:1;background:#c0392b;color:#fff;padding:13px;min-height:50px;font-size:14px;font-weight:700;border-radius:6px;text-align:center;display:flex;align-items:center;justify-content:center;font-family:'Raleway',sans-serif}
+.mb-quote{flex:1;background:#f0c040;color:#1a1a1a;padding:13px;min-height:50px;font-size:14px;font-weight:700;border-radius:6px;text-align:center;display:flex;align-items:center;justify-content:center;font-family:'Raleway',sans-serif}
 
-/* RESPONSIVE */
+/* ── RESPONSIVE ── */
 @media(max-width:920px){
   .coupons-grid{grid-template-columns:repeat(2,1fr)}
   .reviews-grid{grid-template-columns:1fr}
-  .ba-grid{grid-template-columns:repeat(2,1fr)}
+  .ba-grid{grid-template-columns:1fr 1fr}
   .about-inner{flex-direction:column}
   .about-media{flex:none;width:100%}
+  .photo-grid{grid-template-columns:repeat(4,1fr)}
   .proj-grid{grid-template-columns:repeat(3,1fr)}
   .services-grid{grid-template-columns:repeat(2,1fr)}
 }
 @media(max-width:600px){
-  body{padding-bottom:74px}
+  body{padding-bottom:72px}
   .mobile-bar{display:flex}
   .hero-inner{flex-direction:column}
   .hero-right-card{flex:none;width:100%}
   .hero-left-card{text-align:center}
   .nav-links{display:none}
-  .nav-phone{font-size:13px;padding:8px 14px}
+  .nav-phone{font-size:12px;padding:8px 14px}
   .ba-grid{grid-template-columns:1fr}
   .proj-grid{grid-template-columns:repeat(2,1fr)}
   .services-grid{grid-template-columns:1fr 1fr}
   .bfs-inner{flex-direction:column;align-items:stretch}
   .bfs-title{text-align:center}
-  .bfs-btn{width:100%}
+  .bfs-btn{width:100%;padding:14px}
   .footer-inner{flex-direction:column}
+  .photo-grid{grid-template-columns:repeat(4,1fr)}
   input,select{font-size:16px !important}
-  .photo-grid{grid-template-columns:repeat(3,1fr)}
 }
 </style>
 </head>
 <body>
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PNR8J2VT" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
-<!-- MOBILE BAR -->
 <div class="mobile-bar">
   <a href="tel:+19168920745" class="mb-call">&#128222; Call Now</a>
   <a href="#hero-form" class="mb-quote">Free Quote</a>
@@ -275,7 +299,7 @@ footer{background:#222;padding:36px 0 20px}
 <nav class="top-nav">
   <div class="container">
     <div class="nav-inner">
-      <a href="#" class="nav-logo"><img src="https://ik.imagekit.io/mtrbaths/MTR_Baths__19_-removebg-preview%20(1).png" alt="MTR Baths"></a>
+      <a href="#"><img src="https://ik.imagekit.io/mtrbaths/MTR_Baths__19_-removebg-preview%20(1).png" alt="MTR Baths" style="height:46px;width:auto"></a>
       <div class="nav-links">
         <a href="#">Home</a>
         <a href="#about">Why Us</a>
@@ -284,7 +308,7 @@ footer{background:#222;padding:36px 0 20px}
         <a href="#bottom-form">Contact</a>
       </div>
       <a href="tel:+19168920745" class="nav-phone">
-        <svg viewBox="0 0 24 24"><path d="M20 22.621l-3.521-6.795-2.064 1.011C12.175 17.923 7.616 9.017 9.806 7.843l2.083-1.026L8.396 0 6.29 1.039C-.912 4.794 10.523 27.021 17.89 23.654l2.11-1.033z"/></svg>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="#f0c040"><path d="M20 22.621l-3.521-6.795-2.064 1.011C12.175 17.923 7.616 9.017 9.806 7.843l2.083-1.026L8.396 0 6.29 1.039C-.912 4.794 10.523 27.021 17.89 23.654l2.11-1.033z"/></svg>
         (916) 892-0745
       </a>
     </div>
@@ -297,17 +321,11 @@ footer{background:#222;padding:36px 0 20px}
   <a href="tel:+19168920745">(916) 892-0745</a> &nbsp;&middot;&nbsp; Expires March 31
 </div>
 
-<!-- HERO -->
+<!-- HERO with uploaded video background -->
 <section class="hero" id="main-form-anchor">
-  <!-- Option A: Self-hosted video (download from pexels.com/video/7578551, save as hero-bg.mp4) -->
   <video class="hero-video-bg" autoplay muted loop playsinline>
     <source src="hero-bg.mp4" type="video/mp4">
   </video>
-  <!-- Option B: YouTube iframe — swap YOUR_VIDEO_ID below, uncomment, and remove the <video> tag above
-  <iframe class="hero-yt-bg"
-    src="https://www.youtube-nocookie.com/embed/YOUR_VIDEO_ID?autoplay=1&mute=1&loop=1&playlist=YOUR_VIDEO_ID&controls=0&disablekb=1&modestbranding=1"
-    frameborder="0" allow="autoplay"></iframe>
-  -->
   <div class="container">
     <div class="hero-inner">
       <div class="hero-left-card">
@@ -315,21 +333,24 @@ footer{background:#222;padding:36px 0 20px}
         <h1 class="hero-h1"><span class="geo-city">Northern California</span>&rsquo;s #1 Rated<br>Bathroom Remodeling Experts</h1>
         <p class="hero-sub">Trusted By Homeowners Across <span class="geo-region">NorCal</span> for Quality, Safety &amp; Best Price</p>
         <ul class="hero-checks">
-          <li><span class="hcheck">&#10004;</span> Local, Licensed &amp; Owner-Operated &mdash; Serving <span class="geo-city">Your Area</span></li>
+          <li><span class="hcheck">&#10004;</span> Local, Licensed &amp; Owner-Operated</li>
           <li><span class="hcheck">&#10004;</span> Tub Conversions, Walk-In Showers, Senior-Safe Bathrooms</li>
           <li><span class="hcheck">&#10004;</span> Lifetime Warranty &mdash; Labor &amp; Materials</li>
         </ul>
         <a href="tel:+19168920745" class="hero-call">Call Now (916) 892-0745</a>
         <div class="hero-rating">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" alt="Google" width="15" style="display:inline">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/a/ad/Yelp_Logo.svg" alt="Yelp" width="30" style="display:inline;filter:brightness(0) saturate(100%) invert(30%) sepia(90%) saturate(500%) hue-rotate(320deg)">
-          <strong>4.5</strong>
-          <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-          <span>(55+ Reviews)</span>
+          <span class="plat-logo">
+            <span class="g-mark">
+              <svg viewBox="0 0 18 18" xmlns="http://www.w3.org/2000/svg"><path fill="#4285F4" d="M17.64 9.2c0-.637-.057-1.251-.164-1.84H9v3.481h4.844a4.14 4.14 0 0 1-1.796 2.716v2.259h2.908c1.702-1.567 2.684-3.875 2.684-6.615z"/><path fill="#34A853" d="M9 18c2.43 0 4.467-.806 5.956-2.184l-2.908-2.259c-.806.54-1.837.86-3.048.86-2.344 0-4.328-1.584-5.036-3.711H.957v2.332A8.997 8.997 0 0 0 9 18z"/><path fill="#FBBC05" d="M3.964 10.706A5.41 5.41 0 0 1 3.682 9c0-.593.102-1.17.282-1.706V4.962H.957A8.996 8.996 0 0 0 0 9c0 1.452.348 2.827.957 4.038l3.007-2.332z"/><path fill="#EA4335" d="M9 3.58c1.321 0 2.508.454 3.44 1.345l2.582-2.58C13.463.891 11.426 0 9 0A8.997 8.997 0 0 0 .957 4.962L3.964 7.294C4.672 5.163 6.656 3.58 9 3.58z"/></svg>
+            </span>
+            5.0
+          </span>
+          <span class="star-row">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+          <span style="font-size:12px;color:#666">(55+ Reviews)</span>
         </div>
       </div>
       <div class="hero-right-card" id="hero-form">
-        <p class="form-heading">No Obligation, Same Day Estimate</p>
+        <p class="form-heading">No Obligation<br>Same Day Estimate</p>
         <form id="hero-form-el">
           <input type="text" class="hf-input" placeholder="Your Name*" required>
           <input type="tel" class="hf-input" placeholder="Your Phone*" required inputmode="tel">
@@ -350,102 +371,126 @@ footer{background:#222;padding:36px 0 20px}
   </div>
 </section>
 
-<!-- COUPONS (flip to reveal code) -->
+<!-- RATING BAR -->
+<div class="rating-bar">
+  <div class="container">
+    <div class="rating-row">
+      <div class="ri">
+        <span class="g-mark"><svg viewBox="0 0 18 18" xmlns="http://www.w3.org/2000/svg"><path fill="#4285F4" d="M17.64 9.2c0-.637-.057-1.251-.164-1.84H9v3.481h4.844a4.14 4.14 0 0 1-1.796 2.716v2.259h2.908c1.702-1.567 2.684-3.875 2.684-6.615z"/><path fill="#34A853" d="M9 18c2.43 0 4.467-.806 5.956-2.184l-2.908-2.259c-.806.54-1.837.86-3.048.86-2.344 0-4.328-1.584-5.036-3.711H.957v2.332A8.997 8.997 0 0 0 9 18z"/><path fill="#FBBC05" d="M3.964 10.706A5.41 5.41 0 0 1 3.682 9c0-.593.102-1.17.282-1.706V4.962H.957A8.996 8.996 0 0 0 0 9c0 1.452.348 2.827.957 4.038l3.007-2.332z"/><path fill="#EA4335" d="M9 3.58c1.321 0 2.508.454 3.44 1.345l2.582-2.58C13.463.891 11.426 0 9 0A8.997 8.997 0 0 0 .957 4.962L3.964 7.294C4.672 5.163 6.656 3.58 9 3.58z"/></svg></span>
+        <strong>5.0</strong><span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span><span>Google</span>
+      </div>
+      <div class="rbar-div">&middot;</div>
+      <div class="ri"><span class="y-mark">y!</span><strong>5.0</strong><span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span><span>Yelp (55+ reviews)</span></div>
+      <div class="rbar-div">&middot;</div>
+      <div class="ri"><span class="fb-mark">f</span><strong>5.0</strong><span>Facebook</span></div>
+      <div class="rbar-div">&middot;</div>
+      <div class="ri"><span class="bbb-mark">BBB</span><strong>A+</strong><span>Accredited</span></div>
+      <div class="rbar-div">&middot;</div>
+      <div class="ri"><strong>CA #965267</strong><span>Licensed &amp; Insured</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- COUPONS — tap to reveal via lead form -->
 <section class="coupons">
   <div class="container">
     <div class="coupons-grid">
 
-      <div class="coupon-wrapper" onclick="flipCoupon(this)">
-        <div class="coupon-inner">
-          <div class="coupon-front">
-            <div class="coupon-img"><img src="https://ik.imagekit.io/mtrbaths/Screen%20Shot%202025-03-17%20at%203.33.32%20AM.png?updatedAt=1742247173904" alt="Free Estimate"></div>
-            <div class="coupon-body">
-              <div class="coupon-title">FREE IN-HOME ESTIMATE</div>
-              <div class="coupon-subtitle">Valid for all bathroom remodels. Limited time.</div>
-              <div class="coupon-badge">FREE VISIT</div>
-              <div class="coupon-desc">Schedule your free no-pressure consultation. We come to you.</div>
-              <div class="coupon-cta">Click to Claim <span>TAP</span></div>
-              <div class="coupon-exp">Expires March 31, 2026</div>
-            </div>
+      <!-- Coupon 1 -->
+      <div class="coupon" id="c1">
+        <div class="coupon-img"><img src="https://ik.imagekit.io/mtrbaths/Screen%20Shot%202025-03-17%20at%203.33.32%20AM.png?updatedAt=1742247173904" alt="Free Estimate"></div>
+        <div class="coupon-body">
+          <div class="coupon-title">Online Offer</div>
+          <div class="coupon-subtitle">Limited time. No obligation.</div>
+          <div class="coupon-badge badge-gold">FREE VISIT</div>
+          <div class="coupon-desc">Free in-home estimate &amp; consultation. We come to you.</div>
+          <button class="coupon-cta-btn" onclick="showCouponForm('c1')">Tap to Claim Code</button>
+          <div class="coupon-exp">Valid through March 31, 2026</div>
+        </div>
+        <div class="coupon-overlay">
+          <div class="co-title">Enter your info to<br>unlock your code</div>
+          <input type="text" class="co-input" placeholder="Your Name*">
+          <input type="tel" class="co-input" placeholder="Your Phone*" inputmode="tel">
+          <button class="co-submit" onclick="revealCode('c1','FREEMTR',this)">Reveal My Code &rsaquo;</button>
+          <div class="co-code-wrap" id="c1-code">
+            <button class="co-code" onclick="copyCode('FREEMTR',this)">FREEMTR</button>
+            <div class="co-copied">&#10004; Copied to clipboard!</div>
+            <div class="co-hint">Mention this code when you call or submit the form</div>
           </div>
-          <div class="coupon-back">
-            <div class="cb-title">&#127881; Your Coupon Code</div>
-            <div class="cb-code">FREEMTR</div>
-            <button class="cb-copy" onclick="copyCoupon(event,'FREEMTR',this)">Copy Code</button>
-            <div class="cb-copied">&#10004; Copied!</div>
-            <div class="cb-hint">Mention this code when you call or submit the form</div>
-            <button class="cb-flip" onclick="flipBack(event,this)">&#8592; Back</button>
-          </div>
+          <button class="co-back" onclick="hideCouponForm('c1')">&#8592; Back</button>
         </div>
       </div>
 
-      <div class="coupon-wrapper" onclick="flipCoupon(this)">
-        <div class="coupon-inner">
-          <div class="coupon-front">
-            <div class="coupon-img"><img src="https://ik.imagekit.io/mtrbaths/Screen%20Shot%202025-03-17%20at%203.34.37%20AM.png?updatedAt=1742247061366" alt="Save 2500"></div>
-            <div class="coupon-body">
-              <div class="coupon-title">SPRING SPECIAL</div>
-              <div class="coupon-subtitle">Any shower or tub conversion. Limited slots.</div>
-              <div class="coupon-badge">$2,500 OFF</div>
-              <div class="coupon-desc">Valid on all full installs. Free estimate included.</div>
-              <div class="coupon-cta">Click to Claim <span>TAP</span></div>
-              <div class="coupon-exp">Expires March 31, 2026</div>
-            </div>
+      <!-- Coupon 2 -->
+      <div class="coupon" id="c2">
+        <div class="coupon-img"><img src="https://ik.imagekit.io/mtrbaths/Screen%20Shot%202025-03-17%20at%203.34.37%20AM.png?updatedAt=1742247061366" alt="Save 2500"></div>
+        <div class="coupon-body">
+          <div class="coupon-title">Spring Special</div>
+          <div class="coupon-subtitle">Any shower or tub conversion.</div>
+          <div class="coupon-badge badge-gold">$2,500 OFF</div>
+          <div class="coupon-desc">Valid on all full installs. Free estimate included.</div>
+          <button class="coupon-cta-btn" onclick="showCouponForm('c2')">Tap to Claim Code</button>
+          <div class="coupon-exp">Limited slots &mdash; Expires March 31</div>
+        </div>
+        <div class="coupon-overlay">
+          <div class="co-title">Enter your info to<br>unlock your code</div>
+          <input type="text" class="co-input" placeholder="Your Name*">
+          <input type="tel" class="co-input" placeholder="Your Phone*" inputmode="tel">
+          <button class="co-submit" onclick="revealCode('c2','SAVE2500',this)">Reveal My Code &rsaquo;</button>
+          <div class="co-code-wrap" id="c2-code">
+            <button class="co-code" onclick="copyCode('SAVE2500',this)">SAVE2500</button>
+            <div class="co-copied">&#10004; Copied!</div>
+            <div class="co-hint">Show this code when scheduling your free estimate</div>
           </div>
-          <div class="coupon-back">
-            <div class="cb-title">&#127881; Your Coupon Code</div>
-            <div class="cb-code">SAVE2500</div>
-            <button class="cb-copy" onclick="copyCoupon(event,'SAVE2500',this)">Copy Code</button>
-            <div class="cb-copied">&#10004; Copied!</div>
-            <div class="cb-hint">Show this code when scheduling your free estimate</div>
-            <button class="cb-flip" onclick="flipBack(event,this)">&#8592; Back</button>
-          </div>
+          <button class="co-back" onclick="hideCouponForm('c2')">&#8592; Back</button>
         </div>
       </div>
 
-      <div class="coupon-wrapper" onclick="flipCoupon(this)">
-        <div class="coupon-inner">
-          <div class="coupon-front">
-            <div class="coupon-img"><img src="https://s.yimg.com/bj/356e/356e68c7a1dd2fc84013bde73f6d8f0d.jpg" alt="Lifetime Warranty"></div>
-            <div class="coupon-body">
-              <div class="coupon-title">INCLUDED WITH EVERY JOB</div>
-              <div class="coupon-subtitle">For as long as you own your home.</div>
-              <div class="coupon-badge green">LIFETIME WARRANTY</div>
-              <div class="coupon-desc">On all labor &amp; materials. No asterisks, no exceptions.</div>
-              <div class="coupon-cta">Click to Learn More <span>TAP</span></div>
-              <div class="coupon-exp">Valid on all completed installs</div>
-            </div>
+      <!-- Coupon 3 -->
+      <div class="coupon" id="c3">
+        <div class="coupon-img"><img src="https://s.yimg.com/bj/356e/356e68c7a1dd2fc84013bde73f6d8f0d.jpg" alt="Lifetime Warranty"></div>
+        <div class="coupon-body">
+          <div class="coupon-title">Included With Every Job</div>
+          <div class="coupon-subtitle">For as long as you own your home.</div>
+          <div class="coupon-badge badge-green">LIFETIME WARRANTY</div>
+          <div class="coupon-desc">All labor &amp; materials. Written guarantee. No asterisks.</div>
+          <button class="coupon-cta-btn" onclick="showCouponForm('c3')">Tap to Learn More</button>
+          <div class="coupon-exp">Valid on all completed installs</div>
+        </div>
+        <div class="coupon-overlay">
+          <div class="co-title">Enter your info &amp; we&rsquo;ll<br>call you today</div>
+          <input type="text" class="co-input" placeholder="Your Name*">
+          <input type="tel" class="co-input" placeholder="Your Phone*" inputmode="tel">
+          <button class="co-submit" onclick="revealCode('c3','WARRANTY',this)">Unlock Details &rsaquo;</button>
+          <div class="co-code-wrap" id="c3-code">
+            <div style="background:#27ae60;color:#fff;font-family:'Raleway',sans-serif;font-size:13px;font-weight:900;padding:8px 14px;border-radius:3px;text-align:center">&#10003; Lifetime Warranty Confirmed</div>
+            <div class="co-hint">Every MTR install comes with a written lifetime warranty on all labor &amp; materials &mdash; no exceptions. We&rsquo;ll call you shortly to discuss your project.</div>
           </div>
-          <div class="coupon-back">
-            <div class="cb-title" style="color:#2ecc71">&#9989; Lifetime Coverage</div>
-            <div class="cb-code" style="background:#27ae60;color:#fff;font-size:14px;letter-spacing:1px">WARRANTY</div>
-            <div class="cb-hint">Every MTR install includes a written lifetime warranty on all labor &amp; materials. If anything fails, we come back &mdash; free.</div>
-            <a href="#hero-form" onclick="event.stopPropagation()" style="background:#f0c040;color:#222;padding:9px 18px;border-radius:3px;font-weight:800;font-size:13px;font-family:'Raleway',sans-serif">Get Your Free Estimate &rarr;</a>
-            <button class="cb-flip" onclick="flipBack(event,this)">&#8592; Back</button>
-          </div>
+          <button class="co-back" onclick="hideCouponForm('c3')">&#8592; Back</button>
         </div>
       </div>
 
-      <div class="coupon-wrapper" onclick="flipCoupon(this)">
-        <div class="coupon-inner">
-          <div class="coupon-front">
-            <div class="coupon-img"><img src="https://s.yimg.com/bj/b843/b843874fcb52ef9dc1ac758f89e60f35.jpg" alt="Financing"></div>
-            <div class="coupon-body">
-              <div class="coupon-title">FLEXIBLE FINANCING</div>
-              <div class="coupon-subtitle">Quick approval. No hidden fees.</div>
-              <div class="coupon-badge navy">$99 / MONTH</div>
-              <div class="coupon-desc">Low monthly payments. Ask during your free consultation.</div>
-              <div class="coupon-cta">Click to Learn More <span>TAP</span></div>
-              <div class="coupon-exp">Subject to credit approval</div>
-            </div>
+      <!-- Coupon 4 -->
+      <div class="coupon" id="c4">
+        <div class="coupon-img"><img src="https://s.yimg.com/bj/b843/b843874fcb52ef9dc1ac758f89e60f35.jpg" alt="Financing"></div>
+        <div class="coupon-body">
+          <div class="coupon-title">Flexible Financing</div>
+          <div class="coupon-subtitle">Quick approval. No hidden fees.</div>
+          <div class="coupon-badge badge-navy">$99 / MONTH</div>
+          <div class="coupon-desc">Low monthly payments. Ask during your free visit.</div>
+          <button class="coupon-cta-btn" onclick="showCouponForm('c4')">Check My Rate</button>
+          <div class="coupon-exp">Subject to credit approval</div>
+        </div>
+        <div class="coupon-overlay">
+          <div class="co-title">Enter your info &amp; we&rsquo;ll<br>call you today</div>
+          <input type="text" class="co-input" placeholder="Your Name*">
+          <input type="tel" class="co-input" placeholder="Your Phone*" inputmode="tel">
+          <button class="co-submit" onclick="revealCode('c4','FINANCE',this)">Check My Rate &rsaquo;</button>
+          <div class="co-code-wrap" id="c4-code">
+            <div style="background:#2c3e50;color:#f0c040;font-family:'Raleway',sans-serif;font-size:18px;font-weight:900;padding:8px 14px;border-radius:3px;text-align:center;width:100%">FROM $99/MO</div>
+            <div class="co-hint">Quick approval &middot; No prepayment penalty &middot; No hidden fees. We&rsquo;ll go over all options during your free in-home visit.</div>
           </div>
-          <div class="coupon-back">
-            <div class="cb-title">&#128179; Financing Available</div>
-            <div class="cb-code" style="font-size:13px;letter-spacing:0;padding:6px 12px">FROM $99/MO</div>
-            <div class="cb-hint">Quick approval &middot; Low monthly payments &middot; No prepayment penalties &middot; No hidden fees. Ask about options during your free consultation.</div>
-            <a href="#hero-form" onclick="event.stopPropagation()" style="background:#f0c040;color:#222;padding:9px 18px;border-radius:3px;font-weight:800;font-size:13px;font-family:'Raleway',sans-serif">Check My Rate &rarr;</a>
-            <button class="cb-flip" onclick="flipBack(event,this)">&#8592; Back</button>
-          </div>
+          <button class="co-back" onclick="hideCouponForm('c4')">&#8592; Back</button>
         </div>
       </div>
 
@@ -457,29 +502,53 @@ footer{background:#222;padding:36px 0 20px}
 <div class="trust-strip">
   <div class="container">
     <div class="trust-items">
-      <div class="trust-item">13+ Years Serving NorCal</div>
-      <div class="tdiv">&middot;</div>
-      <div class="trust-item">Licensed, Bonded &amp; Insured</div>
-      <div class="tdiv">&middot;</div>
-      <div class="trust-item">4.5&#9733; on Yelp (55+ Reviews)</div>
-      <div class="tdiv">&middot;</div>
-      <div class="trust-item">Christian Family-Owned Business</div>
-      <div class="tdiv">&middot;</div>
+      <div class="trust-item">13+ Years Serving NorCal</div><div class="tdiv">&middot;</div>
+      <div class="trust-item">Licensed, Bonded &amp; Insured</div><div class="tdiv">&middot;</div>
+      <div class="trust-item">5.0&#9733; on Google &amp; Yelp</div><div class="tdiv">&middot;</div>
+      <div class="trust-item">Christian Family-Owned Business</div><div class="tdiv">&middot;</div>
       <div class="trust-item">BBB Accredited</div>
     </div>
   </div>
 </div>
 
-<!-- CREDS -->
+<!-- CREDS — proper colored logos on light bg -->
 <div class="creds-strip">
   <p>Certified, Accredited &amp; Trusted</p>
   <div class="creds-logos">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" alt="Google" style="height:22px">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/a/ad/Yelp_Logo.svg" alt="Yelp" style="height:20px;filter:brightness(0) saturate(100%) invert(30%) sepia(90%) saturate(500%) hue-rotate(320deg)">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/b/b8/2021_Facebook_icon.svg" alt="Facebook" style="height:22px">
-    <span>A+ BBB</span>
-    <span>CA LIC #965267</span>
-    <span>Licensed &amp; Insured</span>
+    <!-- Google — full wordmark SVG, proper colors -->
+    <div class="creds-google">
+      <svg viewBox="0 0 272 92" xmlns="http://www.w3.org/2000/svg" style="width:64px;height:auto">
+        <path fill="#EA4335" d="M115.75 47.18c0 12.77-9.99 22.18-22.25 22.18s-22.25-9.41-22.25-22.18C71.25 34.32 81.24 25 93.5 25s22.25 9.32 22.25 22.18zm-9.74 0c0-7.98-5.79-13.44-12.51-13.44S80.99 39.2 80.99 47.18c0 7.9 5.79 13.44 12.51 13.44s12.51-5.55 12.51-13.44z"/>
+        <path fill="#FBBC05" d="M163.75 47.18c0 12.77-9.99 22.18-22.25 22.18s-22.25-9.41-22.25-22.18c0-12.85 9.99-22.18 22.25-22.18s22.25 9.32 22.25 22.18zm-9.74 0c0-7.98-5.79-13.44-12.51-13.44s-12.51 5.46-12.51 13.44c0 7.9 5.79 13.44 12.51 13.44s12.51-5.55 12.51-13.44z"/>
+        <path fill="#4285F4" d="M209.75 26.34v39.82c0 16.38-9.66 23.07-21.08 23.07-10.75 0-17.22-7.19-19.66-13.07l8.48-3.53c1.51 3.61 5.21 7.87 11.17 7.87 7.31 0 11.84-4.51 11.84-13v-3.19h-.34c-2.18 2.69-6.38 5.04-11.68 5.04-11.09 0-21.25-9.66-21.25-22.09 0-12.52 10.16-22.26 21.25-22.26 5.29 0 9.49 2.35 11.68 4.96h.34v-3.61h9.25zm-8.56 20.92c0-7.81-5.21-13.52-11.84-13.52-6.72 0-12.35 5.71-12.35 13.52 0 7.73 5.63 13.36 12.35 13.36 6.63 0 11.84-5.63 11.84-13.36z"/>
+        <path fill="#34A853" d="M225 3v65h-9.5V3h9.5z"/>
+        <path fill="#EA4335" d="M262.02 54.48l7.56 5.04c-2.44 3.61-8.32 9.83-18.48 9.83-12.6 0-22.01-9.74-22.01-22.18 0-13.19 9.49-22.18 20.92-22.18 11.51 0 17.14 9.16 18.98 14.11l1.01 2.52-29.65 12.28c2.27 4.45 5.8 6.72 10.75 6.72 4.96 0 8.4-2.44 10.92-6.14zm-23.27-7.98l19.82-8.23c-1.09-2.77-4.37-4.7-8.23-4.7-4.95 0-11.84 4.37-11.59 12.93z"/>
+        <path fill="#4285F4" d="M35.29 41.41V32h31.09c.31 1.59.47 3.52.47 5.57 0 6.91-1.89 15.46-7.98 21.55-5.93 6.17-13.5 9.49-23.56 9.49C16.32 68.61 0 53 0 34S16.32-.39 35.31-.39c10.29 0 17.62 4.03 23.14 9.31l-6.5 6.5c-3.95-3.71-9.31-6.6-16.64-6.6-13.6 0-24.23 10.96-24.23 24.56s10.63 24.56 24.23 24.56c8.82 0 13.83-3.55 17.05-6.77 2.61-2.61 4.33-6.35 5.01-11.45l-22.08.69z"/>
+      </svg>
+    </div>
+    <!-- Yelp — red text, burst icon -->
+    <div class="creds-yelp">
+      <svg viewBox="0 0 60 24" style="width:52px;height:auto" xmlns="http://www.w3.org/2000/svg">
+        <text x="0" y="19" font-family="Arial,sans-serif" font-size="20" font-weight="900" fill="#d32323">yelp</text>
+      </svg>
+    </div>
+    <!-- Facebook — proper blue f logo -->
+    <div class="creds-facebook">
+      <svg viewBox="0 0 24 24" style="width:18px;height:18px" xmlns="http://www.w3.org/2000/svg">
+        <path fill="#1877f2" d="M24 12.073C24 5.405 18.627 0 12 0S0 5.405 0 12.073C0 18.1 4.388 23.094 10.125 24v-8.437H7.078v-3.49h3.047V9.41c0-3.025 1.792-4.697 4.533-4.697 1.312 0 2.686.236 2.686.236v2.97h-1.514c-1.491 0-1.956.931-1.956 1.887v2.268h3.328l-.532 3.49h-2.796V24C19.612 23.094 24 18.1 24 12.073z"/>
+      </svg>
+      <span>Facebook</span>
+    </div>
+    <!-- BBB -->
+    <div class="creds-badge">
+      <svg width="14" height="14" viewBox="0 0 20 20"><circle cx="10" cy="10" r="10" fill="#0033a0"/><text x="4" y="14" font-size="7" font-weight="900" fill="#fff" font-family="Arial">BBB</text></svg>
+      <span>A+ Accredited</span>
+    </div>
+    <!-- License -->
+    <div class="creds-badge">
+      <svg width="14" height="14" viewBox="0 0 20 20"><circle cx="10" cy="10" r="10" fill="#2c3e50"/><text x="5.5" y="14" font-size="7" font-weight="900" fill="#f0c040" font-family="Arial">CA</text></svg>
+      <span>Lic. #965267</span>
+    </div>
   </div>
 </div>
 
@@ -487,177 +556,169 @@ footer{background:#222;padding:36px 0 20px}
 <section class="about" id="about">
   <div class="container">
     <div class="about-inner">
-
       <div class="about-media">
-        <!-- OWNER WALKTHROUGH VIDEO -->
         <div class="owner-video-wrap">
-          <video controls playsinline preload="none" poster="https://ik.imagekit.io/mtrbaths/Screen%20Shot%202025-03-17%20at%203.33.32%20AM.png?updatedAt=1742247173904" style="width:100%;display:block;max-height:300px;object-fit:cover">
-            <source src="IMG_5029 - Albert Golovin.mp4" type="video/mp4">
-            <!-- If you have the owner walkthrough video, rename it owner-walkthrough.mp4 and use that src instead -->
+          <!-- Owner walkthrough video — replace src with your owner polo video -->
+          <video controls playsinline preload="none"
+            poster="https://ik.imagekit.io/mtrbaths/Screen%20Shot%202025-03-17%20at%203.33.32%20AM.png?updatedAt=1742247173904"
+            style="width:100%;display:block;max-height:310px;object-fit:cover">
+            <source src="owner-walkthrough.mp4" type="video/mp4">
+            <!-- Fallback to the shower video if owner walkthrough not yet added -->
+            <source src="hero-bg.mp4" type="video/mp4">
           </video>
         </div>
-        <div class="owner-badge">&#127909; Owner Albert Walking Through a Real Completed Project</div>
-
-        <!-- SMALL PHOTO COLLAGE -->
+        <div class="owner-badge">&#127909; Owner Albert &mdash; Walking Through a Recently Completed Project</div>
         <div class="photo-grid">
           <img src="https://s.yimg.com/bj/5360/5360a824b478e50c1cabbf28200c2df7.jpg" alt="Bathroom Remodel">
           <img src="https://s.yimg.com/bj/cb5f/cb5fbd171105b4b9cf8986e406b53b17.jpg" alt="Tile Shower">
           <img src="https://s.yimg.com/bj/9337/9337e8e6b9105ccc39d61dd52e55879d.jpg" alt="Walk-In Shower">
+          <img src="https://s.yimg.com/bj/dee5/dee51c459203e245d81a0cbbbf32b156.jpg" alt="Matte Black Shower">
         </div>
-        <div class="projects-badge">
-          <div>
-            <div class="num">500+</div>
-          </div>
-          <div class="lbl">Projects Completed<br>Across NorCal</div>
+        <div class="proj-badge">
+          <div class="num">3,000+</div>
+          <div class="lbl">Projects Completed<br>Across Northern California</div>
         </div>
       </div>
 
       <div class="about-text">
         <h2 class="about-h2">#1 Trusted Bathroom Remodeler in <span class="geo-city2">Northern California</span></h2>
-        <p class="about-p">We are licensed, bonded &amp; insured. A Christian family-owned business serving <span class="geo-city">your area</span> and all of Northern California for 13+ years. We specialize in bathroom remodeling, walk-in showers, tub-to-shower conversions, and senior-safe bathrooms. BBB Accredited. Kohler certified installer.</p>
+        <p class="about-p">We are licensed, bonded &amp; insured. A Christian family-owned business serving <span class="geo-city">your area</span> and all of Northern California for 13+ years. We specialize in bathroom remodeling, walk-in showers, tub-to-shower conversions, and senior-safe bathrooms. BBB Accredited. Kohler certified installer. Over 3,000 completed projects.</p>
         <ul class="about-checks">
           <li><span class="ac">&#10004;</span> We offer the best price. Guaranteed.</li>
-          <li><span class="ac">&#10004;</span> 4.5-star reviews &amp; many referrals near you</li>
-          <li><span class="ac">&#10004;</span> Background-checked, experienced family crew</li>
-          <li><span class="ac">&#10004;</span> 13+ years of hands-on experience</li>
+          <li><span class="ac">&#10004;</span> 5-star reviews across Google, Yelp &amp; Facebook</li>
+          <li><span class="ac">&#10004;</span> Background-checked family crew &mdash; no subcontractors</li>
+          <li><span class="ac">&#10004;</span> 13+ years of hands-on experience in NorCal</li>
         </ul>
-
-        <!-- OWNER SIGNATURE CARD -->
         <div class="owner-sig">
           <img src="alex-owner.jpg" alt="Alex, Owner MTR Baths" onerror="this.style.display='none'">
-          <div class="owner-sig-text">
+          <div>
             <div class="owner-sig-name">Alex &amp; Albert &mdash; Owners, MTR Baths</div>
-            <div class="owner-sig-title">Family-owned &amp; operated since 2010 &middot; West Sacramento, CA</div>
-            <div class="owner-sig-phone">&#128222; (916) 892-0745</div>
+            <div class="owner-sig-sub">Family-owned &amp; operated &middot; West Sacramento, CA &middot; Since 2010</div>
+            <div class="owner-sig-phone">&#128222; Direct: (916) 892-0745</div>
           </div>
         </div>
       </div>
-
     </div>
   </div>
 </section>
 
-<!-- CALL STRIP -->
-<div class="call-strip">
-  <a href="tel:+19168920745">Call Now (916) 892-0745</a>
-</div>
+<div class="call-strip"><a href="tel:+19168920745">Call Now (916) 892-0745</a></div>
 
-<!-- GALLERY -->
+<!-- GALLERY — real Yelp project photos + before/afters -->
 <section class="gallery-section" id="gallery">
   <div class="container">
     <span class="section-label">Real Projects</span>
-    <h2 class="section-title">Local Bathroom Transformations Near <span class="geo-city3">You</span></h2>
-
-    <!-- BEFORE/AFTER PAIRS -->
+    <h2 class="section-title">Bathroom Transformations Near <span class="geo-city3">You</span></h2>
     <div class="ba-grid">
-      <div class="ba-item">
-        <div class="ba-pair">
-          <div class="ba-img"><img src="https://ik.imagekit.io/mtrbaths/Screen%20Shot%202025-03-17%20at%203.33.12%20AM.png?updatedAt=1742247173878" alt="Before"><span class="ba-label ba-before">Before</span></div>
-          <div class="ba-img"><img src="https://ik.imagekit.io/mtrbaths/Screen%20Shot%202025-03-17%20at%203.33.32%20AM.png?updatedAt=1742247173904" alt="After"><span class="ba-label ba-after">After</span></div>
-        </div>
-      </div>
-      <div class="ba-item">
-        <div class="ba-pair">
-          <div class="ba-img"><img src="https://ik.imagekit.io/mtrbaths/Screen%20Shot%202025-03-17%20at%203.34.23%20AM.png?updatedAt=1742247059083" alt="Before"><span class="ba-label ba-before">Before</span></div>
-          <div class="ba-img"><img src="https://ik.imagekit.io/mtrbaths/Screen%20Shot%202025-03-17%20at%203.34.37%20AM.png?updatedAt=1742247061366" alt="After"><span class="ba-label ba-after">After</span></div>
-        </div>
-      </div>
-      <div class="ba-item">
-        <div class="ba-pair">
-          <div class="ba-img"><img src="project-before-3.png" alt="Before" onerror="this.src='https://s.yimg.com/bj/1cbf/1cbf218d21fbb31984688284d43a3f67.jpg'"><span class="ba-label ba-before">Before</span></div>
-          <div class="ba-img"><img src="project-after-3.png" alt="After" onerror="this.src='https://s.yimg.com/bj/21681c9f152fe7194a5c1eaa486feae1.jpg'"><span class="ba-label ba-after">After</span></div>
-        </div>
-      </div>
+      <div class="ba-item"><div class="ba-pair">
+        <div class="ba-img"><img src="https://ik.imagekit.io/mtrbaths/Screen%20Shot%202025-03-17%20at%203.33.12%20AM.png?updatedAt=1742247173878" alt="Before"><span class="ba-label ba-before">Before</span></div>
+        <div class="ba-img"><img src="https://ik.imagekit.io/mtrbaths/Screen%20Shot%202025-03-17%20at%203.33.32%20AM.png?updatedAt=1742247173904" alt="After"><span class="ba-label ba-after">After</span></div>
+      </div></div>
+      <div class="ba-item"><div class="ba-pair">
+        <div class="ba-img"><img src="https://ik.imagekit.io/mtrbaths/Screen%20Shot%202025-03-17%20at%203.34.23%20AM.png?updatedAt=1742247059083" alt="Before"><span class="ba-label ba-before">Before</span></div>
+        <div class="ba-img"><img src="https://ik.imagekit.io/mtrbaths/Screen%20Shot%202025-03-17%20at%203.34.37%20AM.png?updatedAt=1742247061366" alt="After"><span class="ba-label ba-after">After</span></div>
+      </div></div>
+      <div class="ba-item"><div class="ba-pair">
+        <div class="ba-img"><img src="project-before-3.png" onerror="this.src='https://s.yimg.com/bj/1cbf/1cbf218d21fbb31984688284d43a3f67.jpg'" alt="Before"><span class="ba-label ba-before">Before</span></div>
+        <div class="ba-img"><img src="project-after-3.png" onerror="this.src='https://s.yimg.com/bj/21681c9f152fe7194a5c1eaa486feae1.jpg'" alt="After"><span class="ba-label ba-after">After</span></div>
+      </div></div>
     </div>
-
-    <!-- PROJECT PHOTO STRIP -->
-    <div class="proj-grid" style="margin-top:16px">
-      <div class="proj-item"><img src="classyshower.jpeg" alt="Classy Shower" onerror="this.src='https://s.yimg.com/bj/cb5f/cb5fbd171105b4b9cf8986e406b53b17.jpg'"></div>
-      <div class="proj-item"><img src="Greenshower.jpeg" alt="Walk-In Shower" onerror="this.src='https://s.yimg.com/bj/dee5/dee51c459203e245d81a0cbbbf32b156.jpg'"></div>
-      <div class="proj-item"><img src="whiteshower.jpeg" alt="White Shower" onerror="this.src='https://s.yimg.com/bj/8dc5/8dc5ebbcdda443f42ae7ce9f98c1636f.jpg'"></div>
-      <div class="proj-item"><img src="project-2.png" alt="Bathroom Remodel" onerror="this.src='https://s.yimg.com/bj/9337/9337e8e6b9105ccc39d61dd52e55879d.jpg'"></div>
-      <div class="proj-item"><img src="project-4.png" alt="Shower Install" onerror="this.src='https://s.yimg.com/bj/6df3/6df32770c84cb5d5d654630f1962cfee.jpg'"></div>
+    <!-- 10 real project photos from Yelp listing -->
+    <div class="proj-grid">
+      <div class="proj-item"><img src="classyshower.jpeg" onerror="this.src='https://s.yimg.com/bj/8dc5/8dc5ebbcdda443f42ae7ce9f98c1636f.jpg'" alt="Acrylic Shower"></div>
+      <div class="proj-item"><img src="Greenshower.jpeg" onerror="this.src='https://s.yimg.com/bj/9c19/9c1916dc82e16183de89177c7c78d91e.jpg'" alt="Walk-In Shower"></div>
+      <div class="proj-item"><img src="whiteshower.jpeg" onerror="this.src='https://s.yimg.com/bj/68fa/68fa1c5a3a3590b07d8365f830f5960f.jpg'" alt="White Shower"></div>
+      <div class="proj-item"><img src="project-2.png" onerror="this.src='https://s.yimg.com/bj/1eb8/1eb8aa43dd5b5e41a81bfe071cede50c.jpg'" alt="Canyon Rock Shower"></div>
+      <div class="proj-item"><img src="project-4.png" onerror="this.src='https://s.yimg.com/bj/6df3/6df32770c84cb5d5d654630f1962cfee.jpg'" alt="Sierra Sand Shower"></div>
+    </div>
+    <!-- Second row of 5 -->
+    <div class="proj-grid" style="margin-top:8px">
+      <div class="proj-item"><img src="project-5.png" onerror="this.src='https://s.yimg.com/bj/76150ced1b1cb01afa32d2db291622f6.jpg'" alt="Arctic Shower"></div>
+      <div class="proj-item"><img src="project-6.png" onerror="this.src='https://s.yimg.com/bj/95a1/95a19642e07bd9f4552c453b280a90d8.jpg'" alt="Biscuit Shower"></div>
+      <div class="proj-item"><img src="project-7.png" onerror="this.src='https://s.yimg.com/bj/db6e/db6e2cafd2c53f88aae5c0ba9b03e0b9.jpg'" alt="Gold Tile Shower"></div>
+      <div class="proj-item"><img src="project-8.png" onerror="this.src='https://s.yimg.com/bj/b8c9/b8c9438507c056ea2c5de272da6ed76c.jpg'" alt="Vanity Remodel"></div>
+      <div class="proj-item"><img src="project-9.png" onerror="this.src='https://s.yimg.com/bj/ef78/ef78de4da40ad147a856a16bbedbd29c.jpg'" alt="Full Remodel"></div>
     </div>
   </div>
 </section>
 
-<!-- REVIEWS — REAL -->
+<!-- REVIEWS — real Yelp reviews with styled avatars -->
 <section class="reviews" id="reviews">
   <div class="container">
     <span class="section-label">Verified Reviews</span>
     <h2 class="section-title">What <span class="geo-city4">Your Neighbors</span> Are Saying</h2>
-    <p class="reviews-sub">Real reviews from real customers on Google, Yelp &amp; Yahoo Local.</p>
-
+    <p class="reviews-sub">Real reviews from real customers &mdash; verified on Google, Yelp &amp; Yahoo Local.</p>
     <div class="reviews-grid">
 
       <div class="review-card">
-        <div class="review-platform"><img src="https://upload.wikimedia.org/wikipedia/commons/a/ad/Yelp_Logo.svg" alt="Yelp" style="filter:brightness(0) saturate(100%) invert(30%) sepia(90%) saturate(500%) hue-rotate(320deg)"></div>
-        <p class="review-text">&ldquo;<span class="hl-gold">Surpassed our expectations by a mile!</span> Alex and his son did a fantastic job designing and building a shower, complete with handrails and seat. They were incredibly <span class="hl">professional, polite, helpful</span> and the quality of work was excellent.&rdquo;</p>
+        <div class="review-plat"><div class="review-plat-y">y!</div></div>
         <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-        <div class="reviewer-avatar"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg></div>
+        <p class="review-text">&ldquo;<span class="hlg">Surpassed our expectations by a mile!</span> Alex and his son did a fantastic job designing and building a shower, complete with handrails and seat. They were incredibly <span class="hl">professional, polite</span> and helpful. The quality of work was excellent.&rdquo;</p>
+        <div class="rev-avatar" style="background:#e74c3c">R</div>
         <div class="reviewer-name">Rick M.</div>
-        <div class="reviewer-meta">Yelp Verified Review &middot; Feb 2026 <span class="verified-dot verified-yelp"><svg viewBox="0 0 10 10"><path d="M2 5l2.5 2.5L8 3" stroke="#fff" stroke-width="1.5" fill="none"/></svg></span></div>
+        <div class="reviewer-meta">Yelp Verified &middot; Feb 2026 <span class="vdot vdot-y"><svg viewBox="0 0 10 10"><path d="M2 5l2.5 2.5L8 3" stroke="#fff" stroke-width="1.5" fill="none"/></svg></span></div>
       </div>
 
       <div class="review-card">
-        <div class="review-platform"><img src="https://upload.wikimedia.org/wikipedia/commons/a/ad/Yelp_Logo.svg" alt="Yelp" style="filter:brightness(0) saturate(100%) invert(30%) sepia(90%) saturate(500%) hue-rotate(320deg)"></div>
-        <p class="review-text">&ldquo;<span class="hl-gold">Absolutely AMAZING!!!!</span> Albert came to the house and gave a fair and honest estimate. They weren&rsquo;t the cheapest, nor the most expensive &mdash; but the <span class="hl">value and quality</span> was unmatched. I can&rsquo;t tell you how impressed I am.&rdquo;</p>
+        <div class="review-plat"><div class="review-plat-y">y!</div></div>
         <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-        <div class="reviewer-avatar"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg></div>
+        <p class="review-text">&ldquo;<span class="hlg">Absolutely AMAZING!!!!</span> Albert came and gave a fair, honest estimate. They weren&rsquo;t the cheapest &mdash; but the <span class="hl">value and quality</span> was unmatched. The guys just left and I can&rsquo;t tell you how impressed I am.&rdquo;</p>
+        <div class="rev-avatar" style="background:#8e44ad">K</div>
         <div class="reviewer-name">Kurt A.</div>
-        <div class="reviewer-meta">Yelp Verified Review &middot; Jan 2026 <span class="verified-dot verified-yelp"><svg viewBox="0 0 10 10"><path d="M2 5l2.5 2.5L8 3" stroke="#fff" stroke-width="1.5" fill="none"/></svg></span></div>
+        <div class="reviewer-meta">Yelp Verified &middot; Jan 2026 <span class="vdot vdot-y"><svg viewBox="0 0 10 10"><path d="M2 5l2.5 2.5L8 3" stroke="#fff" stroke-width="1.5" fill="none"/></svg></span></div>
       </div>
 
       <div class="review-card">
-        <div class="review-platform"><img src="https://upload.wikimedia.org/wikipedia/commons/a/ad/Yelp_Logo.svg" alt="Yelp" style="filter:brightness(0) saturate(100%) invert(30%) sepia(90%) saturate(500%) hue-rotate(320deg)"></div>
-        <p class="review-text">&ldquo;I recently had my walk-in shower remodeled by this wonderful company. They were <span class="hl">professional and extremely knowledgeable</span>, answering all my questions in an easy to understand manner. We are <span class="hl-gold">very happy with the results!</span>&rdquo;</p>
+        <div class="review-plat"><div class="review-plat-y">y!</div></div>
         <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-        <div class="reviewer-avatar"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg></div>
+        <p class="review-text">&ldquo;Kohler certified this business and they lived up to every expectation. I&rsquo;ve never worked with a contractor who was this <span class="hl">thorough, communicative</span> and knowledgeable. <span class="hlg">Highly recommend to anyone.</span>&rdquo;</p>
+        <div class="rev-avatar" style="background:#2980b9">B</div>
+        <div class="reviewer-name">Brandon P.</div>
+        <div class="reviewer-meta">Yelp Verified &middot; Mar 2026 <span class="vdot vdot-y"><svg viewBox="0 0 10 10"><path d="M2 5l2.5 2.5L8 3" stroke="#fff" stroke-width="1.5" fill="none"/></svg></span></div>
+      </div>
+
+      <div class="review-card">
+        <div class="review-plat"><div class="review-plat-y">y!</div></div>
+        <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="review-text">&ldquo;I recently had my walk-in shower remodeled by this wonderful company. They were <span class="hl">professional and extremely knowledgeable</span>, answering all my questions clearly. We are <span class="hlg">very happy with the results!</span>&rdquo;</p>
+        <div class="rev-avatar" style="background:#27ae60">J</div>
         <div class="reviewer-name">Jessica H.</div>
-        <div class="reviewer-meta">Yelp Verified Review &middot; Sep 2025 <span class="verified-dot verified-yelp"><svg viewBox="0 0 10 10"><path d="M2 5l2.5 2.5L8 3" stroke="#fff" stroke-width="1.5" fill="none"/></svg></span></div>
+        <div class="reviewer-meta">Yelp Verified &middot; Sep 2025 <span class="vdot vdot-y"><svg viewBox="0 0 10 10"><path d="M2 5l2.5 2.5L8 3" stroke="#fff" stroke-width="1.5" fill="none"/></svg></span></div>
       </div>
 
       <div class="review-card">
-        <div class="review-platform"><img src="https://upload.wikimedia.org/wikipedia/commons/a/ad/Yelp_Logo.svg" alt="Yelp" style="filter:brightness(0) saturate(100%) invert(30%) sepia(90%) saturate(500%) hue-rotate(320deg)"></div>
-        <p class="review-text">&ldquo;This was the 2nd company that gave us a quote. We had <span class="hl">5 more quotes</span> after &mdash; but we chose MTR. Their attention to detail, knowledge, and <span class="hl-gold">passion for their work</span> was evident from the very beginning.&rdquo;</p>
+        <div class="review-plat">
+          <svg class="review-plat-g" viewBox="0 0 18 18"><path fill="#4285F4" d="M17.64 9.2c0-.637-.057-1.251-.164-1.84H9v3.481h4.844a4.14 4.14 0 0 1-1.796 2.716v2.259h2.908c1.702-1.567 2.684-3.875 2.684-6.615z"/><path fill="#34A853" d="M9 18c2.43 0 4.467-.806 5.956-2.184l-2.908-2.259c-.806.54-1.837.86-3.048.86-2.344 0-4.328-1.584-5.036-3.711H.957v2.332A8.997 8.997 0 0 0 9 18z"/><path fill="#FBBC05" d="M3.964 10.706A5.41 5.41 0 0 1 3.682 9c0-.593.102-1.17.282-1.706V4.962H.957A8.996 8.996 0 0 0 0 9c0 1.452.348 2.827.957 4.038l3.007-2.332z"/><path fill="#EA4335" d="M9 3.58c1.321 0 2.508.454 3.44 1.345l2.582-2.58C13.463.891 11.426 0 9 0A8.997 8.997 0 0 0 .957 4.962L3.964 7.294C4.672 5.163 6.656 3.58 9 3.58z"/></svg>
+        </div>
         <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-        <div class="reviewer-avatar"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg></div>
-        <div class="reviewer-name">Homeowner (The Critic)</div>
-        <div class="reviewer-meta">Yelp Verified Review &middot; Oct 2025 <span class="verified-dot verified-yelp"><svg viewBox="0 0 10 10"><path d="M2 5l2.5 2.5L8 3" stroke="#fff" stroke-width="1.5" fill="none"/></svg></span></div>
-      </div>
-
-      <div class="review-card">
-        <div class="review-platform"><img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" alt="Google"></div>
-        <p class="review-text">&ldquo;<span class="hl-gold">Wow! Amazing work</span> on repair/remodel of our master bathroom. Service, quality, and value were great. <span class="hl">Alex and his team</span> (his son is the sweetest and a great worker!) are top-notch. Very professional and talented!!!&rdquo;</p>
-        <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-        <div class="reviewer-avatar"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg></div>
+        <p class="review-text">&ldquo;<span class="hlg">Wow! Amazing work</span> on repair/remodel of our master bathroom. Service, quality, and value were great. <span class="hl">Alex and his team</span> (his son is the sweetest!) are top-notch. Very professional and talented!!!&rdquo;</p>
+        <div class="rev-avatar" style="background:#e67e22">M</div>
         <div class="reviewer-name">NorCal Homeowner</div>
-        <div class="reviewer-meta"><img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" alt="G" style="height:12px"> Google Verified <span class="verified-dot"><svg viewBox="0 0 10 10"><path d="M2 5l2.5 2.5L8 3" stroke="#fff" stroke-width="1.5" fill="none"/></svg></span></div>
+        <div class="reviewer-meta">Google Verified <span class="vdot vdot-g"><svg viewBox="0 0 10 10"><path d="M2 5l2.5 2.5L8 3" stroke="#fff" stroke-width="1.5" fill="none"/></svg></span></div>
       </div>
 
       <div class="review-card">
-        <div class="review-platform"><img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" alt="Google"></div>
-        <p class="review-text">&ldquo;Very happy with our new shower from MTR. They were <span class="hl">fast with coming out, measuring, and quote</span>. They even came back so my husband could be there for the final decision. <span class="hl-gold">Would absolutely recommend!</span>&rdquo;</p>
+        <div class="review-plat">
+          <svg class="review-plat-g" viewBox="0 0 18 18"><path fill="#4285F4" d="M17.64 9.2c0-.637-.057-1.251-.164-1.84H9v3.481h4.844a4.14 4.14 0 0 1-1.796 2.716v2.259h2.908c1.702-1.567 2.684-3.875 2.684-6.615z"/><path fill="#34A853" d="M9 18c2.43 0 4.467-.806 5.956-2.184l-2.908-2.259c-.806.54-1.837.86-3.048.86-2.344 0-4.328-1.584-5.036-3.711H.957v2.332A8.997 8.997 0 0 0 9 18z"/><path fill="#FBBC05" d="M3.964 10.706A5.41 5.41 0 0 1 3.682 9c0-.593.102-1.17.282-1.706V4.962H.957A8.996 8.996 0 0 0 0 9c0 1.452.348 2.827.957 4.038l3.007-2.332z"/><path fill="#EA4335" d="M9 3.58c1.321 0 2.508.454 3.44 1.345l2.582-2.58C13.463.891 11.426 0 9 0A8.997 8.997 0 0 0 .957 4.962L3.964 7.294C4.672 5.163 6.656 3.58 9 3.58z"/></svg>
+        </div>
         <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-        <div class="reviewer-avatar"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg></div>
-        <div class="reviewer-name">Satisfied Customer</div>
-        <div class="reviewer-meta"><img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" alt="G" style="height:12px"> Google Verified <span class="verified-dot"><svg viewBox="0 0 10 10"><path d="M2 5l2.5 2.5L8 3" stroke="#fff" stroke-width="1.5" fill="none"/></svg></span></div>
+        <p class="review-text">&ldquo;Very happy with our new shower from MTR. They were <span class="hl">fast with coming out, measuring, and quote</span>. They even came back so my husband could be there. <span class="hlg">Would absolutely recommend!</span>&rdquo;</p>
+        <div class="rev-avatar" style="background:#16a085">S</div>
+        <div class="reviewer-name">West Sacramento Homeowner</div>
+        <div class="reviewer-meta">Google Verified <span class="vdot vdot-g"><svg viewBox="0 0 10 10"><path d="M2 5l2.5 2.5L8 3" stroke="#fff" stroke-width="1.5" fill="none"/></svg></span></div>
       </div>
 
     </div>
   </div>
 </section>
 
-<!-- CALL -->
-<div class="call-strip" style="padding:24px 0 36px">
-  <a href="tel:+19168920745">Call Now (916) 892-0745</a>
-</div>
+<div class="call-strip" style="padding:14px 0 28px"><a href="tel:+19168920745">Call Now (916) 892-0745</a></div>
 
 <!-- DARK CTA -->
 <section class="dark-cta">
   <div class="dark-cta-inner">
-    <h2 class="dark-cta-h2"><span class="geo-city5">Northern California</span>&rsquo;s Trusted Bathroom Remodeling Experts</h2>
-    <p class="dark-cta-p">Looking for a bathroom remodeler you can actually trust near <span class="geo-city6">you</span>? MTR Baths has spent 13+ years earning 5-star reviews across Northern California. Whether you need a tub-to-shower conversion, a senior-safe walk-in, or a full remodel &mdash; call us today for your free in-home estimate.</p>
+    <h2><span class="geo-city5">Northern California</span>&rsquo;s Trusted Bathroom Remodeling Experts</h2>
+    <p>Looking for a bathroom remodeler you can actually trust near <span class="geo-city6">you</span>? MTR Baths has spent 13+ years earning 5-star reviews across Northern California with over 3,000 completed projects. Whether you need a tub-to-shower conversion, a senior-safe walk-in, or a full remodel &mdash; call us for your free in-home estimate.</p>
     <a href="tel:+19168920745">Call Now (916) 892-0745</a>
   </div>
 </section>
@@ -677,28 +738,27 @@ footer{background:#222;padding:36px 0 20px}
   </div>
 </section>
 
+<!-- MID CTA -->
+<div class="mid-cta">
+  <div class="container">
+    <h3>Ready to transform your bathroom? No pressure &mdash; no obligation.</h3>
+    <div class="mid-cta-btns">
+      <a href="tel:+19168920745" class="btn-gold">&#128222; Call (916) 892-0745</a>
+      <a href="#hero-form" class="btn-ow">Get a Free Estimate &rarr;</a>
+    </div>
+  </div>
+</div>
+
 <!-- SERVICES -->
 <section class="services" id="services">
   <div class="container">
     <h2 class="services-h2">Bathroom Services Near <span class="geo-city7">You</span> &mdash; <span>We Do It All!</span></h2>
-    <p class="services-sub">One crew. One specialty. Every bathroom done right.</p>
+    <p class="services-sub">One crew. One specialty. Every bathroom done right the first time.</p>
     <div class="services-grid">
-      <div>
-        <img src="https://s.yimg.com/bj/cb5f/cb5fbd171105b4b9cf8986e406b53b17.jpg" alt="Tub-to-Shower" class="service-img">
-        <p class="service-name">Tub-to-Shower Conversion</p>
-      </div>
-      <div>
-        <img src="https://ik.imagekit.io/mtrbaths/Screen%20Shot%202025-03-17%20at%203.33.32%20AM.png?updatedAt=1742247173904" alt="Walk-In Shower" class="service-img">
-        <p class="service-name">Walk-In Shower Installation</p>
-      </div>
-      <div>
-        <img src="https://s.yimg.com/bj/356e/356e68c7a1dd2fc84013bde73f6d8f0d.jpg" alt="Senior Accessible Shower" class="service-img">
-        <p class="service-name">Senior &amp; Accessible Showers</p>
-      </div>
-      <div>
-        <img src="https://s.yimg.com/bj/5360/5360a824b478e50c1cabbf28200c2df7.jpg" alt="Full Bathroom Remodel" class="service-img">
-        <p class="service-name">Full Bathroom Remodel</p>
-      </div>
+      <div><img src="https://s.yimg.com/bj/cb5f/cb5fbd171105b4b9cf8986e406b53b17.jpg" alt="Tub-to-Shower" class="service-img"><p class="service-name">Tub-to-Shower Conversion</p></div>
+      <div><img src="https://ik.imagekit.io/mtrbaths/Screen%20Shot%202025-03-17%20at%203.33.32%20AM.png?updatedAt=1742247173904" alt="Walk-In Shower" class="service-img"><p class="service-name">Walk-In Shower Installation</p></div>
+      <div><img src="https://s.yimg.com/bj/356e/356e68c7a1dd2fc84013bde73f6d8f0d.jpg" alt="Senior Accessible" class="service-img"><p class="service-name">Senior &amp; Accessible Showers</p></div>
+      <div><img src="https://s.yimg.com/bj/5360/5360a824b478e50c1cabbf28200c2df7.jpg" alt="Full Remodel" class="service-img"><p class="service-name">Full Bathroom Remodel</p></div>
     </div>
   </div>
 </section>
@@ -707,7 +767,7 @@ footer{background:#222;padding:36px 0 20px}
 <footer>
   <div class="container">
     <div class="footer-inner">
-      <div class="footer-col" style="flex:2 1 280px">
+      <div class="footer-col" style="flex:2 1 260px">
         <h3>MTR Baths</h3>
         <p>Premium bathroom remodeling across Northern California.<br>Licensed &middot; Bonded &middot; Insured &middot; CA #965267<br>Christian family-owned &amp; operated since 2010.</p>
         <div class="footer-social">
@@ -717,9 +777,12 @@ footer{background:#222;padding:36px 0 20px}
           <a href="https://www.instagram.com/modern.technology2011/" target="_blank">
             <svg viewBox="0 0 448 512"><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></svg>
           </a>
+          <a href="https://www.yelp.com/biz/mtr-walk-in-tubs-and-showers-west-sacramento" target="_blank">
+            <svg viewBox="0 0 48 48"><circle cx="24" cy="24" r="22" fill="#d32323"/><text x="9" y="33" font-family="Arial" font-size="22" font-weight="900" fill="#fff">y!</text></svg>
+          </a>
         </div>
       </div>
-      <div class="footer-col" style="flex:1 1 160px">
+      <div class="footer-col" style="flex:1 1 150px">
         <h3>Service Areas</h3>
         <p>Sacramento &middot; Roseville<br>Elk Grove &middot; Folsom<br>Stockton &middot; Modesto<br>Fairfield &middot; Napa<br>West Sacramento &amp; all of NorCal</p>
       </div>
@@ -729,86 +792,90 @@ footer{background:#222;padding:36px 0 20px}
 </footer>
 
 <script>
-/* ── GEO LOCATION ── */
+/* ─── GEO LOCATION ─── */
 (function(){
-  // Targets to update: all .geo-city spans + title tag
-  var selectors = ['.geo-city','.geo-city2','.geo-city3','.geo-city4','.geo-city5','.geo-city6','.geo-city7'];
-  var defaults = {city:'Northern California', region:'NorCal'};
-
-  function updateCity(city, region){
-    selectors.forEach(function(sel){
-      document.querySelectorAll(sel).forEach(function(el){ el.textContent = city; });
+  var geoSelectors=['geo-city','geo-city2','geo-city3','geo-city4','geo-city5','geo-city6','geo-city7'];
+  function setCity(city,region){
+    geoSelectors.forEach(function(cls){
+      document.querySelectorAll('.'+cls).forEach(function(el){el.textContent=city;});
     });
-    document.querySelectorAll('.geo-region').forEach(function(el){ el.textContent = region; });
-    document.title = 'Bathroom Remodeling ' + city + ' | MTR Baths | Free In-Home Estimate';
+    document.querySelectorAll('.geo-region').forEach(function(el){el.textContent=region||city;});
+    document.title='Bathroom Remodeling '+city+' | MTR Baths | Free In-Home Estimate';
   }
-
-  function tryGeo(){
-    if(!navigator.geolocation){ return; }
-    navigator.geolocation.getCurrentPosition(function(pos){
-      var lat = pos.coords.latitude, lon = pos.coords.longitude;
-      fetch('https://api.bigdatacloud.net/data/reverse-geocode-client?latitude='+lat+'&longitude='+lon+'&localityLanguage=en')
-        .then(function(r){ return r.json(); })
-        .then(function(d){
-          var city = d.city || d.locality || d.principalSubdivision || '';
-          var region = d.principalSubdivision || 'your area';
-          if(city){ updateCity(city, region); }
-        })
-        .catch(function(){});
-    }, function(){}, {timeout:4000});
-  }
-
-  // Try IP-based fallback first (no permission needed)
   fetch('https://api.bigdatacloud.net/data/ip-geolocation?localityLanguage=en')
-    .then(function(r){ return r.json(); })
+    .then(function(r){return r.json();})
     .then(function(d){
-      var city = (d.location && d.location.city) ? d.location.city : '';
-      var region = (d.location && d.location.principalSubdivision) ? d.location.principalSubdivision : defaults.region;
-      if(city){ updateCity(city, region); }
-      else { tryGeo(); }
-    })
-    .catch(function(){ tryGeo(); });
+      var city=(d.location&&d.location.city)||'';
+      var region=(d.location&&d.location.principalSubdivision)||'Northern California';
+      if(city)setCity(city,region);
+    }).catch(function(){});
 })();
 
-/* ── COUPON FLIP ── */
-function flipCoupon(wrapper){
-  wrapper.classList.toggle('flipped');
+/* ─── COUPON LEAD-CAPTURE MECHANIC ─── */
+function showCouponForm(id){
+  var c=document.getElementById(id);
+  c.classList.add('revealing');
 }
-function flipBack(e, btn){
-  e.stopPropagation();
-  btn.closest('.coupon-wrapper').classList.remove('flipped');
+function hideCouponForm(id){
+  var c=document.getElementById(id);
+  c.classList.remove('revealing','revealed');
+  // reset code wrap
+  var cw=document.getElementById(id+'-code');
+  if(cw)cw.style.display='none';
+  var overlay=c.querySelector('.coupon-overlay');
+  if(overlay){
+    overlay.querySelectorAll('.co-input').forEach(function(i){i.disabled=false;i.value='';});
+    var sub=overlay.querySelector('.co-submit');
+    if(sub){sub.style.display='';sub.disabled=false;sub.textContent=sub.getAttribute('data-orig')||sub.textContent;}
+    var cop=overlay.querySelector('.co-copied');
+    if(cop)cop.style.display='none';
+  }
 }
-function copyCoupon(e, code, btn){
-  e.stopPropagation();
+function revealCode(id,code,btn){
+  var overlay=btn.closest('.coupon-overlay');
+  var inputs=overlay.querySelectorAll('.co-input');
+  var name=inputs[0]?inputs[0].value.trim():'';
+  var phone=inputs[1]?inputs[1].value.trim():'';
+  if(!name||!phone){inputs[0]&&!inputs[0].value.trim()?inputs[0].focus():inputs[1].focus();return;}
+  // store the original label
+  if(!btn.getAttribute('data-orig'))btn.setAttribute('data-orig',btn.textContent);
+  // fire conversion events
+  if(window.dataLayer)window.dataLayer.push({event:'coupon_claim',coupon:code,name:name,phone:phone});
+  if(typeof fbq!=='undefined')fbq('track','Lead',{content_name:code});
+  // hide form, show code
+  inputs.forEach(function(i){i.disabled=true;});
+  btn.style.display='none';
+  var cw=document.getElementById(id+'-code');
+  if(cw)cw.style.display='flex';
+  document.getElementById(id).classList.add('revealed');
+}
+function copyCode(code,btn){
   navigator.clipboard.writeText(code).then(function(){
-    btn.style.display = 'none';
-    var copied = btn.nextElementSibling;
-    copied.style.display = 'block';
-    setTimeout(function(){ btn.style.display=''; copied.style.display='none'; }, 2000);
-  }).catch(function(){
-    btn.textContent = 'Code: ' + code;
-  });
+    var orig=btn.textContent;
+    btn.textContent='&#10004; Copied!';
+    var cop=btn.nextElementSibling;
+    if(cop)cop.style.display='block';
+    setTimeout(function(){btn.textContent=orig;if(cop)cop.style.display='none';},2500);
+  }).catch(function(){});
 }
 
-/* ── FORMS ── */
+/* ─── FORMS ─── */
 document.getElementById('hero-form-el').addEventListener('submit',function(e){
   e.preventDefault();
   var b=document.getElementById('hero-submit');
-  b.textContent='Submitted! We\'ll call you shortly.';
-  b.style.background='#27ae60';b.style.color='#fff';b.disabled=true;
+  b.textContent='Submitted! We\'ll call you shortly.';b.style.background='#27ae60';b.style.color='#fff';b.disabled=true;
   if(window.dataLayer)window.dataLayer.push({event:'lead_form_submit',form:'hero'});
   if(typeof fbq!=='undefined')fbq('track','Lead');
 });
 document.getElementById('bottom-form-el').addEventListener('submit',function(e){
   e.preventDefault();
   var b=document.getElementById('bottom-submit');
-  b.textContent='Got it! We\'ll call you soon.';
-  b.style.background='#27ae60';b.disabled=true;
+  b.textContent='Got it! We\'ll call you soon.';b.style.background='#27ae60';b.disabled=true;
   if(window.dataLayer)window.dataLayer.push({event:'lead_form_submit',form:'bottom'});
   if(typeof fbq!=='undefined')fbq('track','Lead');
 });
 
-/* ── SMOOTH SCROLL ── */
+/* ─── SMOOTH SCROLL ─── */
 document.querySelectorAll('a[href^="#"]').forEach(function(a){
   a.addEventListener('click',function(e){
     var t=document.querySelector(a.getAttribute('href'));
