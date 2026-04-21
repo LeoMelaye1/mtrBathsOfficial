@@ -630,52 +630,82 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </div>
 
 <!-- ============================================
-     SAFE GEO-LOCATION SWAP
-     - Page loads with "Sacramento" hardcoded (no FOUT, no blank)
-     - ONLY swaps if we detect a CA city
-     - Never blocks render, never causes layout shift
+     HARDENED GEO-LOCATION SWAP
+     - Defaults to "Sacramento" (hardcoded, no FOUT)
+     - Tries 3 APIs in sequence (ipapi → ipwhois → geojs)
+     - Only swaps to a California city — anywhere in CA
+     - Watchdog re-asserts the value for 15s in case another
+       script (like Whoever Calls) tries to override it
      ============================================ -->
 <script>
 (function(){
-  // Whitelist: only swap for actual service-area cities
-  var CA_CITIES = [
-    'sacramento','west sacramento','roseville','elk grove','folsom','citrus heights',
-    'rancho cordova','natomas','arden-arcade','carmichael','fair oaks','orangevale',
-    'rocklin','lincoln','loomis','auburn','granite bay','el dorado hills',
-    'davis','woodland','vacaville','fairfield','suisun city','dixon','winters',
-    'napa','american canyon','sonoma','petaluma','santa rosa',
-    'stockton','lodi','manteca','tracy','modesto','turlock','ceres',
-    'san francisco','oakland','berkeley','hayward','fremont','concord','walnut creek',
-    'antioch','pittsburg','richmond','vallejo','benicia','martinez','pleasanton',
-    'livermore','dublin','san ramon','danville','alamo','brentwood'
-  ];
+  var DEFAULT_CITY = 'Sacramento';
+  var currentCity  = DEFAULT_CITY;  // what we want displayed
+  var locked       = false;         // set once we've successfully detected
 
-  function swapCity(city, region){
-    if(!city) return;
-    var lower = city.toLowerCase().trim();
-    // Must be CA AND a known service-area city — otherwise keep "Sacramento"
-    if(region !== 'California' && region !== 'CA') return;
-    if(CA_CITIES.indexOf(lower) === -1) return;
-
-    // Title-case the city properly
-    var display = city.replace(/\w\S*/g, function(txt){
-      return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
+  function titleCase(s){
+    return s.replace(/\w\S*/g, function(t){
+      return t.charAt(0).toUpperCase() + t.substr(1).toLowerCase();
     });
-
-    document.querySelectorAll('.geo-city, .geo-city-h1').forEach(function(el){
-      el.textContent = display;
-    });
-    // Update title too
-    document.title = display + ' Bathroom Remodeling | MTR Baths | Walk-In Shower Experts';
   }
 
-  // Fire request — if it fails or is slow, page already shows "Sacramento"
-  try {
-    fetch('https://ipapi.co/json/', {cache:'no-store'})
-      .then(function(r){ return r.json(); })
-      .then(function(d){ swapCity(d.city, d.region); })
-      .catch(function(){});
-  } catch(e) {}
+  function applyCity(city){
+    document.querySelectorAll('.geo-city, .geo-city-h1').forEach(function(el){
+      if(el.textContent !== city) el.textContent = city;
+    });
+    document.title = city + ' Bathroom Remodeling | MTR Baths | Walk-In Shower Experts';
+  }
+
+  function setCity(city, region){
+    if(!city || typeof city !== 'string') return false;
+    // Accept any city where region is California (covers entire service area)
+    var isCA = /^(california|ca)$/i.test(region || '');
+    if(!isCA) return false;
+    currentCity = titleCase(city.trim());
+    locked = true;
+    applyCity(currentCity);
+    return true;
+  }
+
+  // Apply default immediately on DOM-ready in case something already ran
+  applyCity(DEFAULT_CITY);
+
+  // Try APIs in sequence — stop at first success
+  function tryApis(){
+    var apis = [
+      { url: 'https://ipapi.co/json/',
+        parse: function(d){ return { city:d.city, region:d.region }; } },
+      { url: 'https://ipwho.is/',
+        parse: function(d){ return { city:d.city, region:d.region }; } },
+      { url: 'https://get.geojs.io/v1/ip/geo.json',
+        parse: function(d){ return { city:d.city, region:d.region }; } }
+    ];
+    var i = 0;
+    function next(){
+      if(i >= apis.length || locked) return;
+      var a = apis[i++];
+      fetch(a.url, {cache:'no-store'})
+        .then(function(r){ return r.json(); })
+        .then(function(d){
+          var parsed = a.parse(d);
+          if(!setCity(parsed.city, parsed.region)) next();
+        })
+        .catch(function(){ next(); });
+    }
+    next();
+  }
+  tryApis();
+
+  // Watchdog: if some OTHER script rewrites our .geo-city text,
+  // put ours back. Runs for 15 seconds then stops.
+  var watchdog = setInterval(function(){
+    document.querySelectorAll('.geo-city, .geo-city-h1').forEach(function(el){
+      if(el.textContent !== currentCity){
+        el.textContent = currentCity;
+      }
+    });
+  }, 500);
+  setTimeout(function(){ clearInterval(watchdog); }, 15000);
 })();
 </script>
 
