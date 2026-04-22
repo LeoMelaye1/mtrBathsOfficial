@@ -24,27 +24,32 @@ fbq('track', 'PageView');
 src="https://www.facebook.com/tr?id=871950812372808&ev=PageView&noscript=1"
 /></noscript>
 
-<!-- Google Ads gtag + phone conversion DNI (keep this — it's the one upgrade worth porting over) -->
+<!-- Google tag (gtag.js) — Google Ads + Phone Call Conversion DNI -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17761859617"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
   gtag('config', 'AW-17761859617');
+
+  // Phone snippet — swaps the phone number on this page with a Google
+  // forwarding number so Google Ads can attribute calls to ad clicks.
   gtag('config', 'AW-17761859617/XggeCIGXlJ8cEKHwwZVC', {
     'phone_conversion_number': '(916) 892-0745'
   });
 </script>
+<!-- End Google tag -->
 
 <!-- CrazyEgg -->
 <script type="text/javascript" src="//script.crazyegg.com/pages/scripts/0128/7376.js" async="async"></script>
 
-<!-- GTM -->
+<!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
 j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 })(window,document,'script','dataLayer','GTM-PNR8J2VT');</script>
+<!-- End Google Tag Manager -->
 
 <!-- Whoever Calls script (kept from original) -->
 <script>var $wc_load=function(a){return JSON.parse(JSON.stringify(a))},$wc_leads=$wc_leads||{doc:{url:$wc_load(document.URL),ref:$wc_load(document.referrer),search:$wc_load(location.search),hash:$wc_load(location.hash)}};</script>
@@ -224,8 +229,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </style>
 </head>
 <body>
+<!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PNR8J2VT"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
 
 <!-- STICKY MOBILE BAR -->
 <div class="mobile-bottom-bar">
