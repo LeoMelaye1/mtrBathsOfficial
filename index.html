@@ -428,18 +428,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     </div>
                 </div>
             </div>
-            <div class="gallery-item">
-                <div class="side-by-side-container">
-                    <div class="img-wrapper no-click">
-                        <img src="project-before-3.png" onerror="this.onerror=null;this.src='https://s.yimg.com/bj/5360/5360a824b478e50c1cabbf28200c2df7.jpg'" alt="Before Project" class="fixed-ratio-img">
-                        <span class="img-label before-label">Before</span>
-                    </div>
-                    <div class="img-wrapper no-click">
-                        <img src="project-after-3.png" onerror="this.onerror=null;this.src='https://s.yimg.com/bj/cb5f/cb5fbd171105b4b9cf8986e406b53b17.jpg'" alt="After Project" class="fixed-ratio-img">
-                        <span class="img-label after-label">After</span>
-                    </div>
-                </div>
-            </div>
         </div>
     </div>
 </section>
@@ -616,12 +604,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </div>
 
 <!-- ============================================
-     HARDENED GEO-LOCATION SWAP (v3)
+     HARDENED GEO-LOCATION SWAP (v4)
      - Default: "Sacramento"
      - URL override: ?city=Pleasanton forces any city (for testing)
-     - Postal code sanity check: if API says "San Jose" but ZIP is
-       94566/94588, we know it's lying and use Pleasanton instead
-     - Watchdog re-asserts for 15s to beat other scripts
+     - PRIMARY: lat/lng -> closest service-area city within 15mi
+       (fixes "Comcast says San Francisco when you're in Pleasanton")
+     - SECONDARY: ZIP -> city lookup
+     - FALLBACK: trust API's city name
+     - Watchdog re-asserts to beat other scripts
      - Logs to console for debugging
      ============================================ -->
 <script>
@@ -630,8 +620,64 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   var currentCity  = DEFAULT_CITY;
   var locked       = false;
 
-  // ZIP-to-city map for our service area — used to correct lying IP APIs
-  // (Comcast Bay Area IPs often register as "San Jose" regardless of real location)
+  // Service-area cities with coordinates.
+  // IP APIs often get the city name wrong (Pleasanton IPs frequently register
+  // as "San Francisco"), but the lat/lng they return is usually within 5-10mi
+  // of the real location. Coordinate matching is therefore more reliable than
+  // trusting the returned city string.
+  var CITIES = [
+    // Sacramento region
+    {name:'Sacramento',       lat:38.5816, lng:-121.4944},
+    {name:'West Sacramento',  lat:38.5805, lng:-121.5302},
+    {name:'Roseville',        lat:38.7521, lng:-121.2880},
+    {name:'Rocklin',          lat:38.7907, lng:-121.2358},
+    {name:'Lincoln',          lat:38.8916, lng:-121.2930},
+    {name:'Folsom',           lat:38.6780, lng:-121.1761},
+    {name:'Elk Grove',        lat:38.4088, lng:-121.3716},
+    {name:'Rancho Cordova',   lat:38.5891, lng:-121.3025},
+    {name:'Citrus Heights',   lat:38.7072, lng:-121.2811},
+    {name:'Auburn',           lat:38.8966, lng:-121.0769},
+    {name:'El Dorado Hills',  lat:38.6857, lng:-121.0822},
+    {name:'Davis',            lat:38.5449, lng:-121.7405},
+    {name:'Woodland',         lat:38.6785, lng:-121.7733},
+    // Solano / Napa / Sonoma
+    {name:'Vacaville',        lat:38.3566, lng:-121.9877},
+    {name:'Fairfield',        lat:38.2494, lng:-122.0400},
+    {name:'Vallejo',          lat:38.1041, lng:-122.2566},
+    {name:'Napa',             lat:38.2975, lng:-122.2869},
+    {name:'Santa Rosa',       lat:38.4405, lng:-122.7144},
+    {name:'Petaluma',         lat:38.2324, lng:-122.6367},
+    // Tri-Valley / East Bay
+    {name:'Pleasanton',       lat:37.6624, lng:-121.8747},
+    {name:'Dublin',           lat:37.7161, lng:-121.9358},
+    {name:'Livermore',        lat:37.6819, lng:-121.7680},
+    {name:'San Ramon',        lat:37.7799, lng:-121.9780},
+    {name:'Danville',         lat:37.8216, lng:-121.9999},
+    {name:'Walnut Creek',     lat:37.9101, lng:-122.0652},
+    {name:'Pleasant Hill',    lat:37.9480, lng:-122.0608},
+    {name:'Concord',          lat:37.9779, lng:-122.0311},
+    {name:'Martinez',         lat:38.0194, lng:-122.1341},
+    {name:'Antioch',          lat:38.0049, lng:-121.8058},
+    {name:'Pittsburg',        lat:38.0279, lng:-121.8847},
+    {name:'Brentwood',        lat:37.9319, lng:-121.6957},
+    {name:'Oakley',           lat:37.9974, lng:-121.7124},
+    {name:'Oakland',          lat:37.8044, lng:-122.2711},
+    {name:'Berkeley',         lat:37.8715, lng:-122.2730},
+    {name:'Alameda',          lat:37.7652, lng:-122.2416},
+    {name:'San Leandro',      lat:37.7249, lng:-122.1561},
+    {name:'Hayward',          lat:37.6688, lng:-122.0808},
+    {name:'Union City',       lat:37.5934, lng:-122.0438},
+    {name:'Fremont',          lat:37.5485, lng:-121.9886},
+    {name:'Newark',           lat:37.5297, lng:-122.0402},
+    // Central Valley / San Joaquin
+    {name:'Stockton',         lat:37.9577, lng:-121.2908},
+    {name:'Lodi',             lat:38.1341, lng:-121.2722},
+    {name:'Manteca',          lat:37.7975, lng:-121.2160},
+    {name:'Tracy',            lat:37.7397, lng:-121.4252},
+    {name:'Modesto',          lat:37.6391, lng:-120.9969}
+  ];
+
+  // ZIP-to-city map — secondary check when coords are unavailable.
   var ZIP_TO_CITY = {
     // East Bay
     '94566':'Pleasanton','94588':'Pleasanton',
@@ -679,6 +725,34 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     return s.replace(/\w\S*/g,function(t){return t.charAt(0).toUpperCase()+t.substr(1).toLowerCase();});
   }
 
+  // Haversine distance in miles between two lat/lng points.
+  function haversine(lat1, lng1, lat2, lng2){
+    var R = 3959; // Earth radius in miles
+    var dLat = (lat2 - lat1) * Math.PI / 180;
+    var dLng = (lng2 - lng1) * Math.PI / 180;
+    var a = Math.sin(dLat/2) * Math.sin(dLat/2) +
+            Math.cos(lat1 * Math.PI/180) * Math.cos(lat2 * Math.PI/180) *
+            Math.sin(dLng/2) * Math.sin(dLng/2);
+    return R * 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
+  }
+
+  // Return the closest service-area city within maxMiles, or null.
+  // This is how "wrong API city but right-ish coords" gets corrected —
+  // we ignore the city string entirely and go by distance.
+  function closestCity(lat, lng, maxMiles){
+    var best = null;
+    var bestDist = maxMiles;
+    for(var i=0; i<CITIES.length; i++){
+      var d = haversine(lat, lng, CITIES[i].lat, CITIES[i].lng);
+      if(d < bestDist){
+        bestDist = d;
+        best = CITIES[i].name;
+      }
+    }
+    if(best) console.log('[MTR Geo] closestCity ->', best, '('+bestDist.toFixed(1)+' mi)');
+    return best;
+  }
+
   function applyCity(city){
     document.querySelectorAll('.geo-city, .geo-city-h1').forEach(function(el){
       if(el.textContent !== city) el.textContent = city;
@@ -710,37 +784,48 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     var city   = data.city || '';
     var region = data.region || data.region_code || '';
     var zip    = data.postal || data.postal_code || data.zip || '';
+    var lat    = parseFloat(data.latitude !== undefined ? data.latitude : data.lat);
+    var lng    = parseFloat(data.longitude !== undefined ? data.longitude : (data.lng !== undefined ? data.lng : data.lon));
     var isCA   = /^(california|ca)$/i.test(region);
 
-    console.log('[MTR Geo]', apiName, 'returned:', {city:city, region:region, zip:zip});
+    console.log('[MTR Geo]', apiName, 'returned:', {city:city, region:region, zip:zip, lat:lat, lng:lng});
 
     if(!isCA){
       console.log('[MTR Geo]', apiName, 'not in CA — ignoring');
       return;
     }
-    if(!city){
-      console.log('[MTR Geo]', apiName, 'no city returned');
+
+    // PRIMARY: coordinate-based match.
+    // Most accurate because IP lat/lng is usually within 5-10mi of the real
+    // location even when the associated city name is a regional hub.
+    if(!isNaN(lat) && !isNaN(lng)){
+      var nearest = closestCity(lat, lng, 15); // 15-mile radius
+      if(nearest){
+        console.log('[MTR Geo] Coord match —', apiName, 'coords place user nearest to', nearest);
+        setCity(nearest);
+        return;
+      }
+    }
+
+    // SECONDARY: ZIP lookup.
+    if(zip && ZIP_TO_CITY[zip]){
+      console.log('[MTR Geo] ZIP match —', zip, '=>', ZIP_TO_CITY[zip]);
+      setCity(ZIP_TO_CITY[zip]);
       return;
     }
 
-    // ZIP sanity check — if we know the real city for this ZIP, use it
-    // This catches the "Comcast says San Jose but ZIP says Pleasanton" case
-    if(zip && ZIP_TO_CITY[zip]){
-      var realCity = ZIP_TO_CITY[zip];
-      if(realCity.toLowerCase() !== city.toLowerCase()){
-        console.log('[MTR Geo] ZIP override —', apiName, 'said', city, 'but ZIP', zip, '=', realCity);
-      }
-      setCity(realCity);
-      return;
+    // FALLBACK: trust API's city name.
+    if(city){
+      console.log('[MTR Geo] Fallback — using API city name:', city);
+      setCity(titleCase(city));
     }
-    // No ZIP match — trust the API's city name
-    setCity(titleCase(city));
   }
 
   function tryApis(){
+    // ipwho.is is typically most accurate for residential IPs, so try first.
     var apis = [
-      { name:'ipapi.co',  url:'https://ipapi.co/json/' },
       { name:'ipwho.is',  url:'https://ipwho.is/' },
+      { name:'ipapi.co',  url:'https://ipapi.co/json/' },
       { name:'geojs',     url:'https://get.geojs.io/v1/ip/geo.json' }
     ];
     var i = 0;
