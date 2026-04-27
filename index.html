@@ -236,8 +236,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <!-- STICKY MOBILE BAR -->
 <div class="mobile-bottom-bar">
-    <a href="tel:+19168920745" class="mobile-call-btn">📞 Call Now</a>
-    <a href="#main-form-anchor" class="mobile-quote-btn">Get Free Quote</a>
+    <a href="tel:+19168920745" class="mobile-call-btn" style="flex:1;">📞 Call Now</a>
 </div>
 
 <!-- TOP HEADER -->
@@ -360,14 +359,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                             <label for="hero-phone">Phone Number *</label>
                             <input type="tel" id="hero-phone" name="phone" class="form-control" placeholder="(555) 555-5555" required>
                         </div>
-                        <div class="form-group">
-                            <label for="hero-details">What are you looking to get done?</label>
-                            <textarea id="hero-details" name="project_details" class="form-control" rows="3" placeholder="Tell us about your project (e.g., converting a tub to a walk-in shower)..." style="resize: vertical; font-family: inherit;"></textarea>
-                        </div>
 
                         <button type="submit" class="btn btn-red" id="hero-submit" style="width:100%; margin-top:5px; font-weight:700; font-size: 18px;">
-                            Start My Free Consultation
+                            See What It Costs
                         </button>
+
+                        <p style="text-align:center; font-size:12px; color:#888; margin-top:8px; margin-bottom:0;">
+                            We'll call you with a free estimate — usually within the hour.
+                        </p>
 
                         <div class="form-disclaimer" style="margin-top: 15px; border-top: 1px solid #e0e0e0; padding-top: 12px; display: flex; flex-direction: column; align-items: center; text-align: center;">
                             <div style="display: flex; align-items: center; justify-content: center; gap: 6px; margin-bottom: 4px; width: 100%;">
@@ -596,7 +595,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 Call Alex Now: (916) 892-0745
             </a>
 
-            <a href="#main-form-anchor" class="btn btn-red trigger-modal">Schedule Free Bathroom Consultation</a>
+            <!-- UPDATED: "Schedule Free Bathroom Consultation" → "Get Your Free Estimate" -->
+            <a href="#main-form-anchor" class="btn btn-red trigger-modal">Get Your Free Estimate</a>
 
             <p style="margin-top: 15px; font-size: 14px; opacity: 0.9;">
                 <em>Flexible financing & monthly payment plans available.</em>
@@ -665,11 +665,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   var currentCity  = DEFAULT_CITY;
   var locked       = false;
 
-  // Service-area cities with coordinates.
-  // IP APIs often get the city name wrong (Pleasanton IPs frequently register
-  // as "San Francisco"), but the lat/lng they return is usually within 5-10mi
-  // of the real location. Coordinate matching is therefore more reliable than
-  // trusting the returned city string.
   var CITIES = [
     // Sacramento region
     {name:'Sacramento',       lat:38.5816, lng:-121.4944},
@@ -722,7 +717,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     {name:'Modesto',          lat:37.6391, lng:-120.9969}
   ];
 
-  // ZIP-to-city map — secondary check when coords are unavailable.
   var ZIP_TO_CITY = {
     // East Bay
     '94566':'Pleasanton','94588':'Pleasanton',
@@ -770,9 +764,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     return s.replace(/\w\S*/g,function(t){return t.charAt(0).toUpperCase()+t.substr(1).toLowerCase();});
   }
 
-  // Haversine distance in miles between two lat/lng points.
   function haversine(lat1, lng1, lat2, lng2){
-    var R = 3959; // Earth radius in miles
+    var R = 3959;
     var dLat = (lat2 - lat1) * Math.PI / 180;
     var dLng = (lng2 - lng1) * Math.PI / 180;
     var a = Math.sin(dLat/2) * Math.sin(dLat/2) +
@@ -781,9 +774,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     return R * 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
   }
 
-  // Return the closest service-area city within maxMiles, or null.
-  // This is how "wrong API city but right-ish coords" gets corrected —
-  // we ignore the city string entirely and go by distance.
   function closestCity(lat, lng, maxMiles){
     var best = null;
     var bestDist = maxMiles;
@@ -815,7 +805,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   // Paint default immediately
   applyCity(DEFAULT_CITY);
 
-  // URL override — ?city=Pleasanton forces any city (handy for testing)
+  // URL override
   var urlParams = new URLSearchParams(window.location.search);
   if(urlParams.get('city')){
     var forced = titleCase(urlParams.get('city'));
@@ -840,11 +830,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       return;
     }
 
-    // PRIMARY: coordinate-based match.
-    // Most accurate because IP lat/lng is usually within 5-10mi of the real
-    // location even when the associated city name is a regional hub.
+    // PRIMARY: coordinate-based match
     if(!isNaN(lat) && !isNaN(lng)){
-      var nearest = closestCity(lat, lng, 15); // 15-mile radius
+      var nearest = closestCity(lat, lng, 15);
       if(nearest){
         console.log('[MTR Geo] Coord match —', apiName, 'coords place user nearest to', nearest);
         setCity(nearest);
@@ -852,22 +840,28 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       }
     }
 
-    // SECONDARY: ZIP lookup.
+    // SECONDARY: ZIP lookup
     if(zip && ZIP_TO_CITY[zip]){
       console.log('[MTR Geo] ZIP match —', zip, '=>', ZIP_TO_CITY[zip]);
       setCity(ZIP_TO_CITY[zip]);
       return;
     }
 
-    // FALLBACK: trust API's city name.
+    // FALLBACK: only use API city if it matches a known service-area city
+    // (prevents "San Jose" and other non-service cities from appearing)
     if(city){
-      console.log('[MTR Geo] Fallback — using API city name:', city);
-      setCity(titleCase(city));
+      var cityNorm = titleCase(city);
+      var isKnown = CITIES.some(function(c){ return c.name === cityNorm; });
+      if(isKnown){
+        console.log('[MTR Geo] Fallback — using API city name:', cityNorm);
+        setCity(cityNorm);
+      } else {
+        console.log('[MTR Geo] Fallback — API city "'+cityNorm+'" not in service list, keeping default');
+      }
     }
   }
 
   function tryApis(){
-    // ipwho.is is typically most accurate for residential IPs, so try first.
     var apis = [
       { name:'ipwho.is',  url:'https://ipwho.is/' },
       { name:'ipapi.co',  url:'https://ipapi.co/json/' },
@@ -892,12 +886,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   }
   tryApis();
 
-  // MutationObserver — the moment ANY script changes text inside a .geo-city
-  // element, we put our value back. This is instant, not polled.
   var observer = new MutationObserver(function(mutations){
     mutations.forEach(function(m){
       var target = m.target;
-      // Walk up to find the .geo-city or .geo-city-h1 ancestor
       while(target && target !== document.body){
         if(target.classList && (target.classList.contains('geo-city') || target.classList.contains('geo-city-h1'))){
           if(target.textContent !== currentCity){
@@ -911,15 +902,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   });
   observer.observe(document.body, { childList:true, subtree:true, characterData:true });
 
-  // Also run a periodic sweep in case script.js replaces entire parent elements
-  // (which MutationObserver catches, but the replaced element may no longer have .geo-city)
   var sweeper = setInterval(function(){
     document.querySelectorAll('.geo-city, .geo-city-h1').forEach(function(el){
       if(el.textContent !== currentCity) el.textContent = currentCity;
     });
   }, 250);
 
-  // Run for 60 seconds then clean up
   setTimeout(function(){
     observer.disconnect();
     clearInterval(sweeper);
@@ -927,7 +915,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 })();
 </script>
 
-<!-- Keep existing script.js for form handling, accordion, lightbox, etc. -->
 <script src="script.js"></script>
 </body>
 </html>
