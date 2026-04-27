@@ -444,7 +444,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
 
         <div style="text-align:center; margin-top:35px;">
-            <a href="#main-form-anchor" class="btn btn-red" style="display:inline-block; padding:16px 36px; font-size:16px; font-weight:700;">See What It Costs</a>
+            <a href="#main-form-anchor" class="btn btn-red" style="display:inline-block; padding:16px 36px; font-size:16px; font-weight:700;">Get My Free Quote</a>
         </div>
     </div>
 </section>
@@ -633,7 +633,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             </a>
 
             <!-- UPDATED: "Schedule Free Bathroom Consultation" → "Get Your Free Estimate" -->
-            <a href="#main-form-anchor" class="btn btn-red trigger-modal">Get Your Free Estimate</a>
+            <a href="#main-form-anchor" class="btn btn-red trigger-modal">Get My Free Quote</a>
 
             <p style="margin-top: 15px; font-size: 14px; opacity: 0.9;">
                 <em>Flexible financing & monthly payment plans available.</em>
@@ -869,7 +869,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     // PRIMARY: coordinate-based match
     if(!isNaN(lat) && !isNaN(lng)){
-      var nearest = closestCity(lat, lng, 15);
+      var nearest = closestCity(lat, lng, 40);
       if(nearest){
         console.log('[MTR Geo] Coord match —', apiName, 'coords place user nearest to', nearest);
         setCity(nearest);
@@ -898,6 +898,33 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     }
   }
 
+  // Try GPS first — most accurate, fires before IP APIs
+  // Browser will prompt for permission; if denied, falls through to IP APIs
+  if(navigator.geolocation){
+    navigator.geolocation.getCurrentPosition(
+      function(pos){
+        if(locked) return;
+        var lat = pos.coords.latitude;
+        var lng = pos.coords.longitude;
+        console.log('[MTR Geo] GPS coords:', lat, lng);
+        var nearest = closestCity(lat, lng, 40);
+        if(nearest){
+          setCity(nearest);
+        } else {
+          console.log('[MTR Geo] GPS — no service city within 40mi, trying IP APIs');
+          tryApis();
+        }
+      },
+      function(err){
+        console.log('[MTR Geo] GPS denied or failed ('+err.message+') — falling back to IP APIs');
+        tryApis();
+      },
+      { timeout: 5000, maximumAge: 300000 }
+    );
+  } else {
+    tryApis();
+  }
+
   function tryApis(){
     var apis = [
       { name:'ipwho.is',  url:'https://ipwho.is/' },
@@ -921,7 +948,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     }
     next();
   }
-  tryApis();
 
   var observer = new MutationObserver(function(mutations){
     mutations.forEach(function(m){
