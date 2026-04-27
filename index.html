@@ -898,32 +898,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     }
   }
 
-  // Try GPS first — most accurate, fires before IP APIs
-  // Browser will prompt for permission; if denied, falls through to IP APIs
-  if(navigator.geolocation){
-    navigator.geolocation.getCurrentPosition(
-      function(pos){
-        if(locked) return;
-        var lat = pos.coords.latitude;
-        var lng = pos.coords.longitude;
-        console.log('[MTR Geo] GPS coords:', lat, lng);
-        var nearest = closestCity(lat, lng, 40);
-        if(nearest){
-          setCity(nearest);
-        } else {
-          console.log('[MTR Geo] GPS — no service city within 40mi, trying IP APIs');
-          tryApis();
-        }
-      },
-      function(err){
-        console.log('[MTR Geo] GPS denied or failed ('+err.message+') — falling back to IP APIs');
-        tryApis();
-      },
-      { timeout: 5000, maximumAge: 300000 }
-    );
-  } else {
-    tryApis();
-  }
+  tryApis();
 
   function tryApis(){
     var apis = [
