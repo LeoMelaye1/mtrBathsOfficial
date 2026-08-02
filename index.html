@@ -317,23 +317,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <div class="hero-content">
                 <!-- PROMO BADGE: dated to Sept 7 (Labor Day) to match the "Save $3,000 Before Sept 7" ad headline.
                      This date must actually be honored, swapped or removed by Sept 7, or it goes stale exactly
-                     like the old "Ends July 31st" version did. -->
+                     like the old "Ends July 31st" version did.
+                     Uses the pre-existing .offer-highlight class from style.css (solid red, glow, pulse) instead
+                     of one-off inline styles, it was already designed and just never used anywhere on the page. -->
                 <div class="offer-badge-container" style="margin-bottom: 15px;">
-                    <span style="
-                        background-color: #ffffff;
-                        color: 
-#2c3e50;
-                        border: 2px solid 
-#c41e3a;
-                        padding: 6px 16px;
-                        border-radius: 50px;
-                        font-size: 13px;
-                        font-weight: 700;
-                        text-transform: uppercase;
-                        letter-spacing: 0.5px;
-                        display: inline-block;
-                        box-shadow: 0 2px 8px rgba(0,0,0,0.15);">
-                        ☀️ Save $3,000 Before Sept 7
+                    <span class="offer-highlight">
+                        ⏰ Save $3,000 Before Sept 7
                     </span>
                 </div>
                 <!-- HEADLINE — .geo-city-h1 swaps to detected city for CA visitors, defaults to Sacramento -->
