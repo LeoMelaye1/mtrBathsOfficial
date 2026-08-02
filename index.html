@@ -223,6 +223,19 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 .financing-line strong{
   color:#c41e3a;
 }
+/* Fix: the external stylesheet's .hero-checklist li uses align-items:center,
+   which vertically centers the checkmark against the FULL height of a bullet
+   once its text wraps to 2 lines, instead of aligning it with the first line.
+   Overriding here with higher-specificity selectors so it doesn't depend on
+   load order, verified by rendering both versions before shipping this. */
+ul.hero-checklist li{
+  align-items:flex-start;
+  line-height:1.4;
+  margin-bottom:16px;
+}
+ul.hero-checklist li .check-icon{
+  margin-top:3px;
+}
 </style>
 </head>
 <body>
