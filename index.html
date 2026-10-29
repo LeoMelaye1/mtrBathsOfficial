@@ -389,7 +389,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 <h2 style="color: 
 #2c3e50; margin-bottom: 20px;">Local, Licensed, and Owner-Operated</h2>
                 <p style="margin-bottom: 20px; font-size: 16px; color: #555;">
-                    "Hi, I'm Alex. I've been helping homeowners in <span class="geo-city">Sacramento</span> and across Northern California transform their bathrooms for over 15 years.
+                    "Hi, I'm Alex. I've been helping homeowners in <span class="geo-city">Sacramento</span> and across Northern California transform their bathrooms for over 25 years.
                     <br><br>
                     When you work with MTR Baths, you aren't hiring a sales rep from a giant franchise. You're hiring a local expert who personally oversees every project. My goal is to build you a bathroom that is safe, beautiful, and built to last a lifetime."
                 </p>
@@ -530,7 +530,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     <div class="accordion-header">How long will my bathroom remodel take?</div>
                     <div class="accordion-content">
                         <div class="accordion-content-inner">
-                            <p>Most bathroom remodels in the <span class="geo-city">Sacramento</span> area are completed in just 2-3 days once materials are on-site.</p>
+                            <p>Most bathroom projects in the <span class="geo-city">Sacramento</span> area are completed in just 1 day once materials are on-site.</p>
                         </div>
                     </div>
                 </div>
@@ -590,7 +590,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="footer-content">
             <div class="footer-col">
                 <h3>About MTR Baths</h3>
-                <p>MTR Baths specializes exclusively in premium bathroom remodeling with over 25+ years of experience serving <span class="geo-city">Sacramento</span> and all of Northern California.</p>
+                <p>MTR Baths specializes exclusively in premium bathroom remodeling with 25+ years of experience serving <span class="geo-city">Sacramento</span> and all of Northern California.</p>
                 <div class="footer-social">
                     <a href="https://www.facebook.com/people/MTR-Walk-in-Tubs-and-Showers/100095165135948/" target="_blank">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
@@ -888,6 +888,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       headline: 'Longest-Lasting Walk-In Showers',
       subtitle: "Built With a 30-Year Wall & Repipe Protection System, So It's Never Redone Again. Most Projects Done in 1 Day."
     },
+    tub: {
+      headline: 'Safe, Comfortable Walk-In Tubs',
+      subtitle: 'Low Step-In Door, Built-In Seat, Grab Bars & Non-Slip Floor. Senior & Veteran Discounts Available.'
+    },
     safety: {
       headline: 'Safest Walk-In Showers & Bath Conversions',
       subtitle: 'Non-Slip Showers & Tub Conversions Built for Safe, Independent Living. Senior & Handicap Accessible Options.'
@@ -897,6 +901,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   var intentKey = urlParams.get('service');
   // Walk-in shower ad landing paths (served by _redirects) default to the safety angle
   if(!intentKey && /^\/(walkin-shower|walk-in-shower|shower)\/?$/.test(window.location.pathname)) intentKey = 'safety';
+  if(!intentKey && /^\/(walk-in-tub|walkin-tub|tub)\/?$/.test(window.location.pathname)) intentKey = 'tub';
   if(intentKey && INTENT_VARIANTS[intentKey]){
     var variant = INTENT_VARIANTS[intentKey];
     var headlineEl = document.querySelector('.intent-headline-accent');
