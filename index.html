@@ -4,8 +4,8 @@
 <!-- ============================================
      MTR BATHS — REVERTED LAYOUT
      Defaults: Sacramento (hardcoded, no FOUT)
-     Promo: END OF JULY SUMMER SALE (offer ends July 31, 2026)
-     Next swap: Labor Day, ~Sept 1
+     Promo: THANKSGIVING — Save $3,000 when you book before Nov 26, 2026
+     Next swap: holiday/New Year promo, ~Nov 26
      ============================================ -->
 <!-- Meta Pixel -->
 <script>
@@ -315,14 +315,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="container">
         <div class="hero-container">
             <div class="hero-content">
-                <!-- PROMO BADGE: dated to Sept 7 (Labor Day) to match the "Save $3,000 Before Sept 7" ad headline.
-                     This date must actually be honored, swapped or removed by Sept 7, or it goes stale exactly
-                     like the old "Ends July 31st" version did.
+                <!-- PROMO BADGE: dated to Thanksgiving (Nov 26, 2026) to match the Google/Meta ad headlines.
+                     Swap or remove by Nov 26, or it goes stale exactly like the old "Before Sept 7" version did.
                      Uses the pre-existing .offer-highlight class from style.css (solid red, glow, pulse) instead
                      of one-off inline styles, it was already designed and just never used anywhere on the page. -->
                 <div class="offer-badge-container" style="margin-bottom: 15px;">
                     <span class="offer-highlight">
-                        ⏰ Save $3,000 Before Sept 7
+                        ⏰ Save $3,000 When You Book Before Thanksgiving
                     </span>
                 </div>
                 <!-- HEADLINE — .geo-city-h1 swaps to detected city for CA visitors, defaults to Sacramento -->
@@ -896,6 +895,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   };
   var urlParams = new URLSearchParams(window.location.search);
   var intentKey = urlParams.get('service');
+  // Walk-in shower ad landing paths (served by _redirects) default to the safety angle
+  if(!intentKey && /^\/(walkin-shower|walk-in-shower|shower)\/?$/.test(window.location.pathname)) intentKey = 'safety';
   if(intentKey && INTENT_VARIANTS[intentKey]){
     var variant = INTENT_VARIANTS[intentKey];
     var headlineEl = document.querySelector('.intent-headline-accent');

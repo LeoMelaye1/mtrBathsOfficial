@@ -109,7 +109,7 @@ const combinedProjectDetails = `Project: ${projectDetails}`;
                     budget: '',
                     timeline: 'ASAP - Promo',
                     features: '',
-                    reason: 'Claimed $2500 Off Offer',
+                    reason: 'Claimed $3,000 Off Offer (Thanksgiving)',
                     zip_code: ''
                 };
                 
