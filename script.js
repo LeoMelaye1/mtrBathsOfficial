@@ -1,3 +1,26 @@
+// --- AD CLICK MEMORY ---
+// Remember a Google Ads click (gclid / UTMs) for 90 days, so a form sent later in the
+// visit, or on a return visit, still tells GHL the lead came from Google Ads.
+(function rememberAdClick() {
+    try {
+        const p = new URLSearchParams(window.location.search);
+        const got = {};
+        ['gclid', 'gbraid', 'wbraid', 'utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content']
+            .forEach(k => { if (p.get(k)) got[k] = p.get(k); });
+        if (Object.keys(got).length) {
+            got.landing = window.location.pathname;
+            got.at = Date.now();
+            localStorage.setItem('mtr_ad_click', JSON.stringify(got));
+        }
+    } catch (e) { /* private mode: the lead just goes without it */ }
+})();
+function lastAdClick() {
+    try {
+        const c = JSON.parse(localStorage.getItem('mtr_ad_click') || 'null');
+        return c && Date.now() - c.at < 90 * 86400000 ? c : {};
+    } catch (e) { return {}; }
+}
+
 document.addEventListener('DOMContentLoaded', function() {
     
     // --- ACCORDION FUNCTIONALITY ---
@@ -100,11 +123,18 @@ const combinedProjectDetails = `Project: ${projectDetails}`;
                 heroSubmit.style.backgroundColor = '#27ae60'; 
                 heroSubmit.disabled = true;
                 
+                const click = lastAdClick();
+                const fromGoogle = !!(click.gclid || click.gbraid || click.wbraid || /google/i.test(click.utm_source || ''));
                 const ghlData = {
                     name: name,
                     phone: phone,
                     email: '',
-                    source: 'Website Hero Form',
+                    source: fromGoogle ? 'Website Hero Form - Google Ads' : 'Website Hero Form',
+                    gclid: click.gclid || click.gbraid || click.wbraid || '',
+                    utm_source: click.utm_source || '',
+                    utm_medium: click.utm_medium || '',
+                    utm_campaign: click.utm_campaign || '',
+                    utm_term: click.utm_term || '',
                     project_type: combinedProjectDetails,
                     budget: '',
                     timeline: 'ASAP - Promo',
