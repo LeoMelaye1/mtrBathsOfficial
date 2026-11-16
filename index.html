@@ -224,6 +224,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 .financing-line strong{
   color:#c41e3a;
 }
+/* Hero: walk-in shower photo under the form + tap-to-call under the headline (mobile only) */
+.hero-shower-photo{margin:14px 0 0;border-radius:12px;overflow:hidden;box-shadow:0 8px 24px rgba(0,0,0,.35);background:#fff}
+.hero-shower-photo img{display:block;width:100%;height:220px;object-fit:cover;object-position:center 40%}
+.hero-shower-photo figcaption{font-size:13px;font-weight:600;color:#333;padding:8px 12px;text-align:center}
+.hero-call-btn{display:none}
+@media(max-width:768px){
+  .hero-call-btn{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;min-height:52px;margin:0 0 16px;border-radius:10px;background:#f4b941;color:#1a1a1a !important;font-weight:800;font-size:17px;text-decoration:none;box-shadow:0 4px 14px rgba(0,0,0,.25)}
+  .hero-shower-photo img{height:200px}
+}
 /* Fix: the external stylesheet's .hero-checklist li uses align-items:center,
    which vertically centers the checkmark against the FULL height of a bullet
    once its text wraps to 2 lines, instead of aligning it with the first line.
@@ -330,6 +339,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 <p class="hero-subtitle intent-subtitle" style="margin-bottom: 20px; font-size: 18px;">
                     Walk-In Showers, Bathtub Installs & Full Bathroom Remodels. Many Projects Done in 1 Day.
                 </p>
+                <a href="tel:+19168920745" class="hero-call-btn">📞 Tap to Call (916) 892-0745</a>
                 <p style="text-transform:uppercase; letter-spacing:1px; font-size:12px; font-weight:700; color:rgba(255,255,255,0.65); margin-bottom:10px;">What You Get</p>
                 <ul class="hero-checklist">
                     <li>
@@ -373,6 +383,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                          advertised payment figures are regulated (Reg Z / TILA), don't publish a guess as fact. -->
                     <p class="financing-line">Flexible financing available, as low as <strong>$158/mo</strong>*</p>
                 </div>
+                <figure class="hero-shower-photo">
+                    <img src="hero-walkin-shower.jpg" alt="Walk-in shower with grab bars and a fold-down seat, installed by MTR Baths" loading="eager" width="600" height="220">
+                    <figcaption>A walk-in shower installed by MTR Baths</figcaption>
+                </figure>
             </div>
         </div>
     </div>
